@@ -13,11 +13,11 @@
   "targetRoles": [
     "Trading Systems Engineer (Buy-Side)",
     "OMS/EMS Platform Engineer",
-    "Charles River / Aladdin Platform Engineer",
+    "Buy-Side OMS/PMS Platform Engineer",
     "FIX Connectivity Engineer",
-    "Sell-Side Trading Technology (TOMS/Murex/Calypso)"
+    "Sell-Side Trade-and-Risk Platform Engineer"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -25,11 +25,11 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Learn how the software that runs the buy side and sell side actually works — by rebuilding it. This is the platform-engineering track for the systems every asset manager, hedge fund, and dealer depends on: Charles River (CRD) and Bloomberg AIM for order management, BlackRock Aladdin for portfolio and risk, Bloomberg TOMS for sell-side inventory, and Murex/Calypso for derivatives and post-trade. Those products are proprietary and license-gated, so you reconstruct the concepts they embody as small, correct, runnable C++ programs: a security master and the trade lifecycle, an order-management state machine, a hand-rolled FIX engine, a pre-trade compliance rule engine, execution algos and transaction-cost analysis, and allocation/clearing/settlement with an IBOR position keeper. Every project ties its code back to how the real platforms do the same job, so you graduate fluent in both the domain (how capital markets work front-to-back) and the systems (how the platforms are engineered). The track culminates in a multi-asset OMS/EMS simulator that runs an order from entry through a compliance gate, FIX routing, execution, allocation, and settlement while keeping a live position and P&L book. Built on the cpp-from-zero and dsa-cpp foundations, this is the applied path toward trading-platform and financial-technology engineering roles on the buy side and sell side.",
+  "summary": "Learn how the software that runs the buy side and sell side actually works — by rebuilding it. This is the platform-engineering track for the systems every asset manager, hedge fund, and dealer depends on: the buy-side order-management platforms, the portfolio-and-risk platforms, the sell-side inventory platforms, and the cross-asset trade-and-risk platforms that run derivatives and post-trade. Those products are proprietary and license-gated, so you reconstruct the concepts they embody as small, correct, runnable C++ programs: a security master and the trade lifecycle, an order-management state machine, a hand-rolled FIX engine, a pre-trade compliance rule engine, execution algos and transaction-cost analysis, and allocation/clearing/settlement with an IBOR position keeper. Every project ties its code back to how the real platforms do the same job, so you graduate fluent in both the domain (how capital markets work front-to-back) and the systems (how the platforms are engineered). The track culminates in a multi-asset OMS/EMS simulator that runs an order from entry through a compliance gate, FIX routing, execution, allocation, and settlement while keeping a live position and P&L book. Built on the cpp-from-zero and dsa-cpp foundations, this is the applied path toward trading-platform and financial-technology engineering roles on the buy side and sell side.",
   "environment": [],
   "capstone": {
     "title": "Multi-Asset OMS/EMS Platform Simulator",
-    "project": "Build a working mini trading platform that ties the whole track together: take an order from entry through a pre-trade compliance gate, route it over your FIX engine, capture executions, allocate a block fill across accounts, and settle it — all while maintaining a live position and P&L book and a risk/exposure view. Model at least two asset classes, persist the blotter and positions, and structure it as a properly built and tested C++ project so it reads like the core of a real CRD/Aladdin/TOMS-style system."
+    "project": "Build a working mini trading platform that ties the whole track together: take an order from entry through a pre-trade compliance gate, route it over your FIX engine, capture executions, allocate a block fill across accounts, and settle it — all while maintaining a live position and P&L book and a risk/exposure view. Model at least two asset classes, persist the blotter and positions, and structure it as a properly built and tested C++ project so it reads like the core of a real production trading platform."
   },
   "phases": [
     {
@@ -152,7 +152,7 @@
     {
       "id": "phase-2-order-management-system",
       "title": "Building an OMS (Buy-Side Core)",
-      "goal": "Engineer the core of an order-management system the way Charles River and Bloomberg AIM do: order entry and validation, the order state machine and blotter, parent/child orders and slicing, cancel/replace, execution capture with the cum_qty/leaves_qty invariant, and multi-account orders.",
+      "goal": "Engineer the core of an order-management system the way the leading buy-side order-management platforms do: order entry and validation, the order state machine and blotter, parent/child orders and slicing, cancel/replace, execution capture with the cum_qty/leaves_qty invariant, and multi-account orders.",
       "projectCount": 8,
       "projects": [
         {
@@ -384,7 +384,7 @@
     {
       "id": "phase-4-compliance-and-risk",
       "title": "Pre-Trade Compliance & Risk",
-      "goal": "Build the differentiator of CRD and Aladdin: a pre-trade compliance rule engine (mandates/guidelines, restricted lists, concentration and exposure limits, buying power), pre- vs post-trade evaluation, a small rules DSL, and core risk metrics (exposure, VaR concept, Greeks, margin).",
+      "goal": "Build the differentiator of the leading buy-side platforms: a pre-trade compliance rule engine (mandates/guidelines, restricted lists, concentration and exposure limits, buying power), pre- vs post-trade evaluation, a small rules DSL, and core risk metrics (exposure, VaR concept, Greeks, margin).",
       "projectCount": 8,
       "projects": [
         {
@@ -460,7 +460,7 @@
           "slug": "project-06-rule-engine",
           "path": "projects/phase-4-compliance-and-risk/project-06-rule-engine",
           "title": "A Pre-Trade Compliance Rule Engine",
-          "description": "Build the Charles River compliance-engine pattern: model each rule as a std::function<RuleResult(const Order&, const Portfolio&)> with id and severity, hold them in a registry, and write a generic engine that folds every rule's pass/warn/fail into one cited compliance report — so a new rule is a push_back, not an engine change.",
+          "description": "Build the buy-side compliance-engine pattern: model each rule as a std::function<RuleResult(const Order&, const Portfolio&)> with id and severity, hold them in a registry, and write a generic engine that folds every rule's pass/warn/fail into one cited compliance report — so a new rule is a push_back, not an engine change.",
           "tech": [
             "C++20",
             "g++/clang++",
@@ -503,7 +503,7 @@
     {
       "id": "phase-5-ems-execution-market-data",
       "title": "EMS, Execution Algos & Market Data",
-      "goal": "Engineer the execution side that EMSX/TSOX and Aladdin trading occupy: EMS vs OMS, deterministic TWAP/VWAP algos, smart order routing across venues, market-data snapshots (BBO/depth), average-price fill aggregation, and transaction-cost analysis for best execution.",
+      "goal": "Engineer the execution side that the vendor execution-management systems and the portfolio platforms' trading modules occupy: EMS vs OMS, deterministic TWAP/VWAP algos, smart order routing across venues, market-data snapshots (BBO/depth), average-price fill aggregation, and transaction-cost analysis for best execution.",
       "projectCount": 8,
       "projects": [
         {
@@ -615,14 +615,14 @@
     {
       "id": "phase-6-post-trade-and-sell-side",
       "title": "Post-Trade, Allocations, Settlement & Sell-Side",
-      "goal": "Complete the lifecycle the way TOMS, Murex, and Calypso do the back office: block allocation (pro-rata and average price), confirmation/affirmation, clearing and settlement (T+1, DvP), trade matching and reconciliation, sell-side inventory and market making, and the derivatives lifecycle with an IBOR position keeper.",
+      "goal": "Complete the lifecycle the way the sell-side and cross-asset trade-and-risk platforms do the back office: block allocation (pro-rata and average price), confirmation/affirmation, clearing and settlement (T+1, DvP), trade matching and reconciliation, sell-side inventory and market making, and the derivatives lifecycle with an IBOR position keeper.",
       "projectCount": 8,
       "projects": [
         {
           "slug": "project-01-block-allocation",
           "path": "projects/phase-6-post-trade-and-sell-side/project-01-block-allocation",
           "title": "Allocating a Block Fill (Pro-Rata)",
-          "description": "Split one block execution across client accounts pro-rata to their order size, handling indivisible-share residuals with the largest-remainder method so the parts sum to the block exactly and the booked cash reconciles to the penny — the post-execution allocation step CRD and Bloomberg AIM perform every day.",
+          "description": "Split one block execution across client accounts pro-rata to their order size, handling indivisible-share residuals with the largest-remainder method so the parts sum to the block exactly and the booked cash reconciles to the penny — the post-execution allocation step the buy-side OMS platforms perform every day.",
           "tech": [
             "C++20",
             "g++/clang++",
@@ -661,7 +661,7 @@
           "slug": "project-04-clearing-and-settlement",
           "path": "projects/phase-6-post-trade-and-sell-side/project-04-clearing-and-settlement",
           "title": "Clearing & Settlement (T+1, DvP)",
-          "description": "Compute settlement dates as T+1 business days with a weekend-skipping counter, net affirmed trades into a per-day settlement ladder of securities-versus-cash obligations, and model Delivery-versus-Payment, the CCP/custodian roles, and Standing Settlement Instructions — the back-office settlement workflow NSCC/DTC and Aladdin/CRD automate.",
+          "description": "Compute settlement dates as T+1 business days with a weekend-skipping counter, net affirmed trades into a per-day settlement ladder of securities-versus-cash obligations, and model Delivery-versus-Payment, the CCP/custodian roles, and Standing Settlement Instructions — the back-office settlement workflow the CSD and the buy-side platforms automate.",
           "tech": [
             "C++20",
             "g++/clang++",
@@ -687,7 +687,7 @@
           "slug": "project-06-sell-side-inventory",
           "path": "projects/phase-6-post-trade-and-sell-side/project-06-sell-side-inventory",
           "title": "Sell-Side Inventory & Market Making",
-          "description": "Take the dealer's seat: maintain a signed inventory position with weighted-average cost as client trades fill, realize P&L on offsets and mark the open position to market, derive the desk's axe, and post a two-way quote skewed toward it — the inventory, axe, and P&L model at the heart of Bloomberg TOMS.",
+          "description": "Take the dealer's seat: maintain a signed inventory position with weighted-average cost as client trades fill, realize P&L on offsets and mark the open position to market, derive the desk's axe, and post a two-way quote skewed toward it — the inventory, axe, and P&L model at the heart of the sell-side OMS.",
           "tech": [
             "C++20",
             "g++/clang++",
@@ -700,7 +700,7 @@
           "slug": "project-07-derivatives-lifecycle",
           "path": "projects/phase-6-post-trade-and-sell-side/project-07-derivatives-lifecycle",
           "title": "The Derivatives Lifecycle",
-          "description": "Build a lifecycle engine for a vanilla fixed-for-floating interest-rate swap: capture the trade, advance it period by period through reset and coupon events computing net cashflows in integer basis points and cents, and revalue the remaining swap to see whether receiving fixed is in- or out-of-the-money — the capture-schedule-process-revalue skeleton of Murex and Calypso.",
+          "description": "Build a lifecycle engine for a vanilla fixed-for-floating interest-rate swap: capture the trade, advance it period by period through reset and coupon events computing net cashflows in integer basis points and cents, and revalue the remaining swap to see whether receiving fixed is in- or out-of-the-money — the capture-schedule-process-revalue skeleton of the cross-asset trade-and-risk platforms.",
           "tech": [
             "C++20",
             "g++/clang++",
@@ -713,7 +713,7 @@
           "slug": "project-08-ibor-position-keeper",
           "path": "projects/phase-6-post-trade-and-sell-side/project-08-ibor-position-keeper",
           "title": "The IBOR: Investment Book of Record",
-          "description": "Build the firm's real-time book of record: seed positions and cash at start of day, then update intraday from execution fills and derivative lifecycle events (a bond coupon) in one consistent structure, and mark to market for a live total value — the position-keeping core Aladdin and Charles River put at the center of the platform, and the spine that ties the whole track together.",
+          "description": "Build the firm's real-time book of record: seed positions and cash at start of day, then update intraday from execution fills and derivative lifecycle events (a bond coupon) in one consistent structure, and mark to market for a live total value — the position-keeping core that the buy-side platforms put at the center of the platform, and the spine that ties the whole track together.",
           "tech": [
             "C++20",
             "g++/clang++",
