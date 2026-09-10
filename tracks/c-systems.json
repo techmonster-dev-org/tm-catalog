@@ -1,0 +1,990 @@
+{
+  "id": "c-systems",
+  "title": "C & Systems Programming (Zero to the Kernel)",
+  "tagline": "Learn C the way the systems world actually uses it — as the portable assembly that the Linux kernel, device drivers, embedded firmware, databases, and network stacks are written in.",
+  "level": null,
+  "stack": [
+    "C11/C17",
+    "gcc/clang",
+    "make",
+    "valgrind / AddressSanitizer",
+    "POSIX / Linux"
+  ],
+  "targetRoles": [
+    "Systems / Kernel Engineer",
+    "Embedded / Firmware Engineer",
+    "Low-Latency Engineer (foundation)",
+    "OS / Database / Network Internals Engineer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 44,
+  "freeEligible": true,
+  "freeProjectCount": 1,
+  "paid": true,
+  "playlistUrl": "https://www.youtube.com/playlist?list=PLGif_w4_FvXE",
+  "summary": "Learn C the way the systems world actually uses it — as the portable assembly that the Linux kernel, device drivers, embedded firmware, databases, and network stacks are written in. You go from your first program to manual memory management with no safety net (and the tools to stay safe), to writing the allocator underneath malloc and a set of reusable data-structure libraries, to the POSIX system-call layer (processes, files, pipes, signals), to concurrency and networking (you build a real concurrent server), and finally down to bare metal: memory-mapped I/O, microcontrollers, interrupts, Linux kernel modules, and character device drivers. The capstone is a concurrent in-memory key-value store server. Data structures are built here, not imported, because C ships none - it has no list, no map, no set, no queue - so hand-rolling them is what production C actually does, and each one doubles as the exercise that teaches ownership, alignment, and API design. What this track deliberately does NOT teach is algorithms: balanced trees, graph algorithms, and dynamic programming are a different subject with a different bar, taught in the dsa-cpp track (Data Structures & Algorithms in C++). This is the foundation beneath the C++ track — the layer where the kernel, embedded/robotics firmware, and the lowest-latency systems live, and where C is non-negotiable. Honest framing: pure-C top-of-market pay concentrates in kernel engineering at big tech and chip companies, HFT (alongside C++), and embedded at frontier robotics/automotive/aerospace — narrower than C++, but it is the price of admission to the very bottom of the stack.",
+  "environment": [
+    "This track is written against a **POSIX/GNU toolchain**. How far you get natively depends on your OS, so set this up before Phase 1 rather than discovering it in Phase 4.",
+    "",
+    "| Phases | What they need | Linux | macOS | Windows |",
+    "|---|---|---|---|---|",
+    "| 1-3 (Foundations, Pointers & Memory, Modular C) | `gcc`, `make`, `gdb`, Valgrind | native | native (Valgrind is **not** available on Apple Silicon - use the AddressSanitizer alternatives the projects name) | MSYS2 UCRT64 (`pacman -S mingw-w64-ucrt-x86_64-gcc`) |",
+    "| 4-6 (Systems & Processes, Concurrency & Networking, Bare Metal) | POSIX APIs: `unistd.h`, `sys/mman.h`, `fork`, `pthread`, `epoll`, `/proc`, `strace`, `perf` | native | **partial** - `epoll`, `/proc`, `perf` and `strace` do not exist on macOS | **WSL2 required** |",
+    "",
+    "**22 of the 48 projects are Linux-specific** (all of Phase 4 and Phase 5, plus parts of Phases 3 and 6). That is not an accident of how they were written - `epoll`, `/proc` and loadable kernel modules are Linux kernel interfaces, and learning them *is* the point of those phases.",
+    "",
+    "**The simplest setup that works for the whole track**, on any host: install Linux and work there.",
+    "",
+    "- **Windows** - `wsl --install` (Ubuntu), then `sudo apt install build-essential gdb valgrind strace linux-tools-generic`. Keep your repo inside the WSL filesystem (`~/`), not `/mnt/c`, or builds will be slow.",
+    "- **macOS** - `xcode-select --install` covers Phases 1-3. For Phases 4-6 use a Linux VM (UTM, Lima, or Docker with `--privileged` for the `/proc` work).",
+    "- **Linux** - `sudo apt install build-essential gdb valgrind strace linux-tools-generic` and you are done.",
+    "",
+    "Where a project needs something your platform genuinely cannot provide, the project README says so and names the alternative. Nothing here is compiled or run by the grader - it reads your source and your journal - so a platform mismatch will never fail your review, it will just stop you finishing the work."
+  ],
+  "capstone": {
+    "title": "Build Your Own memcached — a Concurrent In-Memory Key-Value Store in C",
+    "project": "Build a real piece of infrastructure software in C: a networked, concurrent in-memory key-value store (a small memcached/Redis). Serve many clients over TCP using an epoll event loop or a thread pool, store data in your own hash table, speak a simple GET/SET protocol with robust partial-read/write handling, and shut down cleanly. Build it with a Makefile, test it with a client, and prove it is memory-safe under Valgrind/AddressSanitizer. (Alternatives of equal weight: a malloc implementation, or a tiny persistent database.)"
+  },
+  "phases": [
+    {
+      "id": "phase-1-foundations",
+      "title": "C Foundations & the Toolchain",
+      "goal": "Compile and run C from zero: the toolchain, types and integer/float representation, operators, control flow, functions, formatted I/O, strings, and arrays.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-hello-toolchain",
+          "path": "projects/phase-1-foundations/project-01-hello-toolchain",
+          "title": "Hello, C & the Toolchain",
+          "description": "Write your first C program, trace the four-stage gcc compilation pipeline (preprocess/compile/assemble/link), and understand why C produces tiny, fast native binaries.",
+          "tech": [
+            "C11/C17",
+            "gcc",
+            "binutils"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-types-representation",
+          "path": "projects/phase-1-foundations/project-02-types-representation",
+          "title": "Types & How Numbers Are Stored",
+          "description": "Explore C's fundamental types, use sizeof and <limits.h> to inspect platform sizes and bounds, use <stdint.h> fixed-width types, and understand why signed overflow is undefined behavior while unsigned wraparound is not.",
+          "tech": [
+            "C11/C17",
+            "gcc",
+            "stdint.h",
+            "limits.h"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "3ujNL4trtiU",
+            "url": "https://www.youtube.com/shorts/3ujNL4trtiU",
+            "title": "Numbers don't grow forever in C | C & Systems Programming #2",
+            "publishAt": "2026-08-24T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-03-operators-expressions",
+          "path": "projects/phase-1-foundations/project-03-operators-expressions",
+          "title": "Operators & Expressions",
+          "description": "Master C's arithmetic, comparison, logical, and bitwise operators, understand operator precedence traps, and implement the set/test/clear/toggle bit-manipulation patterns used in every device driver and systems library.",
+          "tech": [
+            "C11/C17",
+            "gcc"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "FOgBlN7HZaA",
+            "url": "https://www.youtube.com/shorts/FOgBlN7HZaA",
+            "title": "One operator, one CPU instruction | C & Systems Programming #3",
+            "publishAt": "2026-08-24T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-04-control-flow",
+          "path": "projects/phase-1-foundations/project-04-control-flow",
+          "title": "Control Flow",
+          "description": "Master C's if/else, switch with fallthrough, all three loop forms, break/continue, and the kernel-style goto cleanup ladder — the control flow patterns found in the Linux kernel, git, nginx, and SQLite.",
+          "tech": [
+            "C11/C17",
+            "gcc"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "ZQywb8hyFNs",
+            "url": "https://www.youtube.com/shorts/ZQywb8hyFNs",
+            "title": "goto: forbidden in class, everywhere in Linux | C & Systems Programming #4",
+            "publishAt": "2026-08-19T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-05-functions-scope",
+          "path": "projects/phase-1-foundations/project-05-functions-scope",
+          "title": "Functions, Scope & the Stack",
+          "description": "Write prototypes and definitions, observe pass-by-value, trace the call stack through recursion, use static local variables for persistent state, and control file-scope visibility with static/extern linkage.",
+          "tech": [
+            "C11/C17",
+            "gcc"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "mB2ANHb5F6g",
+            "url": "https://www.youtube.com/shorts/mB2ANHb5F6g",
+            "title": "A stack frame is born on almost every call | C & Systems Programming #5",
+            "publishAt": "2026-08-19T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-06-io-strings",
+          "path": "projects/phase-1-foundations/project-06-io-strings",
+          "title": "Formatted I/O & C Strings",
+          "description": "Master printf/scanf format strings, read input safely with fgets, understand C strings as null-terminated char arrays, and use <string.h> functions (strlen, strcpy, strcmp, strcat) while learning why gets() was a security disaster.",
+          "tech": [
+            "C11/C17",
+            "gcc",
+            "stdio.h",
+            "string.h"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "OO3w5uUx2kQ",
+            "url": "https://www.youtube.com/shorts/OO3w5uUx2kQ",
+            "title": "One C function was deleted for being unsafe | C & Systems Programming #6",
+            "publishAt": "2026-08-20T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-07-arrays",
+          "path": "projects/phase-1-foundations/project-07-arrays",
+          "title": "Arrays & Multidimensional Arrays",
+          "description": "Declare, initialize, and iterate 1D and 2D arrays, understand array decay to pointer, verify row-major memory layout, and observe why C performs no bounds checking — and how AddressSanitizer catches the resulting bugs.",
+          "tech": [
+            "C11/C17",
+            "gcc",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "0wjIa-Bci_I",
+            "url": "https://www.youtube.com/shorts/0wjIa-Bci_I",
+            "title": "What does arr[5] actually do? | C & Systems Programming #7",
+            "publishAt": "2026-08-24T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-08-cli-tool",
+          "path": "projects/phase-1-foundations/project-08-cli-tool",
+          "title": "A Real CLI Tool",
+          "description": "Build a complete wc-style line/word/character counter using argc/argv, fopen/fgets/fclose, multi-function design, error handling with stderr, and a Makefile — synthesizing every concept from Phase 1 into a real Unix-quality command-line tool.",
+          "tech": [
+            "C11/C17",
+            "gcc",
+            "make"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "l_epTxc6gLE",
+            "url": "https://www.youtube.com/shorts/l_epTxc6gLE",
+            "title": "You've used wc. Now build it. | C & Systems Programming #8",
+            "publishAt": "2026-08-20T18:00:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-2-pointers-memory",
+      "title": "Pointers, Memory & Manual Management",
+      "goal": "Master the heart of C: pointers, the array/string/pointer relationship, structs and unions, the stack vs heap, malloc/free, memory bugs and the tools that catch them, and function pointers - capped by writing the layer underneath malloc, an arena and pool allocator you benchmark against it.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-pointers",
+          "path": "projects/phase-2-pointers-memory/project-01-pointers",
+          "title": "Pointers",
+          "description": "Declare pointer variables, use & and * to take addresses and dereference, handle NULL safely, and use pointer-to-pointer to pass pointers as output parameters.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "wSNDpV0IGow",
+            "url": "https://www.youtube.com/shorts/wSNDpV0IGow",
+            "title": "Pointers aren't scary — they're just addresses | C & Systems Programming #9",
+            "publishAt": "2026-08-20T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-02-pointers-arrays-strings",
+          "path": "projects/phase-2-pointers-memory/project-02-pointers-arrays-strings",
+          "title": "Pointers, Arrays & Strings",
+          "description": "Explore array-to-pointer decay, pointer arithmetic, and null-terminated strings by implementing my_strlen and my_strcpy from scratch using only pointer operations.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "eYVNas8m8LU",
+            "url": "https://www.youtube.com/shorts/eYVNas8m8LU",
+            "title": "a[i] and *(a+i) are the same thing | C & Systems Programming #10",
+            "publishAt": "2026-08-26T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-03-structs-unions-enums",
+          "path": "projects/phase-2-pointers-memory/project-03-structs-unions-enums",
+          "title": "Structs, Unions & Enums",
+          "description": "Define structs and access fields with . and ->, observe struct padding with offsetof/sizeof, use unions for type punning float bits, and pair enums with typedef for clean state machines.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "gB1_Gan6dZI",
+            "url": "https://www.youtube.com/shorts/gB1_Gan6dZI",
+            "title": "14 bytes of data weigh 24 | C & Systems Programming #11",
+            "publishAt": "2026-08-21T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-04-stack-heap-malloc",
+          "path": "projects/phase-2-pointers-memory/project-04-stack-heap-malloc",
+          "title": "The Stack, the Heap & malloc/free",
+          "description": "Compare stack vs heap lifetime by printing their addresses, then use malloc/calloc/realloc/free to manage dynamic arrays and return heap memory from a function with documented ownership transfer.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "McsAl6QAHfg",
+            "url": "https://www.youtube.com/shorts/McsAl6QAHfg",
+            "title": "Your locals vanish. The heap doesn't. | C & Systems Programming #12",
+            "publishAt": "2026-08-21T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-05-dynamic-memory-patterns",
+          "path": "projects/phase-2-pointers-memory/project-05-dynamic-memory-patterns",
+          "title": "Dynamic Memory Patterns",
+          "description": "Build a growable heap array using the double-capacity realloc strategy, manage arrays of structs with owned string fields, implement deep vs shallow copy, and verify zero leaks with Valgrind.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "Acpg3nHrsKc",
+            "url": "https://www.youtube.com/shorts/Acpg3nHrsKc",
+            "title": "Push one number, copy the whole array | C & Systems Programming #13",
+            "publishAt": "2026-08-21T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-06-memory-bugs-tools",
+          "path": "projects/phase-2-pointers-memory/project-06-memory-bugs-tools",
+          "title": "Memory Bugs & the Tools That Catch Them",
+          "description": "Deliberately reproduce a memory leak, use-after-free, double-free, and buffer overflow in C, then detect each with Valgrind --leak-check=full and GCC -fsanitize=address, and produce a clean fixed version.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "qIhOH9Xf6PI",
+            "url": "https://www.youtube.com/shorts/qIhOH9Xf6PI",
+            "title": "70% of critical C bugs are one mistake | C & Systems Programming #14",
+            "publishAt": "2026-08-22T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-07-function-pointers",
+          "path": "projects/phase-2-pointers-memory/project-07-function-pointers",
+          "title": "Function Pointers & Callbacks",
+          "description": "Declare and call function pointers, pass a comparator to qsort, build a dispatch table, and implement a minimal struct file_operations-style vtable to understand how C achieves runtime polymorphism.",
+          "tech": [
+            "C17",
+            "gcc",
+            "valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "E4kvBrcs4FA",
+            "url": "https://www.youtube.com/shorts/E4kvBrcs4FA",
+            "title": "Sort anything — the code never knew your type | C & Systems Programming #15",
+            "publishAt": "2026-08-26T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-08-arena-allocator",
+          "path": "projects/phase-2-pointers-memory/project-08-arena-allocator",
+          "title": "An Arena & Pool Allocator from Scratch",
+          "description": "Write the layer underneath malloc: a bump/arena allocator over one heap block with correct alignment via _Alignof and max_align_t, a fixed-size pool allocator whose free list lives inside the free blocks themselves, and a bitset for occupancy tracking — then benchmark the arena against malloc and report the measured speedup with its conditions.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make",
+            "valgrind",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-modular-c-data-structures",
+      "title": "Modular C & Data Structures",
+      "goal": "Build real C software: multi-file projects, make and the preprocessor, generic code with void*, and reusable dynamic-array, linked-list, hash-table and ring-buffer libraries with disciplined error handling, packaged as a tested static library. These are taught as exercises in memory ownership and API design - the containers systems code hand-rolls - not as an algorithms course; balanced trees, graphs and dynamic programming belong to the dsa-cpp track.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-build-system",
+          "path": "projects/phase-3-modular-c-data-structures/project-01-build-system",
+          "title": "The Build System: Headers, Translation Units, make & the Preprocessor",
+          "description": "Take a C program from source text to executable: split it into headers and translation units with include guards and extern, build it incrementally with a Makefile, then open the layer underneath — raw macro expansion with gcc -E, the precedence and multiple-evaluation traps, conditional compilation, assert, and the X-macro pattern.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "uhRphBSkZsk",
+            "url": "https://www.youtube.com/shorts/uhRphBSkZsk",
+            "title": "Squared, 1+2 gives 5. Here's why. | C & Systems Programming #18",
+            "publishAt": "2026-08-22T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-02-generic-void-ptr",
+          "path": "projects/phase-3-modular-c-data-structures/project-02-generic-void-ptr",
+          "title": "Generic Programming with void*",
+          "description": "Build type-erased C functions using void* pointers, memcpy for element copying, and comparator/printer callbacks — the model behind qsort, bsearch, and every C container library.",
+          "tech": [
+            "C17",
+            "gcc"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "ozd_kbfdDc4",
+            "url": "https://www.youtube.com/shorts/ozd_kbfdDc4",
+            "title": "C has no generics? qsort disagrees. | C & Systems Programming #19",
+            "publishAt": "2026-08-25T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-03-dynamic-array",
+          "path": "projects/phase-3-modular-c-data-structures/project-03-dynamic-array",
+          "title": "A Reusable Dynamic Array (Vector)",
+          "description": "Build a growable array library in C using void* + element size, realloc with a doubling strategy for amortized O(1) push, and a clean opaque-struct API with create/destroy/push/pop/get/set.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "NYADCUuvBlI",
+            "url": "https://www.youtube.com/shorts/NYADCUuvBlI",
+            "title": "Push a million items — almost none move | C & Systems Programming #20",
+            "publishAt": "2026-08-27T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-04-linked-list",
+          "path": "projects/phase-3-modular-c-data-structures/project-04-linked-list",
+          "title": "A Linked List Library",
+          "description": "Build singly and doubly linked list libraries in C, then implement the Linux kernel's intrusive list_head pattern with container_of — giving O(1) insert/remove at any known node.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "n2yjfiCyHuE",
+            "url": "https://www.youtube.com/shorts/n2yjfiCyHuE",
+            "title": "Two pointers vs. a thousand shifts | C & Systems Programming #21",
+            "publishAt": "2026-08-22T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-05-hash-table",
+          "path": "projects/phase-3-modular-c-data-structures/project-05-hash-table",
+          "title": "A Hash Table",
+          "description": "Build a string-keyed hash map with separate chaining, FNV-1a hashing, and automatic rehashing when the load factor exceeds 0.75 — achieving O(1) average lookup for any key.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "pGrYbDB0AJc",
+            "url": "https://www.youtube.com/shorts/pGrYbDB0AJc",
+            "title": "Find one key in a million — instantly | C & Systems Programming #22",
+            "publishAt": "2026-08-23T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-06-ring-buffer",
+          "path": "projects/phase-3-modular-c-data-structures/project-06-ring-buffer",
+          "title": "A Ring Buffer (FIFO)",
+          "description": "Build the fixed-capacity queue that kernels, UART drivers, audio stacks, and low-latency feeds are built on: a flat power-of-two buffer indexed by bitmask instead of modulo, free-running cursors that resolve the full-vs-empty ambiguity the way Linux kfifo does, and wrap-around handled by two memcpy calls with no data ever moved.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make",
+            "AddressSanitizer",
+            "Valgrind"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-error-handling",
+          "path": "projects/phase-3-modular-c-data-structures/project-07-error-handling",
+          "title": "Error Handling in C (Without Exceptions)",
+          "description": "Master C error-handling patterns: return-code conventions, errno + perror/strerror, the goto-cleanup pattern for multi-resource functions, and designing APIs that cannot silently leak on failure.",
+          "tech": [
+            "C17",
+            "gcc",
+            "AddressSanitizer",
+            "Valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "ARIdqWLFuoE",
+            "url": "https://www.youtube.com/shorts/ARIdqWLFuoE",
+            "title": "You were told never to use goto | C & Systems Programming #23",
+            "publishAt": "2026-08-23T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-08-data-structures-lib",
+          "path": "projects/phase-3-modular-c-data-structures/project-08-data-structures-lib",
+          "title": "A Tested C Library (Finale)",
+          "description": "Package the dynamic array, doubly linked list, and hash table into a single libds static library with a professional directory layout, a Makefile that builds libds.a, and a test runner that is Valgrind and ASan-clean.",
+          "tech": [
+            "C17",
+            "gcc",
+            "make",
+            "ar",
+            "AddressSanitizer",
+            "Valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "9xid8ssFoY4",
+            "url": "https://www.youtube.com/shorts/9xid8ssFoY4",
+            "title": "Three files become one shippable library | C & Systems Programming #24",
+            "publishAt": "2026-08-23T23:00:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-4-systems-processes-files",
+      "title": "Systems Programming I — Processes, Files & IPC",
+      "goal": "Program the OS directly: system calls, file I/O with descriptors, processes (fork/exec/wait), pipes and redirection, signals, the process environment, and memory-mapped files — capped by building a shell.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-syscalls-unix",
+          "path": "projects/phase-4-systems-processes-files/project-01-syscalls-unix",
+          "title": "System Calls & the Unix Philosophy",
+          "description": "Learn what system calls are, how the user/kernel mode boundary works, and how to use write(2), errno, perror, and strace to understand and debug programs at the OS level.",
+          "tech": [
+            "C17",
+            "gcc",
+            "strace",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "4-XioSPO3tA",
+            "url": "https://www.youtube.com/shorts/4-XioSPO3tA",
+            "title": "One instruction into the kernel | C & Systems Programming #25",
+            "publishAt": "2026-08-26T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-02-file-io",
+          "path": "projects/phase-4-systems-processes-files/project-02-file-io",
+          "title": "File I/O with File Descriptors",
+          "description": "Master the POSIX open/read/write/close/lseek syscall family, understand O_* flags, and build working cat and cp clones using raw file descriptors.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX",
+            "strace"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "kB_z1IWVwxM",
+            "url": "https://www.youtube.com/shorts/kB_z1IWVwxM",
+            "title": "The kernel hands you one number | C & Systems Programming #26",
+            "publishAt": "2026-08-28T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-03-processes",
+          "path": "projects/phase-4-systems-processes-files/project-03-processes",
+          "title": "Processes: fork, exec & wait",
+          "description": "Learn to create and manage processes using fork, exec, and waitpid — the foundation of every Unix shell, build system, and process supervisor.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "A2aRu5YljOA",
+            "url": "https://www.youtube.com/shorts/A2aRu5YljOA",
+            "title": "Your shell doesn't run ls — it becomes ls | C & Systems Programming #27",
+            "publishAt": "2026-08-30T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-04-pipes-redirection",
+          "path": "projects/phase-4-systems-processes-files/project-04-pipes-redirection",
+          "title": "Pipes & Redirection",
+          "description": "Implement shell-style pipes and redirection in C using pipe(), dup2(), fork(), and exec() — connecting processes so one's output feeds another's input.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "S1xKipg0Ry8",
+            "url": "https://www.youtube.com/shorts/S1xKipg0Ry8",
+            "title": "Two programs, one invisible stream | C & Systems Programming #28",
+            "publishAt": "2026-09-01T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-05-signals",
+          "path": "projects/phase-4-systems-processes-files/project-05-signals",
+          "title": "Signals",
+          "description": "Master POSIX signal handling with sigaction, implement graceful shutdown, use SIGCHLD to reap children asynchronously, and understand async-signal-safety.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "mE0rZcmqzqo",
+            "url": "https://www.youtube.com/shorts/mE0rZcmqzqo",
+            "title": "Ctrl-C doesn't have to kill your program | C & Systems Programming #29",
+            "publishAt": "2026-09-02T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-06-environment-args",
+          "path": "projects/phase-4-systems-processes-files/project-06-environment-args",
+          "title": "The Process Environment",
+          "description": "Build well-behaved CLI programs in C: parse options with getopt, read and modify environment variables, register atexit cleanup handlers, and measure wall and CPU time.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "NPqpwOP4hpM",
+            "url": "https://www.youtube.com/shorts/NPqpwOP4hpM",
+            "title": "Where does PATH come from? Nobody passed it in. | C & Systems Programming #30",
+            "publishAt": "2026-09-03T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-07-mmap-shm",
+          "path": "projects/phase-4-systems-processes-files/project-07-mmap-shm",
+          "title": "Memory-Mapped Files & Shared Memory",
+          "description": "Use mmap() to access files as memory arrays, create anonymous mappings, and build a POSIX shared-memory IPC channel between two processes using shm_open.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "AaQDzkW-LHM",
+            "url": "https://www.youtube.com/shorts/AaQDzkW-LHM",
+            "title": "One tool reads files with zero extra copies | C & Systems Programming #31",
+            "publishAt": "2026-09-04T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-08-build-a-shell",
+          "path": "projects/phase-4-systems-processes-files/project-08-build-a-shell",
+          "title": "Build a Unix Shell",
+          "description": "Capstone project: build a working interactive Unix shell in C that handles external commands, single pipes, input/output redirection, built-ins (cd, exit, help), and Ctrl-C gracefully.",
+          "tech": [
+            "C17",
+            "gcc",
+            "Linux/POSIX"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "lzp1JX9ZuOA",
+            "url": "https://www.youtube.com/shorts/lzp1JX9ZuOA",
+            "title": "Four steps run every command you type | C & Systems Programming #32",
+            "publishAt": "2026-09-04T18:00:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-5-concurrency-networking",
+      "title": "Systems Programming II — Concurrency & Networking",
+      "goal": "Make C concurrent and networked: pthreads and synchronization, C11 atomics and lock-free basics, TCP sockets, robust I/O, epoll event loops, and a thread-pool server.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-pthreads",
+          "path": "projects/phase-5-concurrency-networking/project-01-pthreads",
+          "title": "Threads with pthreads",
+          "description": "Create and join POSIX threads, pass arguments via void*, retrieve results, compare threads vs processes, and observe a data race with ThreadSanitizer.",
+          "tech": [
+            "C17",
+            "pthreads",
+            "gcc",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "BpEYDa2MUdE",
+            "url": "https://www.youtube.com/shorts/BpEYDa2MUdE",
+            "title": "The counter says 4 million. It lies. | C & Systems Programming #33",
+            "publishAt": "2026-09-06T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-02-synchronization",
+          "path": "projects/phase-5-concurrency-networking/project-02-synchronization",
+          "title": "Synchronization: Mutexes & Condition Variables",
+          "description": "Fix a data race with pthread_mutex, implement a bounded producer-consumer queue with condition variables, and demonstrate and prevent deadlock.",
+          "tech": [
+            "C17",
+            "pthreads",
+            "gcc",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "VI7ee7LIE80",
+            "url": "https://www.youtube.com/shorts/VI7ee7LIE80",
+            "title": "Sleeping while you hold the lock would freeze everyone | C & Systems Programming #34",
+            "publishAt": "2026-09-04T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-03-atomics-lockfree",
+          "path": "projects/phase-5-concurrency-networking/project-03-atomics-lockfree",
+          "title": "Atomics & Lock-Free Basics (C11)",
+          "description": "Use <stdatomic.h> to build a lock-free counter and a single-producer/single-consumer ring buffer, and benchmark atomics against mutexes on a multi-core machine.",
+          "tech": [
+            "C17",
+            "stdatomic.h",
+            "pthreads",
+            "gcc",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "5xqqUjVOaKE",
+            "url": "https://www.youtube.com/shorts/5xqqUjVOaKE",
+            "title": "Your counter is losing numbers, and a mutex is overkill | C & Systems Programming #35",
+            "publishAt": "2026-09-05T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-04-tcp-sockets",
+          "path": "projects/phase-5-concurrency-networking/project-04-tcp-sockets",
+          "title": "TCP Sockets",
+          "description": "Build a TCP echo server and client from raw POSIX syscalls, handle partial send/recv, set SO_REUSEADDR and TCP_NODELAY, and measure loopback round-trip latency.",
+          "tech": [
+            "C17",
+            "POSIX sockets",
+            "gcc",
+            "ss"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "WrbvYmSGNc4",
+            "url": "https://www.youtube.com/shorts/WrbvYmSGNc4",
+            "title": "send returned 600. Your message isn't broken. | C & Systems Programming #36",
+            "publishAt": "2026-09-06T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-05-robust-io",
+          "path": "projects/phase-5-concurrency-networking/project-05-robust-io",
+          "title": "Robust I/O & Framing",
+          "description": "Implement read_n/write_n helpers that handle partial reads, EINTR, and EOF, then build a length-prefix framing layer and use it to exchange variable-length messages between a framed echo server and client.",
+          "tech": [
+            "C17",
+            "POSIX sockets",
+            "gcc"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "Yx_dGz1Gavs",
+            "url": "https://www.youtube.com/shorts/Yx_dGz1Gavs",
+            "title": "One send is not one recv | C & Systems Programming #37",
+            "publishAt": "2026-09-06T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-06-epoll-eventloop",
+          "path": "projects/phase-5-concurrency-networking/project-06-epoll-eventloop",
+          "title": "Event-Driven I/O with epoll",
+          "description": "Build a single-threaded TCP echo server using the epoll API (epoll_create1/epoll_ctl/epoll_wait) with non-blocking sockets, handle 100 simultaneous clients, and understand the reactor pattern.",
+          "tech": [
+            "C17",
+            "epoll",
+            "POSIX sockets",
+            "gcc"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "nw6mjx4CfnY",
+            "url": "https://www.youtube.com/shorts/nw6mjx4CfnY",
+            "title": "One thread. Ten thousand clients. | C & Systems Programming #38",
+            "publishAt": "2026-09-07T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-07-thread-pool-server",
+          "path": "projects/phase-5-concurrency-networking/project-07-thread-pool-server",
+          "title": "A Thread-Pool Server",
+          "description": "Build a fixed-size thread pool backed by a synchronized task queue, dispatch accepted TCP connections to worker threads, pre-allocate connection structs to avoid per-request malloc, and benchmark throughput against the single-threaded event loop.",
+          "tech": [
+            "C17",
+            "pthreads",
+            "POSIX sockets",
+            "gcc",
+            "Valgrind"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "8sIZkG9la_c",
+            "url": "https://www.youtube.com/shorts/8sIZkG9la_c",
+            "title": "10,000 clients, 4 cores, zero crashes: the thread pool | C & Systems Programming #39",
+            "publishAt": "2026-09-07T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-08-concurrent-server",
+          "path": "projects/phase-5-concurrency-networking/project-08-concurrent-server",
+          "title": "A Concurrent Networked Server",
+          "description": "Build a production-quality key-value server combining an epoll accept loop, a thread pool, a mutex-protected hash table, and a binary request/response protocol, with a clean shutdown that passes Valgrind with zero leaks.",
+          "tech": [
+            "C17",
+            "epoll",
+            "pthreads",
+            "POSIX sockets",
+            "gcc",
+            "Valgrind",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "-lrhbJzzzC4",
+            "url": "https://www.youtube.com/shorts/-lrhbJzzzC4",
+            "title": "How one server handles 500 clients at once | C & Systems Programming #40",
+            "publishAt": "2026-09-07T18:00:00Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": "phase-6-bare-metal-kernel",
+      "title": "Bare Metal, Embedded & the Kernel",
+      "goal": "Go below the OS: C down to the ABI, memory-mapped I/O and registers, bare-metal microcontrollers, interrupts and a tiny scheduler, Linux kernel modules, a character device driver, and real-time/embedded constraints.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-c-to-metal-abi",
+          "path": "projects/phase-6-bare-metal-kernel/project-01-c-to-metal-abi",
+          "title": "C Down to the Metal",
+          "description": "Compile C to assembly with gcc -S, trace the System V AMD64 calling convention and stack frame, apply volatile to hardware register simulation, write inline asm with RDTSC, and build a freestanding object with no OS runtime.",
+          "tech": [
+            "C11",
+            "gcc",
+            "x86-64 assembly",
+            "inline asm"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "f2lwD5zBIkc",
+            "url": "https://www.youtube.com/shorts/f2lwD5zBIkc",
+            "title": "Where do six arguments actually go? | C & Systems Programming #41",
+            "publishAt": "2026-09-08T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-02-memory-mapped-io",
+          "path": "projects/phase-6-bare-metal-kernel/project-02-memory-mapped-io",
+          "title": "Memory-Mapped I/O & Registers",
+          "description": "Declare and manipulate simulated hardware registers using volatile pointers, implement the read-modify-write pattern for GPIO configuration and BSRR atomic set/clear, and simulate a polling UART transmit loop.",
+          "tech": [
+            "C11",
+            "gcc",
+            "stdint.h",
+            "Makefile"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "o_5EBp_8xEc",
+            "url": "https://www.youtube.com/shorts/o_5EBp_8xEc",
+            "title": "Hardware isn't functions. It's addresses. | C & Systems Programming #42",
+            "publishAt": "2026-09-08T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-03-bare-metal-mcu",
+          "path": "projects/phase-6-bare-metal-kernel/project-03-bare-metal-mcu",
+          "title": "Bare-Metal Microcontroller Programming",
+          "description": "Write a complete bare-metal blink program for ARM Cortex-M3 from scratch: linker script, startup.c reset handler with .data/.bss init, GPIO register writes, and a cross-compiled Makefile build runnable in QEMU.",
+          "tech": [
+            "C11",
+            "arm-none-eabi-gcc",
+            "GNU ld",
+            "QEMU",
+            "Makefile",
+            "ARM Cortex-M3"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "jfsVSeGRSv4",
+            "url": "https://www.youtube.com/shorts/jfsVSeGRSv4",
+            "title": "On a bare chip, nobody sets up main but you | C & Systems Programming #43",
+            "publishAt": "2026-09-08T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-04-interrupts-scheduler",
+          "path": "projects/phase-6-bare-metal-kernel/project-04-interrupts-scheduler",
+          "title": "Interrupts & a Tiny Scheduler",
+          "description": "Configure SysTick interrupts on a bare-metal Cortex-M3, write a naked context-switch ISR in inline ARM assembly, build fake initial task frames, and implement a two-task round-robin preemptive scheduler.",
+          "tech": [
+            "C11",
+            "ARM Cortex-M3",
+            "arm-none-eabi-gcc",
+            "inline assembly",
+            "QEMU",
+            "Makefile"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "nVnZZkcfEtw",
+            "url": "https://www.youtube.com/shorts/nVnZZkcfEtw",
+            "title": "One core, two programs, each thinks it's alone. | C & Systems Programming #44",
+            "publishAt": "2026-09-09T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-05-linux-kernel-module",
+          "path": "projects/phase-6-bare-metal-kernel/project-05-linux-kernel-module",
+          "title": "Linux Kernel Modules",
+          "description": "Write, build, and load a Linux loadable kernel module using the Kbuild Makefile system; use printk, module_param, and module_init/exit; explain the kernel-space constraints that make C the kernel's language.",
+          "tech": [
+            "C11",
+            "Linux kernel",
+            "Kbuild",
+            "insmod/rmmod",
+            "dmesg",
+            "GNU Make"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "PHPXORMPjSQ",
+            "url": "https://www.youtube.com/shorts/PHPXORMPjSQ",
+            "title": "Write C that runs inside Linux itself | C & Systems Programming #45",
+            "publishAt": "2026-09-09T18:00:00Z"
+          }
+        },
+        {
+          "slug": "project-06-char-device-driver",
+          "path": "projects/phase-6-bare-metal-kernel/project-06-char-device-driver",
+          "title": "A Character Device Driver",
+          "description": "Implement a complete Linux character device driver with a circular buffer: file_operations (open/release/read/write), alloc_chrdev_region, cdev_add, class_create/device_create for /dev, and copy_to_user/copy_from_user with proper mutex locking.",
+          "tech": [
+            "C11",
+            "Linux kernel",
+            "Kbuild",
+            "character devices",
+            "file_operations",
+            "copy_to_user"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "s4KtEwrZlpw",
+            "url": "https://www.youtube.com/shorts/s4KtEwrZlpw",
+            "title": "Your keyboard is a file. So is your GPU. | C & Systems Programming #46",
+            "publishAt": "2026-09-09T23:00:00Z"
+          }
+        },
+        {
+          "slug": "project-07-embedded-realtime-constraints",
+          "path": "projects/phase-6-bare-metal-kernel/project-07-embedded-realtime-constraints",
+          "title": "Embedded & Real-Time Constraints",
+          "description": "Implement a static memory pool (no malloc), Q16.16 fixed-point PID controller, watchdog/WCET simulation, MISRA-C violation/fix examples, and a CAN frame builder — the full set of constraints governing safety-critical automotive/aerospace/robot firmware.",
+          "tech": [
+            "C11",
+            "gcc",
+            "fixed-point arithmetic",
+            "MISRA-C",
+            "CAN bus",
+            "Makefile"
+          ],
+          "featured": true,
+          "video": {
+            "youtubeId": "o_VeSECg7ZA",
+            "url": "https://www.youtube.com/shorts/o_VeSECg7ZA",
+            "title": "A pacemaker has 8 ms. So malloc is banned. | C & Systems Programming #47",
+            "publishAt": "2026-09-10T13:00:00Z"
+          }
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-bare-metal-kernel/project-08-capstone",
+          "title": "Build Your Own memcached — a Concurrent In-Memory Key-Value Store in C",
+          "description": "Build a real networked key-value store server: an epoll event loop, a hand-written chaining hash table with resize, a line-oriented GET/SET protocol with partial-read handling, a test client, and a Makefile build proven memory-safe under Valgrind and AddressSanitizer.",
+          "tech": [
+            "C11",
+            "gcc",
+            "epoll",
+            "TCP sockets",
+            "hash table",
+            "Valgrind",
+            "AddressSanitizer",
+            "Makefile"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
