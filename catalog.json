@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10T19:11:19Z",
+  "generatedAt": "2026-09-10T23:27:26Z",
   "totals": {
     "tracks": 21,
     "projects": 941,
-    "videos": 77
+    "videos": 78
   },
   "tracks": [
     {
@@ -142,7 +142,7 @@
       "version": "1.0.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 44,
+      "videoCount": 45,
       "freeEligible": true,
       "freeProjectCount": 1,
       "paid": true,
@@ -163,11 +163,11 @@
       "targetRoles": [
         "Trading Systems Engineer (Buy-Side)",
         "OMS/EMS Platform Engineer",
-        "Charles River / Aladdin Platform Engineer",
+        "Buy-Side OMS/PMS Platform Engineer",
         "FIX Connectivity Engineer",
-        "Sell-Side Trading Technology (TOMS/Murex/Calypso)"
+        "Sell-Side Trade-and-Risk Platform Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
