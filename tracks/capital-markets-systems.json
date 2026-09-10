@@ -1,0 +1,728 @@
+{
+  "id": "capital-markets-systems",
+  "title": "Capital Markets Systems in C++ (OMS/EMS, FIX, Compliance & Settlement)",
+  "tagline": "Learn how the software that runs the buy side and sell side actually works — by rebuilding it.",
+  "level": null,
+  "stack": [
+    "C++17/20",
+    "g++/clang++",
+    "CMake",
+    "GoogleTest",
+    "FIX protocol"
+  ],
+  "targetRoles": [
+    "Trading Systems Engineer (Buy-Side)",
+    "OMS/EMS Platform Engineer",
+    "Charles River / Aladdin Platform Engineer",
+    "FIX Connectivity Engineer",
+    "Sell-Side Trading Technology (TOMS/Murex/Calypso)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Learn how the software that runs the buy side and sell side actually works — by rebuilding it. This is the platform-engineering track for the systems every asset manager, hedge fund, and dealer depends on: Charles River (CRD) and Bloomberg AIM for order management, BlackRock Aladdin for portfolio and risk, Bloomberg TOMS for sell-side inventory, and Murex/Calypso for derivatives and post-trade. Those products are proprietary and license-gated, so you reconstruct the concepts they embody as small, correct, runnable C++ programs: a security master and the trade lifecycle, an order-management state machine, a hand-rolled FIX engine, a pre-trade compliance rule engine, execution algos and transaction-cost analysis, and allocation/clearing/settlement with an IBOR position keeper. Every project ties its code back to how the real platforms do the same job, so you graduate fluent in both the domain (how capital markets work front-to-back) and the systems (how the platforms are engineered). The track culminates in a multi-asset OMS/EMS simulator that runs an order from entry through a compliance gate, FIX routing, execution, allocation, and settlement while keeping a live position and P&L book. Built on the cpp-from-zero and dsa-cpp foundations, this is the applied path toward trading-platform and financial-technology engineering roles on the buy side and sell side.",
+  "environment": [],
+  "capstone": {
+    "title": "Multi-Asset OMS/EMS Platform Simulator",
+    "project": "Build a working mini trading platform that ties the whole track together: take an order from entry through a pre-trade compliance gate, route it over your FIX engine, capture executions, allocate a block fill across accounts, and settle it — all while maintaining a live position and P&L book and a risk/exposure view. Model at least two asset classes, persist the blotter and positions, and structure it as a properly built and tested C++ project so it reads like the core of a real CRD/Aladdin/TOMS-style system."
+  },
+  "phases": [
+    {
+      "id": "phase-1-capital-markets-foundations",
+      "title": "Capital Markets & the Trade Lifecycle",
+      "goal": "Build the domain vocabulary and data model as C++ types: securities and the instrument master, identifiers (ISIN/CUSIP/SEDOL/FIGI), asset classes, market participants, front/middle/back office, OMS vs EMS vs PMS vs IBOR/ABOR, the order-to-settlement lifecycle (T+1), and positions and P&L.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-instrument-master",
+          "path": "projects/phase-1-capital-markets-foundations/project-01-instrument-master",
+          "title": "The Security Master",
+          "description": "Build the reference-data spine every trading platform stands on: a Security record with an asset class, currency, lot size, and integer tick size, and a SecurityMaster over unordered_map with add, an std::optional lookup, and the order-admission gate that rejects any instrument not in the master.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::unordered_map",
+            "std::optional",
+            "int64_t integer money"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-security-identifiers",
+          "path": "projects/phase-1-capital-markets-foundations/project-02-security-identifiers",
+          "title": "Security Identifiers (ISIN/CUSIP/SEDOL/FIGI)",
+          "description": "Implement real check-digit validation for CUSIP, ISIN, and SEDOL, build an ISIN from a country code and a CUSIP, describe the FIGI anatomy, and wire all of them into a security-master cross-reference (xref) that resolves one instrument from any of its identifiers.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "std::unordered_map",
+            "std::optional"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-asset-classes",
+          "path": "projects/phase-1-capital-markets-foundations/project-03-asset-classes",
+          "title": "Asset Classes & How They're Quoted",
+          "description": "Model the five core asset classes (equity, fixed income, FX, futures, options) as C++ types and encode how each is quoted: a Treasury in 32nds vs yield with clean/dirty price, an FX pair with pips, a futures multiplier and tick value, and an option premium with a 100x multiplier — converting every quote to a dollar value with int64 money and a std::variant valuation engine.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "std::variant",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-market-participants",
+          "path": "projects/phase-1-capital-markets-foundations/project-04-market-participants",
+          "title": "Who's Who: Buy-Side, Sell-Side & the Plumbing",
+          "description": "Model every market participant as a C++ type with a role and a fee schedule, then walk a single equity order from the buy-side PM's decision through the sell-side broker, the exchange, the clearinghouse, and the custodian — printing who touches the order, what they do, and what they charge, and computing the all-in cost in exact integer cents.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-front-middle-back-office",
+          "path": "projects/phase-1-capital-markets-foundations/project-05-front-middle-back-office",
+          "title": "Front, Middle & Back Office (OMS vs EMS vs PMS vs IBOR)",
+          "description": "Model the three offices of an investment firm and the systems each owns — distinguishing PMS, OMS, EMS, IBOR, and ABOR — by routing one trade event front-to-back and showing why the IBOR and ABOR give two different position numbers at the same instant.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-trade-lifecycle",
+          "path": "projects/phase-1-capital-markets-foundations/project-06-trade-lifecycle",
+          "title": "The Trade Lifecycle, End to End",
+          "description": "Model the full equity trade lifecycle as a validated state machine — ORDER, ROUTED, EXECUTED, ALLOCATED, CONFIRMED, CLEARED, SETTLED — with each stage attributed to its owning office and computed T+n business-day date, a block allocation split across accounts in integer cents, and rejection of illegal transitions like settling before clearing.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "integer arithmetic",
+            "business-day date math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-positions-and-pnl",
+          "path": "projects/phase-1-capital-markets-foundations/project-07-positions-and-pnl",
+          "title": "Positions, Average Cost & P&L",
+          "description": "Build a PositionKeeper that ingests a stream of fills across symbols and maintains net signed quantity, quantity-weighted average cost, realized P&L, and mark-to-market unrealized P&L — all in int64 cents, handling adds, reductions, and crossing through zero exactly to the cent.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-portfolio-and-holdings",
+          "path": "projects/phase-1-capital-markets-foundations/project-08-portfolio-and-holdings",
+          "title": "Portfolios, Holdings & NAV",
+          "description": "Aggregate marked positions and a cash balance into a portfolio, strike its NAV, compute each holding's weight as a percentage of NAV with integer basis-point math, and print a full holdings appraisal report with market value, weight, and unrealized P&L — the top of the buy-side data model that ties Phase 1 together.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-order-management-system",
+      "title": "Building an OMS (Buy-Side Core)",
+      "goal": "Engineer the core of an order-management system the way Charles River and Bloomberg AIM do: order entry and validation, the order state machine and blotter, parent/child orders and slicing, cancel/replace, execution capture with the cum_qty/leaves_qty invariant, and multi-account orders.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-order-entry-and-validation",
+          "path": "projects/phase-2-order-management-system/project-01-order-entry-and-validation",
+          "title": "Order Entry & Validation",
+          "description": "Build the front door of an OMS: model an order as a C++ struct (ClOrdID, account, symbol, side, type, qty, limit price in int64 cents, TIF), load a security master, and run every order through a fail-fast validation gate that accepts or rejects it with a precise reason.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer (cents) money",
+            "STL containers"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-order-state-machine",
+          "path": "projects/phase-2-order-management-system/project-02-order-state-machine",
+          "title": "The Order State Machine",
+          "description": "Model an order's lifecycle as a finite-state machine: the full FIX-style status alphabet, an explicit legal-transition table, a single transition function that rejects illegal moves (e.g. Filled to New), and a complete state-history audit trail.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "finite-state machine",
+            "STL containers"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-the-order-blotter",
+          "path": "projects/phase-2-order-management-system/project-03-the-order-blotter",
+          "title": "The Order Blotter",
+          "description": "Build the live, queryable list at the heart of every OMS UI: store many stateful orders with their fill progress, derive filtered views (open / by account / by symbol) from one canonical store using composable predicates, and render them as an aligned trader-screen table.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::function",
+            "<iomanip>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-parent-child-orders",
+          "path": "projects/phase-2-order-management-system/project-04-parent-child-orders",
+          "title": "Parent & Child Orders (Slicing)",
+          "description": "Separate staged intent from working orders: stage a parent order, slice it into lot-aligned child orders by count or by size, keep parent and child linked both ways, and roll every child fill up so the parent's totals always equal the sum of its children.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::deque",
+            "integer (cents) money"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-cancel-replace",
+          "path": "projects/phase-2-order-management-system/project-05-cancel-replace",
+          "title": "Cancel/Replace & Amendments",
+          "description": "Amend a working order's quantity and price the way FIX does: each cancel/replace mints a new ClOrdID linked to its predecessor via OrigClOrdID, fills carry forward across versions, and the chain enforces that only a working order can be amended and never below the already-filled quantity.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX cancel/replace",
+            "integer (cents) money"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-execution-capture",
+          "path": "projects/phase-2-order-management-system/project-06-execution-capture",
+          "title": "Capturing Executions & Fills",
+          "description": "Fold a stream of FIX-style execution reports into an order's running state: update cum_qty, leaves_qty, and a value-weighted avg_px in integer cents, derive PartiallyFilled/Filled from leaves, reject overfills, and assert cum_qty + leaves_qty == order_qty after every fill.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX ExecutionReport",
+            "integer (cents) money"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-multi-account-orders",
+          "path": "projects/phase-2-order-management-system/project-07-multi-account-orders",
+          "title": "Block Orders Across Accounts",
+          "description": "Model a block order that spans several accounts: attach a pre-trade allocation target per account, validate the targets sum to the block, work the block as a single unit, and split each fill across accounts pro-rata with integer largest-remainder math so every account is booked at the block's average price.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "largest-remainder apportionment",
+            "integer (cents) money"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-mini-oms",
+          "path": "projects/phase-2-order-management-system/project-08-mini-oms",
+          "title": "Assembling a Mini OMS",
+          "description": "Integrate order entry and validation, the order state machine, the blotter, and execution capture into one buy-side OMS core, then run an order from entry through partial fills to Filled (and cancel another) with every status change routed through a single guarded transition.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "finite-state machine",
+            "integer (cents) money"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-fix-connectivity",
+      "title": "FIX Protocol & Connectivity",
+      "goal": "Speak the language every OMS/EMS uses to reach brokers and venues: FIX message anatomy and checksums, parsing and building messages, the session layer (logon, heartbeat, sequence numbers, resend/gap-fill), NewOrderSingle/ExecutionReport/Cancel, and a working mini FIX engine.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-fix-message-anatomy",
+          "path": "projects/phase-3-fix-connectivity/project-01-fix-message-anatomy",
+          "title": "Anatomy of a FIX Message",
+          "description": "Build a program that constructs a real NewOrderSingle, prints it as it travels on the wire (SOH shown as '|'), and dissects every field into a labelled header/body/trailer table — internalizing the tag=value structure every OMS/EMS uses to reach brokers.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-fix-parser",
+          "path": "projects/phase-3-fix-connectivity/project-02-fix-parser",
+          "title": "Parsing FIX Messages",
+          "description": "Build a parse() function that splits a raw SOH-delimited FIX string into an ordered field list plus a tag-to-value index, looks fields up by tag via std::optional, handles repeating fields, and pretty-prints the parsed message — the inverse of the builder and the foundation every later project queries.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-fix-builder-and-checksum",
+          "path": "projects/phase-3-fix-connectivity/project-03-fix-builder-and-checksum",
+          "title": "Building Messages: BodyLength & CheckSum",
+          "description": "Build a build() function that assembles a complete FIX message field by field, computes BodyLength (tag 9) and CheckSum (tag 10) over the exact byte ranges the protocol specifies, and verifies the result by independently re-deriving both framing fields from the raw bytes.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-fix-session-layer",
+          "path": "projects/phase-3-fix-connectivity/project-04-fix-session-layer",
+          "title": "The Session Layer: Logon, Heartbeat, Logout",
+          "description": "Build a stateful Session class that produces the core FIX admin messages — Logon(A), Heartbeat(0), TestRequest(1), Logout(5) — stamping SenderCompID/TargetCompID and a monotonic MsgSeqNum on every message, then simulate a full logon-to-logout session lifecycle between an initiator and an acceptor.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-sequence-and-resend",
+          "path": "projects/phase-3-fix-connectivity/project-05-sequence-and-resend",
+          "title": "Sequence Numbers, Gaps & Resend",
+          "description": "Build a FIX receiver that enforces a monotonic MsgSeqNum, detects a gap when a message is dropped, buffers out-of-order messages, issues a ResendRequest(2) with BeginSeqNo/EndSeqNo, and recovers via either a PossDup resend of an application message or a SequenceReset(4) gap-fill for non-resendable admin traffic.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-new-order-single",
+          "path": "projects/phase-3-fix-connectivity/project-06-new-order-single",
+          "title": "NewOrderSingle (35=D)",
+          "description": "Build a new_order_single() translator that turns a typed OMS Order object into a framed FIX NewOrderSingle, mapping Side/OrdType/TimeInForce enums to wire codes, emitting an int64-cents price as a correct FIX price string, and conditionally including Price (44) only for limit-style orders.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-execution-report",
+          "path": "projects/phase-3-fix-connectivity/project-07-execution-report",
+          "title": "ExecutionReport (35=8)",
+          "description": "Build a consumer that parses a stream of FIX ExecutionReports, distinguishes ExecType from OrdStatus, and folds the per-fill LastQty/LastPx into the order's running CumQty, LeavesQty, and volume-weighted AvgPx — verifying the CumQty+LeavesQty==OrderQty invariant and cross-checking against the broker's reported totals.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-mini-fix-engine",
+          "path": "projects/phase-3-fix-connectivity/project-08-mini-fix-engine",
+          "title": "A Mini FIX Engine",
+          "description": "Combine the parser, builder, session, and application messages from the whole phase into an Engine/Broker pair that logs on, sends a NewOrderSingle, processes ExecutionReports, cancels the remainder with an OrderCancelRequest(35=F), and maintains independent monotonic sequence numbers — reconstructing the order's final filled/canceled state from the wire.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "FIX 4.2"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-compliance-and-risk",
+      "title": "Pre-Trade Compliance & Risk",
+      "goal": "Build the differentiator of CRD and Aladdin: a pre-trade compliance rule engine (mandates/guidelines, restricted lists, concentration and exposure limits, buying power), pre- vs post-trade evaluation, a small rules DSL, and core risk metrics (exposure, VaR concept, Greeks, margin).",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-compliance-overview",
+          "path": "projects/phase-4-compliance-and-risk/project-01-compliance-overview",
+          "title": "What Compliance Checks & Why",
+          "description": "Build the vocabulary of investment compliance: mandates/guidelines and their sources (UCITS, 40-Act, client IMA), the pre-trade vs at-trade vs post-trade distinction, and a pure (Order, Portfolio, Guideline) -> Decision check that evaluates the hypothetical post-trade book and blocks an order before it is sent.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer money (int64 cents)"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-restricted-lists",
+          "path": "projects/phase-4-compliance-and-risk/project-02-restricted-lists",
+          "title": "Restricted & Prohibited Lists",
+          "description": "Build a fail-closed hard-block screen that resolves an order through a security master to its issuer and country of risk, then matches it against restricted-security, restricted-issuer, sanctioned-country, and wildcard lists — blocking an issuer's bonds and ADRs via look-through, not just its stock, and rejecting any unknown security.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::optional",
+            "unordered_set/map"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-concentration-limits",
+          "path": "projects/phase-4-compliance-and-risk/project-03-concentration-limits",
+          "title": "Concentration Limits",
+          "description": "Build a concentration check that applies an order to a hypothetical post-trade book, aggregates market value by issuer and by sector, and enforces the UCITS 5/10/40 rule plus a sector cap — computing every weight as a double from int64 cents and reporting all breaches an order would cause.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer money (int64 cents)",
+            "std::map"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-exposure-and-issuer-limits",
+          "path": "projects/phase-4-compliance-and-risk/project-04-exposure-and-issuer-limits",
+          "title": "Exposure & Issuer Limits",
+          "description": "Value a long/short book in signed market value, compute gross vs net exposure, aggregate an issuer's stock and bonds into a single look-through exposure, and enforce a per-issuer gross cap plus a portfolio gross-leverage limit pre-trade — including the case where a buy that covers a short reduces gross exposure.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer money (int64 cents)",
+            "std::llabs"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-buying-power-and-position-limits",
+          "path": "projects/phase-4-compliance-and-risk/project-05-buying-power-and-position-limits",
+          "title": "Buying Power & Position Limits",
+          "description": "Build the account-protection gate: compute buying power from cash and a Reg T margin requirement, check an order's total cost (notional plus fees) against it, enforce per-name share and notional position limits on the post-trade position, and block a sell that would open an impermissible short.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer money (int64 cents)",
+            "std::map"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-rule-engine",
+          "path": "projects/phase-4-compliance-and-risk/project-06-rule-engine",
+          "title": "A Pre-Trade Compliance Rule Engine",
+          "description": "Build the Charles River compliance-engine pattern: model each rule as a std::function<RuleResult(const Order&, const Portfolio&)> with id and severity, hold them in a registry, and write a generic engine that folds every rule's pass/warn/fail into one cited compliance report — so a new rule is a push_back, not an engine change.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::function",
+            "registry / strategy pattern"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-risk-metrics",
+          "path": "projects/phase-4-compliance-and-risk/project-07-risk-metrics",
+          "title": "Risk Metrics: Exposure, Beta, VaR",
+          "description": "Build the risk dashboard a PM watches: mark a long/short book to market in int64 cents, compute net/gross and beta-adjusted exposure and portfolio beta, then estimate one-day Value-at-Risk two ways — parametric (z x sigma x exposure) and historical (empirical quantile of a P&L series) — keeping money exact and analytics in double.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer money + double analytics",
+            "<cmath>/<algorithm>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-derivatives-greeks-margin",
+          "path": "projects/phase-4-compliance-and-risk/project-08-derivatives-greeks-margin",
+          "title": "Derivatives Risk: Greeks & Margin",
+          "description": "Price a European option with Black-Scholes, compute its delta/gamma/vega/theta, convert the position to a delta-equivalent stock exposure, compute a scenario-based initial margin, and build a pre-trade risk gate that blocks an option order if it breaches a portfolio delta limit or requires more margin than account equity.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "Black-Scholes / <cmath>",
+            "double analytics + int64 money"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-ems-execution-market-data",
+      "title": "EMS, Execution Algos & Market Data",
+      "goal": "Engineer the execution side that EMSX/TSOX and Aladdin trading occupy: EMS vs OMS, deterministic TWAP/VWAP algos, smart order routing across venues, market-data snapshots (BBO/depth), average-price fill aggregation, and transaction-cost analysis for best execution.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-ems-vs-oms",
+          "path": "projects/phase-5-ems-execution-market-data/project-01-ems-vs-oms",
+          "title": "EMS vs OMS — Working an Order",
+          "description": "Model the OMS→EMS handoff in C++: a StagedOrder (the PM's intent) becomes a WorkingOrder that adds an execution algo, a live BBO snapshot, and child-order slices across venues, driven STAGED→WORKING→DONE while maintaining cum_qty + leaves_qty == target_qty.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-market-data-snapshot",
+          "path": "projects/phase-5-ems-execution-market-data/project-02-market-data-snapshot",
+          "title": "Consuming Market Data (BBO & Depth)",
+          "description": "Model a BBO and L2 depth book in integer ticks, compute mid/spread/microprice and order-book imbalance, walk the depth ladder to price an N-share sweep, and feed the microprice signal into a cross-now-vs-post-passively execution decision.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-twap-algo",
+          "path": "projects/phase-5-ems-execution-market-data/project-03-twap-algo",
+          "title": "The TWAP Algo",
+          "description": "Build a deterministic TWAP execution algo: slice a parent order into N equal time buckets (remainder front-loaded), emit a child per bucket along a price path, and show that equal slices make the achieved average price equal the time-weighted benchmark, then report slippage vs benchmark and vs arrival in basis points.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-vwap-algo",
+          "path": "projects/phase-5-ems-execution-market-data/project-04-vwap-algo",
+          "title": "The VWAP Algo",
+          "description": "Build a deterministic VWAP execution algo: slice a parent order in proportion to a U-shaped intraday volume profile using the integer largest-remainder method, emit volume-weighted children, and show the achieved average price tracks the interval VWAP benchmark, with slippage vs VWAP and arrival in basis points.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-smart-order-routing",
+          "path": "projects/phase-5-ems-execution-market-data/project-05-smart-order-routing",
+          "title": "Smart Order Routing",
+          "description": "Build a smart order router over a fragmented market: model venues with price, size, and fee, compute each venue's effective price (ask + fee/rebate), rank by it with a stable sort, sweep cheapest-first respecting venue size, and report the routing plan plus the blended quoted and effective price.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-fill-aggregation",
+          "path": "projects/phase-5-ems-execution-market-data/project-06-fill-aggregation",
+          "title": "Aggregating Fills & Average Price",
+          "description": "Aggregate a stream of fills from multiple venues and slices into a cumulative quantity and size-weighted average price in int64 cents, maintain the running average and leaves invariant, break results down per venue with std::map, and measure slippage vs the arrival price in basis points from the exact integer notional.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-transaction-cost-analysis",
+          "path": "projects/phase-5-ems-execution-market-data/project-07-transaction-cost-analysis",
+          "title": "Transaction Cost Analysis (TCA)",
+          "description": "Build a TCA report from the four price marks of an order's life (decision, arrival, execution average, end): benchmark against arrival and interval VWAP, compute implementation shortfall and decompose it into delay, trading, and opportunity cost in int64 cents and basis points, and explain best execution.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-best-execution-report",
+          "path": "projects/phase-5-ems-execution-market-data/project-08-best-execution-report",
+          "title": "A Best-Execution Report",
+          "description": "Integrate VWAP slicing, smart order routing, fill aggregation, and TCA into one end-to-end pipeline: take a worked parent order, slice it by volume, route each slice across venues, aggregate the fills into a per-venue and overall average price, and decompose the cost into an implementation-shortfall best-execution report.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-post-trade-and-sell-side",
+      "title": "Post-Trade, Allocations, Settlement & Sell-Side",
+      "goal": "Complete the lifecycle the way TOMS, Murex, and Calypso do the back office: block allocation (pro-rata and average price), confirmation/affirmation, clearing and settlement (T+1, DvP), trade matching and reconciliation, sell-side inventory and market making, and the derivatives lifecycle with an IBOR position keeper.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-block-allocation",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-01-block-allocation",
+          "title": "Allocating a Block Fill (Pro-Rata)",
+          "description": "Split one block execution across client accounts pro-rata to their order size, handling indivisible-share residuals with the largest-remainder method so the parts sum to the block exactly and the booked cash reconciles to the penny — the post-execution allocation step CRD and Bloomberg AIM perform every day.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-average-price-allocation",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-02-average-price-allocation",
+          "title": "Average Price Allocation",
+          "description": "When a block fills at several prices, compute the size-weighted average price in integer cents, book every account at that single fair price, and allocate the exact executed notional with the largest-remainder method so the cash reconciles to the penny despite the average being a sub-cent value.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-confirmation-affirmation",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-03-confirmation-affirmation",
+          "title": "Confirmation & Affirmation",
+          "description": "Build the post-trade match: hold your firm's record of a trade, compare it field-by-field against the broker's confirmation, affirm when the economics agree, and detect a price/quantity/settlement-date break with a precise report — the gate every institutional trade passes before it can settle.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-clearing-and-settlement",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-04-clearing-and-settlement",
+          "title": "Clearing & Settlement (T+1, DvP)",
+          "description": "Compute settlement dates as T+1 business days with a weekend-skipping counter, net affirmed trades into a per-day settlement ladder of securities-versus-cash obligations, and model Delivery-versus-Payment, the CCP/custodian roles, and Standing Settlement Instructions — the back-office settlement workflow NSCC/DTC and Aladdin/CRD automate.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-trade-matching-reconciliation",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-05-trade-matching-reconciliation",
+          "title": "Matching & Reconciliation",
+          "description": "Reconcile your internal trade book against the custodian/broker statement: match records on a shared key, classify every pairing as matched, missing-internal, missing-external, quantity mismatch, or price mismatch, and produce a reconciliation report with per-break detail and a summary by type.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::map"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-sell-side-inventory",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-06-sell-side-inventory",
+          "title": "Sell-Side Inventory & Market Making",
+          "description": "Take the dealer's seat: maintain a signed inventory position with weighted-average cost as client trades fill, realize P&L on offsets and mark the open position to market, derive the desk's axe, and post a two-way quote skewed toward it — the inventory, axe, and P&L model at the heart of Bloomberg TOMS.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-derivatives-lifecycle",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-07-derivatives-lifecycle",
+          "title": "The Derivatives Lifecycle",
+          "description": "Build a lifecycle engine for a vanilla fixed-for-floating interest-rate swap: capture the trade, advance it period by period through reset and coupon events computing net cashflows in integer basis points and cents, and revalue the remaining swap to see whether receiving fixed is in- or out-of-the-money — the capture-schedule-process-revalue skeleton of Murex and Calypso.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-ibor-position-keeper",
+          "path": "projects/phase-6-post-trade-and-sell-side/project-08-ibor-position-keeper",
+          "title": "The IBOR: Investment Book of Record",
+          "description": "Build the firm's real-time book of record: seed positions and cash at start of day, then update intraday from execution fills and derivative lifecycle events (a bond coupon) in one consistent structure, and mark to market for a live total value — the position-keeping core Aladdin and Charles River put at the center of the platform, and the spine that ties the whole track together.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "std::map"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
