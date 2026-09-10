@@ -1,0 +1,351 @@
+{
+  "id": "backend",
+  "title": "Backend / API Engineering",
+  "tagline": "Build production backends: REST and GraphQL APIs, relational and cached data, auth, background jobs, testing, and system design.",
+  "level": null,
+  "stack": [
+    "TypeScript or Python",
+    "Node/NestJS or FastAPI",
+    "PostgreSQL",
+    "Redis",
+    "Docker"
+  ],
+  "targetRoles": [
+    "Backend Engineer",
+    "API Engineer",
+    "Software Engineer (Server)"
+  ],
+  "version": "2.0.0",
+  "phaseCount": 4,
+  "projectCount": 19,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Build production backends: REST and GraphQL APIs, relational and cached data, auth, background jobs, testing, and system design. Language-flexible (Node/TypeScript or Python), grounded in how real services are built and operated.",
+  "environment": [],
+  "capstone": {
+    "title": "Production-grade API service",
+    "project": "Ship a deployed, authenticated, tested API with a database, caching, and a background job — defendable end-to-end."
+  },
+  "phases": [
+    {
+      "id": "phase-1-foundations",
+      "title": "Language, HTTP & Tooling",
+      "goal": "Be fluent in your server language and the HTTP request lifecycle.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-http-methods-status-codes-headers",
+          "path": "projects/phase-1-foundations/project-01-http-methods-status-codes-headers",
+          "title": "HTTP Methods, Status Codes, Headers",
+          "description": "A bare HTTP server that routes by method + path, no framework",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-json-request-response-handling",
+          "path": "projects/phase-1-foundations/project-02-json-request-response-handling",
+          "title": "JSON Request/response Handling",
+          "description": "An echo API that validates and reshapes JSON payloads",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-environment-config-and-secrets",
+          "path": "projects/phase-1-foundations/project-03-environment-config-and-secrets",
+          "title": "Environment Config & Secrets",
+          "description": "A service that loads config from env with validation and safe defaults",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-logging-and-error-handling",
+          "path": "projects/phase-1-foundations/project-04-logging-and-error-handling",
+          "title": "Logging & Error Handling",
+          "description": "Structured request logging + a global error handler",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-apis-data",
+      "title": "APIs & Databases",
+      "goal": "Design and build data-backed APIs.",
+      "projectCount": 6,
+      "projects": [
+        {
+          "slug": "project-01-rest-api-design",
+          "path": "projects/phase-2-apis-data/project-01-rest-api-design",
+          "title": "REST API Design",
+          "description": "A CRUD REST API for a real resource (e.g. tasks) with proper routes and status codes",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-relational-data-modeling-postgresql",
+          "path": "projects/phase-2-apis-data/project-02-relational-data-modeling-postgresql",
+          "title": "Relational Data Modeling (PostgreSQL)",
+          "description": "Schema with keys, constraints, and indexes for a small domain",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-orm-query-layer",
+          "path": "projects/phase-2-apis-data/project-03-orm-query-layer",
+          "title": "ORM / Query Layer",
+          "description": "Wire the API to PostgreSQL via an ORM or query builder with migrations",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-validation-and-error-contracts",
+          "path": "projects/phase-2-apis-data/project-04-validation-and-error-contracts",
+          "title": "Validation & Error Contracts",
+          "description": "Schema-validate every endpoint and return a consistent error shape",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-pagination-filtering-sorting",
+          "path": "projects/phase-2-apis-data/project-05-pagination-filtering-sorting",
+          "title": "Pagination, Filtering, Sorting",
+          "description": "Add list endpoints with cursor or offset pagination",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-graphql-basics",
+          "path": "projects/phase-2-apis-data/project-06-graphql-basics",
+          "title": "GraphQL Basics",
+          "description": "Expose part of the domain as a GraphQL schema with resolvers",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-auth-async",
+      "title": "Auth, Caching & Async Work",
+      "goal": "Secure the API and move slow work off the request path.",
+      "projectCount": 5,
+      "projects": [
+        {
+          "slug": "project-01-authentication-jwt-sessions",
+          "path": "projects/phase-3-auth-async/project-01-authentication-jwt-sessions",
+          "title": "Authentication (JWT/sessions)",
+          "description": "Login + protected routes with hashed passwords and tokens",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-authorization-and-roles",
+          "path": "projects/phase-3-auth-async/project-02-authorization-and-roles",
+          "title": "Authorization & Roles",
+          "description": "Role-based access control on the API",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-caching-with-redis",
+          "path": "projects/phase-3-auth-async/project-03-caching-with-redis",
+          "title": "Caching With Redis",
+          "description": "Cache an expensive read and invalidate it correctly on write",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-rate-limiting",
+          "path": "projects/phase-3-auth-async/project-04-rate-limiting",
+          "title": "Rate Limiting",
+          "description": "Per-IP or per-key rate limiting middleware",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-background-jobs-queues",
+          "path": "projects/phase-3-auth-async/project-05-background-jobs-queues",
+          "title": "Background Jobs / Queues",
+          "description": "Move a slow task to a queue/worker and report status",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-quality-scale",
+      "title": "Testing, System Design & Deployment",
+      "goal": "Make it correct, explainable, and deployable.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-api-testing",
+          "path": "projects/phase-4-quality-scale/project-01-api-testing",
+          "title": "API Testing",
+          "description": "Unit + integration tests covering the happy path and key failures",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-system-design-fundamentals",
+          "path": "projects/phase-4-quality-scale/project-02-system-design-fundamentals",
+          "title": "System Design Fundamentals",
+          "description": "Design doc + diagram for scaling one endpoint to 100x traffic",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-idempotency-and-reliability",
+          "path": "projects/phase-4-quality-scale/project-03-idempotency-and-reliability",
+          "title": "Idempotency & Reliability",
+          "description": "Make a write endpoint safe to retry (idempotency keys)",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-containerization-and-deployment",
+          "path": "projects/phase-4-quality-scale/project-04-containerization-and-deployment",
+          "title": "Containerization & Deployment",
+          "description": "Dockerize the service and deploy it somewhere reachable",
+          "tech": [
+            "TypeScript or Python",
+            "Node/NestJS or FastAPI",
+            "PostgreSQL",
+            "Redis",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
