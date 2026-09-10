@@ -1,0 +1,925 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-10T19:11:19Z",
+  "totals": {
+    "tracks": 21,
+    "projects": 941,
+    "videos": 77
+  },
+  "tracks": [
+    {
+      "id": "ai-chip-ml-systems",
+      "title": "AI-Chip & ML-Systems Engineering (GPU Kernels to Compilers)",
+      "tagline": "Build the layer that makes AI fast on hardware — the highest, most durable rung of the AI-infrastructure stack.",
+      "level": null,
+      "stack": [
+        "CUDA",
+        "C++17/20",
+        "Triton",
+        "Python / PyTorch",
+        "MLIR / TVM"
+      ],
+      "targetRoles": [
+        "GPU Kernel Engineer",
+        "ML Systems / Inference Engineer",
+        "ML Compiler Engineer",
+        "AI-Chip / Accelerator Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "ai-ml-python",
+      "title": "AI / ML with Python",
+      "tagline": "Become a job-ready ML engineer through projects: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/ge…",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "NumPy",
+        "pandas",
+        "matplotlib",
+        "scikit-learn",
+        "PyTorch",
+        "XGBoost",
+        "Anthropic SDK",
+        "FastAPI",
+        "MLflow",
+        "SQL"
+      ],
+      "targetRoles": [
+        "ML Engineer",
+        "Data Scientist",
+        "AI/ML Software Engineer",
+        "Applied Scientist (entry)"
+      ],
+      "version": "3.0.0",
+      "phaseCount": 6,
+      "projectCount": 49,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "ai-native-llm",
+      "title": "AI-Native / LLM Application Engineering",
+      "tagline": "Build production LLM applications the way modern teams actually do: structured outputs, RAG, agents, tool use, evals, and MCP.",
+      "level": null,
+      "stack": [
+        "Python",
+        "TypeScript",
+        "Anthropic SDK",
+        "FastAPI/Next.js",
+        "pgvector",
+        "Docker"
+      ],
+      "targetRoles": [
+        "AI Engineer",
+        "LLM Application Developer",
+        "Applied AI Engineer",
+        "ML-adjacent Software Engineer"
+      ],
+      "version": "2.0.0",
+      "phaseCount": 4,
+      "projectCount": 17,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "backend",
+      "title": "Backend / API Engineering",
+      "tagline": "Build production backends: REST and GraphQL APIs, relational and cached data, auth, background jobs, testing, and system design.",
+      "level": null,
+      "stack": [
+        "TypeScript or Python",
+        "Node/NestJS or FastAPI",
+        "PostgreSQL",
+        "Redis",
+        "Docker"
+      ],
+      "targetRoles": [
+        "Backend Engineer",
+        "API Engineer",
+        "Software Engineer (Server)"
+      ],
+      "version": "2.0.0",
+      "phaseCount": 4,
+      "projectCount": 19,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "c-systems",
+      "title": "C & Systems Programming (Zero to the Kernel)",
+      "tagline": "Learn C the way the systems world actually uses it — as the portable assembly that the Linux kernel, device drivers, embedded firmware, databases, and network stacks are written in.",
+      "level": null,
+      "stack": [
+        "C11/C17",
+        "gcc/clang",
+        "make",
+        "valgrind / AddressSanitizer",
+        "POSIX / Linux"
+      ],
+      "targetRoles": [
+        "Systems / Kernel Engineer",
+        "Embedded / Firmware Engineer",
+        "Low-Latency Engineer (foundation)",
+        "OS / Database / Network Internals Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 44,
+      "freeEligible": true,
+      "freeProjectCount": 1,
+      "paid": true,
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLGif_w4_FvXE"
+    },
+    {
+      "id": "capital-markets-systems",
+      "title": "Capital Markets Systems in C++ (OMS/EMS, FIX, Compliance & Settlement)",
+      "tagline": "Learn how the software that runs the buy side and sell side actually works — by rebuilding it.",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "g++/clang++",
+        "CMake",
+        "GoogleTest",
+        "FIX protocol"
+      ],
+      "targetRoles": [
+        "Trading Systems Engineer (Buy-Side)",
+        "OMS/EMS Platform Engineer",
+        "Charles River / Aladdin Platform Engineer",
+        "FIX Connectivity Engineer",
+        "Sell-Side Trading Technology (TOMS/Murex/Calypso)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "computer-architecture",
+      "title": "Computer Architecture & Systems (How the Machine Really Works)",
+      "tagline": "Go beneath the language to the machine itself — the layer that separates a generic software engineer from a low-latency systems engineer.",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "x86-64 / GCC / Clang",
+        "Godbolt",
+        "perf / Linux"
+      ],
+      "targetRoles": [
+        "Low-Latency / HFT Engineer",
+        "AI-Chip / Kernel Engineer (foundation)",
+        "Systems / Performance Engineer",
+        "Embedded / Robotics Engineer (foundation)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "cpp-from-zero",
+      "title": "C++ From Zero (Absolute Beginner to Modern C++)",
+      "tagline": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are a…",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "g++/clang++",
+        "CMake",
+        "GoogleTest"
+      ],
+      "targetRoles": [
+        "C++ Developer",
+        "Low-Latency / HFT Engineer (foundation)",
+        "AI-Chip / Kernel Engineer (foundation)",
+        "Systems / Robotics Engineer (foundation)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "devops-cloud-data",
+      "title": "DevOps / Cloud / Data Engineering",
+      "tagline": "Operate and ship software at scale: Linux, containers, CI/CD, infrastructure-as-code, cloud, observability, and the data-engineering basics (pipelines, warehouses).",
+      "level": null,
+      "stack": [
+        "Linux",
+        "Bash",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "GitHub Actions",
+        "a cloud (AWS/GCP/Azure)",
+        "Python",
+        "SQL"
+      ],
+      "targetRoles": [
+        "DevOps Engineer",
+        "Cloud Engineer",
+        "Platform Engineer",
+        "Data Engineer",
+        "SRE"
+      ],
+      "version": "2.0.0",
+      "phaseCount": 4,
+      "projectCount": 16,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "dsa-cpp",
+      "title": "Data Structures & Algorithms in C++ (Interview-Grade)",
+      "tagline": "Turn your C++ fluency into problem-solving power.",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "g++/clang++",
+        "CMake",
+        "GoogleTest"
+      ],
+      "targetRoles": [
+        "Software Engineer (interview-ready)",
+        "Low-Latency / HFT Engineer (foundation)",
+        "AI-Chip / Systems Engineer (foundation)",
+        "Competitive Programmer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "frontend",
+      "title": "Frontend Engineering",
+      "tagline": "Job-ready modern frontend: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio.",
+      "level": null,
+      "stack": [
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js"
+      ],
+      "targetRoles": [
+        "Frontend Engineer",
+        "React Developer",
+        "Next.js Developer",
+        "UI Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 5,
+      "projectCount": 72,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "frontend-advanced",
+      "title": "Frontend Advanced — Next.js",
+      "tagline": "Advanced, production-grade Next.js across eight phases and a deployable capstone: routing and the server/client boundary, forms and validation, data fetching with React Query, a reusable UI library,…",
+      "level": null,
+      "stack": [
+        "Next.js",
+        "TypeScript",
+        "React",
+        "Tailwind CSS"
+      ],
+      "targetRoles": [
+        "Frontend Engineer",
+        "Next.js Developer",
+        "Full-Stack (frontend-leaning)"
+      ],
+      "version": "1.1.0",
+      "phaseCount": 8,
+      "projectCount": 88,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "full-stack",
+      "title": "Full-Stack Engineering",
+      "tagline": "The most common job-ready bundle: build complete products end-to-end — frontend, backend, database, auth, and deployment — using Next.js full-stack.",
+      "level": null,
+      "stack": [
+        "TypeScript",
+        "Next.js (App Router)",
+        "React",
+        "PostgreSQL",
+        "Prisma",
+        "Tailwind",
+        "Docker"
+      ],
+      "targetRoles": [
+        "Full-Stack Engineer",
+        "Software Engineer",
+        "Product Engineer"
+      ],
+      "version": "2.0.0",
+      "phaseCount": 4,
+      "projectCount": 16,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "hft-low-latency",
+      "title": "HFT & Low-Latency Engineering in C++",
+      "tagline": "Engineer software where nanoseconds are money.",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "Linux",
+        "lock-free / std::atomic",
+        "perf / rdtsc",
+        "TCP/UDP networking"
+      ],
+      "targetRoles": [
+        "Low-Latency C++ Engineer (HFT)",
+        "Trading Systems Engineer",
+        "Market Data / Feed Handler Engineer",
+        "Performance Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "math-foundations",
+      "title": "Math & Reasoning for Systems and Quant (Zero to Confident)",
+      "tagline": "Build the mathematical spine that every elite low-level and quantitative role assumes — from a true-zero start, learning by writing tiny programs that compute and verify each idea.",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "math (stdlib)",
+        "random (stdlib)",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "targetRoles": [
+        "Quant Trader (foundation)",
+        "ML/AI-Systems Engineer (foundation)",
+        "Low-Latency / HFT Engineer (foundation)",
+        "Robotics Engineer (foundation)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "parallel-performance",
+      "title": "Parallel Computing & Performance (CPU to GPU)",
+      "tagline": "Make code fast by making it parallel.",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "CUDA",
+        "OpenMP",
+        "AVX / SIMD",
+        "Nsight"
+      ],
+      "targetRoles": [
+        "AI-Chip / GPU Kernel Engineer (foundation)",
+        "HPC / Performance Engineer",
+        "Low-Latency Engineer",
+        "ML-Systems Engineer (foundation)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "python-core",
+      "title": "Python Core (Beginner to Advanced)",
+      "tagline": "Master the Python language end-to-end through projects: fundamentals, idiomatic and functional Python, object-oriented design, packaging and environments, the standard library, and concurrency, perfo…",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "pytest",
+        "typing",
+        "venv",
+        "Poetry"
+      ],
+      "targetRoles": [
+        "Python Developer",
+        "Software Engineer",
+        "Backend Engineer (Python)",
+        "ML/Data Engineer (foundation)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "python-data-automation",
+      "title": "Python Data Engineering & Automation",
+      "tagline": "Build the pipelines and automation that power real systems with Python: scripting and CLI tools, web scraping and data acquisition, data engineering (ETL, validation, warehousing), big data and orche…",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "pandas",
+        "BeautifulSoup",
+        "Scrapy",
+        "Playwright",
+        "SQLAlchemy",
+        "PySpark",
+        "Airflow",
+        "dbt",
+        "Docker",
+        "boto3"
+      ],
+      "targetRoles": [
+        "Data Engineer",
+        "Automation Engineer",
+        "Analytics Engineer",
+        "Platform/Backend Engineer (Data)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 5,
+      "projectCount": 43,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "python-web",
+      "title": "Python Web & Backend Engineering",
+      "tagline": "Build production web backends and full-stack apps in Python: HTTP and ASGI foundations, REST APIs with FastAPI, databases and ORMs (SQLAlchemy, Django), authentication and security, async and real-ti…",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "FastAPI",
+        "Flask",
+        "Django",
+        "Pydantic",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "Docker",
+        "pytest"
+      ],
+      "targetRoles": [
+        "Backend Engineer (Python)",
+        "Full-Stack Engineer (Python)",
+        "API Engineer",
+        "Software Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 45,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "quant-trader",
+      "title": "Quant Trading — Mental Math, Probability & Market-Making",
+      "tagline": "Train for the trading floor the way the prop shops actually hire.",
+      "level": null,
+      "stack": [
+        "Python",
+        "NumPy",
+        "Probability",
+        "Mental Math",
+        "Monte Carlo"
+      ],
+      "targetRoles": [
+        "Quant Trader (Prop / HFT)",
+        "Trading Intern / Junior Trader",
+        "Market Maker",
+        "Quant Researcher (foundation)"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "robotics-humanoid",
+      "title": "Robotics & Humanoid Systems Engineering",
+      "tagline": "Make C++ move in the physical world.",
+      "level": null,
+      "stack": [
+        "C++17/20",
+        "Eigen",
+        "ROS 2",
+        "Python",
+        "MuJoCo / Isaac Sim"
+      ],
+      "targetRoles": [
+        "Robotics Software Engineer",
+        "Humanoid / Controls Engineer",
+        "Perception / SLAM Engineer",
+        "Embedded Robotics Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    }
+  ],
+  "series": [
+    {
+      "id": "before-c",
+      "title": "How Computers Really Work",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLJ5zX2vfk3AA",
+      "episodes": [
+        {
+          "id": "s1e01-transistors",
+          "episodeNumber": 1,
+          "topic": "Transistors: your computer is just billions of switches",
+          "youtubeId": "KB-uLZ9HAHQ",
+          "url": "https://www.youtube.com/shorts/KB-uLZ9HAHQ",
+          "title": "Your computer is billions of switches | How Computers Really Work #1",
+          "publishAt": "2026-08-16T05:04:53Z"
+        },
+        {
+          "id": "s1e02-binary",
+          "episodeNumber": 2,
+          "topic": "Binary: how 1s and 0s become numbers",
+          "youtubeId": "o7yubnswBxI",
+          "url": "https://www.youtube.com/shorts/o7yubnswBxI",
+          "title": "8 wires, 256 numbers | How Computers Really Work #2",
+          "publishAt": "2026-08-16T05:04:53Z"
+        },
+        {
+          "id": "s1e03-logic-gates",
+          "episodeNumber": 3,
+          "topic": "Logic gates: how switches make decisions",
+          "youtubeId": "6y29QfpOf10",
+          "url": "https://www.youtube.com/shorts/6y29QfpOf10",
+          "title": "Three rules run every chip | How Computers Really Work #3",
+          "publishAt": "2026-08-16T05:04:53Z"
+        },
+        {
+          "id": "s1e04-cpu-loop",
+          "episodeNumber": 4,
+          "topic": "The CPU: fetch, decode, execute — forever",
+          "youtubeId": "hPMW-4e8pYg",
+          "url": "https://www.youtube.com/shorts/hPMW-4e8pYg",
+          "title": "One loop, a billion times a second | How Computers Really Work #4",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e05-ram",
+          "episodeNumber": 5,
+          "topic": "RAM: the CPU's desk (and why it forgets)",
+          "youtubeId": "ljg34Z8AcXw",
+          "url": "https://www.youtube.com/shorts/ljg34Z8AcXw",
+          "title": "Why your unsaved work just vanishes | How Computers Really Work #5",
+          "publishAt": "2026-08-16T13:00:00Z"
+        },
+        {
+          "id": "s1e06-storage",
+          "episodeNumber": 6,
+          "topic": "Disk vs RAM: why saving a file exists",
+          "youtubeId": "yBVdPeSADe8",
+          "url": "https://www.youtube.com/shorts/yBVdPeSADe8",
+          "title": "Fast forgets. Slow remembers. | How Computers Really Work #6",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e07-machine-code",
+          "episodeNumber": 7,
+          "topic": "Machine code: the only language a CPU speaks",
+          "youtubeId": "xnOUTzUy6ng",
+          "url": "https://www.youtube.com/shorts/xnOUTzUy6ng",
+          "title": "Every program is just numbers | How Computers Really Work #7",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e08-assembly",
+          "episodeNumber": 8,
+          "topic": "Assembly: giving names to numbers",
+          "youtubeId": "CujgEesIjNU",
+          "url": "https://www.youtube.com/shorts/CujgEesIjNU",
+          "title": "MOV, ADD, JMP: numbers get names | How Computers Really Work #8",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e09-why-software",
+          "episodeNumber": 9,
+          "topic": "Hardware vs software: why we need both",
+          "youtubeId": "5mjcd9LG0Sg",
+          "url": "https://www.youtube.com/shorts/5mjcd9LG0Sg",
+          "title": "Same chip becomes anything | How Computers Really Work #9",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e10-birth-of-c",
+          "episodeNumber": 10,
+          "topic": "1972: why C was invented",
+          "youtubeId": "BwxKFO1AdF4",
+          "url": "https://www.youtube.com/shorts/BwxKFO1AdF4",
+          "title": "1972: the language that still runs everything | How Computers Really Work #10",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e11-compiler",
+          "episodeNumber": 11,
+          "topic": "The compiler: from your words to machine code",
+          "youtubeId": "vnHgMzvemqY",
+          "url": "https://www.youtube.com/shorts/vnHgMzvemqY",
+          "title": "Your words become raw machine code | How Computers Really Work #11",
+          "publishAt": "2026-08-17T23:00:00Z"
+        },
+        {
+          "id": "s1e12-why-c-matters",
+          "episodeNumber": 12,
+          "topic": "Why C still runs the world (and why learn it first)",
+          "youtubeId": "KKQjhJCYWPk",
+          "url": "https://www.youtube.com/shorts/KKQjhJCYWPk",
+          "title": "C isn't old — it's the floor everything stands on | How Computers Really Work #12",
+          "publishAt": "2026-08-17T20:30:46Z"
+        },
+        {
+          "id": "s1e13-hello-world",
+          "episodeNumber": 13,
+          "topic": "Your first C program: Hello, World — from source to running machine code",
+          "youtubeId": "RzD_nvoOBcM",
+          "url": "https://www.youtube.com/shorts/RzD_nvoOBcM",
+          "title": "Four lines. Billions of transistors obey. | How Computers Really Work #13",
+          "publishAt": "2026-08-18T13:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "quantum-vs-classical",
+      "title": "Quantum vs Classical",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLeVdqyiGZl8E",
+      "episodes": [
+        {
+          "id": "qvc02-qubit-hardware",
+          "episodeNumber": 2,
+          "topic": "Transistor vs qubit: why quantum chips live near absolute zero",
+          "youtubeId": "Uc67YncL87c",
+          "url": "https://www.youtube.com/shorts/Uc67YncL87c",
+          "title": "Colder than deep space: why qubits freeze | Quantum vs Classical #2",
+          "publishAt": "2026-08-27T18:00:00Z"
+        },
+        {
+          "id": "qvc03-quantum-gates",
+          "episodeNumber": 3,
+          "topic": "Logic gates vs quantum gates: reversibility is the law",
+          "youtubeId": "M8t_vjy9d7w",
+          "url": "https://www.youtube.com/shorts/M8t_vjy9d7w",
+          "title": "Quantum gates can't delete information | Quantum vs Classical #3",
+          "publishAt": "2026-08-29T13:00:00Z"
+        },
+        {
+          "id": "qvc04-interference-not-parallelism",
+          "episodeNumber": 4,
+          "topic": "The big myth: quantum computers do NOT try all answers at once",
+          "youtubeId": "XVcyaJcV72c",
+          "url": "https://www.youtube.com/shorts/XVcyaJcV72c",
+          "title": "Quantum computers don't try every answer at once | Quantum vs Classical #4",
+          "publishAt": "2026-08-30T23:00:00Z"
+        },
+        {
+          "id": "qvc05-entanglement",
+          "episodeNumber": 5,
+          "topic": "Entanglement: correlations no wire can copy",
+          "youtubeId": "3m5VjZKucqc",
+          "url": "https://www.youtube.com/shorts/3m5VjZKucqc",
+          "title": "The link two qubits share that no wire can copy | Quantum vs Classical #5",
+          "publishAt": "2026-08-31T13:00:00Z"
+        },
+        {
+          "id": "qvc06-measurement-no-cloning",
+          "episodeNumber": 6,
+          "topic": "Why you can't printf-debug a quantum computer",
+          "youtubeId": "SgTIOZ8MeNQ",
+          "url": "https://www.youtube.com/shorts/SgTIOZ8MeNQ",
+          "title": "You can't printf-debug a quantum computer | Quantum vs Classical #6",
+          "publishAt": "2026-09-01T18:00:00Z"
+        },
+        {
+          "id": "qvc07-what-its-good-for",
+          "episodeNumber": 7,
+          "topic": "What quantum computers are actually good for (and not)",
+          "youtubeId": "xwk4MxbWplg",
+          "url": "https://www.youtube.com/shorts/xwk4MxbWplg",
+          "title": "Your website won't run faster on a quantum computer | Quantum vs Classical #7",
+          "publishAt": "2026-09-01T23:00:00Z"
+        },
+        {
+          "id": "qvc08-noise-and-error-correction",
+          "episodeNumber": 8,
+          "topic": "Noise, error correction, and how far away useful quantum really is",
+          "youtubeId": "CSyjlmr4Hmk",
+          "url": "https://www.youtube.com/shorts/CSyjlmr4Hmk",
+          "title": "Today's quantum computers can't finish the math | Quantum vs Classical #8",
+          "publishAt": "2026-09-03T18:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "programming-map",
+      "title": "The Programming Map",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLEJVw1jO16sc",
+      "episodes": [
+        {
+          "id": "pm01-the-map",
+          "episodeNumber": 1,
+          "topic": "Programming is not one job: the map of the territory",
+          "youtubeId": "v_nMPj87V0I",
+          "url": "https://www.youtube.com/shorts/v_nMPj87V0I",
+          "title": "Nobody agrees what 'programmer' means | The Programming Map #1",
+          "publishAt": "2026-08-27T23:00:00Z"
+        },
+        {
+          "id": "pm02-chip-design",
+          "episodeNumber": 2,
+          "topic": "Chip design: programming that becomes hardware",
+          "youtubeId": "EL7XLgf5Lh0",
+          "url": "https://www.youtube.com/shorts/EL7XLgf5Lh0",
+          "title": "This code never runs. It becomes a chip. | The Programming Map #2",
+          "publishAt": "2026-08-28T13:00:00Z"
+        },
+        {
+          "id": "pm03-embedded-firmware",
+          "episodeNumber": 3,
+          "topic": "Embedded & firmware: code that ships inside devices",
+          "youtubeId": "ByQRN3vBPjM",
+          "url": "https://www.youtube.com/shorts/ByQRN3vBPjM",
+          "title": "Your car's airbag runs code you can't patch | The Programming Map #3",
+          "publishAt": "2026-08-28T18:00:00Z"
+        },
+        {
+          "id": "pm04-systems-programming",
+          "episodeNumber": 4,
+          "topic": "Systems programming: the software under all other software",
+          "youtubeId": "H4fKEEWGrgc",
+          "url": "https://www.youtube.com/shorts/H4fKEEWGrgc",
+          "title": "The software under all your software | The Programming Map #4",
+          "publishAt": "2026-08-29T18:00:00Z"
+        },
+        {
+          "id": "pm05-frontend",
+          "episodeNumber": 5,
+          "topic": "Frontend: programming what users see",
+          "youtubeId": "bse093MHfKk",
+          "url": "https://www.youtube.com/shorts/bse093MHfKk",
+          "title": "Frontend isn't making things pretty | The Programming Map #5",
+          "publishAt": "2026-08-29T23:00:00Z"
+        },
+        {
+          "id": "pm06-backend-fullstack",
+          "episodeNumber": 6,
+          "topic": "Backend & full-stack: APIs, databases, and scale",
+          "youtubeId": "glNLiszm9Fw",
+          "url": "https://www.youtube.com/shorts/glNLiszm9Fw",
+          "title": "Every app has a half you never see | The Programming Map #6",
+          "publishAt": "2026-08-31T18:00:00Z"
+        },
+        {
+          "id": "pm07-mobile",
+          "episodeNumber": 7,
+          "topic": "Mobile: programming the computer in your pocket",
+          "youtubeId": "KH8RJXM_Qxo",
+          "url": "https://www.youtube.com/shorts/KH8RJXM_Qxo",
+          "title": "Same app, different code on each phone | The Programming Map #7",
+          "publishAt": "2026-08-31T23:00:00Z"
+        },
+        {
+          "id": "pm08-data-engineering",
+          "episodeNumber": 8,
+          "topic": "Data engineering: moving and shaping the world's data",
+          "youtubeId": "gC2xHeP_8j8",
+          "url": "https://www.youtube.com/shorts/gC2xHeP_8j8",
+          "title": "The dashboard is the easy part | The Programming Map #8",
+          "publishAt": "2026-09-02T13:00:00Z"
+        },
+        {
+          "id": "pm09-ai-ml-two-layers",
+          "episodeNumber": 9,
+          "topic": "AI/ML is two different jobs, not one",
+          "youtubeId": "MiD4CsbRE8E",
+          "url": "https://www.youtube.com/shorts/MiD4CsbRE8E",
+          "title": "'I work in AI' is two different jobs | The Programming Map #9",
+          "publishAt": "2026-09-02T18:00:00Z"
+        },
+        {
+          "id": "pm11-quant-trading",
+          "episodeNumber": 11,
+          "topic": "Quant & trading systems: markets as a systems problem",
+          "youtubeId": "rL42gkYT3XI",
+          "url": "https://www.youtube.com/shorts/rL42gkYT3XI",
+          "title": "Trading isn't picking stocks. It's a systems problem. | The Programming Map #11",
+          "publishAt": "2026-09-03T23:00:00Z"
+        },
+        {
+          "id": "pm12-devops-cloud-sre",
+          "episodeNumber": 12,
+          "topic": "DevOps, cloud & SRE: keeping everything running",
+          "youtubeId": "7TTysR-0cN8",
+          "url": "https://www.youtube.com/shorts/7TTysR-0cN8",
+          "title": "Someone gets paged at 3 a.m. so you don't notice | The Programming Map #12",
+          "publishAt": "2026-09-05T18:00:00Z"
+        },
+        {
+          "id": "pm13-how-to-choose",
+          "episodeNumber": 13,
+          "topic": "How to choose your lane (and why depth wins)",
+          "youtubeId": "4WzK-5EN6xA",
+          "url": "https://www.youtube.com/shorts/4WzK-5EN6xA",
+          "title": "Don't learn a little of everything | The Programming Map #13",
+          "publishAt": "2026-09-05T23:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "c-systems",
+      "title": "C & Systems Programming",
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLGif_w4_FvXE",
+      "episodes": [
+        {
+          "id": "c-systems-e051",
+          "episodeNumber": 51,
+          "topic": "Correction: a stack frame is a convention, not a law",
+          "youtubeId": "MaMKsXqUCcE",
+          "url": "https://www.youtube.com/shorts/MaMKsXqUCcE",
+          "title": "We said every call pushes a frame. Wrong. | C & Systems Programming #51",
+          "publishAt": "2026-08-30T13:00:00Z"
+        }
+      ]
+    }
+  ]
+}
