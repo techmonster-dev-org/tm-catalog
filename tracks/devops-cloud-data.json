@@ -1,0 +1,376 @@
+{
+  "id": "devops-cloud-data",
+  "title": "DevOps / Cloud / Data Engineering",
+  "tagline": "Operate and ship software at scale: Linux, containers, CI/CD, infrastructure-as-code, cloud, observability, and the data-engineering basics (pipelines, warehouses).",
+  "level": null,
+  "stack": [
+    "Linux",
+    "Bash",
+    "Docker",
+    "Kubernetes",
+    "Terraform",
+    "GitHub Actions",
+    "a cloud (AWS/GCP/Azure)",
+    "Python",
+    "SQL"
+  ],
+  "targetRoles": [
+    "DevOps Engineer",
+    "Cloud Engineer",
+    "Platform Engineer",
+    "Data Engineer",
+    "SRE"
+  ],
+  "version": "2.0.0",
+  "phaseCount": 4,
+  "projectCount": 16,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Operate and ship software at scale: Linux, containers, CI/CD, infrastructure-as-code, cloud, observability, and the data-engineering basics (pipelines, warehouses). Built around real, reproducible infrastructure you can demo.",
+  "environment": [],
+  "capstone": {
+    "title": "Reproducible deployed platform",
+    "project": "Provision (IaC) + deploy (CI/CD) a containerized service with observability, all reproducible from the repo."
+  },
+  "phases": [
+    {
+      "id": "phase-1-foundations",
+      "title": "Linux, Shell & Networking",
+      "goal": "Be comfortable on a server and the command line.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-linux-fundamentals-and-permissions",
+          "path": "projects/phase-1-foundations/project-01-linux-fundamentals-and-permissions",
+          "title": "Linux Fundamentals & Permissions",
+          "description": "Notes + a setup script that provisions a fresh box",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-bash-scripting",
+          "path": "projects/phase-1-foundations/project-02-bash-scripting",
+          "title": "Bash Scripting",
+          "description": "A script that automates a real repetitive task with error handling",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-networking-basics-dns-ports-tls",
+          "path": "projects/phase-1-foundations/project-03-networking-basics-dns-ports-tls",
+          "title": "Networking Basics (DNS, Ports, TLS)",
+          "description": "Diagram + demo of a request from browser to server",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-git-and-trunk-based-workflow",
+          "path": "projects/phase-1-foundations/project-04-git-and-trunk-based-workflow",
+          "title": "Git & Trunk-based Workflow",
+          "description": "A repo with a branch-protection + PR workflow",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-containers-cicd",
+      "title": "Containers & CI/CD",
+      "goal": "Package and ship software reproducibly.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-docker",
+          "path": "projects/phase-2-containers-cicd/project-01-docker",
+          "title": "Docker",
+          "description": "Containerize an app with a small, multi-stage image",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-docker-compose",
+          "path": "projects/phase-2-containers-cicd/project-02-docker-compose",
+          "title": "Docker-compose",
+          "description": "A multi-service local stack (app + db + cache)",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-ci-pipelines-github-actions",
+          "path": "projects/phase-2-containers-cicd/project-03-ci-pipelines-github-actions",
+          "title": "CI Pipelines (GitHub Actions)",
+          "description": "A pipeline that lints, tests, and builds on every push",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-cd-automated-deploy",
+          "path": "projects/phase-2-containers-cicd/project-04-cd-automated-deploy",
+          "title": "CD / Automated Deploy",
+          "description": "Auto-deploy on merge to main with a rollback path",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-cloud-iac",
+      "title": "Cloud & Infrastructure-as-Code",
+      "goal": "Provision real infrastructure declaratively.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-cloud-compute-and-storage",
+          "path": "projects/phase-3-cloud-iac/project-01-cloud-compute-and-storage",
+          "title": "Cloud Compute & Storage",
+          "description": "Deploy a service to a cloud VM/container service",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-infrastructure-as-code-terraform",
+          "path": "projects/phase-3-cloud-iac/project-02-infrastructure-as-code-terraform",
+          "title": "Infrastructure-as-code (Terraform)",
+          "description": "Provision the infrastructure for your service with Terraform",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-kubernetes-basics",
+          "path": "projects/phase-3-cloud-iac/project-03-kubernetes-basics",
+          "title": "Kubernetes Basics",
+          "description": "Deploy your container to a (local or managed) k8s cluster",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-secrets-and-config-management",
+          "path": "projects/phase-3-cloud-iac/project-04-secrets-and-config-management",
+          "title": "Secrets & Config Management",
+          "description": "Manage app secrets without putting them in code or images",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-observability-data",
+      "title": "Observability & Data Pipelines",
+      "goal": "See what's happening and move data.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-logging-metrics-tracing",
+          "path": "projects/phase-4-observability-data/project-01-logging-metrics-tracing",
+          "title": "Logging, Metrics, Tracing",
+          "description": "Add structured logs + a metrics dashboard to a service",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-alerting-and-slos",
+          "path": "projects/phase-4-observability-data/project-02-alerting-and-slos",
+          "title": "Alerting & SLOs",
+          "description": "Define one SLO and an alert that fires on breach",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-data-pipelines-etl",
+          "path": "projects/phase-4-observability-data/project-03-data-pipelines-etl",
+          "title": "Data Pipelines (ETL)",
+          "description": "An ETL job that ingests, transforms, and loads data into a warehouse/table",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-sql-for-analytics",
+          "path": "projects/phase-4-observability-data/project-04-sql-for-analytics",
+          "title": "SQL For Analytics",
+          "description": "Answer 3 business questions with non-trivial SQL (joins, aggregates, windows)",
+          "tech": [
+            "Linux",
+            "Bash",
+            "Docker",
+            "Kubernetes",
+            "Terraform",
+            "GitHub Actions",
+            "a cloud (AWS/GCP/Azure)",
+            "Python",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
