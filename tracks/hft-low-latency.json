@@ -1,0 +1,806 @@
+{
+  "id": "hft-low-latency",
+  "title": "HFT & Low-Latency Engineering in C++",
+  "tagline": "Engineer software where nanoseconds are money.",
+  "level": null,
+  "stack": [
+    "C++17/20",
+    "Linux",
+    "lock-free / std::atomic",
+    "perf / rdtsc",
+    "TCP/UDP networking"
+  ],
+  "targetRoles": [
+    "Low-Latency C++ Engineer (HFT)",
+    "Trading Systems Engineer",
+    "Market Data / Feed Handler Engineer",
+    "Performance Engineer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Engineer software where nanoseconds are money. This is the specialization branch for high-frequency trading and ultra-low-latency systems: you learn to measure latency distributions (not averages), write 'mechanically sympathetic' C++ that never allocates or branches on the hot path, build the lock-free queues and ring buffers that move data between threads without contention, implement a limit-order-book matching engine with price-time priority, handle binary market-data feeds over the network with kernel-bypass techniques, and tune a Linux box for deterministic tail latency. The track culminates in a real matching engine fed by a simulated market-data handler, instrumented with latency histograms down to p99.9. Built on the computer-architecture and parallel-performance foundations, this is the path toward the highest-compensation engineering roles in software — the prop shops and hedge funds (Jane Street, Citadel, Jump, HRT, Optiver) where low-latency C++ mastery is the price of admission.",
+  "environment": [],
+  "capstone": {
+    "title": "Limit-Order-Book Matching Engine + Market-Data Feed Handler",
+    "project": "Build a low-latency trading core: a price-time-priority limit-order-book matching engine fed by a simulated binary market-data feed handler over a lock-free SPSC queue. Process orders (add/cancel/execute), match crossing orders, publish fills, and instrument the whole hot path with a latency histogram reporting p50/p99/p99.9. Apply the track's optimizations (no hot-path allocation, cache-friendly book, busy-spin consumer, thread pinning) and document the latency wins."
+  },
+  "phases": [
+    {
+      "id": "phase-1-latency-measurement",
+      "title": "The Low-Latency Mindset & Measurement",
+      "goal": "Think in nanoseconds and tail latency: latency vs throughput, measuring with rdtsc/steady clocks, percentiles (p99/p99.9), jitter, and honest benchmarking.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-latency-vs-throughput",
+          "path": "projects/phase-1-latency-measurement/project-01-latency-vs-throughput",
+          "title": "Latency vs Throughput in Trading",
+          "description": "Build latency/throughput measurement programs, model the tick-to-trade pipeline, and understand the economic rationale that drives HFT firms to spend millions optimizing nanoseconds.",
+          "tech": [
+            "C++17",
+            "steady_clock",
+            "POSIX threads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-measuring-time",
+          "path": "projects/phase-1-latency-measurement/project-02-measuring-time",
+          "title": "Measuring Nanoseconds",
+          "description": "Implement RDTSC/RDTSCP wrappers, calibrate TSC cycles to nanoseconds, compare clock sources by overhead, and build a reusable timing_utils.hpp header used throughout the track.",
+          "tech": [
+            "C++17",
+            "x86 RDTSC/RDTSCP",
+            "CLOCK_MONOTONIC",
+            "std::chrono"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-latency-distributions",
+          "path": "projects/phase-1-latency-measurement/project-03-latency-distributions",
+          "title": "Latency Distributions & Percentiles",
+          "description": "Build a fixed-bucket logarithmic latency histogram, compute p50/p99/p99.9 from 1M samples, visualize distribution shapes, and understand coordinated omission — the most common latency benchmarking mistake.",
+          "tech": [
+            "C++17",
+            "CLOCK_MONOTONIC",
+            "fixed-bucket histogram",
+            "HdrHistogram concept"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-jitter",
+          "path": "projects/phase-1-latency-measurement/project-04-jitter",
+          "title": "Jitter & Determinism",
+          "description": "Measure nondeterminism in a tight loop, attribute outliers to page faults, C-states, TLB shootdowns, and scheduler preemptions, and apply mitigations to reduce tail latency on Linux.",
+          "tech": [
+            "C++17",
+            "CLOCK_MONOTONIC",
+            "pthread affinity",
+            "mlockall",
+            "perf stat"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-cost-model",
+          "path": "projects/phase-1-latency-measurement/project-05-cost-model",
+          "title": "A Cost Model of Operations",
+          "description": "Measure and memorize nanosecond costs for L1/L2/L3/DRAM accesses, branch mispredictions, atomic RMWs, syscalls, and malloc, then apply the model to estimate hot-path latency by inspection before benchmarking.",
+          "tech": [
+            "C++17",
+            "pointer chasing",
+            "CLOCK_MONOTONIC",
+            "perf stat",
+            "x86 cache hierarchy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-microbenchmarking",
+          "path": "projects/phase-1-latency-measurement/project-06-microbenchmarking",
+          "title": "Microbenchmarking Correctly",
+          "description": "Learn to defeat the optimizer with DoNotOptimize/escape idioms, apply warm-up and multi-run discipline, use Google Benchmark, and recognize five common ways a microbenchmark can lie.",
+          "tech": [
+            "C++17",
+            "asm volatile",
+            "Google Benchmark",
+            "CLOCK_MONOTONIC",
+            "compiler optimization"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-profiling-latency",
+          "path": "projects/phase-1-latency-measurement/project-07-profiling-latency",
+          "title": "Profiling for Tail Latency",
+          "description": "Build a program with four known latency-spike sources, then use perf stat/record, flamegraphs, perf c2c (false sharing), and off-CPU analysis to attribute each spike and practice the production tail-latency profiling workflow.",
+          "tech": [
+            "C++17",
+            "perf stat",
+            "perf record",
+            "perf c2c",
+            "FlameGraph",
+            "CLOCK_THREAD_CPUTIME_ID"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-latency-harness-lab",
+          "path": "projects/phase-1-latency-measurement/project-08-latency-harness-lab",
+          "title": "Build a Latency-Measurement Harness",
+          "description": "Build latency_harness.hpp — a 200-line single-header library combining RDTSC timing, TSC calibration, logarithmic histogram, timer-overhead subtraction, and a multi-run BenchmarkRunner — and validate it with a 7-test self-test suite.",
+          "tech": [
+            "C++17",
+            "RDTSC/RDTSCP",
+            "logarithmic histogram",
+            "TSC calibration",
+            "DoNotOptimize",
+            "single-header library"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-mechanical-sympathy",
+      "title": "Mechanical Sympathy: C++ for Speed",
+      "goal": "Write hot-path C++ that respects the machine: no allocations, cache-friendly layout, branch reduction, inlining, object pools, and avoiding virtual/exception costs.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-hot-path",
+          "path": "projects/phase-2-mechanical-sympathy/project-01-hot-path",
+          "title": "The Hot Path Principle",
+          "description": "Identify the common-case hot path in a market-data handler, separate it from cold-path error handling and logging using __builtin_expect and [[gnu::cold]], and measure the latency improvement with an rdtsc timer.",
+          "tech": [
+            "C++17",
+            "x86 rdtsc",
+            "GCC cold/noinline attributes"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-no-allocations",
+          "path": "projects/phase-2-mechanical-sympathy/project-02-no-allocations",
+          "title": "Eliminating Hot-Path Allocations",
+          "description": "Identify and remove heap allocations (new/delete, std::string concat, unreserved std::vector) from a market-data serializer's hot path, replacing them with a pre-allocated fixed stack buffer, and measure the p50/p99/p99.9 latency improvement.",
+          "tech": [
+            "C++17",
+            "x86 rdtsc",
+            "malloc interposition"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-object-pools",
+          "path": "projects/phase-2-mechanical-sympathy/project-03-object-pools",
+          "title": "Object Pools & Custom Allocators",
+          "description": "Build a free-list object pool and an arena bump allocator for Order objects, use std::pmr::monotonic_buffer_resource with pmr::vector, and measure the p50/p99/p99.9 latency improvement over raw new/delete.",
+          "tech": [
+            "C++17",
+            "std::pmr",
+            "placement new",
+            "x86 rdtsc"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-cache-friendly-layout",
+          "path": "projects/phase-2-mechanical-sympathy/project-04-cache-friendly-layout",
+          "title": "Cache-Friendly Data Layout",
+          "description": "Redesign an instrument table from fat AoS to SoA and hot/cold split layouts, measure the cache-line-fetch reduction and scan throughput improvement for 4096 instruments, and explain the result in terms of bytes-useful-per-cache-line.",
+          "tech": [
+            "C++17",
+            "alignas",
+            "x86 rdtsc",
+            "SoA/AoS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-branch-reduction",
+          "path": "projects/phase-2-mechanical-sympathy/project-05-branch-reduction",
+          "title": "Branch Reduction & Predictability",
+          "description": "Implement a quote classifier four ways — branchy, sorted-input, branchless arithmetic, and lookup table — and measure the branch-misprediction cost on random vs structured input using an rdtsc timer.",
+          "tech": [
+            "C++20",
+            "x86 rdtsc",
+            "branchless arithmetic",
+            "constexpr LUT"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-inlining-no-indirection",
+          "path": "projects/phase-2-mechanical-sympathy/project-06-inlining-no-indirection",
+          "title": "Inlining & Killing Indirection",
+          "description": "Benchmark four call-dispatch mechanisms (virtual, function pointer, std::function, CRTP) on a per-order risk check, measure the latency gap between indirect and inlined calls, and implement a CRTP-based static dispatcher that matches plain-inline performance.",
+          "tech": [
+            "C++17",
+            "CRTP",
+            "x86 rdtsc",
+            "templates"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-hidden-costs",
+          "path": "projects/phase-2-mechanical-sympathy/project-07-hidden-costs",
+          "title": "Avoiding Hidden Costs",
+          "description": "Measure the latency of exceptions (thrown vs not-thrown), RTTI dynamic_cast, accidental struct copies, and std::shared_ptr atomic refcounting; produce a documented hot-path ban list with measured cost justification for each item.",
+          "tech": [
+            "C++17",
+            "x86 rdtsc",
+            "RTTI",
+            "std::shared_ptr",
+            "exceptions"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-optimize-hotpath-lab",
+          "path": "projects/phase-2-mechanical-sympathy/project-08-optimize-hotpath-lab",
+          "title": "Mechanical-Sympathy Lab",
+          "description": "Apply all Phase 2 techniques sequentially to a deliberately slow message handler (v0 through v7), measuring p50/p99 latency after each change and documenting the transformation log — targeting at least 20x improvement at p50 and 50x at p99.",
+          "tech": [
+            "C++17",
+            "CRTP",
+            "object pool",
+            "SoA",
+            "branchless",
+            "x86 rdtsc"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-lockfree-concurrency",
+      "title": "Lock-Free Concurrency for Trading",
+      "goal": "Move data between threads without locks: atomics and memory ordering, SPSC/MPSC ring buffers, the LMAX Disruptor sequencer, busy-spin, and thread-per-core pinning.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-atomics-for-trading",
+          "path": "projects/phase-3-lockfree-concurrency/project-01-atomics-for-trading",
+          "title": "Atomics & Memory Ordering for Messaging",
+          "description": "Build a series of focused experiments mapping each std::memory_order to hardware instructions and costs, implementing the publish-data-then-release-flag pattern used between network and strategy threads in HFT pipelines.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "pthreads",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-spsc-ring",
+          "path": "projects/phase-3-lockfree-concurrency/project-02-spsc-ring",
+          "title": "The SPSC Ring Buffer (Production-Grade)",
+          "description": "Build a production-grade SPSC ring buffer with power-of-two masking, cache-line-separated head/tail, correct acquire/release orderings, and measured throughput exceeding 100 M msg/s — the workhorse of HFT inter-thread pipelines.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "alignas(64)",
+            "pthreads",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-mpsc",
+          "path": "projects/phase-3-lockfree-concurrency/project-03-mpsc",
+          "title": "MPSC & Multi-Producer Queues",
+          "description": "Demonstrate why two producers on an SPSC queue is an immediate data race, then build a Vyukov-style bounded MPSC queue using CAS on the tail, and benchmark it against SPSC sharding to understand when each design wins.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "compare_exchange_weak",
+            "pthreads",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-disruptor",
+          "path": "projects/phase-3-lockfree-concurrency/project-04-disruptor",
+          "title": "The LMAX Disruptor Pattern",
+          "description": "Build a simplified but functionally complete LMAX Disruptor with pre-allocated ring buffer, monotonic sequence counter, single-writer producer, and multiple independent broadcast consumers — then benchmark it against a mutex queue to understand each source of performance gain.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "alignas(64)",
+            "pthreads",
+            "ThreadSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-busy-spin",
+          "path": "projects/phase-3-lockfree-concurrency/project-05-busy-spin",
+          "title": "Busy-Spin vs Blocking",
+          "description": "Measure wakeup latency for busy-spin vs condition_variable, implement the _mm_pause() spin hint and exponential backoff, and build the decision framework for choosing spinning vs blocking per pipeline stage in an HFT system.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "_mm_pause()",
+            "std::condition_variable",
+            "clock_gettime",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-thread-per-core",
+          "path": "projects/phase-3-lockfree-concurrency/project-06-thread-per-core",
+          "title": "Thread-Per-Core & Pinning",
+          "description": "Pin threads to dedicated CPU cores with pthread_setaffinity_np, measure p99 jitter for pinned vs unpinned threads under background load, demonstrate NUMA-local vs remote memory latency, and build a 3-stage pinned pipeline with measured per-stage handoff latency.",
+          "tech": [
+            "C++17",
+            "pthread_setaffinity_np",
+            "sched_getcpu",
+            "clock_gettime",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-seqlock",
+          "path": "projects/phase-3-lockfree-concurrency/project-07-seqlock",
+          "title": "Seqlocks & Wait-Free Reads",
+          "description": "Implement a templated Seqlock<T> with version counter and acquire/release orderings, verify zero torn reads over 480 M read operations, benchmark it against shared_mutex for a one-writer/many-reader workload, and analyze retry rate at different write frequencies.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "std::shared_mutex",
+            "memcpy",
+            "clock_gettime",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-pipeline-lab",
+          "path": "projects/phase-3-lockfree-concurrency/project-08-pipeline-lab",
+          "title": "Lock-Free Pipeline Lab",
+          "description": "Assemble a complete 3-stage lock-free pipeline (producer → processor → publisher) connected by SPSC rings on pinned threads, push 10 million messages end-to-end, and measure p50/p99/p99.9 latency and throughput — the capstone of Phase 3 applying every technique from projects 1–7.",
+          "tech": [
+            "C++17",
+            "std::atomic",
+            "pthread_setaffinity_np",
+            "clock_gettime",
+            "SPSCRing",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-order-book",
+      "title": "The Order Book & Matching Engine",
+      "goal": "Build the core of an exchange: market microstructure, order types, a price-time-priority limit order book, and a matching engine with O(1) best bid/ask.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-microstructure",
+          "path": "projects/phase-4-order-book/project-01-microstructure",
+          "title": "Market Microstructure Basics",
+          "description": "Build the vocabulary of a matching engineer: bid/ask/spread/mid, price levels and depth, all four order types (LIMIT/MARKET/IOC/FOK), maker vs taker, the complete order lifecycle, and integer tick pricing — the foundation every later project depends on.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "integer arithmetic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-order-book-structure",
+          "path": "projects/phase-4-order-book/project-02-order-book-structure",
+          "title": "The Limit Order Book Data Structure",
+          "description": "Build a correct two-sided limit order book using std::map and std::queue: implement add_order, cancel_order, and best-bid/ask queries with strict price-time FIFO priority, print multi-level depth snapshots, assert the crossed-book invariant, and benchmark add throughput to understand why std::map is the wrong choice for HFT.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "std::map",
+            "std::queue",
+            "std::unordered_map"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-matching-engine",
+          "path": "projects/phase-4-order-book/project-03-matching-engine",
+          "title": "The Matching Engine — Price-Time Priority",
+          "description": "Implement the price-time priority matching loop: an aggressive order walks the opposite side from best price, fills FIFO within each level, generates paired fill records, and either rests or cancels the remainder — with correct handling of MARKET, LIMIT, IOC, and FOK semantics.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "std::map",
+            "std::queue",
+            "matching algorithms"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-efficient-book",
+          "path": "projects/phase-4-order-book/project-04-efficient-book",
+          "title": "An Efficient Order Book",
+          "description": "Replace the std::map level index with a flat array indexed by price offset and the queue with an intrusive doubly-linked list, achieving O(1) add, O(1) cancel, and O(1) best-bid/ask tracking — then benchmark the 10x+ speedup over the map-based design.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "intrusive linked list",
+            "array indexing",
+            "benchmarking"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-order-management",
+          "path": "projects/phase-4-order-book/project-05-order-management",
+          "title": "Order Management & Fast Cancel",
+          "description": "Complete the fast order book's management layer: an order pool (slab allocator) for allocation-free hot-path operation, an ID→Order* hash map for O(1) cancel, and correct exchange-standard amend priority semantics (price-change/qty-up loses priority; qty-down retains it).",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "slab allocator",
+            "unordered_map",
+            "intrusive list"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-book-output",
+          "path": "projects/phase-4-order-book/project-06-book-output",
+          "title": "Book Updates & Outgoing Market Data",
+          "description": "Add a market data publication layer to the fast LOB: emit incremental BookUpdate messages (ADD_LEVEL, CHANGE_LEVEL, REMOVE_LEVEL) and BBOUpdate messages on BBO changes, build a full-depth snapshot function for new subscribers, and implement sequence-number-based gap detection.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "std::optional",
+            "incremental feed design"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-book-testing",
+          "path": "projects/phase-4-order-book/project-07-book-testing",
+          "title": "Testing the Book for Correctness",
+          "description": "Build a systematic test harness for the order book and matching engine: define and assert five book invariants, replay a golden order sequence fill-by-fill, run 50,000+ randomized property tests, and cover edge cases including empty book, duplicate cancel, qty conservation, and FOK rejection.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "std::mt19937",
+            "property-based testing",
+            "assert"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-matching-engine-lab",
+          "path": "projects/phase-4-order-book/project-08-matching-engine-lab",
+          "title": "Single-Symbol Matching Engine (Finale)",
+          "description": "Assemble a complete price-time-priority matching engine integrating all Phase 4 components: fast array-indexed LOB, order pool, ID map, market data publisher, and correctness checks — then measure throughput (M msgs/sec) and per-message latency distribution (p50/p99/p99.9) and identify the dominant bottleneck.",
+          "tech": [
+            "C++17",
+            "g++/clang++",
+            "high_resolution_clock",
+            "slab allocator",
+            "intrusive list",
+            "array LOB"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-market-data-networking",
+      "title": "Market Data & Low-Latency Networking",
+      "goal": "Get data off the wire fast: TCP/UDP and multicast, binary feed parsing (ITCH/FIX-style), gap recovery, kernel-bypass concepts, busy-poll I/O, and clock synchronization.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-tcp-udp-trading",
+          "path": "projects/phase-5-market-data-networking/project-01-tcp-udp-trading",
+          "title": "TCP vs UDP for Trading",
+          "description": "Build UDP and TCP sockets that model exchange market-data and order-gateway protocols, measure Nagle's algorithm and head-of-line blocking, and understand why exchanges split traffic across both transports.",
+          "tech": [
+            "C++20",
+            "POSIX sockets",
+            "UDP",
+            "TCP",
+            "TCP_NODELAY"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-binary-protocols",
+          "path": "projects/phase-5-market-data-networking/project-02-binary-protocols",
+          "title": "Parsing Binary Market-Data Protocols",
+          "description": "Implement an ITCH 5.0-inspired binary protocol parser using packed structs, zero-copy field views, and correct big-endian byte swapping, then benchmark the decode path to confirm zero heap allocation.",
+          "tech": [
+            "C++20",
+            "POSIX",
+            "binary protocols",
+            "ITCH 5.0",
+            "endianness",
+            "zero-copy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-feed-handler",
+          "path": "projects/phase-5-market-data-networking/project-03-feed-handler",
+          "title": "Building a Feed Handler",
+          "description": "Build a complete UDP feed handler that decodes ITCH-style binary messages, dispatches by message type via a switch table, updates an order book, and measures end-to-end decode+apply latency.",
+          "tech": [
+            "C++20",
+            "POSIX sockets",
+            "UDP",
+            "binary protocol",
+            "order book"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-gap-recovery",
+          "path": "projects/phase-5-market-data-networking/project-04-gap-recovery",
+          "title": "Sequencing & Gap Recovery",
+          "description": "Build a recovery state machine that detects sequence gaps, fetches a TCP snapshot, buffers live incrementals during recovery, replays them in order, and implements A/B redundant-feed arbitration by sequence number.",
+          "tech": [
+            "C++20",
+            "POSIX sockets",
+            "UDP",
+            "TCP",
+            "state machine",
+            "recovery"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-kernel-bypass",
+          "path": "projects/phase-5-market-data-networking/project-05-kernel-bypass",
+          "title": "Kernel Bypass & Fast I/O (Concepts + Busy-Poll)",
+          "description": "Study the kernel packet path's latency sources, implement SO_BUSY_POLL and a manual non-blocking spin-poll loop on standard sockets, and survey the kernel-bypass technology landscape (DPDK, AF_XDP, io_uring, Solarflare ef_vi).",
+          "tech": [
+            "C++20",
+            "POSIX sockets",
+            "SO_BUSY_POLL",
+            "sched_setaffinity",
+            "io_uring concepts"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-multicast",
+          "path": "projects/phase-5-market-data-networking/project-06-multicast",
+          "title": "Multicast UDP Programming",
+          "description": "Build a multicast sender and receiver using IP_ADD_MEMBERSHIP on loopback, batch-receive with recvmmsg, and read software receive timestamps via SO_TIMESTAMPING from the ancillary control message chain.",
+          "tech": [
+            "C++20",
+            "POSIX sockets",
+            "IP multicast",
+            "recvmmsg",
+            "SO_TIMESTAMPING"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-clock-sync",
+          "path": "projects/phase-5-market-data-networking/project-07-clock-sync",
+          "title": "Timestamps & Clock Synchronization",
+          "description": "Measure RDTSC and clock_gettime overhead, demonstrate cross-core TSC skew, build a tick-to-trade latency histogram, and model the PTP offset calculation that enables sub-100 ns clock synchronization for MiFID II compliance.",
+          "tech": [
+            "C++20",
+            "x86 TSC",
+            "RDTSC/RDTSCP",
+            "clock_gettime",
+            "PTP/IEEE-1588"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-feed-handler-lab",
+          "path": "projects/phase-5-market-data-networking/project-08-feed-handler-lab",
+          "title": "Feed-Handler Lab",
+          "description": "Capstone: build a complete multicast feed handler that decodes a binary ITCH stream with zero allocation, detects sequence gaps, updates a pre-allocated order book, and reports p50/p99/p99.9 decode+apply latency over 200,000 messages.",
+          "tech": [
+            "C++20",
+            "POSIX sockets",
+            "UDP multicast",
+            "binary protocol",
+            "order book",
+            "latency histogram"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-systems-tuning-capstone",
+      "title": "Systems Tuning & the Matching-Engine Capstone",
+      "goal": "Tune the box for determinism (core isolation, IRQ affinity, NUMA, huge pages, C-states) and build the capstone matching engine + feed handler with latency histograms.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-os-tuning",
+          "path": "projects/phase-6-systems-tuning-capstone/project-01-os-tuning",
+          "title": "Tuning Linux for Latency",
+          "description": "Configure Linux kernel boot parameters (isolcpus, nohz_full, rcu_nocbs), the CPU frequency governor, C-state limits, IRQ affinity, and measure the before/after jitter reduction with a latency histogram.",
+          "tech": [
+            "C++20",
+            "Linux kernel",
+            "cpupower",
+            "chrt",
+            "taskset",
+            "CLOCK_MONOTONIC"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-numa-hugepages",
+          "path": "projects/phase-6-systems-tuning-capstone/project-02-numa-hugepages",
+          "title": "NUMA & Huge Pages",
+          "description": "Benchmark NUMA-local vs NUMA-remote DRAM latency with pointer chasing, allocate memory on the correct node with libnuma, reduce TLB miss pressure using MAP_HUGETLB, and lock all process memory with mlockall.",
+          "tech": [
+            "C++20",
+            "libnuma",
+            "hugetlbfs",
+            "mlockall",
+            "numactl",
+            "CLOCK_MONOTONIC"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-core-isolation-pinning",
+          "path": "projects/phase-6-systems-tuning-capstone/project-03-core-isolation-pinning",
+          "title": "Core Isolation & Thread Pinning",
+          "description": "Pin threads to isolated CPU cores with sched_setaffinity and pthread_setaffinity_np, apply SCHED_FIFO real-time priority with chrt, move workqueue threads off hot cores, and measure jitter reduction across four isolation configurations.",
+          "tech": [
+            "C++20",
+            "pthreads",
+            "chrt",
+            "taskset",
+            "SCHED_FIFO",
+            "tuna"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-tail-latency-hunting",
+          "path": "projects/phase-6-systems-tuning-capstone/project-04-tail-latency-hunting",
+          "title": "Hunting the p99.9",
+          "description": "Identify and eliminate tail-latency spikes from page faults, TLB shootdowns, and hot-path allocations using pre-faulting, cache warming, object pools, perf stat, and a pre-flight validation script.",
+          "tech": [
+            "C++20",
+            "perf",
+            "mlockall",
+            "mmap",
+            "CLOCK_MONOTONIC",
+            "object pool pattern"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-end-to-end-latency",
+          "path": "projects/phase-6-systems-tuning-capstone/project-05-end-to-end-latency",
+          "title": "Tick-to-Trade Latency Budgeting",
+          "description": "Decompose wire-to-wire tick-to-trade latency across feed-handler, book-update, strategy, and order-gateway stages, instrument each with CLOCK_MONOTONIC, set a per-stage budget, and validate budget compliance with a reusable LatencyBudget checker.",
+          "tech": [
+            "C++20",
+            "CLOCK_MONOTONIC",
+            "chrt",
+            "taskset",
+            "PTP concepts",
+            "DPDK concepts"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-reliability-without-slowdown",
+          "path": "projects/phase-6-systems-tuning-capstone/project-06-reliability-without-slowdown",
+          "title": "Reliability Without Sacrificing Speed",
+          "description": "Build an async SPSC log queue, an atomic kill switch, and a stale-data graceful degradation guard — each adding under 50 ns to the hot path — and benchmark the reliability overhead versus naive synchronous alternatives.",
+          "tech": [
+            "C++20",
+            "std::atomic",
+            "pthreads",
+            "SPSC ring buffer",
+            "__builtin_expect",
+            "CLOCK_MONOTONIC"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-trading-system-architecture",
+          "path": "projects/phase-6-systems-tuning-capstone/project-07-trading-system-architecture",
+          "title": "Architecture of a Trading System",
+          "description": "Map the six components of an HFT trading system (feed handler, order book, strategy, order gateway, risk, logger) onto isolated cores connected by typed SPSC queues, implement the skeleton, and annotate every technique from the track to its architectural home.",
+          "tech": [
+            "C++20",
+            "pthreads",
+            "SPSC queue",
+            "thread-per-core",
+            "CLOCK_MONOTONIC"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-systems-tuning-capstone/project-08-capstone",
+          "title": "Limit-Order-Book Matching Engine + Feed Handler (Track Capstone)",
+          "description": "Assemble the complete HFT track: a price-time-priority matching engine fed by a simulated binary feed handler over a lock-free SPSC queue, running on pinned threads with no hot-path allocation, instrumented with a latency histogram, packaged with CMake and GoogleTest, and documented with architecture, measurements, and two explicit tradeoffs.",
+          "tech": [
+            "C++20",
+            "CMake 3.14+",
+            "GoogleTest FetchContent",
+            "pthreads",
+            "SPSC queue",
+            "CLOCK_MONOTONIC",
+            "chrt",
+            "taskset"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
