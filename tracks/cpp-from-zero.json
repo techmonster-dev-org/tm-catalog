@@ -1,0 +1,724 @@
+{
+  "id": "cpp-from-zero",
+  "title": "C++ From Zero (Absolute Beginner to Modern C++)",
+  "tagline": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are a…",
+  "level": null,
+  "stack": [
+    "C++17/20",
+    "g++/clang++",
+    "CMake",
+    "GoogleTest"
+  ],
+  "targetRoles": [
+    "C++ Developer",
+    "Low-Latency / HFT Engineer (foundation)",
+    "AI-Chip / Kernel Engineer (foundation)",
+    "Systems / Robotics Engineer (foundation)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are all written in. You build understanding of the machine as you go: types and the compiler, control flow and functions, the memory model (pointers, references, the stack and heap), RAII and ownership with smart pointers, the STL and templates, and modern features like move semantics and lambdas. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it turns the mathematical 'what' from math-foundations into the 'how' that runs on real hardware.",
+  "environment": [
+    "This track is **fully cross-platform** - every project runs natively on Linux, macOS and Windows. You need a C++17 compiler and `make`.",
+    "",
+    "- **Linux** - `sudo apt install build-essential gdb`",
+    "- **macOS** - `xcode-select --install` (this gives you `clang++` and `make`)",
+    "- **Windows** - `make` is **not** included with Windows. Either install MSYS2 and use the **UCRT64** terminal (`pacman -S mingw-w64-ucrt-x86_64-gcc make gdb`), or use WSL2, or use Visual Studio's MSVC toolchain and build with `cl` instead of the `make` invocations shown.",
+    "",
+    "The projects show `g++`/`make` commands. If you are on MSVC or Xcode, the equivalent flags differ but the concepts do not - translating a build command is a normal part of the job.",
+    "",
+    "Nothing here is compiled or run by the grader - it reads your source and your journal."
+  ],
+  "capstone": {
+    "title": "Tested, CMake-Packaged C++ CLI Tool",
+    "project": "Build a real command-line tool as a properly structured C++ project: organized into headers and sources, built with CMake, unit-tested with GoogleTest, using RAII and the STL throughout, and documented. For example, a CSV/expense analyzer or a small key-value store."
+  },
+  "phases": [
+    {
+      "id": "phase-1-first-programs",
+      "title": "Setup, First Programs, Types & I/O",
+      "goal": "Compile and run C++ from zero: the toolchain, types, variables, expressions, and console I/O.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-hello-world-toolchain",
+          "path": "projects/phase-1-first-programs/project-01-hello-world-toolchain",
+          "title": "Hello World & the Toolchain",
+          "description": "Install a C++ compiler, write/compile/run a minimal program, and understand the compile-link-execute pipeline and how it differs from interpreted languages — building toolchain literacy, not just a hello world.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-variables-types",
+          "path": "projects/phase-1-first-programs/project-02-variables-types",
+          "title": "Variables & Fundamental Types",
+          "description": "Declare C++'s fundamental types (int, double, char, bool), measure their byte sizes with sizeof, explore ranges with <limits>, and use auto deduction — grounding static typing in the powers-of-two and overflow reasoning from math-foundations.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-console-io",
+          "path": "projects/phase-1-first-programs/project-03-console-io",
+          "title": "Console Input & Output",
+          "description": "Make programs interactive with std::cin and std::cout: read typed values and whole lines, format floating-point output, and detect failed reads — the input/process/output skeleton of every CLI tool.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-operators-expressions",
+          "path": "projects/phase-1-first-programs/project-04-operators-expressions",
+          "title": "Operators & Expressions",
+          "description": "Master arithmetic, comparison, and logical operators and the type rules that govern them — the integer-division trap, modulo, type promotion with static_cast, precedence, and compound assignment.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-strings-characters",
+          "path": "projects/phase-1-first-programs/project-05-strings-characters",
+          "title": "Strings & Characters",
+          "description": "Work with text using std::string — concatenate, index, search with find, slice with substr — contrast it with error-prone C-style char arrays, and build small text tools (uppercase, vowel count, key=value split).",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-constants-conversions",
+          "path": "projects/phase-1-first-programs/project-06-constants-conversions",
+          "title": "Constants & Type Conversions",
+          "description": "Use const and constexpr for immutability and compile-time constants, convert between types safely with static_cast (recognizing narrowing/data loss), and convert numbers to/from strings — instilling const-correctness.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-integer-types-overflow",
+          "path": "projects/phase-1-first-programs/project-07-integer-types-overflow",
+          "title": "Integer Types & Overflow",
+          "description": "Use fixed-width integer types from <cstdint>, compare signed/unsigned ranges, reproduce and explain overflow (unsigned wrap as modular arithmetic; signed overflow as undefined behavior), and choose integer types deliberately by range and size.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "cstdint"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-unit-converter-cli",
+          "path": "projects/phase-1-first-programs/project-08-unit-converter-cli",
+          "title": "Interactive Unit Converter (Phase Finale)",
+          "description": "Combine types, I/O, expressions, constants, and validation into a robust menu-driven unit converter that loops until quit and recovers cleanly from bad input — the read/validate/process/print skeleton that scales up to the track capstone.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-control-functions",
+      "title": "Control Flow & Functions",
+      "goal": "Direct program flow and structure code: conditionals, loops, functions, parameters, overloading, and scope.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-conditionals",
+          "path": "projects/phase-2-control-functions/project-01-conditionals",
+          "title": "Conditionals — if / else",
+          "description": "Branch program flow with if/else if/else and the ternary operator, build compound conditions with && and ||, order conditions correctly in a grade classifier, and avoid the =/== and dangling-else traps.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-switch-statements",
+          "path": "projects/phase-2-control-functions/project-02-switch-statements",
+          "title": "Switch Statements",
+          "description": "Branch on discrete values with switch/case, use break and understand intentional vs accidental fall-through, group cases, provide a default, and decide when switch beats an if/else chain.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-loops",
+          "path": "projects/phase-2-control-functions/project-03-loops",
+          "title": "Loops — while, for & do-while",
+          "description": "Repeat work with while, for, and do-while loops, control them with break and continue, use range-based for over a collection, and avoid infinite-loop and off-by-one traps — connecting iteration count to Big-O.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-functions-basics",
+          "path": "projects/phase-2-control-functions/project-04-functions-basics",
+          "title": "Functions — Parameters & Return",
+          "description": "Define and call functions with typed parameters and return values, understand pass-by-value (copies), write void action functions, use declarations vs definitions, and decompose a problem into small single-purpose functions.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-overloading-defaults",
+          "path": "projects/phase-2-control-functions/project-05-overloading-defaults",
+          "title": "Function Overloading & Default Arguments",
+          "description": "Overload functions by parameter type and arity, understand compile-time overload resolution, provide trailing default arguments, and recognize/fix ambiguous calls.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-scope-lifetime",
+          "path": "projects/phase-2-control-functions/project-06-scope-lifetime",
+          "title": "Scope & Lifetime",
+          "description": "Distinguish scope (visibility) from lifetime (existence): block scope, variable shadowing, static locals that persist across calls, automatic vs static storage, and the dangers of mutable global state — groundwork for pointers and RAII.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-recursion",
+          "path": "projects/phase-2-control-functions/project-07-recursion",
+          "title": "Recursion",
+          "description": "Write recursive functions (factorial, Fibonacci, sum-of-digits, power) with base and recursive cases, trace the call stack, compare to iteration, hit and explain stack overflow, and connect to induction/recurrences and memoization from math-foundations.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-menu-calculator",
+          "path": "projects/phase-2-control-functions/project-08-menu-calculator",
+          "title": "Menu-Driven Calculator (Phase Finale)",
+          "description": "Combine functions, conditionals, loops, and switch into a cleanly decomposed interactive calculator: pure operation functions, a validated input helper, a switch dispatcher, std::optional for division-by-zero, and a thin main — the structure that makes the track capstone testable.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "optional"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-memory-model",
+      "title": "The Memory Model — Pointers, References & the Stack/Heap",
+      "goal": "Understand how C++ actually stores data: arrays, pointers, references, the stack vs the heap, and manual allocation.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-arrays",
+          "path": "projects/phase-3-memory-model/project-01-arrays",
+          "title": "Arrays",
+          "description": "Store many values in contiguous memory with fixed-size arrays, iterate with indexed and range-based loops, observe the contiguous layout via element addresses, and confront the limitations (no bounds check, no size knowledge) that motivate std::vector.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-pointers-intro",
+          "path": "projects/phase-3-memory-model/project-02-pointers-intro",
+          "title": "Pointers — Introduction",
+          "description": "Understand pointers as variables holding memory addresses: use address-of (&) and dereference (*), read and modify a value through a pointer (indirection), and use nullptr with guarded dereferences.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-references",
+          "path": "projects/phase-3-memory-model/project-03-references",
+          "title": "References",
+          "description": "Use references as aliases for existing variables, pass by reference to modify caller data (a working swap), pass large objects by const& for efficiency and safety, and learn when to choose a reference vs a pointer.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-pointer-arithmetic",
+          "path": "projects/phase-3-memory-model/project-04-pointer-arithmetic",
+          "title": "Pointer Arithmetic & Arrays",
+          "description": "Discover the pointer-array connection: array-name decay, pointer arithmetic that scales by element size, the equivalence arr[i] == *(arr+i), and the half-open begin/end traversal idiom that STL iterators generalize.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-stack-heap",
+          "path": "projects/phase-3-memory-model/project-05-stack-heap",
+          "title": "The Stack & the Heap",
+          "description": "Learn the two memory regions — the automatic stack and the manual heap — allocate with new/new[] and free with delete/delete[], allocate runtime-sized arrays, and understand the speed/size/lifetime tradeoffs that motivate RAII.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-leaks-dangling",
+          "path": "projects/phase-3-memory-model/project-06-leaks-dangling",
+          "title": "Dynamic Memory — Leaks & Dangling Pointers",
+          "description": "Deliberately create and then fix the classic manual-memory bugs — leaks, dangling pointers (use-after-free), and double-frees — detect them with AddressSanitizer, and understand why these failures motivate RAII and smart pointers.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-pointers-references-params",
+          "path": "projects/phase-3-memory-model/project-07-pointers-references-params",
+          "title": "Pointers & References as Function Parameters",
+          "description": "Master the three ways to pass data — by value, by reference, by pointer — with correct const usage, output parameters, and a practical decision rule for which to use based on size, mutability, and nullability.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-dynamic-array",
+          "path": "projects/phase-3-memory-model/project-08-dynamic-array",
+          "title": "Dynamic Array (Phase Finale)",
+          "description": "Build a growable integer array by hand with new[]/delete[] — your own mini std::vector — tracking size vs capacity, doubling on growth (amortized O(1), per the geometric series), and freeing in a destructor (first RAII), then reflect on the manual bookkeeping smart pointers automate.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-raii-ownership",
+      "title": "RAII, Ownership & Smart Pointers",
+      "goal": "Manage resources the modern C++ way: classes, constructors/destructors, RAII, and unique/shared/weak pointers.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-classes-objects",
+          "path": "projects/phase-4-raii-ownership/project-01-classes-objects",
+          "title": "Classes & Objects",
+          "description": "Define your own types with classes — bundling member data and methods, controlling access with public/private, marking read-only methods const, and enforcing class invariants through encapsulation.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-constructors-destructors",
+          "path": "projects/phase-4-raii-ownership/project-02-constructors-destructors",
+          "title": "Constructors & Destructors",
+          "description": "Control object birth and death: constructors that initialize state via member initializer lists, destructors that clean up, constructor overloading, and the automatic construct-on-entry/destruct-on-exit (reverse order) lifecycle that RAII is built on.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-raii-principle",
+          "path": "projects/phase-4-raii-ownership/project-03-raii-principle",
+          "title": "RAII — Resource Acquisition Is Initialization",
+          "description": "Learn the defining C++ idiom: tie a resource's lifetime to an object's, acquiring in the constructor and releasing in the destructor so cleanup is automatic and guaranteed — even on early returns and exceptions — then refactor leaky manual-memory code into a leak-proof RAII wrapper.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-rule-of-three",
+          "path": "projects/phase-4-raii-ownership/project-04-rule-of-three",
+          "title": "The Rule of Three",
+          "description": "Fix the copy bug in resource-owning classes: reproduce the double-free from default shallow copy, implement a deep-copying copy constructor and a self-assignment-safe copy assignment operator, state the Rule of Three, and learn = delete and the Rule of Zero.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-unique-ptr",
+          "path": "projects/phase-4-raii-ownership/project-05-unique-ptr",
+          "title": "std::unique_ptr",
+          "description": "Use std::unique_ptr and make_unique to own heap objects with automatic cleanup (RAII for any allocation), understand exclusive ownership (no copy, only move via std::move), borrow with .get(), and make ownership explicit in function signatures.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "memory",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-shared-ptr",
+          "path": "projects/phase-4-raii-ownership/project-06-shared-ptr",
+          "title": "std::shared_ptr",
+          "description": "Share ownership of a heap object with std::shared_ptr and make_shared, watch reference counting via use_count() determine when the object is freed, decide shared vs unique ownership, and observe the reference-cycle leak that motivates weak_ptr.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "memory",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-weak-ptr",
+          "path": "projects/phase-4-raii-ownership/project-07-weak-ptr",
+          "title": "std::weak_ptr & Breaking Cycles",
+          "description": "Use std::weak_ptr as a non-owning observer of a shared_ptr's object: access safely via lock(), detect expiration, and break the reference-cycle leak by making the back-reference weak — completing the smart-pointer ownership toolkit.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "memory",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-raii-resource-manager",
+          "path": "projects/phase-4-raii-ownership/project-08-raii-resource-manager",
+          "title": "RAII Resource Manager (Phase Finale)",
+          "description": "Build a complete, leak-proof resource-owning class (a FileLogger and a smart-pointer-owning TaskPool) using the Rule of Zero — composing from RAII members so cleanup is automatic and exception-safe — and verify correctness under AddressSanitizer.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "fstream",
+            "memory",
+            "AddressSanitizer"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-stl-containers",
+      "title": "The STL & Templates",
+      "goal": "Use the Standard Template Library and write generic code: vector, map, set, iterators, algorithms, and templates.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-vector",
+          "path": "projects/phase-5-stl-containers/project-01-vector",
+          "title": "std::vector",
+          "description": "Use std::vector — the production-grade version of your Phase 3 dynamic array: create/grow/access, iterate three ways, observe capacity doubling (amortized O(1) push_back), and use reserve to avoid reallocations.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "vector"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-string-string-view",
+          "path": "projects/phase-5-stl-containers/project-02-string-string-view",
+          "title": "std::string & string_view",
+          "description": "Learn std::string properly (build/concatenate/search/slice, string↔number conversion) and meet std::string_view — a non-owning (pointer, length) view that passes and slices text with zero copying, plus when a view dangles.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "string",
+            "string_view"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-map",
+          "path": "projects/phase-5-stl-containers/project-03-map",
+          "title": "std::map & unordered_map",
+          "description": "Use associative containers: build map<string,int>, insert/update/look up by key, query safely with contains/find/at (and avoid the [] auto-insert trap), iterate with structured bindings, build a word-frequency counter, and choose between sorted std::map (O(log n)) and hash-based std::unordered_map (avg O(1)).",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "map",
+            "unordered_map"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-set-pair-tuple",
+          "path": "projects/phase-5-stl-containers/project-04-set-pair-tuple",
+          "title": "std::set, pair & tuple",
+          "description": "Use std::set for unique, sorted membership and deduplication (O(log n) contains/count), and std::pair/std::tuple to bundle values — accessing .first/.second and std::get<N>, unpacking with structured bindings, and returning multiple values from a function.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "set",
+            "tuple",
+            "utility"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-iterators",
+          "path": "projects/phase-5-stl-containers/project-05-iterators",
+          "title": "Iterators",
+          "description": "Learn iterators — the generalized-pointer abstraction every container shares: begin()/end() half-open ranges, *it / ++it / it->, const_iterator, find/erase by iterator (checking against end()), iterator invalidation (it = erase(it)), and how range-based for is iterators underneath.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "iterator",
+            "algorithm"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-algorithms",
+          "path": "projects/phase-5-stl-containers/project-06-algorithms",
+          "title": "STL Algorithms",
+          "description": "Replace raw loops with named STL algorithms over iterator ranges: sort (with comparator lambdas), find/count/count_if/any_of, max_element/accumulate (reduce), transform/copy_if (map/filter), and the remove_if+erase idiom — passing custom logic via lambdas.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "algorithm",
+            "numeric"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-function-templates",
+          "path": "projects/phase-5-stl-containers/project-07-function-templates",
+          "title": "Function Templates",
+          "description": "Write your own generic functions with template <typename T>: argument deduction vs explicit arguments, multiple type parameters, compile-time instantiation (and why template errors are confusing), and constraining a template with a C++20 concept for clear diagnostics.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "templates",
+            "concepts"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-class-templates",
+          "path": "projects/phase-5-stl-containers/project-08-class-templates",
+          "title": "Class Templates — Build Your Own Stack<T>",
+          "description": "Phase finale: write a class template Stack<T> backed by a std::vector<T> member — a generic, RAII-clean LIFO container (push/pop/top/empty/size) that works for any element type, nests (Stack<Stack<int>>), and solves a real problem (balanced brackets). Synthesizes templates + vector + RAII + clean design, the way real STL adaptors are built.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "class templates",
+            "vector",
+            "RAII"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-modern-cpp",
+      "title": "Modern C++ (Move Semantics, Lambdas, C++17/20)",
+      "goal": "Write idiomatic modern C++: move semantics, lambdas, auto, optional/variant, ranges, and concurrency basics.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-move-semantics",
+          "path": "projects/phase-6-modern-cpp/project-01-move-semantics",
+          "title": "Move Semantics & Rvalue References",
+          "description": "Learn the performance feature at the heart of modern C++: lvalues vs rvalues, what std::move really is (a cast, not a mover), and how a move steals a resource (O(1) pointer swap) instead of deep-copying. Build a Noisy class to watch COPY vs move, move-construct a std::string, and return a million-element vector by value for free.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "move semantics",
+            "rvalue references",
+            "std::move"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-rule-of-five",
+          "path": "projects/phase-6-modern-cpp/project-02-rule-of-five",
+          "title": "The Rule of Five — Make Your Class Move",
+          "description": "Upgrade a raw-resource-owning class (Buffer with int* data_) from Phase 4's Rule of Three to the modern Rule of Five by adding a noexcept move constructor and move assignment that steal the pointer and null the source. Watch a move transfer ownership with no allocation, guard self-assignment, then learn the Rule of Zero: a std::vector member generates all five correctly for free.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "Rule of Five",
+            "move semantics",
+            "RAII"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-auto-structured-bindings",
+          "path": "projects/phase-6-modern-cpp/project-03-auto-structured-bindings",
+          "title": "auto, decltype & Structured Bindings",
+          "description": "Let the compiler spell out types it already knows: use auto to deduce variable types (and know when it strips const/references vs const auto& which keeps them), and use C++17 structured bindings to unpack pairs, tuples, and structs into named variables. Master the modern map-iteration idiom for (const auto& [key, value] : map).",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "auto",
+            "structured bindings",
+            "decltype"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-lambdas-closures",
+          "path": "projects/phase-6-modern-cpp/project-04-lambdas-closures",
+          "title": "Lambdas, Closures & std::function",
+          "description": "Write anonymous functions inline with [capture](params){body}, capture surrounding variables by value [=] or reference [&] (a closure), and feed lambdas to STL algorithms (sort comparator, find_if/count_if predicates, for_each). Use mutable for stateful closures and std::function to store heterogeneous callables behind one signature, knowing its overhead.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "lambdas",
+            "std::function",
+            "algorithms"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-optional-variant",
+          "path": "projects/phase-6-modern-cpp/project-05-optional-variant",
+          "title": "Vocabulary Types — std::optional & std::variant",
+          "description": "Model absence and alternatives with the type system. Use std::optional<T> for 'a value or nothing' (nullopt, has_value, value_or, checked value() vs unchecked *) instead of -1/null sentinels, and std::variant<Ts...> as a type-safe union (holds_alternative, get, index) dispatched with std::visit and a generic lambda + if constexpr.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "std::optional",
+            "std::variant",
+            "std::visit"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-ranges-views",
+          "path": "projects/phase-6-modern-cpp/project-06-ranges-views",
+          "title": "Ranges & Views (C++20)",
+          "description": "Replace nested iterator-pair algorithms with readable left-to-right pipelines using the | operator and lazy, non-owning views: views::filter, views::transform, views::take, plus iota/drop/reverse. Prove laziness (computation happens on iteration, take(3) short-circuits), understand that views don't own data (dangling risk), and materialize a view into a vector when you need ownership.",
+          "tech": [
+            "C++20",
+            "g++/clang++",
+            "ranges",
+            "views",
+            "lazy evaluation"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-concurrency-basics",
+          "path": "projects/phase-6-modern-cpp/project-07-concurrency-basics",
+          "title": "Concurrency Basics — Threads, Mutexes & std::async",
+          "description": "A safe introduction to parallelism: launch and join a std::thread, deliberately create a data race (lost increments from unsynchronized ++counter) and understand why it's undefined behavior, fix it with std::mutex + std::lock_guard (RAII locking), and use std::async + std::future to return a value from parallel work via get(). Closes with the discipline rules of correct concurrent code.",
+          "tech": [
+            "C++17/20",
+            "g++/clang++",
+            "std::thread",
+            "std::mutex",
+            "std::async"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone-expense-analyzer",
+          "path": "projects/phase-6-modern-cpp/project-08-capstone-expense-analyzer",
+          "title": "Track Capstone — A Tested, CMake-Packaged C++ CLI Tool",
+          "description": "The C++ From Zero finale: build expense-analyzer, a real CLI tool that parses an expenses CSV and reports total, per-category breakdown, and largest expense. Structure it as a testable library + thin main, build it out-of-source with CMake, and cover it with a GoogleTest suite (happy path + edge cases: malformed amount, negative amount, empty input). Synthesizes RAII, STL, std::optional, lambdas, moves, and structured bindings into one portfolio-grade, leak-free project.",
+          "tech": [
+            "C++17/20",
+            "CMake",
+            "GoogleTest",
+            "RAII",
+            "STL"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
