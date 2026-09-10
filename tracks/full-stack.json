@@ -1,0 +1,340 @@
+{
+  "id": "full-stack",
+  "title": "Full-Stack Engineering",
+  "tagline": "The most common job-ready bundle: build complete products end-to-end — frontend, backend, database, auth, and deployment — using Next.js full-stack.",
+  "level": null,
+  "stack": [
+    "TypeScript",
+    "Next.js (App Router)",
+    "React",
+    "PostgreSQL",
+    "Prisma",
+    "Tailwind",
+    "Docker"
+  ],
+  "targetRoles": [
+    "Full-Stack Engineer",
+    "Software Engineer",
+    "Product Engineer"
+  ],
+  "version": "2.0.0",
+  "phaseCount": 4,
+  "projectCount": 16,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "The most common job-ready bundle: build complete products end-to-end — frontend, backend, database, auth, and deployment — using Next.js full-stack. Assumes some web basics; goes deep on shipping real, deployed applications.",
+  "environment": [],
+  "capstone": {
+    "title": "Deployed full-stack product",
+    "project": "Ship a complete, authenticated, deployed product (frontend + API + DB) you can demo and explain in full."
+  },
+  "phases": [
+    {
+      "id": "phase-1-frontend-core",
+      "title": "Frontend Core",
+      "goal": "Build interactive, typed UIs in React + Next.js.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-react-components-props-state",
+          "path": "projects/phase-1-frontend-core/project-01-react-components-props-state",
+          "title": "React Components, Props, State",
+          "description": "A typed, interactive multi-component UI",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-hooks-usestate-useeffect",
+          "path": "projects/phase-1-frontend-core/project-02-hooks-usestate-useeffect",
+          "title": "Hooks (useState/useEffect)",
+          "description": "A data-driven dashboard with loading and error states",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-next-js-app-router-and-layouts",
+          "path": "projects/phase-1-frontend-core/project-03-next-js-app-router-and-layouts",
+          "title": "Next.js App Router & Layouts",
+          "description": "A multi-page app with shared layout and navigation",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-forms-and-validation",
+          "path": "projects/phase-1-frontend-core/project-04-forms-and-validation",
+          "title": "Forms & Validation",
+          "description": "A validated multi-field form with good UX",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-backend-data",
+      "title": "Backend & Data in Next.js",
+      "goal": "Build the server side of a full-stack app.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-route-handlers-api-routes",
+          "path": "projects/phase-2-backend-data/project-01-route-handlers-api-routes",
+          "title": "Route Handlers / API Routes",
+          "description": "Server endpoints backing the UI",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-database-with-prisma-postgresql",
+          "path": "projects/phase-2-backend-data/project-02-database-with-prisma-postgresql",
+          "title": "Database With Prisma + PostgreSQL",
+          "description": "Model the domain, migrate, and query from the app",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-server-vs-client-components",
+          "path": "projects/phase-2-backend-data/project-03-server-vs-client-components",
+          "title": "Server Vs Client Components",
+          "description": "Correctly split data-fetching server components from interactive client ones",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-server-actions-mutations",
+          "path": "projects/phase-2-backend-data/project-04-server-actions-mutations",
+          "title": "Server Actions / Mutations",
+          "description": "Create and update data from the UI through the server",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-auth-integration",
+      "title": "Auth & Integration",
+      "goal": "Add real users and third-party services.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-authentication",
+          "path": "projects/phase-3-auth-integration/project-01-authentication",
+          "title": "Authentication",
+          "description": "Sign-up/login with protected pages and sessions",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-external-api-integration",
+          "path": "projects/phase-3-auth-integration/project-02-external-api-integration",
+          "title": "External API Integration",
+          "description": "Integrate a third-party API (payments, email, or maps) server-side",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-file-image-uploads",
+          "path": "projects/phase-3-auth-integration/project-03-file-image-uploads",
+          "title": "File/image Uploads",
+          "description": "Upload and serve files securely",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-state-management-and-data-fetching",
+          "path": "projects/phase-3-auth-integration/project-04-state-management-and-data-fetching",
+          "title": "State Management & Data Fetching",
+          "description": "Add React Query/SWR for client cache + revalidation",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-ship",
+      "title": "Quality & Shipping",
+      "goal": "Make it robust and deploy it.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-testing-frontend-api",
+          "path": "projects/phase-4-ship/project-01-testing-frontend-api",
+          "title": "Testing (frontend + API)",
+          "description": "Tests for a critical user flow end-to-end",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-performance-and-seo",
+          "path": "projects/phase-4-ship/project-02-performance-and-seo",
+          "title": "Performance & SEO",
+          "description": "Optimize images, metadata, and Core Web Vitals on one page",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-error-boundaries-and-resilience",
+          "path": "projects/phase-4-ship/project-03-error-boundaries-and-resilience",
+          "title": "Error Boundaries & Resilience",
+          "description": "Graceful error and empty states across the app",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-deployment-vercel-db",
+          "path": "projects/phase-4-ship/project-04-deployment-vercel-db",
+          "title": "Deployment (Vercel + DB)",
+          "description": "Deploy the full app with a hosted database",
+          "tech": [
+            "TypeScript",
+            "Next.js (App Router)",
+            "React",
+            "PostgreSQL",
+            "Prisma",
+            "Tailwind",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
