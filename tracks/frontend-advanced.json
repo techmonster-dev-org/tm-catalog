@@ -1,0 +1,1329 @@
+{
+  "id": "frontend-advanced",
+  "title": "Frontend Advanced — Next.js",
+  "tagline": "Advanced, production-grade Next.js across eight phases and a deployable capstone: routing and the server/client boundary, forms and validation, data fetching with React Query, a reusable UI library,…",
+  "level": null,
+  "stack": [
+    "Next.js",
+    "TypeScript",
+    "React",
+    "Tailwind CSS"
+  ],
+  "targetRoles": [
+    "Frontend Engineer",
+    "Next.js Developer",
+    "Full-Stack (frontend-leaning)"
+  ],
+  "version": "1.1.0",
+  "phaseCount": 8,
+  "projectCount": 88,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Advanced, production-grade Next.js across eight phases and a deployable capstone: routing and the server/client boundary, forms and validation, data fetching with React Query, a reusable UI library, media and integrations, state management and performance, and real-world app features. Assumes the Frontend track's fundamentals; this is the follow-on for candidates targeting Next.js roles.",
+  "environment": [],
+  "capstone": {
+    "title": "Production E-commerce Store",
+    "project": "Ship a deployed, full e-commerce experience — product catalog with dynamic routes, a shopping cart with optimistic updates, a multi-step checkout flow, auth-gated account pages, and an admin dashboard — composing the routing, data-fetching, forms, UI, and performance patterns from every phase."
+  },
+  "phases": [
+    {
+      "id": "phase-1-setup-app-shell",
+      "title": "Production Setup & App Shell",
+      "goal": "Stand up a production Next.js app with the cross-cutting infrastructure every feature depends on.",
+      "projectCount": 10,
+      "projects": [
+        {
+          "slug": "project-01-next-js-14-app-router-setup",
+          "path": "projects/phase-1-setup-app-shell/project-01-next-js-14-app-router-setup",
+          "title": "Next.js 14 App Router Setup",
+          "description": "Create a Next.js project with TypeScript, Tailwind CSS, and understand the App Router structure",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-environment-configuration",
+          "path": "projects/phase-1-setup-app-shell/project-02-environment-configuration",
+          "title": "Environment Configuration",
+          "description": "Set up multi-environment configuration with API endpoints and environment variables",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-api-client-setup",
+          "path": "projects/phase-1-setup-app-shell/project-03-api-client-setup",
+          "title": "API Client Setup",
+          "description": "Create an axios instance with interceptors, error handling, and base URL configuration",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-react-query-setup",
+          "path": "projects/phase-1-setup-app-shell/project-04-react-query-setup",
+          "title": "React Query Setup",
+          "description": "Configure TanStack Query (React Query) with persistence and devtools for efficient data fetching",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-authentication-flow",
+          "path": "projects/phase-1-setup-app-shell/project-05-authentication-flow",
+          "title": "Authentication Flow",
+          "description": "Implement Keycloak integration with protected routes and authentication state management",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-layout-system",
+          "path": "projects/phase-1-setup-app-shell/project-06-layout-system",
+          "title": "Layout System",
+          "description": "Build reusable layouts with header, footer, sidebar, and nested layouts",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-error-boundaries",
+          "path": "projects/phase-1-setup-app-shell/project-07-error-boundaries",
+          "title": "Error Boundaries",
+          "description": "Implement error handling with React Error Boundary and Next.js error pages",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-loading-states",
+          "path": "projects/phase-1-setup-app-shell/project-08-loading-states",
+          "title": "Loading States",
+          "description": "Create loading skeletons, spinners, and loading UI components",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-toast-notifications",
+          "path": "projects/phase-1-setup-app-shell/project-09-toast-notifications",
+          "title": "Toast Notifications",
+          "description": "Build toast notification system for success, error, and info messages",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-theme-provider",
+          "path": "projects/phase-1-setup-app-shell/project-10-theme-provider",
+          "title": "Theme Provider",
+          "description": "Implement dark/light theme with persistence and theme switching",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-routing",
+      "title": "App Router & Routing",
+      "goal": "Master every App Router routing pattern and the server/client component boundary.",
+      "projectCount": 10,
+      "projects": [
+        {
+          "slug": "project-01-dynamic-routes",
+          "path": "projects/phase-2-routing/project-01-dynamic-routes",
+          "title": "Dynamic Routes",
+          "description": "Build [slug] dynamic pages with params and understand dynamic routing",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-nested-dynamic-routes",
+          "path": "projects/phase-2-routing/project-02-nested-dynamic-routes",
+          "title": "Nested Dynamic Routes",
+          "description": "Create [category]/[location] nested routing with dynamic parameters",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-catch-all-routes",
+          "path": "projects/phase-2-routing/project-03-catch-all-routes",
+          "title": "Catch-All Routes",
+          "description": "Implement [...slug] catch-all patterns for flexible URL structures",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-route-groups",
+          "path": "projects/phase-2-routing/project-04-route-groups",
+          "title": "Route Groups",
+          "description": "Organize routes with (group) folders without affecting URL structure",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-parallel-routes",
+          "path": "projects/phase-2-routing/project-05-parallel-routes",
+          "title": "Parallel Routes",
+          "description": "Build @parallel slot routing for simultaneous route rendering",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-intercepting-routes",
+          "path": "projects/phase-2-routing/project-06-intercepting-routes",
+          "title": "Intercepting Routes",
+          "description": "Create modal routes with @modal for seamless user experience",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-route-handlers",
+          "path": "projects/phase-2-routing/project-07-route-handlers",
+          "title": "Route Handlers",
+          "description": "Build API route handlers for server-side logic and API endpoints",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-server-components",
+          "path": "projects/phase-2-routing/project-08-server-components",
+          "title": "Server Components",
+          "description": "Create server components with data fetching and server-side rendering",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-client-components",
+          "path": "projects/phase-2-routing/project-09-client-components",
+          "title": "Client Components",
+          "description": "Build interactive client components with hooks and browser APIs",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-404-and-error-pages",
+          "path": "projects/phase-2-routing/project-10-404-and-error-pages",
+          "title": "404 & Error Pages",
+          "description": "Implement custom not-found and error pages for better UX",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-forms",
+      "title": "Forms & Validation",
+      "goal": "Build complex, validated forms with the patterns real apps require.",
+      "projectCount": 10,
+      "projects": [
+        {
+          "slug": "project-01-basic-form",
+          "path": "projects/phase-3-forms/project-01-basic-form",
+          "title": "Basic Form",
+          "description": "Create form with validation using react-hook-form and form handling",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-multi-step-form",
+          "path": "projects/phase-3-forms/project-02-multi-step-form",
+          "title": "Multi-Step Form",
+          "description": "Build wizard-style multi-step form with progress indicator",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-file-upload",
+          "path": "projects/phase-3-forms/project-03-file-upload",
+          "title": "File Upload",
+          "description": "Implement file upload with react-dropzone and preview functionality",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-image-upload",
+          "path": "projects/phase-3-forms/project-04-image-upload",
+          "title": "Image Upload",
+          "description": "Build image upload with preview, crop, and resize capabilities",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-form-validation",
+          "path": "projects/phase-3-forms/project-05-form-validation",
+          "title": "Form Validation",
+          "description": "Create comprehensive validation with zod schema validation",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-dynamic-form-fields",
+          "path": "projects/phase-3-forms/project-06-dynamic-form-fields",
+          "title": "Dynamic Form Fields",
+          "description": "Build forms with add/remove fields dynamically",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-form-state-management",
+          "path": "projects/phase-3-forms/project-07-form-state-management",
+          "title": "Form State Management",
+          "description": "Manage complex form state with Context API",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-form-auto-save",
+          "path": "projects/phase-3-forms/project-08-form-auto-save",
+          "title": "Form Auto-save",
+          "description": "Implement draft saving functionality with debouncing",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-form-submission",
+          "path": "projects/phase-3-forms/project-09-form-submission",
+          "title": "Form Submission",
+          "description": "Handle form submission with loading and error states",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-form-reset-and-clear",
+          "path": "projects/phase-3-forms/project-10-form-reset-and-clear",
+          "title": "Form Reset & Clear",
+          "description": "Build form reset functionality and clear form data",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-data-fetching",
+      "title": "Data Fetching with React Query",
+      "goal": "Fetch, mutate, and cache server data the way production apps do.",
+      "projectCount": 15,
+      "projects": [
+        {
+          "slug": "project-01-get-request",
+          "path": "projects/phase-4-data-fetching/project-01-get-request",
+          "title": "GET Request",
+          "description": "Fetch data with React Query useQuery hook",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-post-request",
+          "path": "projects/phase-4-data-fetching/project-02-post-request",
+          "title": "POST Request",
+          "description": "Create data with useMutation hook",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-put-patch-request",
+          "path": "projects/phase-4-data-fetching/project-03-put-patch-request",
+          "title": "PUT/PATCH Request",
+          "description": "Update data with mutations",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-delete-request",
+          "path": "projects/phase-4-data-fetching/project-04-delete-request",
+          "title": "DELETE Request",
+          "description": "Delete data with confirmation",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-infinite-scroll",
+          "path": "projects/phase-4-data-fetching/project-05-infinite-scroll",
+          "title": "Infinite Scroll",
+          "description": "Implement infinite scroll pagination",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-search-and-filter",
+          "path": "projects/phase-4-data-fetching/project-06-search-and-filter",
+          "title": "Search & Filter",
+          "description": "Build search with debounced API calls",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-optimistic-updates",
+          "path": "projects/phase-4-data-fetching/project-07-optimistic-updates",
+          "title": "Optimistic Updates",
+          "description": "Implement optimistic UI updates",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-query-invalidation",
+          "path": "projects/phase-4-data-fetching/project-08-query-invalidation",
+          "title": "Query Invalidation",
+          "description": "Handle cache invalidation after mutations",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-parallel-queries",
+          "path": "projects/phase-4-data-fetching/project-09-parallel-queries",
+          "title": "Parallel Queries",
+          "description": "Fetch multiple endpoints simultaneously",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-dependent-queries",
+          "path": "projects/phase-4-data-fetching/project-10-dependent-queries",
+          "title": "Dependent Queries",
+          "description": "Chain queries based on previous results",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-query-retry-logic",
+          "path": "projects/phase-4-data-fetching/project-11-query-retry-logic",
+          "title": "Query Retry Logic",
+          "description": "Implement retry on failure",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-request-cancellation",
+          "path": "projects/phase-4-data-fetching/project-12-request-cancellation",
+          "title": "Request Cancellation",
+          "description": "Cancel in-flight requests",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-13-api-error-handling",
+          "path": "projects/phase-4-data-fetching/project-13-api-error-handling",
+          "title": "API Error Handling",
+          "description": "Handle API errors gracefully",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-14-query-loading-states",
+          "path": "projects/phase-4-data-fetching/project-14-query-loading-states",
+          "title": "Query Loading States",
+          "description": "Show loading states during API calls",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-15-refetch-on-focus",
+          "path": "projects/phase-4-data-fetching/project-15-refetch-on-focus",
+          "title": "Refetch On Focus",
+          "description": "Auto-refetch when window regains focus",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-ui-library",
+      "title": "Reusable UI Component Library",
+      "goal": "Build an accessible, reusable component library you can compose across the app.",
+      "projectCount": 14,
+      "projects": [
+        {
+          "slug": "project-01-button-component",
+          "path": "projects/phase-5-ui-library/project-01-button-component",
+          "title": "Button Component",
+          "description": "Build reusable button with variants",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-input-component",
+          "path": "projects/phase-5-ui-library/project-02-input-component",
+          "title": "Input Component",
+          "description": "Create input with validation states",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-select-dropdown",
+          "path": "projects/phase-5-ui-library/project-03-select-dropdown",
+          "title": "Select/Dropdown",
+          "description": "Build select component with search",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-modal-dialog",
+          "path": "projects/phase-5-ui-library/project-04-modal-dialog",
+          "title": "Modal/Dialog",
+          "description": "Create modal with Radix UI",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-tabs-component",
+          "path": "projects/phase-5-ui-library/project-05-tabs-component",
+          "title": "Tabs Component",
+          "description": "Build tabbed interface",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-accordion",
+          "path": "projects/phase-5-ui-library/project-06-accordion",
+          "title": "Accordion",
+          "description": "Create collapsible accordion component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-tooltip",
+          "path": "projects/phase-5-ui-library/project-07-tooltip",
+          "title": "Tooltip",
+          "description": "Implement tooltip component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-popover",
+          "path": "projects/phase-5-ui-library/project-08-popover",
+          "title": "Popover",
+          "description": "Build popover component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-breadcrumbs",
+          "path": "projects/phase-5-ui-library/project-09-breadcrumbs",
+          "title": "Breadcrumbs",
+          "description": "Build breadcrumb navigation",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-pagination-component",
+          "path": "projects/phase-5-ui-library/project-10-pagination-component",
+          "title": "Pagination Component",
+          "description": "Create pagination component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-data-table",
+          "path": "projects/phase-5-ui-library/project-11-data-table",
+          "title": "Data Table",
+          "description": "Build sortable, filterable table",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-card-component",
+          "path": "projects/phase-5-ui-library/project-12-card-component",
+          "title": "Card Component",
+          "description": "Create card layout component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-13-badge-tag",
+          "path": "projects/phase-5-ui-library/project-13-badge-tag",
+          "title": "Badge/Tag",
+          "description": "Build badge component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-14-skeleton-loader",
+          "path": "projects/phase-5-ui-library/project-14-skeleton-loader",
+          "title": "Skeleton Loader",
+          "description": "Create skeleton loading states",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-media-integrations",
+      "title": "Media, Files & Integrations",
+      "goal": "Integrate media, file handling, and third-party capabilities production apps ship.",
+      "projectCount": 15,
+      "projects": [
+        {
+          "slug": "project-01-image-optimization",
+          "path": "projects/phase-6-media-integrations/project-01-image-optimization",
+          "title": "Image Optimization",
+          "description": "Use Next.js Image component with optimization",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-maps-integration",
+          "path": "projects/phase-6-media-integrations/project-02-maps-integration",
+          "title": "Maps Integration",
+          "description": "Integrate Leaflet maps",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-pdf-generation",
+          "path": "projects/phase-6-media-integrations/project-03-pdf-generation",
+          "title": "PDF Generation",
+          "description": "Generate PDFs with jsPDF",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-excel-export",
+          "path": "projects/phase-6-media-integrations/project-04-excel-export",
+          "title": "Excel Export",
+          "description": "Export data to Excel format",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-print-functionality",
+          "path": "projects/phase-6-media-integrations/project-05-print-functionality",
+          "title": "Print Functionality",
+          "description": "Implement print-friendly pages",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-share-functionality",
+          "path": "projects/phase-6-media-integrations/project-06-share-functionality",
+          "title": "Share Functionality",
+          "description": "Add social sharing buttons",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-copy-to-clipboard",
+          "path": "projects/phase-6-media-integrations/project-07-copy-to-clipboard",
+          "title": "Copy To Clipboard",
+          "description": "Implement copy functionality",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-download-files",
+          "path": "projects/phase-6-media-integrations/project-08-download-files",
+          "title": "Download Files",
+          "description": "Handle file downloads from API",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-image-gallery",
+          "path": "projects/phase-6-media-integrations/project-09-image-gallery",
+          "title": "Image Gallery",
+          "description": "Build image gallery with lightbox",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-video-player",
+          "path": "projects/phase-6-media-integrations/project-10-video-player",
+          "title": "Video Player",
+          "description": "Integrate video player component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-rich-text-editor",
+          "path": "projects/phase-6-media-integrations/project-11-rich-text-editor",
+          "title": "Rich Text Editor",
+          "description": "Add rich text editing capability",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-date-picker",
+          "path": "projects/phase-6-media-integrations/project-12-date-picker",
+          "title": "Date Picker",
+          "description": "Build date picker component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-13-time-picker",
+          "path": "projects/phase-6-media-integrations/project-13-time-picker",
+          "title": "Time Picker",
+          "description": "Create time selection component",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-14-color-picker",
+          "path": "projects/phase-6-media-integrations/project-14-color-picker",
+          "title": "Color Picker",
+          "description": "Implement color selection",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-15-drag-and-drop",
+          "path": "projects/phase-6-media-integrations/project-15-drag-and-drop",
+          "title": "Drag & Drop",
+          "description": "Build drag and drop interface",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-7-state-performance",
+      "title": "State Management & Performance",
+      "goal": "Manage client state and optimize the app for production performance.",
+      "projectCount": 10,
+      "projects": [
+        {
+          "slug": "project-01-context-api",
+          "path": "projects/phase-7-state-performance/project-01-context-api",
+          "title": "Context API",
+          "description": "Manage global state with Context",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-local-storage",
+          "path": "projects/phase-7-state-performance/project-02-local-storage",
+          "title": "Local Storage",
+          "description": "Persist data to localStorage",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-session-storage",
+          "path": "projects/phase-7-state-performance/project-03-session-storage",
+          "title": "Session Storage",
+          "description": "Use sessionStorage for temporary data",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-url-state",
+          "path": "projects/phase-7-state-performance/project-04-url-state",
+          "title": "URL State",
+          "description": "Manage state in URL query params",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-debouncing",
+          "path": "projects/phase-7-state-performance/project-05-debouncing",
+          "title": "Debouncing",
+          "description": "Implement debounced search/input",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-throttling",
+          "path": "projects/phase-7-state-performance/project-06-throttling",
+          "title": "Throttling",
+          "description": "Throttle scroll/resize events",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-memoization",
+          "path": "projects/phase-7-state-performance/project-07-memoization",
+          "title": "Memoization",
+          "description": "Use React.memo and useMemo",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-code-splitting",
+          "path": "projects/phase-7-state-performance/project-08-code-splitting",
+          "title": "Code Splitting",
+          "description": "Implement dynamic imports",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-lazy-loading",
+          "path": "projects/phase-7-state-performance/project-09-lazy-loading",
+          "title": "Lazy Loading",
+          "description": "Lazy load components and images",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-performance-monitoring",
+          "path": "projects/phase-7-state-performance/project-10-performance-monitoring",
+          "title": "Performance Monitoring",
+          "description": "Add performance metrics",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-8-real-world-features",
+      "title": "Real-World App Features",
+      "goal": "Assemble the patterns into the page types every product needs.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-01-dashboard",
+          "path": "projects/phase-8-real-world-features/project-01-dashboard",
+          "title": "Dashboard",
+          "description": "Build admin dashboard with charts and stats",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-profile-management",
+          "path": "projects/phase-8-real-world-features/project-02-profile-management",
+          "title": "Profile Management",
+          "description": "Create user profile with edit capabilities",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-search-results",
+          "path": "projects/phase-8-real-world-features/project-03-search-results",
+          "title": "Search Results",
+          "description": "Build search results page with filters",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-detail-view",
+          "path": "projects/phase-8-real-world-features/project-04-detail-view",
+          "title": "Detail View",
+          "description": "Create detail page with related items",
+          "tech": [
+            "Next.js",
+            "TypeScript",
+            "React",
+            "Tailwind CSS"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
