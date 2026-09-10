@@ -1,0 +1,661 @@
+{
+  "id": "math-foundations",
+  "title": "Math & Reasoning for Systems and Quant (Zero to Confident)",
+  "tagline": "Build the mathematical spine that every elite low-level and quantitative role assumes — from a true-zero start, learning by writing tiny programs that compute and verify each idea.",
+  "level": null,
+  "stack": [
+    "Python 3.12",
+    "math (stdlib)",
+    "random (stdlib)",
+    "NumPy",
+    "Matplotlib"
+  ],
+  "targetRoles": [
+    "Quant Trader (foundation)",
+    "ML/AI-Systems Engineer (foundation)",
+    "Low-Latency / HFT Engineer (foundation)",
+    "Robotics Engineer (foundation)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Build the mathematical spine that every elite low-level and quantitative role assumes — from a true-zero start, learning by writing tiny programs that compute and verify each idea. Covers number sense and mental math, discrete math and logic, probability, statistics, linear algebra, and the calculus and optimization used in systems and machine learning. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it feeds the shared core (DSA, computer architecture, performance) and is the direct on-ramp for the quant-trader and AI/ML-systems branches. Python is used as a calculator and laboratory; you only need the few lines each project teaches.",
+  "environment": [],
+  "capstone": {
+    "title": "Numerical & Probability Toolkit",
+    "project": "Build a small, well-tested Python package that pulls the whole track together: a Monte-Carlo estimator (probability), a descriptive-statistics module (statistics), a tiny vector/matrix mini-library with dot product and matrix multiply (linear algebra), and a gradient-descent optimizer that fits a line to data (calculus/optimization). Validate each piece against a known closed-form answer."
+  },
+  "phases": [
+    {
+      "id": "phase-1-number-sense",
+      "title": "Number Sense, Mental Math & Estimation",
+      "goal": "Compute fast and estimate confidently: arithmetic fluency, percentages, powers of two, number bases, Fermi estimation, modular arithmetic, and sequences.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-mental-math-engine",
+          "path": "projects/phase-1-number-sense/project-01-mental-math-engine",
+          "title": "Mental Math Engine",
+          "description": "Build a timed arithmetic drill (your own Zetamac) that generates random problems, scores answers against the clock, and reports a correct-per-minute rate — while learning the core mental-math shortcuts.",
+          "tech": [
+            "Python 3.12",
+            "random",
+            "time"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-percentages-ratios",
+          "path": "projects/phase-1-number-sense/project-02-percentages-ratios",
+          "title": "Percentages, Ratios & Proportions",
+          "description": "Build a percentage-and-ratio toolkit (percent_of, percent_change, apply_change, recovery_needed, ratio_to_parts) and learn the mental anchors to do the same calculations instantly, including the asymmetry-of-gains-and-losses trap.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-powers-of-two",
+          "path": "projects/phase-1-number-sense/project-03-powers-of-two",
+          "title": "Powers of Two & Orders of Magnitude",
+          "description": "Build a reference tool for powers of two and byte-size prefixes (humanize_bytes, order_of_magnitude) and train the instinct to estimate memory sizes, bit widths, and log-time growth in your head.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-number-bases",
+          "path": "projects/phase-1-number-sense/project-04-number-bases",
+          "title": "Number Bases — Binary & Hex",
+          "description": "Build a base converter (to_base, from_base) using repeated division and positional notation, validate it against Python's bin/hex/int, and learn to read binary and hex the way the machine does — the bridge into computer architecture.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-fermi-estimation",
+          "path": "projects/phase-1-number-sense/project-05-fermi-estimation",
+          "title": "Fermi Estimation",
+          "description": "Build an Estimate helper that records named multiplicative factors and answer order-of-magnitude questions (piano tuners in a city, daily queries for 10M users) by decomposition, then sanity-check results against quick estimates.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-modular-arithmetic",
+          "path": "projects/phase-1-number-sense/project-06-modular-arithmetic",
+          "title": "Modular Arithmetic",
+          "description": "Build a clock-arithmetic toolkit (clock_add, wrap_index, add_uint8, day_of_week) that teaches remainders and wrap-around, and connect modulo to hashing, ring buffers, and integer overflow.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-sequences-series",
+          "path": "projects/phase-1-number-sense/project-07-sequences-series",
+          "title": "Sequences & Series",
+          "description": "Generate arithmetic and geometric sequences, derive and verify their closed-form sums against brute force, and use compounding and the rule of 72 to build intuition for linear vs exponential growth and algorithm loop costs.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-latency-back-of-envelope",
+          "path": "projects/phase-1-number-sense/project-08-latency-back-of-envelope",
+          "title": "Back-of-the-Envelope Latency",
+          "description": "Fuse the whole phase into systems estimation: a canonical latency table, time/byte unit converters, an estimate_runtime helper, and a full capacity estimate (does a day of logs fit in RAM?) reasoned out by hand.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-discrete-logic",
+      "title": "Discrete Math & Logic",
+      "goal": "Reason precisely with the math of computers: propositional logic, sets, functions, proof by induction, recurrences, and counting.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-propositional-logic",
+          "path": "projects/phase-2-discrete-logic/project-01-propositional-logic",
+          "title": "Propositional Logic",
+          "description": "Build a truth-table generator with all five connectives plus tautology and equivalence checkers, then use De Morgan's laws and the contrapositive to simplify real boolean conditions by hand.",
+          "tech": [
+            "Python 3.12",
+            "itertools"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-boolean-algebra-gates",
+          "path": "projects/phase-2-discrete-logic/project-02-boolean-algebra-gates",
+          "title": "Boolean Algebra & Logic Gates",
+          "description": "Build the fundamental logic gates from bits, prove NAND is universal, then compose half-adders and full-adders into a ripple-carry adder that performs binary addition — discovering that arithmetic is just logic, the doorway to computer architecture.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-sets-operations",
+          "path": "projects/phase-2-discrete-logic/project-03-sets-operations",
+          "title": "Sets & Operations",
+          "description": "Build a set-algebra toolkit (union, intersection, difference, symmetric difference, subset, power set, inclusion-exclusion), connect each operation to its logical counterpart, and count overlapping groups without double-counting.",
+          "tech": [
+            "Python 3.12",
+            "itertools"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-relations-functions",
+          "path": "projects/phase-2-discrete-logic/project-04-relations-functions",
+          "title": "Relations & Functions",
+          "description": "Represent relations as pairs and functions as mappings, test validity/injectivity/surjectivity/bijectivity, compose and invert them, and classify real mappings (hashes, primary keys, ciphers) by which properties make them reversible.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-mathematical-induction",
+          "path": "projects/phase-2-discrete-logic/project-05-mathematical-induction",
+          "title": "Mathematical Induction",
+          "description": "Learn induction (base case + inductive step), empirically check inductive identities, mirror classic proofs in code, and connect induction to recursion correctness and loop invariants — then write full proofs by hand.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-recursion-recurrences",
+          "path": "projects/phase-2-discrete-logic/project-06-recursion-recurrences",
+          "title": "Recursion & Recurrences",
+          "description": "Write recursive functions, express their cost as recurrence relations and solve by unrolling, expose naive Fibonacci's exponential blowup with a call counter, fix it with memoization, and recognize the master-theorem patterns.",
+          "tech": [
+            "Python 3.12",
+            "functools"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-counting-principles",
+          "path": "projects/phase-2-discrete-logic/project-07-counting-principles",
+          "title": "Counting Principles",
+          "description": "Build a counting toolkit (factorial, nPr, nCr) and apply the product/sum rules and the pigeonhole principle to count outcomes, size search spaces, and prove that collisions must occur — the on-ramp to probability.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-number-theory-gcd-primes",
+          "path": "projects/phase-2-discrete-logic/project-08-number-theory-gcd-primes",
+          "title": "Number Theory — GCD & Primes",
+          "description": "Implement Euclid's GCD (recursive and iterative), LCM, the Sieve of Eratosthenes, primality testing, and prime factorization, then connect the multiply-easy/factor-hard asymmetry to public-key cryptography.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-probability",
+      "title": "Combinatorics & Probability",
+      "goal": "Quantify uncertainty: counting, conditional probability, Bayes, expected value, variance, and the distributions that show up everywhere.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-probability-basics",
+          "path": "projects/phase-3-probability/project-01-probability-basics",
+          "title": "Probability Basics",
+          "description": "Build a probability calculator (exact fractions, complement and addition rules) alongside a Monte-Carlo simulator, and establish the core habit of deriving a closed-form probability then confirming it by simulation.",
+          "tech": [
+            "Python 3.12",
+            "fractions",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-conditional-probability",
+          "path": "projects/phase-3-probability/project-02-conditional-probability",
+          "title": "Conditional Probability & Independence",
+          "description": "Compute P(A|B) as sample-space narrowing, apply the multiplication rule for joint probability, test independence, and confirm by filtering simulations — then untangle the classic traps (two-child problem, prosecutor's fallacy, P(A|B) vs P(B|A)).",
+          "tech": [
+            "Python 3.12",
+            "fractions",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-bayes-theorem",
+          "path": "projects/phase-3-probability/project-03-bayes-theorem",
+          "title": "Bayes' Theorem",
+          "description": "Build a Bayes calculator and the famous medical-test false-positive paradox, verify it by simulating a million-person population, and implement sequential belief updating where each posterior becomes the next prior.",
+          "tech": [
+            "Python 3.12",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-expected-value",
+          "path": "projects/phase-3-probability/project-04-expected-value",
+          "title": "Expected Value",
+          "description": "Build an expected-value calculator and bet evaluator, apply linearity of expectation to collapse hard problems into simple sums, and watch the long-run simulated average converge to the EV — the core decision tool of trading.",
+          "tech": [
+            "Python 3.12",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-variance-stddev",
+          "path": "projects/phase-3-probability/project-05-variance-stddev",
+          "title": "Variance & Standard Deviation",
+          "description": "Build variance and standard-deviation tools for random variables and data samples, demonstrate that equal-EV bets can carry wildly different risk, apply Bessel's correction, and confirm by simulation.",
+          "tech": [
+            "Python 3.12",
+            "math",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-discrete-distributions",
+          "path": "projects/phase-3-probability/project-06-discrete-distributions",
+          "title": "Discrete Distributions",
+          "description": "Build PMF and mean/variance functions for Bernoulli, binomial, geometric, and Poisson distributions, simulate each, and learn to recognize which distribution a real scenario follows by its defining question.",
+          "tech": [
+            "Python 3.12",
+            "math",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-monte-carlo",
+          "path": "projects/phase-3-probability/project-07-monte-carlo",
+          "title": "Monte Carlo Simulation",
+          "description": "Estimate pi by random sampling, build a general Monte-Carlo mean estimator, quantify the 1/sqrt(n) error law, and price a multi-step bet that has no easy closed form — the precursor to the track's Monte-Carlo capstone.",
+          "tech": [
+            "Python 3.12",
+            "random",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-market-making-game",
+          "path": "projects/phase-3-probability/project-08-market-making-game",
+          "title": "Market-Making Game",
+          "description": "Build and play a simplified market-making game — quoting bid/ask around a noisy fair value, marking trades to the truth, and simulating thousands of rounds to see edge and variance together — fusing EV, variance, and Bayesian updating into the quant-trader interview in miniature.",
+          "tech": [
+            "Python 3.12",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-statistics",
+      "title": "Statistics & Distributions",
+      "goal": "Make decisions from data: descriptive statistics, the normal and other key distributions, sampling, confidence, and hypothesis testing — by simulation.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-descriptive-statistics",
+          "path": "projects/phase-4-statistics/project-01-descriptive-statistics",
+          "title": "Descriptive Statistics",
+          "description": "Build a statistics summary tool (mean, median, mode, variance, quartiles, five-number summary, IQR outlier detection) and learn when each measure of center and spread is the honest one to report.",
+          "tech": [
+            "Python 3.12",
+            "statistics",
+            "collections"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-normal-distribution",
+          "path": "projects/phase-4-statistics/project-02-normal-distribution",
+          "title": "The Normal Distribution",
+          "description": "Build the normal PDF, z-scores, the 68-95-99.7 empirical rule, and an exact CDF via math.erf, then confirm the rule by sampling — learning the bell curve that describes errors, scores, and (approximately) returns.",
+          "tech": [
+            "Python 3.12",
+            "math",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-central-limit-theorem",
+          "path": "projects/phase-4-statistics/project-03-central-limit-theorem",
+          "title": "The Central Limit Theorem",
+          "description": "Demonstrate empirically that the distribution of sample means becomes normal regardless of the (even strongly skewed) source distribution, measure the skewness collapsing as sample size grows, and verify the sigma/sqrt(n) standard error.",
+          "tech": [
+            "Python 3.12",
+            "random",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-sampling-estimation",
+          "path": "projects/phase-4-statistics/project-04-sampling-estimation",
+          "title": "Sampling & Estimation",
+          "description": "Estimate a population mean and proportion from random samples, quantify the uncertainty with standard error and a 95% margin of error, and demonstrate why biased sampling produces persistently wrong estimates that more data can't fix.",
+          "tech": [
+            "Python 3.12",
+            "random",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-confidence-intervals",
+          "path": "projects/phase-4-statistics/project-05-confidence-intervals",
+          "title": "Confidence Intervals",
+          "description": "Build confidence intervals from the standard-error formula and from the bootstrap (resampling with replacement), verify by simulation that a 95% interval covers the truth ~95% of the time, and state the correct interpretation.",
+          "tech": [
+            "Python 3.12",
+            "random",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-hypothesis-testing",
+          "path": "projects/phase-4-statistics/project-06-hypothesis-testing",
+          "title": "Hypothesis Testing",
+          "description": "Build a permutation test that estimates a p-value by shuffling group labels, make and state a significance decision precisely, and demonstrate p-hacking on pure noise to understand false positives and the correct meaning of a p-value.",
+          "tech": [
+            "Python 3.12",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-correlation-regression",
+          "path": "projects/phase-4-statistics/project-07-correlation-regression",
+          "title": "Correlation & Regression",
+          "description": "Compute covariance, the Pearson correlation coefficient, and a least-squares regression line from the formulas, predict from the line, measure fit with R^2, and reason carefully about correlation vs causation — the gateway to machine learning.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-ab-test-analyzer",
+          "path": "projects/phase-4-statistics/project-08-ab-test-analyzer",
+          "title": "A/B Test Analyzer",
+          "description": "Build an end-to-end A/B test analyzer that reports effect size (absolute and relative lift), a confidence interval for the difference, and a permutation p-value, plus a required-sample-size estimator — fusing the whole statistics phase into one ship/no-ship decision.",
+          "tech": [
+            "Python 3.12",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-linear-algebra",
+      "title": "Linear Algebra",
+      "goal": "Speak the language of ML, graphics, and robotics: vectors, matrices, dot products, linear systems, eigenvalues, and what they mean geometrically.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-vectors",
+          "path": "projects/phase-5-linear-algebra/project-01-vectors",
+          "title": "Vectors & Operations",
+          "description": "Build vectors and their core operations (add, subtract, scale, magnitude, normalize) from scratch, holding both the list view and the geometric arrow view, and reason about vectors in any dimension — the first brick of the track's mini-library capstone.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-dot-product",
+          "path": "projects/phase-5-linear-algebra/project-02-dot-product",
+          "title": "The Dot Product",
+          "description": "Build the dot product and use it to compute angles, detect orthogonality, rank vectors by cosine similarity (as search/recommenders do), and project one vector onto another — connecting the algebraic and geometric definitions.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-matrices",
+          "path": "projects/phase-5-linear-algebra/project-03-matrices",
+          "title": "Matrices & Operations",
+          "description": "Represent matrices as lists of rows and build shape, add, scale, transpose, identity, and matrix-vector product, while learning the three interpretations of a matrix (data table, equation system, transformation).",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-matrix-multiplication",
+          "path": "projects/phase-5-linear-algebra/project-04-matrix-multiplication",
+          "title": "Matrix Multiplication",
+          "description": "Implement general matrix multiplication with the shape-compatibility rule, verify against the identity and hand computation, and understand it as composition of transformations (AB != BA) with O(n^3) cost — the operation GPUs and AI chips exist to accelerate.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-linear-systems",
+          "path": "projects/phase-5-linear-algebra/project-05-linear-systems",
+          "title": "Solving Linear Systems",
+          "description": "Build a linear-system solver using Gaussian elimination with partial pivoting and back substitution, solve 2x2 and 3x3 systems, verify by substitution, and recognize the no-solution / infinite-solution cases geometrically.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-linear-transformations",
+          "path": "projects/phase-5-linear-algebra/project-06-linear-transformations",
+          "title": "Linear Transformations",
+          "description": "Interpret matrices as functions that transform space — build scaling, rotation, shear, and reflection matrices, discover that a matrix's columns are the transformed basis vectors, compose transforms, and use the determinant as an area-scaling factor.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-eigenvalues",
+          "path": "projects/phase-5-linear-algebra/project-07-eigenvalues",
+          "title": "Eigenvalues & Eigenvectors",
+          "description": "Test eigenvectors against Av=lambda*v, find 2x2 eigenvalues from the characteristic equation, and implement power iteration (the algorithm behind PageRank) to find the dominant eigenvector — connecting to PCA, PageRank, and stability.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-mini-linalg-library",
+          "path": "projects/phase-5-linear-algebra/project-08-mini-linalg-library",
+          "title": "Vector & Matrix Mini-Library",
+          "description": "Package the phase into a reusable Vector/Matrix library with operator overloading (+, *, @), validate every operation against NumPy with a pytest suite, and measure why NumPy is 100x+ faster despite identical Big-O — a portfolio artifact and a direct capstone component.",
+          "tech": [
+            "Python 3.12",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-calculus-optimization",
+      "title": "Calculus & Optimization for Systems",
+      "goal": "Understand change and how machines learn: limits, derivatives, gradients, gradient descent, and the optimization at the heart of ML and engineering.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-limits-continuity",
+          "path": "projects/phase-6-calculus-optimization/project-01-limits-continuity",
+          "title": "Limits & Continuity",
+          "description": "Build a numerical limit estimator that probes a function from both sides of a point, see that a limit can exist where the function is undefined (sin(x)/x at 0), detect discontinuities, and test continuity — the conceptual gateway to derivatives.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-derivatives",
+          "path": "projects/phase-6-calculus-optimization/project-02-derivatives",
+          "title": "Derivatives",
+          "description": "Build numerical derivatives (forward and central difference), verify them against exact derivatives, interpret the derivative as slope/rate/sensitivity, and locate flat (zero-slope) critical points — the quantity gradient descent follows.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-differentiation-rules",
+          "path": "projects/phase-6-calculus-optimization/project-03-differentiation-rules",
+          "title": "Differentiation Rules",
+          "description": "Implement and verify the power, product, quotient, and chain rules against numerical derivatives, and understand the chain rule as the mathematical core of backpropagation in neural networks.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-partial-derivatives-gradients",
+          "path": "projects/phase-6-calculus-optimization/project-04-partial-derivatives-gradients",
+          "title": "Partial Derivatives & Gradients",
+          "description": "Compute partial derivatives (one variable at a time), assemble them into the gradient vector, and verify empirically that the gradient points in the direction of steepest ascent — the compass that gradient descent follows.",
+          "tech": [
+            "Python 3.12",
+            "math",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-gradient-descent",
+          "path": "projects/phase-6-calculus-optimization/project-05-gradient-descent",
+          "title": "Gradient Descent",
+          "description": "Implement gradient descent to minimize functions, watch the loss decrease step by step, sweep learning rates to see convergence vs divergence, and demonstrate local-vs-global minima — the algorithm that trains nearly every ML model.",
+          "tech": [
+            "Python 3.12",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-optimization-convexity",
+          "path": "projects/phase-6-calculus-optimization/project-06-optimization-convexity",
+          "title": "Optimization & Convexity",
+          "description": "Find optima analytically by locating critical points and classifying them with the second-derivative test, define and test convexity, and understand why convexity guarantees gradient descent finds the global minimum.",
+          "tech": [
+            "Python 3.12"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-linear-regression-gradient-descent",
+          "path": "projects/phase-6-calculus-optimization/project-07-linear-regression-gradient-descent",
+          "title": "Linear Regression by Gradient Descent",
+          "description": "Fit a line to data by gradient descent, fusing a model (y=mx+b), a loss (MSE), and an optimizer into machine learning's hello world — derive the loss gradient, train on clean and noisy data, recover the true parameters, and cross-check against the closed-form solution.",
+          "tech": [
+            "Python 3.12",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone-numerical-toolkit",
+          "path": "projects/phase-6-calculus-optimization/project-08-capstone-numerical-toolkit",
+          "title": "Numerical & Probability Toolkit (Track Capstone)",
+          "description": "The math-foundations capstone: assemble Monte Carlo, statistics, the linear-algebra mini-library, and gradient descent into one tested Python package (mathkit), with every component validated against a known closed-form answer and documented in `work/README.md`.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
