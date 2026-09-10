@@ -1,0 +1,792 @@
+{
+  "id": "computer-architecture",
+  "title": "Computer Architecture & Systems (How the Machine Really Works)",
+  "tagline": "Go beneath the language to the machine itself — the layer that separates a generic software engineer from a low-latency systems engineer.",
+  "level": null,
+  "stack": [
+    "C++17/20",
+    "x86-64 / GCC / Clang",
+    "Godbolt",
+    "perf / Linux"
+  ],
+  "targetRoles": [
+    "Low-Latency / HFT Engineer",
+    "AI-Chip / Kernel Engineer (foundation)",
+    "Systems / Performance Engineer",
+    "Embedded / Robotics Engineer (foundation)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Go beneath the language to the machine itself — the layer that separates a generic software engineer from a low-latency systems engineer. You learn how data is represented in bits, how C compiles to x86-64 assembly, how the CPU pipelines and predicts branches, how the cache and memory hierarchy actually determine performance, how threads and atomics work at the hardware level, and how your program talks to the operating system kernel. Every concept is hands-on: you read disassembly on Godbolt, measure cache effects and branch misprediction, profile with perf, and kill false sharing with cache-line alignment. This is the shared systems spine of the Zero-to-Low-Level-Systems-Elite program — the body of knowledge that HFT low-latency, AI-chip/kernel, and robotics roles all assume, and where 'thinking in cache lines and nanoseconds' is built.",
+  "environment": [],
+  "capstone": {
+    "title": "Latency Lab — A Measured, Cache-Aware Lock-Free Component",
+    "project": "Build and measure a low-latency component the way an HFT engineer would: a single-producer/single-consumer lock-free ring buffer with cache-line-aligned slots, instrument it with a latency histogram (percentiles), eliminate false sharing, and benchmark it head-to-head against a mutex-protected queue. Package it with CMake and write up the measurements and the architectural reasoning."
+  },
+  "phases": [
+    {
+      "id": "phase-1-data-representation",
+      "title": "Data, Numbers & Representation",
+      "goal": "See how the machine stores everything in bits: integers and two's complement, overflow, IEEE-754 floating point, endianness, and character encodings.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-bits-bytes",
+          "path": "projects/phase-1-data-representation/project-01-bits-bytes",
+          "title": "Bits, Bytes & Hexadecimal",
+          "description": "Inspect the raw binary and hex representation of C++ fundamental types using sizeof, std::bitset, fixed-width cstdint types, and byte-level memory access.",
+          "tech": [
+            "C++17/20",
+            "std::bitset",
+            "<cstdint>",
+            "reinterpret_cast"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-integer-representation",
+          "path": "projects/phase-1-data-representation/project-02-integer-representation",
+          "title": "Integer Representation & Two's Complement",
+          "description": "Encode and decode signed and unsigned integers in binary using two's complement, observe sign extension, and query type ranges with std::numeric_limits.",
+          "tech": [
+            "C++17/20",
+            "std::bitset",
+            "std::numeric_limits",
+            "<cstdint>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-integer-overflow",
+          "path": "projects/phase-1-data-representation/project-03-integer-overflow",
+          "title": "Integer Overflow & Its Dangers",
+          "description": "Explore unsigned wraparound vs signed undefined behavior, reproduce the unsigned-comparison trap and size-calculation vulnerability, and implement safe overflow-detecting arithmetic.",
+          "tech": [
+            "C++17/20",
+            "__builtin_add_overflow",
+            "UndefinedBehaviorSanitizer",
+            "<limits>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-floating-point",
+          "path": "projects/phase-1-data-representation/project-04-floating-point",
+          "title": "Floating Point & IEEE-754",
+          "description": "Decode the sign/exponent/mantissa bit layout of IEEE-754 floats, reproduce the 0.1+0.2 precision problem, inspect special values, and implement correct epsilon-based comparisons.",
+          "tech": [
+            "C++17/20",
+            "std::numeric_limits",
+            "<cmath>",
+            "std::memcpy type-pun"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-bitfields-flags",
+          "path": "projects/phase-1-data-representation/project-05-bitfields-flags",
+          "title": "Bit Fields, Flags & Packing",
+          "description": "Apply all six bitwise operators to implement bitmask flag operations, model a hardware register with C++ bit-fields, and measure struct padding and alignment with sizeof and offsetof.",
+          "tech": [
+            "C++17/20",
+            "std::bitset",
+            "alignas",
+            "offsetof"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-endianness",
+          "path": "projects/phase-1-data-representation/project-06-endianness",
+          "title": "Endianness & Byte Order",
+          "description": "Inspect multi-byte integer layout in memory, convert between host and network byte order using htonl/ntohl, type-pun safely with std::memcpy, and implement portable little/big-endian serialization.",
+          "tech": [
+            "C++17/20",
+            "std::byte",
+            "std::memcpy",
+            "htonl/ntohl",
+            "<arpa/inet.h>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-char-encoding",
+          "path": "projects/phase-1-data-representation/project-07-char-encoding",
+          "title": "Character Encoding: ASCII & UTF-8",
+          "description": "Expose the integer nature of char, print the ASCII table, manually decode UTF-8 byte sequences to Unicode code points, and implement a code-point iterator that correctly handles multi-byte characters.",
+          "tech": [
+            "C++17/20",
+            "std::string",
+            "<cctype>",
+            "manual UTF-8 decoding"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-binary-format",
+          "path": "projects/phase-1-data-representation/project-08-binary-format",
+          "title": "Read & Write a Binary Format",
+          "description": "Design, write, and read a fixed 16-byte binary record format with magic number, little-endian integer fields, and an XOR checksum using std::fstream in binary mode, synthesizing all Phase 1 concepts.",
+          "tech": [
+            "C++17/20",
+            "std::fstream",
+            "std::memcpy",
+            "little-endian serialization",
+            "XOR checksum"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-c-to-machine",
+      "title": "From C to the Machine: Assembly & Linking",
+      "goal": "Follow C all the way down: the compilation pipeline, x86-64 assembly, how variables/control-flow/functions map to instructions and the stack, and how linking resolves symbols.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-compilation-pipeline",
+          "path": "projects/phase-2-c-to-machine/project-01-compilation-pipeline",
+          "title": "The Compilation Pipeline",
+          "description": "Walk a two-file C++ program through all four pipeline stages — preprocess, compile, assemble, link — stopping at each to read the intermediate file and inspect symbols with nm.",
+          "tech": [
+            "C++20",
+            "g++",
+            "nm",
+            "objdump",
+            "ELF"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-x86-basics",
+          "path": "projects/phase-2-c-to-machine/project-02-x86-basics",
+          "title": "x86-64 Assembly Basics",
+          "description": "Learn the x86-64 register file, Intel syntax, and the core instruction set by annotating compiler output on Godbolt — turning assembly from noise into readable machine-level C++.",
+          "tech": [
+            "C++20",
+            "g++",
+            "x86-64",
+            "Godbolt",
+            "Intel syntax"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-c-to-asm",
+          "path": "projects/phase-2-c-to-machine/project-03-c-to-asm",
+          "title": "How C++ Maps to Assembly",
+          "description": "Compare -O0 and -O2 compiler output for local variables, arithmetic, dead code, and constant folding — making the compiler's translation rules and optimization license visible.",
+          "tech": [
+            "C++20",
+            "g++",
+            "Godbolt",
+            "x86-64",
+            "Intel syntax"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-control-flow-asm",
+          "path": "projects/phase-2-c-to-machine/project-04-control-flow-asm",
+          "title": "Control Flow in Assembly",
+          "description": "Trace how if/else, for/while loops, and switch statements compile to cmp, conditional jumps, loop labels, and jump tables — making the FLAGS register and branchy assembly readable.",
+          "tech": [
+            "C++20",
+            "g++",
+            "x86-64",
+            "Godbolt",
+            "Intel syntax"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-functions-stack",
+          "path": "projects/phase-2-c-to-machine/project-05-functions-stack",
+          "title": "Functions, the Stack & Calling Conventions",
+          "description": "Trace the System V AMD64 ABI from argument registers through stack frame layout, prologue/epilogue, call/ret mechanics, and the red zone — building a complete mental model of how every function call works at the hardware level.",
+          "tech": [
+            "C++20",
+            "g++",
+            "x86-64",
+            "System V ABI",
+            "Godbolt"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-pointers-addressing",
+          "path": "projects/phase-2-c-to-machine/project-06-pointers-addressing",
+          "title": "Pointers, Arrays & Addressing Modes",
+          "description": "Decode the x86-64 base+index*scale+displacement addressing formula by tracing how array indexing, struct field access, and pointer arithmetic each compile to a specific memory operand.",
+          "tech": [
+            "C++20",
+            "g++",
+            "x86-64",
+            "Intel syntax",
+            "Godbolt"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-linking",
+          "path": "projects/phase-2-c-to-machine/project-07-linking",
+          "title": "Linking, Symbols & Libraries",
+          "description": "Build a static and a dynamic library, inspect symbols with nm/objdump/readelf, trigger a linker error to understand ODR, and learn the difference between static (.a) and dynamic (.so) linking.",
+          "tech": [
+            "C++20",
+            "g++",
+            "ar",
+            "nm",
+            "readelf",
+            "ldd",
+            "c++filt",
+            "ELF"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-reading-disassembly",
+          "path": "projects/phase-2-c-to-machine/project-08-reading-disassembly",
+          "title": "Reading Disassembly",
+          "description": "Compile a complete C++ program, disassemble it with objdump -d -M intel, and produce a fully annotated walkthrough of dot_product and argmax — mapping every instruction back to the C++ source.",
+          "tech": [
+            "C++20",
+            "g++",
+            "objdump",
+            "c++filt",
+            "DWARF",
+            "x86-64"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-processor-performance",
+      "title": "The Processor & Performance",
+      "goal": "Understand why code runs fast or slow: pipelining, branch prediction, instruction-level parallelism, the roofline model, profiling with perf, and compiler optimizations.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-cpu-pipeline",
+          "path": "projects/phase-3-processor-performance/project-01-cpu-pipeline",
+          "title": "The CPU Pipeline",
+          "description": "Build a series of C++ microbenchmarks that make pipeline throughput, latency, data hazards, and superscalar IPC visible and measurable.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono",
+            "volatile-sink"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-branch-prediction",
+          "path": "projects/phase-3-processor-performance/project-02-branch-prediction",
+          "title": "Branch Prediction",
+          "description": "Reproduce the classic sorted-vs-unsorted array benchmark, quantify the ~15-cycle misprediction penalty, and implement branchless alternatives using arithmetic masking and cmov.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono",
+            "perf stat",
+            "volatile-sink"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-ilp",
+          "path": "projects/phase-3-processor-performance/project-03-ilp",
+          "title": "Instruction-Level Parallelism",
+          "description": "Break single-accumulator dependency chains with multiple accumulators, measure the IPC improvement via perf stat, and apply the pattern to both integer and FP reduction loops.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono",
+            "perf stat",
+            "fno-tree-vectorize"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-profiling",
+          "path": "projects/phase-3-processor-performance/project-04-profiling",
+          "title": "Profiling with perf",
+          "description": "Build a three-bottleneck target program, profile it with perf stat and perf record, identify each hotspot by its counter signature, and generate a flamegraph to visualize the call stack.",
+          "tech": [
+            "C++20",
+            "g++",
+            "perf stat",
+            "perf record",
+            "perf report",
+            "FlameGraph"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-roofline",
+          "path": "projects/phase-3-processor-performance/project-05-roofline",
+          "title": "The Roofline Model",
+          "description": "Measure your machine's peak memory bandwidth and peak FLOPs, calculate arithmetic intensity for three kernels, place them on a roofline diagram, and determine which optimizations help in each performance regime.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono",
+            "STREAM benchmark"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-compiler-optimization",
+          "path": "projects/phase-3-processor-performance/project-06-compiler-optimization",
+          "title": "What the Compiler Does For You",
+          "description": "Measure the performance impact of -O0 through -Ofast, observe constant folding and inlining with timing experiments, use __restrict__ to unblock auto-vectorization, and read generated assembly on Godbolt.",
+          "tech": [
+            "C++20",
+            "g++",
+            "Godbolt/Compiler Explorer",
+            "fopt-info-vec"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-optimization-techniques",
+          "path": "projects/phase-3-processor-performance/project-07-optimization-techniques",
+          "title": "Hand-Optimizing a Hot Path",
+          "description": "Apply four targeted optimizations to a deliberately slow order-processing function — eliminating heap allocations, hoisting invariants, replacing branches with lookup tables, and transforming AoS to SoA — and document a measurement log for each step.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono",
+            "perf stat"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-optimize-a-kernel",
+          "path": "projects/phase-3-processor-performance/project-08-optimize-a-kernel",
+          "title": "Optimize a Kernel End-to-End",
+          "description": "Take a naive character-frequency histogram from 0.35 GB/s to 7.8 GB/s by applying four bottleneck-targeted optimizations in sequence, profiling with perf at each step, and producing a full optimization report.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono",
+            "perf stat",
+            "perf record"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-memory-hierarchy",
+      "title": "The Memory Hierarchy & Caches",
+      "goal": "Master the layer that dominates real performance: latency numbers, how caches work, locality, the memory mountain, false sharing, virtual memory, and the heap.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-memory-hierarchy",
+          "path": "projects/phase-4-memory-hierarchy/project-01-memory-hierarchy",
+          "title": "The Memory Hierarchy & Latency Numbers",
+          "description": "Build a pointer-chasing benchmark that measures access latency across L1/L2/L3/DRAM and internalise the canonical latency numbers that drive every systems-performance decision.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-how-caches-work",
+          "path": "projects/phase-4-memory-hierarchy/project-02-how-caches-work",
+          "title": "How Caches Work",
+          "description": "Build a stride benchmark that exposes cache-set conflicts by exploiting tag/index/offset address geometry, and measure L1/L2/L3/DRAM hit latency directly.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-locality",
+          "path": "projects/phase-4-memory-hierarchy/project-03-locality",
+          "title": "Locality & Cache-Friendly Code",
+          "description": "Measure the row-major vs column-major 2D traversal gap and fix a matrix-multiply loop order, explaining every speedup in cache-line terms.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-memory-mountain",
+          "path": "projects/phase-4-memory-hierarchy/project-04-memory-mountain",
+          "title": "The Memory Mountain",
+          "description": "Build a 2D throughput table sweeping working-set size and stride to map L1/L2/L3/DRAM plateaus and identify the spatial- and temporal-locality ridges on the student's own machine.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-aos-vs-soa",
+          "path": "projects/phase-4-memory-hierarchy/project-05-aos-vs-soa",
+          "title": "Data Layout: AoS vs SoA",
+          "description": "Benchmark AoS vs SoA particle layouts for a field-selective loop, measure the cache-utilisation speedup, and learn when each layout is correct using data-oriented design principles.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-false-sharing",
+          "path": "projects/phase-4-memory-hierarchy/project-06-false-sharing",
+          "title": "False Sharing & Cache-Line Alignment",
+          "description": "Reproduce and measure a false-sharing slowdown with two threads, fix it with alignas(64) padding and per-thread local accumulation, and explain the MESI coherence mechanism behind the bug.",
+          "tech": [
+            "C++20",
+            "std::thread",
+            "std::atomic",
+            "chrono",
+            "g++",
+            "pthread"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-virtual-memory",
+          "path": "projects/phase-4-memory-hierarchy/project-07-virtual-memory",
+          "title": "Virtual Memory & Paging",
+          "description": "Measure the TLB miss cliff by striding through a 256 MB array in page-sized increments, identify TLB capacity on the student's machine, and explain paging, page faults, and huge pages.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-cache-aware-structure",
+          "path": "projects/phase-4-memory-hierarchy/project-08-cache-aware-structure",
+          "title": "Build a Cache-Aware Data Structure",
+          "description": "Implement a cache-line-sized B-tree node (15 int32 keys per 64-byte node), benchmark it against sorted-array binary search and a linked list, and explain the full speedup using every principle from Phase 4.",
+          "tech": [
+            "C++20",
+            "chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-concurrency-hardware",
+      "title": "Concurrency at the Hardware Level",
+      "goal": "Make multicore code correct and fast: OS threads and affinity, the C++ memory model, atomics and lock-free basics, contention, a lock-free SPSC queue, and SIMD.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-threads-and-cores",
+          "path": "projects/phase-5-concurrency-hardware/project-01-threads-and-cores",
+          "title": "Threads, Cores & Scheduling",
+          "description": "Query hardware topology, measure context-switch cost, demonstrate oversubscription collapse, and pin threads to specific CPU cores using pthread_setaffinity_np.",
+          "tech": [
+            "C++20",
+            "pthreads",
+            "Linux sched_setaffinity"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-memory-model",
+          "path": "projects/phase-5-concurrency-hardware/project-02-memory-model",
+          "title": "The C++ Memory Model & Reordering",
+          "description": "Observe compiler and hardware reordering, detect data races with ThreadSanitizer, and build the happens-before mental model that makes concurrent code provably correct.",
+          "tech": [
+            "C++20",
+            "ThreadSanitizer",
+            "pthreads",
+            "std::atomic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-atomics",
+          "path": "projects/phase-5-concurrency-hardware/project-03-atomics",
+          "title": "Atomics & Read-Modify-Write",
+          "description": "Build a correct atomic counter three ways, implement a CAS retry loop, construct a spinlock from std::atomic_flag, and benchmark atomic vs mutex performance.",
+          "tech": [
+            "C++20",
+            "std::atomic",
+            "std::atomic_flag",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-memory-ordering",
+          "path": "projects/phase-5-concurrency-hardware/project-04-memory-ordering",
+          "title": "Memory Ordering: acquire/release/seq_cst",
+          "description": "Build the broken and correct flag-plus-data handoff, benchmark seq_cst vs acquire/release vs relaxed, and explain operationally what each ordering permits the CPU and compiler to reorder.",
+          "tech": [
+            "C++20",
+            "std::atomic",
+            "memory_order",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-contention-locks",
+          "path": "projects/phase-5-concurrency-hardware/project-05-contention-locks",
+          "title": "Locks, Contention & Their Cost",
+          "description": "Measure single-mutex throughput collapse vs thread count, recover scaling with per-bucket fine-grained locks, and quantify cache-line bounce and spinlock vs blocking-mutex trade-offs.",
+          "tech": [
+            "C++20",
+            "std::mutex",
+            "std::atomic_flag",
+            "futex",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-spsc-queue",
+          "path": "projects/phase-5-concurrency-hardware/project-06-spsc-queue",
+          "title": "A Lock-Free SPSC Ring Buffer",
+          "description": "Build a correct single-producer/single-consumer ring buffer using acquire/release atomics, demonstrate cache-line separation of head and tail, and benchmark against a mutex queue.",
+          "tech": [
+            "C++20",
+            "std::atomic",
+            "memory_order",
+            "pthreads",
+            "alignas"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-simd",
+          "path": "projects/phase-5-concurrency-hardware/project-07-simd",
+          "title": "SIMD & Data Parallelism",
+          "description": "Vectorize a float-array kernel using AVX2 intrinsics and auto-vectorization, measure scalar vs SIMD throughput, and understand alignment requirements and horizontal reduction.",
+          "tech": [
+            "C++20",
+            "AVX2",
+            "__m256",
+            "_mm256_*",
+            "GCC -mavx2 -mfma"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-parallel-speedup",
+          "path": "projects/phase-5-concurrency-hardware/project-08-parallel-speedup",
+          "title": "Measure Parallel Speedup & Amdahl's Law",
+          "description": "Parallelize a histogram workload across N threads, measure speedup vs cores, diagnose false sharing and load imbalance, and fit Amdahl's Law to predict the serial-fraction ceiling.",
+          "tech": [
+            "C++20",
+            "std::thread",
+            "std::atomic",
+            "pthreads",
+            "Amdahl's Law"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-os-and-low-latency",
+      "title": "The OS Interface & Low-Latency Systems",
+      "goal": "Cross into the kernel and engineer for nanoseconds: system calls, processes/threads, files and I/O, sockets, epoll event loops, and low-latency techniques — capped by a measured latency lab.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-syscalls",
+          "path": "projects/phase-6-os-and-low-latency/project-01-syscalls",
+          "title": "System Calls & the Kernel Boundary",
+          "description": "Measure the cost of a mode switch by writing programs that call write(2) directly, watching every syscall with strace, and benchmarking batched vs. per-byte writes — then explain why HFT hot paths obsess over eliminating kernel crossings.",
+          "tech": [
+            "C++20",
+            "POSIX",
+            "Linux",
+            "strace",
+            "clock_gettime"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-processes-threads",
+          "path": "projects/phase-6-os-and-low-latency/project-02-processes-threads",
+          "title": "Processes vs Threads",
+          "description": "Use fork(2) to create child processes and observe copy-on-write address-space isolation, communicate between processes with a pipe, benchmark process vs thread creation cost, and explain when each abstraction is the right tool for a latency-critical system.",
+          "tech": [
+            "C++20",
+            "POSIX",
+            "Linux",
+            "fork(2)",
+            "waitpid(2)",
+            "pipe(2)",
+            "pthreads"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-files-io",
+          "path": "projects/phase-6-os-and-low-latency/project-03-files-io",
+          "title": "Files & I/O",
+          "description": "Use the POSIX open/read/write/close/mmap syscall family to read a 1 MiB file at multiple chunk sizes, measure the throughput gap between per-byte and batched reads, and then memory-map the same file to observe zero-copy access — connecting each strategy to the kernel page cache.",
+          "tech": [
+            "C++20",
+            "POSIX",
+            "Linux",
+            "open(2)",
+            "read(2)",
+            "mmap(2)",
+            "fsync(2)"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-signals",
+          "path": "projects/phase-6-os-and-low-latency/project-04-signals",
+          "title": "Signals & Asynchronous Events",
+          "description": "Install signal handlers with sigaction(2) to implement graceful SIGINT/SIGTERM shutdown, demonstrate why printf is banned in signal handlers, observe EINTR from interrupted syscalls, and implement the self-pipe trick to integrate signals safely into a select-based event loop.",
+          "tech": [
+            "C++20",
+            "POSIX",
+            "Linux",
+            "sigaction(2)",
+            "kill(2)",
+            "select(2)",
+            "self-pipe trick"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-sockets",
+          "path": "projects/phase-6-os-and-low-latency/project-05-sockets",
+          "title": "Sockets & Networking Basics",
+          "description": "Build a TCP echo server and client from raw POSIX syscalls (socket/bind/listen/accept/connect/send/recv), handle partial sends and receives correctly, measure loopback round-trip latency, and learn the socket options that matter for low-latency systems.",
+          "tech": [
+            "C++20",
+            "POSIX",
+            "Linux",
+            "TCP/IP",
+            "socket(2)",
+            "send(2)",
+            "recv(2)"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-epoll",
+          "path": "projects/phase-6-os-and-low-latency/project-06-epoll",
+          "title": "I/O Multiplexing with epoll",
+          "description": "Build a single-threaded TCP echo server using epoll_create/epoll_ctl/epoll_wait that handles multiple simultaneous non-blocking clients, implement edge-triggered drain loops, and explain why the reactor pattern scales to 10,000 connections where blocking-per-connection does not.",
+          "tech": [
+            "C++20",
+            "Linux",
+            "epoll(7)",
+            "POSIX",
+            "non-blocking sockets",
+            "accept4(2)"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-low-latency-techniques",
+          "path": "projects/phase-6-os-and-low-latency/project-07-low-latency-techniques",
+          "title": "Low-Latency Engineering Techniques",
+          "description": "Synthesize the HFT engineering toolkit: implement and benchmark busy-polling vs epoll wakeup latency, apply the no-alloc hot-path discipline and measure p99 improvement, pin threads to CPU cores, and explain kernel-bypass concepts (DPDK, Solarflare) — backed by a latency histogram reporting p50/p99/p99.9.",
+          "tech": [
+            "C++20",
+            "Linux",
+            "POSIX",
+            "pthread_setaffinity_np",
+            "eventfd",
+            "clock_gettime",
+            "DPDK concepts"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-os-and-low-latency/project-08-capstone",
+          "title": "Latency Lab — A Measured, Cache-Aware Lock-Free Component (Track Capstone)",
+          "description": "Build, measure, and package a lock-free SPSC ring buffer with std::atomic acquire/release ordering and alignas(64) cache-line isolation, instrument it with a latency histogram reporting p50/p99/p99.9, benchmark it head-to-head against a mutex baseline and a naive (false-sharing) variant, and package everything with CMake + GoogleTest — the portfolio artifact that closes the Computer Architecture & Systems track.",
+          "tech": [
+            "C++20",
+            "CMake 3.14+",
+            "GoogleTest (FetchContent)",
+            "std::atomic",
+            "alignas(64)",
+            "pthreads",
+            "clock_gettime"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
