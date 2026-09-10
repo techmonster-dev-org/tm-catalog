@@ -1,0 +1,632 @@
+{
+  "id": "python-data-automation",
+  "title": "Python Data Engineering & Automation",
+  "tagline": "Build the pipelines and automation that power real systems with Python: scripting and CLI tools, web scraping and data acquisition, data engineering (ETL, validation, warehousing), big data and orche…",
+  "level": null,
+  "stack": [
+    "Python 3.12",
+    "pandas",
+    "BeautifulSoup",
+    "Scrapy",
+    "Playwright",
+    "SQLAlchemy",
+    "PySpark",
+    "Airflow",
+    "dbt",
+    "Docker",
+    "boto3"
+  ],
+  "targetRoles": [
+    "Data Engineer",
+    "Automation Engineer",
+    "Analytics Engineer",
+    "Platform/Backend Engineer (Data)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 5,
+  "projectCount": 43,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Build the pipelines and automation that power real systems with Python: scripting and CLI tools, web scraping and data acquisition, data engineering (ETL, validation, warehousing), big data and orchestration (PySpark, Airflow, dbt, streaming), and the cloud, containerization, and reliability practices that ship pipelines to production. Prepares for Data Engineer, Automation, and platform-adjacent roles.",
+  "environment": [],
+  "capstone": {
+    "title": "End-to-end orchestrated data pipeline",
+    "project": "Build a scheduled, tested ETL pipeline that ingests from a source (API/scrape/file), validates and transforms the data, loads it into a warehouse with incremental/idempotent loads and data-quality gates, and is containerized with logging and alerting."
+  },
+  "phases": [
+    {
+      "id": "phase-1-automation-scripting",
+      "title": "Automation & Scripting",
+      "goal": "Automate real tasks with robust Python scripts and polished CLI tools.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-argparse-cli",
+          "path": "projects/phase-1-automation-scripting/project-01-argparse-cli",
+          "title": "Command-Line Tools with argparse",
+          "description": "Build a real CLI tool with argparse: positional and optional arguments, subcommands, help text, and proper exit codes — the stdlib way to make scripts usable.",
+          "tech": [
+            "Python 3.12",
+            "argparse"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-typer-click-cli",
+          "path": "projects/phase-1-automation-scripting/project-02-typer-click-cli",
+          "title": "Modern CLIs with Typer",
+          "description": "Build polished CLIs with Typer (built on Click): type-hint-driven commands, options with help, prompts, and colored output — far less boilerplate than argparse.",
+          "tech": [
+            "Python 3.12",
+            "Typer",
+            "Click"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-filesystem-automation",
+          "path": "projects/phase-1-automation-scripting/project-03-filesystem-automation",
+          "title": "Filesystem Automation",
+          "description": "Automate bulk file operations with pathlib and shutil: organize, rename, deduplicate, and process files safely — with dry-run support and idempotency.",
+          "tech": [
+            "Python 3.12",
+            "pathlib",
+            "shutil"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-scheduling-automation",
+          "path": "projects/phase-1-automation-scripting/project-04-scheduling-automation",
+          "title": "Scheduling Automation",
+          "description": "Run tasks on a schedule: cron for system-level scheduling and APScheduler for in-process jobs — and learn idempotency, overlap, and failure handling for scheduled work.",
+          "tech": [
+            "Python 3.12",
+            "APScheduler",
+            "cron"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-api-data-collection",
+          "path": "projects/phase-1-automation-scripting/project-05-api-data-collection",
+          "title": "API Data Collection",
+          "description": "Collect data from REST APIs robustly: pagination, rate limiting, retries with backoff, authentication, and saving results — the foundation of API-based data ingestion.",
+          "tech": [
+            "Python 3.12",
+            "httpx",
+            "requests"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-spreadsheet-automation",
+          "path": "projects/phase-1-automation-scripting/project-06-spreadsheet-automation",
+          "title": "Spreadsheet Automation",
+          "description": "Automate Excel and CSV work: read, transform, and generate spreadsheets with pandas and openpyxl — formatted reports, multiple sheets, and formulas — replacing manual spreadsheet drudgery.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "openpyxl"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-notifications-automation",
+          "path": "projects/phase-1-automation-scripting/project-07-notifications-automation",
+          "title": "Notifications & Alerts",
+          "description": "Send automated notifications — email (SMTP) and chat (Slack/webhook) — so your scripts and pipelines tell you about successes, failures, and results.",
+          "tech": [
+            "Python 3.12",
+            "smtplib",
+            "httpx"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-robust-automation-scripts",
+          "path": "projects/phase-1-automation-scripting/project-08-robust-automation-scripts",
+          "title": "Robust Automation Scripts",
+          "description": "Make automation production-grade: structured logging, retries with backoff, clear exit codes, configuration, and idempotency — turning a fragile script into a reliable, observable job.",
+          "tech": [
+            "Python 3.12",
+            "logging",
+            "tenacity"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-scraping-acquisition",
+      "title": "Web Scraping & Data Acquisition",
+      "goal": "Acquire data from the web responsibly — static and dynamic sites, APIs, and documents.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-beautifulsoup-basics",
+          "path": "projects/phase-2-scraping-acquisition/project-01-beautifulsoup-basics",
+          "title": "Web Scraping with BeautifulSoup",
+          "description": "Fetch and parse static HTML to extract structured data: navigate the DOM with BeautifulSoup, select with CSS selectors, and turn a web page into clean rows.",
+          "tech": [
+            "Python 3.12",
+            "httpx",
+            "beautifulsoup4"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-forms-sessions-pagination",
+          "path": "projects/phase-2-scraping-acquisition/project-02-forms-sessions-pagination",
+          "title": "Forms, Sessions & Pagination",
+          "description": "Scrape sites that need state: keep cookies across requests with a session, log in by posting a form, and follow pagination to collect every page of results.",
+          "tech": [
+            "Python 3.12",
+            "httpx",
+            "beautifulsoup4"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-ethical-scraping",
+          "path": "projects/phase-2-scraping-acquisition/project-03-ethical-scraping",
+          "title": "Ethical Scraping: robots.txt, Rate Limiting & Politeness",
+          "description": "Scrape responsibly: read and respect robots.txt, identify yourself, rate-limit and back off, cache to avoid re-fetching, and understand the legal/ethical lines so your scraper is a good citizen.",
+          "tech": [
+            "Python 3.12",
+            "httpx",
+            "urllib.robotparser"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-scrapy-spider",
+          "path": "projects/phase-2-scraping-acquisition/project-04-scrapy-spider",
+          "title": "Large-Scale Crawling with Scrapy",
+          "description": "Graduate from scripts to a framework: build a Scrapy spider that crawls, follows links, yields structured items, and exports data — with built-in concurrency, throttling, and pipelines.",
+          "tech": [
+            "Python 3.12",
+            "Scrapy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-playwright-dynamic",
+          "path": "projects/phase-2-scraping-acquisition/project-05-playwright-dynamic",
+          "title": "Scraping Dynamic Sites with Playwright",
+          "description": "Scrape JavaScript-rendered pages a plain HTTP fetch can't see: drive a real browser with Playwright, wait for content to load, interact (click/scroll/fill), and extract from the live DOM.",
+          "tech": [
+            "Python 3.12",
+            "Playwright"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-parsing-html-xml",
+          "path": "projects/phase-2-scraping-acquisition/project-06-parsing-html-xml",
+          "title": "Parsing HTML, XML & Structured Documents",
+          "description": "Go beyond CSS selectors: parse XML/HTML with lxml and XPath, consume RSS/Atom feeds and sitemaps, and handle namespaces and malformed markup robustly.",
+          "tech": [
+            "Python 3.12",
+            "lxml",
+            "feedparser"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-pdf-document-extraction",
+          "path": "projects/phase-2-scraping-acquisition/project-07-pdf-document-extraction",
+          "title": "Extracting Data from PDFs & Documents",
+          "description": "Liberate data trapped in documents: extract text and tables from PDFs with pdfplumber, read Word/Excel files, and handle scanned pages with OCR — turning unstructured documents into structured data.",
+          "tech": [
+            "Python 3.12",
+            "pdfplumber",
+            "python-docx",
+            "pytesseract"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-scraping-storage-pipeline",
+          "path": "projects/phase-2-scraping-acquisition/project-08-scraping-storage-pipeline",
+          "title": "Storing Scraped Data: Pipelines, Dedup & Incremental Saves",
+          "description": "Close the loop on acquisition: store scraped records durably (CSV/JSONL/SQLite), deduplicate with stable keys, and scrape incrementally so re-runs only fetch what's new — a complete, resumable acquisition pipeline.",
+          "tech": [
+            "Python 3.12",
+            "sqlite3",
+            "pandas"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-data-engineering",
+      "title": "Data Engineering Core",
+      "goal": "Build reliable ETL: clean, validate, model, and load data into warehouses.",
+      "projectCount": 9,
+      "projects": [
+        {
+          "slug": "project-01-pandas-at-scale",
+          "path": "projects/phase-3-data-engineering/project-01-pandas-at-scale",
+          "title": "Efficient pandas at Scale",
+          "description": "Make pandas fast and memory-efficient on large data: pick the right dtypes, vectorize instead of looping, process in chunks, and measure memory — so your transforms scale beyond toy datasets.",
+          "tech": [
+            "Python 3.12",
+            "pandas"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-data-cleaning-transformation",
+          "path": "projects/phase-3-data-engineering/project-02-data-cleaning-transformation",
+          "title": "Data Cleaning & Transformation",
+          "description": "Turn messy real-world data into a clean dataset: handle missing values, fix types and inconsistent categories, remove duplicates, parse dates, and reshape — the unglamorous work that makes data usable.",
+          "tech": [
+            "Python 3.12",
+            "pandas"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-data-validation-pandera",
+          "path": "projects/phase-3-data-engineering/project-03-data-validation-pandera",
+          "title": "Data Validation with Pandera",
+          "description": "Stop bad data at the gate: declare schemas with Pandera that enforce types, ranges, nullability, uniqueness, and custom rules — failing loudly when input violates expectations instead of silently corrupting downstream data.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "pandera"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-etl-pipeline-design",
+          "path": "projects/phase-3-data-engineering/project-04-etl-pipeline-design",
+          "title": "Designing ETL Pipelines",
+          "description": "Structure data pipelines properly: separate Extract, Transform, and Load into composable stages, understand ETL vs ELT, and build a pipeline that's modular, testable, idempotent, and observable.",
+          "tech": [
+            "Python 3.12",
+            "pandas"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-sql-databases-sqlalchemy",
+          "path": "projects/phase-3-data-engineering/project-05-sql-databases-sqlalchemy",
+          "title": "SQL Databases with SQLAlchemy",
+          "description": "Move data in and out of relational databases efficiently: connect with SQLAlchemy Core, run parameterized queries safely, bulk-load with pandas, and use transactions — the load layer of real pipelines.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "pandas",
+            "psycopg"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-data-warehousing-dimensional",
+          "path": "projects/phase-3-data-engineering/project-06-data-warehousing-dimensional",
+          "title": "Data Warehousing & Dimensional Modeling",
+          "description": "Model data for analytics: understand warehouses vs OLTP databases, design star schemas with fact and dimension tables, handle slowly changing dimensions, and build a dimensional model from raw data.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-columnar-parquet",
+          "path": "projects/phase-3-data-engineering/project-07-columnar-parquet",
+          "title": "Columnar Storage with Parquet",
+          "description": "Store analytical data efficiently: use Parquet's columnar format for fast, compressed, typed reads, partition datasets for query pruning, and understand why columnar beats CSV/row formats for analytics.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "pyarrow"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-incremental-idempotent-loads",
+          "path": "projects/phase-3-data-engineering/project-08-incremental-idempotent-loads",
+          "title": "Incremental & Idempotent Loads",
+          "description": "Load only what changed, safely: track high-water marks, detect changes, implement upserts/merge, design idempotent loads that survive retries and backfills without duplicating data — the heart of production pipelines.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "pandas"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-data-quality-monitoring",
+          "path": "projects/phase-3-data-engineering/project-09-data-quality-monitoring",
+          "title": "Data Quality Checks & Monitoring",
+          "description": "Keep data trustworthy over time: define quality dimensions and checks (completeness, freshness, uniqueness, distribution), run them as automated gates, monitor for anomalies, and alert when data quality degrades.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "pandera"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-bigdata-orchestration",
+      "title": "Big Data & Orchestration",
+      "goal": "Scale and schedule pipelines with PySpark, Airflow, dbt, and streaming.",
+      "projectCount": 9,
+      "projects": [
+        {
+          "slug": "project-01-pyspark-fundamentals",
+          "path": "projects/phase-4-bigdata-orchestration/project-01-pyspark-fundamentals",
+          "title": "PySpark Fundamentals",
+          "description": "Process data that doesn't fit on one machine: understand distributed computing, create a SparkSession, load and explore data as a Spark DataFrame, and grasp how Spark partitions and parallelizes work across a cluster.",
+          "tech": [
+            "Python 3.12",
+            "PySpark"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-spark-transformations-actions",
+          "path": "projects/phase-4-bigdata-orchestration/project-02-spark-transformations-actions",
+          "title": "Spark Transformations & Actions",
+          "description": "Understand Spark's execution model: lazy transformations build a plan, actions trigger it, and wide transformations cause shuffles. Read the DAG, know what's expensive, and reason about how Spark runs your code.",
+          "tech": [
+            "Python 3.12",
+            "PySpark"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-spark-sql-joins-aggregations",
+          "path": "projects/phase-4-bigdata-orchestration/project-03-spark-sql-joins-aggregations",
+          "title": "Spark SQL, Joins & Aggregations",
+          "description": "Transform big data with Spark SQL: write SQL against DataFrames, join large datasets, aggregate and window at scale, and understand join strategies (shuffle vs broadcast) that determine performance.",
+          "tech": [
+            "Python 3.12",
+            "PySpark",
+            "Spark SQL"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-spark-performance-tuning",
+          "path": "projects/phase-4-bigdata-orchestration/project-04-spark-performance-tuning",
+          "title": "Spark Performance Tuning",
+          "description": "Make Spark jobs fast: minimize shuffles, cache reused data, control partitioning, fix data skew, and read the Spark UI to find bottlenecks — the optimization skills that turn hours into minutes.",
+          "tech": [
+            "Python 3.12",
+            "PySpark"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-airflow-dags",
+          "path": "projects/phase-4-bigdata-orchestration/project-05-airflow-dags",
+          "title": "Workflow Orchestration with Airflow",
+          "description": "Schedule and orchestrate pipelines: model a workflow as an Airflow DAG of tasks with dependencies, schedule it, and understand operators, the scheduler, and how Airflow runs and tracks data pipelines.",
+          "tech": [
+            "Python 3.12",
+            "Apache Airflow"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-airflow-production-patterns",
+          "path": "projects/phase-4-bigdata-orchestration/project-06-airflow-production-patterns",
+          "title": "Production Airflow: Retries, Sensors, Backfills & Idempotency",
+          "description": "Make orchestrated pipelines production-grade: idempotent tasks parameterized by execution date, retries and alerting, sensors that wait for data, and safe backfills of historical windows.",
+          "tech": [
+            "Python 3.12",
+            "Apache Airflow"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-dbt-analytics-engineering",
+          "path": "projects/phase-4-bigdata-orchestration/project-07-dbt-analytics-engineering",
+          "title": "Analytics Engineering with dbt",
+          "description": "Transform data in the warehouse the modern way: build dbt models as SQL SELECTs, layer staging→marts, add tests and documentation, and use refs/lineage — the ELT 'T' that analytics teams run on.",
+          "tech": [
+            "Python 3.12",
+            "dbt"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-streaming-kafka",
+          "path": "projects/phase-4-bigdata-orchestration/project-08-streaming-kafka",
+          "title": "Streaming Data with Kafka",
+          "description": "Process data as it arrives, not in nightly batches: understand event streaming, produce and consume messages with Kafka, grasp topics/partitions/offsets/consumer groups, and reason about batch vs streaming.",
+          "tech": [
+            "Python 3.12",
+            "Kafka",
+            "confluent-kafka"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-spark-structured-streaming",
+          "path": "projects/phase-4-bigdata-orchestration/project-09-spark-structured-streaming",
+          "title": "Stream Processing with Spark Structured Streaming",
+          "description": "Compute on streams with the same DataFrame API as batch: read a stream, apply transformations and windowed aggregations, handle event-time and late data with watermarks, and write results with checkpointing for fault tolerance.",
+          "tech": [
+            "Python 3.12",
+            "PySpark",
+            "Structured Streaming"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-cloud-reliability",
+      "title": "Cloud, Testing & Reliability",
+      "goal": "Ship pipelines: cloud SDKs, containers, CI/CD, testing, logging, and observability.",
+      "projectCount": 9,
+      "projects": [
+        {
+          "slug": "project-01-cloud-storage-boto3",
+          "path": "projects/phase-5-cloud-reliability/project-01-cloud-storage-boto3",
+          "title": "Cloud Storage with boto3 (AWS SDK)",
+          "description": "Work with cloud infrastructure from Python: use boto3 to read/write S3 (the data lake), handle credentials securely, stream large objects, and understand object storage as the foundation of cloud data platforms.",
+          "tech": [
+            "Python 3.12",
+            "boto3",
+            "AWS S3"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-containerizing-jobs-docker",
+          "path": "projects/phase-5-cloud-reliability/project-02-containerizing-jobs-docker",
+          "title": "Containerizing Data Jobs with Docker",
+          "description": "Package a pipeline so it runs identically everywhere: write a Dockerfile, build a lean image, pass config via environment, handle dependencies, and run your job as a reproducible container.",
+          "tech": [
+            "Python 3.12",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-testing-data-pipelines-pytest",
+          "path": "projects/phase-5-cloud-reliability/project-03-testing-data-pipelines-pytest",
+          "title": "Testing Data Pipelines with pytest",
+          "description": "Test pipelines like software: unit-test pure transforms, use fixtures and sample data, test edge cases, mock external systems, and add data-quality assertions — so changes don't silently break your data.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "pandas"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-cicd-github-actions",
+          "path": "projects/phase-5-cloud-reliability/project-04-cicd-github-actions",
+          "title": "CI/CD for Data Pipelines with GitHub Actions",
+          "description": "Automate quality and deployment: build a GitHub Actions workflow that lints, tests, and builds your pipeline on every push, then deploys (e.g. pushes an image) — so changes are validated and shipped automatically.",
+          "tech": [
+            "Python 3.12",
+            "GitHub Actions",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-config-secrets-management",
+          "path": "projects/phase-5-cloud-reliability/project-05-config-secrets-management",
+          "title": "Configuration & Secrets Management",
+          "description": "Manage config and secrets the right way: separate config from code (12-factor), layer env/files/defaults, validate config with Pydantic Settings, and pull secrets from a secrets manager instead of env or code.",
+          "tech": [
+            "Python 3.12",
+            "pydantic-settings",
+            "AWS Secrets Manager"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-logging-monitoring-observability",
+          "path": "projects/phase-5-cloud-reliability/project-06-logging-monitoring-observability",
+          "title": "Logging, Monitoring & Observability",
+          "description": "See what your pipelines are doing: emit structured logs, expose metrics, trace runs, and build the observability that lets you answer 'is it healthy?' and debug failures fast — the difference between flying blind and operating with confidence.",
+          "tech": [
+            "Python 3.12",
+            "logging",
+            "Prometheus"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-reliability-patterns",
+          "path": "projects/phase-5-cloud-reliability/project-07-reliability-patterns",
+          "title": "Reliability Patterns for Pipelines",
+          "description": "Design pipelines that survive failure: retries with backoff, idempotency, dead-letter queues for poison records, circuit breakers and timeouts for flaky dependencies, and graceful degradation — so partial failures don't become outages or corrupt data.",
+          "tech": [
+            "Python 3.12",
+            "tenacity"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-serverless-event-driven",
+          "path": "projects/phase-5-cloud-reliability/project-08-serverless-event-driven",
+          "title": "Serverless & Event-Driven Data Processing",
+          "description": "Process data without managing servers: write a function (AWS Lambda) triggered by events (a file landing in S3, a queue message), understand the serverless model and its tradeoffs, and design event-driven pipelines.",
+          "tech": [
+            "Python 3.12",
+            "AWS Lambda",
+            "S3",
+            "SQS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-capstone-production-pipeline",
+          "path": "projects/phase-5-cloud-reliability/project-09-capstone-production-pipeline",
+          "title": "Capstone — Production Data Pipeline",
+          "description": "Build a complete, production-grade data pipeline end to end: ingest from a source, validate and transform, load to a warehouse with incremental/idempotent loads and quality gates, orchestrated/scheduled, tested, containerized, with logging and alerting — integrating every skill in the track.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "SQLAlchemy",
+            "Airflow",
+            "Docker",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
