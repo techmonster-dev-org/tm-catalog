@@ -1,0 +1,668 @@
+{
+  "id": "python-web",
+  "title": "Python Web & Backend Engineering",
+  "tagline": "Build production web backends and full-stack apps in Python: HTTP and ASGI foundations, REST APIs with FastAPI, databases and ORMs (SQLAlchemy, Django), authentication and security, async and real-ti…",
+  "level": null,
+  "stack": [
+    "Python 3.12",
+    "FastAPI",
+    "Flask",
+    "Django",
+    "Pydantic",
+    "SQLAlchemy",
+    "PostgreSQL",
+    "Docker",
+    "pytest"
+  ],
+  "targetRoles": [
+    "Backend Engineer (Python)",
+    "Full-Stack Engineer (Python)",
+    "API Engineer",
+    "Software Engineer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 45,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Build production web backends and full-stack apps in Python: HTTP and ASGI foundations, REST APIs with FastAPI, databases and ORMs (SQLAlchemy, Django), authentication and security, async and real-time features, and shipping with Django, DRF, testing, and Docker. Covers the FastAPI/Django/Flask ecosystem end to end for Python backend and full-stack roles.",
+  "environment": [],
+  "capstone": {
+    "title": "Deployed full-stack Python web application",
+    "project": "Ship a deployed, authenticated web app or API backed by a real database, with migrations, tests for a core flow, a background job or real-time feature, and a documented architecture."
+  },
+  "phases": [
+    {
+      "id": "phase-1-http-foundations",
+      "title": "Web & HTTP Foundations",
+      "goal": "Understand HTTP, WSGI/ASGI, and serve requests with Flask and FastAPI.",
+      "projectCount": 7,
+      "projects": [
+        {
+          "slug": "project-01-http-fundamentals",
+          "path": "projects/phase-1-http-foundations/project-01-http-fundamentals",
+          "title": "HTTP Fundamentals & a No-Framework Server",
+          "description": "Build a tiny HTTP server with no web framework to learn methods, status codes, headers, and the request/response cycle — plus WSGI vs ASGI.",
+          "tech": [
+            "Python 3.12",
+            "http.server",
+            "WSGI"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-flask-first-app",
+          "path": "projects/phase-1-http-foundations/project-02-flask-first-app",
+          "title": "Your First Flask App",
+          "description": "Build a small Flask web app with routes, request handling, and JSON responses — your first real (WSGI) web framework after the no-framework server.",
+          "tech": [
+            "Python 3.12",
+            "Flask"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-fastapi-first-app",
+          "path": "projects/phase-1-http-foundations/project-03-fastapi-first-app",
+          "title": "Your First FastAPI App",
+          "description": "Build a FastAPI app with type-hinted path operations, automatic validation, and auto-generated interactive docs — the modern async Python API framework.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "uvicorn",
+            "pydantic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-routing-params-responses",
+          "path": "projects/phase-1-http-foundations/project-04-routing-params-responses",
+          "title": "Routing, Parameters & Response Models",
+          "description": "Master FastAPI's parameter system — path, query, and body params with validation constraints — and response_model for shaping and filtering output.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "pydantic"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-jinja2-server-rendering",
+          "path": "projects/phase-1-http-foundations/project-05-jinja2-server-rendering",
+          "title": "Server-Side Rendering with Jinja2",
+          "description": "Render HTML pages from templates with Jinja2: template inheritance, passing data, loops/conditionals, and why autoescaping protects against XSS.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Jinja2"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-htmx-dynamic-ui",
+          "path": "projects/phase-1-http-foundations/project-06-htmx-dynamic-ui",
+          "title": "Dynamic UIs with HTMX",
+          "description": "Add interactivity to server-rendered pages using HTMX — swap HTML fragments returned by your backend on user actions, no JavaScript framework required.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Jinja2",
+            "HTMX"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-calling-external-apis",
+          "path": "projects/phase-1-http-foundations/project-07-calling-external-apis",
+          "title": "Calling External APIs (httpx)",
+          "description": "Make your backend an HTTP client: call third-party APIs with httpx (sync and async), handle timeouts, retries, and errors, and keep API keys server-side.",
+          "tech": [
+            "Python 3.12",
+            "httpx",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-apis-validation",
+      "title": "REST APIs & Validation",
+      "goal": "Design clean REST APIs with FastAPI and Pydantic — params, validation, errors, docs, pagination, uploads.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-rest-api-design",
+          "path": "projects/phase-2-apis-validation/project-01-rest-api-design",
+          "title": "REST API Design",
+          "description": "Design and build a clean CRUD REST API for a resource: correct HTTP verbs and status codes, consistent resource URLs, and predictable behavior.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "pydantic"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-pydantic-validation",
+          "path": "projects/phase-2-apis-validation/project-02-pydantic-validation",
+          "title": "Deep Validation with Pydantic",
+          "description": "Go beyond basic types: field constraints, custom validators, nested models, computed fields, and clear validation errors — making your API reject bad data at the edge.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "pydantic"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-error-handling-contracts",
+          "path": "projects/phase-2-apis-validation/project-03-error-handling-contracts",
+          "title": "Error Handling & Contracts",
+          "description": "Give your API one consistent error shape with custom exceptions and FastAPI exception handlers, so clients always get predictable, useful errors without leaking internals.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-dependency-injection",
+          "path": "projects/phase-2-apis-validation/project-04-dependency-injection",
+          "title": "Dependency Injection",
+          "description": "Use FastAPI's Depends to share logic across endpoints — DB sessions, current-user lookup, pagination params, config — keeping handlers clean and testable.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-pagination-filtering-sorting",
+          "path": "projects/phase-2-apis-validation/project-05-pagination-filtering-sorting",
+          "title": "Pagination, Filtering & Sorting",
+          "description": "Add scalable list endpoints: offset and cursor pagination, safe filtering and sorting, and metadata so clients can page through large datasets without dumping the whole table.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-file-uploads",
+          "path": "projects/phase-2-apis-validation/project-06-file-uploads",
+          "title": "File Uploads",
+          "description": "Accept file uploads safely in FastAPI: enforce type and size limits, store files, serve them back, and reject dangerous or oversized files.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "python-multipart"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-api-versioning",
+          "path": "projects/phase-2-apis-validation/project-07-api-versioning",
+          "title": "API Versioning",
+          "description": "Evolve an API without breaking existing clients: URL vs header versioning, organizing versioned routers, and a deprecation strategy.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "APIRouter"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-openapi-customization",
+          "path": "projects/phase-2-apis-validation/project-08-openapi-customization",
+          "title": "OpenAPI & Docs Customization",
+          "description": "Polish your API's auto-generated OpenAPI docs: tags, summaries, descriptions, examples, response documentation, and metadata — so the interactive docs are genuinely useful.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "OpenAPI"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-db-orm",
+      "title": "Databases & ORMs",
+      "goal": "Model and query relational data with SQLAlchemy and Django ORM, with migrations and transactions.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-sqlalchemy-core",
+          "path": "projects/phase-3-db-orm/project-01-sqlalchemy-core",
+          "title": "SQLAlchemy Core & Connections",
+          "description": "Connect to a database and run queries with SQLAlchemy Core: engine, connections, parameterized statements, and the connection lifecycle — the layer the ORM is built on.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "SQLite"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-sqlalchemy-orm",
+          "path": "projects/phase-3-db-orm/project-02-sqlalchemy-orm",
+          "title": "SQLAlchemy ORM",
+          "description": "Map Python classes to database tables with the SQLAlchemy ORM: declarative models, sessions, and full CRUD using objects instead of raw SQL.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "SQLite"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-relationships-joins",
+          "path": "projects/phase-3-db-orm/project-03-relationships-joins",
+          "title": "Relationships & Joins",
+          "description": "Model connections between tables — one-to-many and many-to-many — with foreign keys and SQLAlchemy relationships, and query across them with joins.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "SQLite"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-n-plus-1-eager-loading",
+          "path": "projects/phase-3-db-orm/project-04-n-plus-1-eager-loading",
+          "title": "The N+1 Problem & Eager Loading",
+          "description": "Diagnose and fix the N+1 query problem — the most common ORM performance bug — using eager loading (joinedload/selectinload) and query inspection.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "SQLite"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-alembic-migrations",
+          "path": "projects/phase-3-db-orm/project-05-alembic-migrations",
+          "title": "Schema Migrations with Alembic",
+          "description": "Manage database schema changes with Alembic: generate migrations from model changes, apply and roll them back, and keep environments in sync.",
+          "tech": [
+            "Python 3.12",
+            "Alembic",
+            "SQLAlchemy"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-transactions-integrity",
+          "path": "projects/phase-3-db-orm/project-06-transactions-integrity",
+          "title": "Transactions & Data Integrity",
+          "description": "Make multi-step database operations all-or-nothing with transactions (commit/rollback), and use constraints and isolation to keep data consistent under concurrency.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy",
+            "SQLite"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-django-orm",
+          "path": "projects/phase-3-db-orm/project-07-django-orm",
+          "title": "The Django ORM",
+          "description": "Use Django's batteries-included ORM: models, the QuerySet API, migrations, relationships, and the admin — contrasting it with SQLAlchemy.",
+          "tech": [
+            "Python 3.12",
+            "Django"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-repository-pattern",
+          "path": "projects/phase-3-db-orm/project-08-repository-pattern",
+          "title": "The Repository Pattern",
+          "description": "Decouple business logic from data access with a repository layer, so your code depends on an interface (not the ORM) and is easy to test and swap.",
+          "tech": [
+            "Python 3.12",
+            "SQLAlchemy"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-auth-security",
+      "title": "Authentication & Security",
+      "goal": "Secure an API: password hashing, JWT/OAuth, sessions, RBAC, CSRF/CORS, rate limiting.",
+      "projectCount": 7,
+      "projects": [
+        {
+          "slug": "project-01-password-hashing",
+          "path": "projects/phase-4-auth-security/project-01-password-hashing",
+          "title": "Password Hashing",
+          "description": "Store passwords safely: hash with a slow, salted algorithm (bcrypt/argon2), verify on login, and learn why you must never store or encrypt plaintext passwords.",
+          "tech": [
+            "Python 3.12",
+            "passlib",
+            "bcrypt"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-jwt-authentication",
+          "path": "projects/phase-4-auth-security/project-02-jwt-authentication",
+          "title": "JWT Authentication",
+          "description": "Implement token-based auth in FastAPI: issue a signed JWT on login, protect routes by verifying it, and understand what a JWT is, what it isn't, and where to store it.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "PyJWT"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-oauth2-social-login",
+          "path": "projects/phase-4-auth-security/project-03-oauth2-social-login",
+          "title": "OAuth2 & Social Login",
+          "description": "Let users log in with a third-party provider (Google/GitHub) via the OAuth2 authorization-code flow, learning what OAuth delegates and why you never handle the user's provider password.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Authlib"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-sessions-cookies",
+          "path": "projects/phase-4-auth-security/project-04-sessions-cookies",
+          "title": "Sessions & Cookies",
+          "description": "Implement classic server-side session auth with secure cookies: create a session on login, store it server-side, and set cookies with the right security flags.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-rbac-authorization",
+          "path": "projects/phase-4-auth-security/project-05-rbac-authorization",
+          "title": "Authorization & RBAC",
+          "description": "Control what authenticated users can do with role-based access control: assign roles, restrict endpoints by role, deny by default, and keep checks where they can't be bypassed.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-csrf-cors-security",
+          "path": "projects/phase-4-auth-security/project-06-csrf-cors-security",
+          "title": "CSRF, CORS & Web Security",
+          "description": "Defend against cross-site attacks: configure CORS correctly, protect against CSRF, and apply key web-security headers and input-handling habits.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-rate-limiting",
+          "path": "projects/phase-4-auth-security/project-07-rate-limiting",
+          "title": "Rate Limiting",
+          "description": "Protect endpoints from abuse with per-client rate limiting: implement a limiter, return 429 with the right headers, and understand fixed-window vs token-bucket and why in-memory limits fail at scale.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Redis"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-async-realtime",
+      "title": "Async & Real-Time",
+      "goal": "Build async endpoints, WebSockets, SSE, background jobs (Celery), and caching.",
+      "projectCount": 7,
+      "projects": [
+        {
+          "slug": "project-01-async-endpoints-db",
+          "path": "projects/phase-5-async-realtime/project-01-async-endpoints-db",
+          "title": "Async Endpoints & Async Databases",
+          "description": "Write truly async FastAPI endpoints with an async database driver, learning when async helps, the danger of blocking calls in async code, and async sessions.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "SQLAlchemy async",
+            "asyncpg"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-websockets",
+          "path": "projects/phase-5-async-realtime/project-02-websockets",
+          "title": "WebSockets",
+          "description": "Build real-time, bidirectional communication with WebSockets in FastAPI: a chat/broadcast server that pushes messages to connected clients instantly.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "WebSockets"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-server-sent-events",
+          "path": "projects/phase-5-async-realtime/project-03-server-sent-events",
+          "title": "Server-Sent Events (SSE)",
+          "description": "Stream one-way real-time updates from server to client with Server-Sent Events — simpler than WebSockets for live feeds, notifications, and progress updates.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "SSE"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-background-tasks",
+          "path": "projects/phase-5-async-realtime/project-04-background-tasks",
+          "title": "Background Tasks",
+          "description": "Do slow work after responding using FastAPI BackgroundTasks — send emails, write logs, process data without making the client wait — and learn its limits.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-celery-redis-jobs",
+          "path": "projects/phase-5-async-realtime/project-05-celery-redis-jobs",
+          "title": "Distributed Jobs with Celery & Redis",
+          "description": "Run durable, scalable background jobs with Celery and a Redis broker: enqueue tasks, process them in separate workers, track status, and handle retries and failures.",
+          "tech": [
+            "Python 3.12",
+            "Celery",
+            "Redis",
+            "FastAPI"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-caching",
+          "path": "projects/phase-5-async-realtime/project-06-caching",
+          "title": "Caching with Redis",
+          "description": "Speed up expensive reads by caching results in Redis: cache-aside pattern, TTLs, and correct invalidation on writes — the classic performance win with the classic hard problem.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Redis"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-streaming-responses",
+          "path": "projects/phase-5-async-realtime/project-07-streaming-responses",
+          "title": "Streaming Responses",
+          "description": "Stream large or generated responses instead of building them fully in memory: StreamingResponse for big files/exports and chunked generation, keeping memory flat.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-frameworks-deploy",
+      "title": "Frameworks, Testing & Deployment",
+      "goal": "Ship with Django/DRF, GraphQL, automated tests, and a deployed, containerized service.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-django-full-app",
+          "path": "projects/phase-6-frameworks-deploy/project-01-django-full-app",
+          "title": "A Full Django App",
+          "description": "Build a complete Django app end to end: models, migrations, views, URL routing, templates, and forms — using Django's integrated, convention-driven stack.",
+          "tech": [
+            "Python 3.12",
+            "Django"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-django-rest-framework",
+          "path": "projects/phase-6-frameworks-deploy/project-02-django-rest-framework",
+          "title": "Django REST Framework",
+          "description": "Build a REST API the Django way with DRF: serializers, viewsets, routers, and the browsable API — getting full CRUD endpoints with minimal code.",
+          "tech": [
+            "Python 3.12",
+            "Django",
+            "Django REST Framework"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-graphql-strawberry",
+          "path": "projects/phase-6-frameworks-deploy/project-03-graphql-strawberry",
+          "title": "GraphQL with Strawberry",
+          "description": "Build a GraphQL API with Strawberry: define a schema with types, queries, and mutations, and learn how GraphQL differs from REST — and its tradeoffs like the N+1 problem.",
+          "tech": [
+            "Python 3.12",
+            "Strawberry",
+            "FastAPI"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-testing-apis",
+          "path": "projects/phase-6-frameworks-deploy/project-04-testing-apis",
+          "title": "Testing Web APIs",
+          "description": "Write automated tests for a FastAPI app with TestClient and pytest: test endpoints end-to-end, cover success and failure paths, and override dependencies to isolate the unit under test.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-database-testing",
+          "path": "projects/phase-6-frameworks-deploy/project-05-database-testing",
+          "title": "Database Testing",
+          "description": "Test code that uses a database against a real test database with fixtures and per-test isolation (transaction rollback), so tests are realistic yet fast and independent.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "SQLAlchemy",
+            "pytest"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-containerize-and-serve",
+          "path": "projects/phase-6-frameworks-deploy/project-06-containerize-and-serve",
+          "title": "Containerize & Serve in Production",
+          "description": "Package a FastAPI app in Docker and run it with a production ASGI server (uvicorn workers / gunicorn), with multiple workers, health checks, and reverse-proxy awareness.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Docker",
+            "gunicorn",
+            "uvicorn"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-logging-and-config",
+          "path": "projects/phase-6-frameworks-deploy/project-07-logging-and-config",
+          "title": "Logging, Config & Observability",
+          "description": "Make a web app operable: structured request logging, environment-based settings (Pydantic Settings), and basic observability so you can debug production from logs.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "pydantic-settings"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-deployment",
+          "path": "projects/phase-6-frameworks-deploy/project-08-deployment",
+          "title": "Deploying to Production",
+          "description": "Deploy your containerized app to a reachable URL with a hosted database, production config, and a deploy checklist — the last mile that makes your work real.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Docker",
+            "cloud"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
