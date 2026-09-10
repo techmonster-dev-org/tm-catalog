@@ -1,0 +1,1301 @@
+{
+  "id": "frontend",
+  "title": "Frontend Engineering",
+  "tagline": "Job-ready modern frontend: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio.",
+  "level": null,
+  "stack": [
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js"
+  ],
+  "targetRoles": [
+    "Frontend Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "UI Engineer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 5,
+  "projectCount": 72,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Job-ready modern frontend: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio. Migrated from the original STUDENT-GUIDE.md as the reference track.",
+  "environment": [],
+  "capstone": {
+    "title": "Full portfolio + blog + project hub",
+    "project": "A deployed Next.js + TypeScript portfolio that auto-showcases your work, with a blog and a project hub."
+  },
+  "phases": [
+    {
+      "id": "phase-1-git-basics",
+      "title": "Computer & Git Basics",
+      "goal": "Understand your development environment and version control.",
+      "projectCount": 7,
+      "projects": [
+        {
+          "slug": "project-01-basic-computer-dos-commands",
+          "path": "projects/phase-1-git-basics/project-01-basic-computer-dos-commands",
+          "title": "Basic Computer/DOS Commands",
+          "description": "Create notes + demo screen recording",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-vs-code-setup-extensions",
+          "path": "projects/phase-1-git-basics/project-02-vs-code-setup-extensions",
+          "title": "VS Code Setup + Extensions",
+          "description": "Create a `work/README.md` personal page",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-git-cli-basics",
+          "path": "projects/phase-1-git-basics/project-03-git-cli-basics",
+          "title": "Git CLI Basics",
+          "description": "Push your first repo to GitHub",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-git-branch-commit-merge-pull-request",
+          "path": "projects/phase-1-git-basics/project-04-git-branch-commit-merge-pull-request",
+          "title": "Git Branch, Commit, Merge, Pull Request",
+          "description": "Repo with a branch workflow demo",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-git-via-vs-code-gui",
+          "path": "projects/phase-1-git-basics/project-05-git-via-vs-code-gui",
+          "title": "Git Via VS Code GUI",
+          "description": "Clone + commit via the VS Code Source Control panel",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-markdown-basics",
+          "path": "projects/phase-1-git-basics/project-06-markdown-basics",
+          "title": "Markdown Basics",
+          "description": "Portfolio homepage written in Markdown",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-terminal-navigation-ls-cd-cat-mkdir",
+          "path": "projects/phase-1-git-basics/project-07-terminal-navigation-ls-cd-cat-mkdir",
+          "title": "Terminal Navigation (ls, Cd, Cat, Mkdir)",
+          "description": "Build a folder structure + `work/README.md`",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-html-css",
+      "title": "HTML & CSS",
+      "goal": "Build beautiful, responsive web pages with HTML, CSS, and Tailwind.",
+      "projectCount": 12,
+      "projects": [
+        {
+          "slug": "project-01-html-tags",
+          "path": "projects/phase-2-html-css/project-01-html-tags",
+          "title": "HTML Tags",
+          "description": "Personal bio page",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-css-basics-selectors",
+          "path": "projects/phase-2-html-css/project-02-css-basics-selectors",
+          "title": "CSS Basics, Selectors",
+          "description": "Styled resume page",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-flexbox",
+          "path": "projects/phase-2-html-css/project-03-flexbox",
+          "title": "Flexbox",
+          "description": "Profile + social links layout",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-css-grid",
+          "path": "projects/phase-2-html-css/project-04-css-grid",
+          "title": "CSS Grid",
+          "description": "3x3 photo gallery",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-media-queries",
+          "path": "projects/phase-2-html-css/project-05-media-queries",
+          "title": "Media Queries",
+          "description": "Responsive landing page",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-forms-inputs",
+          "path": "projects/phase-2-html-css/project-06-forms-inputs",
+          "title": "Forms + Inputs",
+          "description": "Contact form",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-css-animations",
+          "path": "projects/phase-2-html-css/project-07-css-animations",
+          "title": "CSS Animations",
+          "description": "Button hover animation",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-tailwind-setup",
+          "path": "projects/phase-2-html-css/project-08-tailwind-setup",
+          "title": "Tailwind Setup",
+          "description": "Simple Tailwind page",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-tailwind-components",
+          "path": "projects/phase-2-html-css/project-09-tailwind-components",
+          "title": "Tailwind Components",
+          "description": "Tailwind navbar + hero",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-tailwind-grid-flex",
+          "path": "projects/phase-2-html-css/project-10-tailwind-grid-flex",
+          "title": "Tailwind Grid + Flex",
+          "description": "Pricing page",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-tailwind-dark-mode",
+          "path": "projects/phase-2-html-css/project-11-tailwind-dark-mode",
+          "title": "Tailwind Dark Mode",
+          "description": "Dark/light theme toggle",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-tailwind-custom-config",
+          "path": "projects/phase-2-html-css/project-12-tailwind-custom-config",
+          "title": "Tailwind Custom Config",
+          "description": "Custom color theme",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-javascript",
+      "title": "JavaScript Fundamentals",
+      "goal": "Master core JavaScript and DOM manipulation.",
+      "projectCount": 24,
+      "projects": [
+        {
+          "slug": "project-01-variables-var-let-const",
+          "path": "projects/phase-3-javascript/project-01-variables-var-let-const",
+          "title": "Variables: Var, Let, Const",
+          "description": "Calculator",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-data-types",
+          "path": "projects/phase-3-javascript/project-02-data-types",
+          "title": "Data Types",
+          "description": "Random quote generator",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-operators",
+          "path": "projects/phase-3-javascript/project-03-operators",
+          "title": "Operators",
+          "description": "Color flipper",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-strings",
+          "path": "projects/phase-3-javascript/project-04-strings",
+          "title": "Strings",
+          "description": "Todo list (localStorage)",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-arrays",
+          "path": "projects/phase-3-javascript/project-05-arrays",
+          "title": "Arrays",
+          "description": "Digital clock",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-objects",
+          "path": "projects/phase-3-javascript/project-06-objects",
+          "title": "Objects",
+          "description": "Password generator",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-functions",
+          "path": "projects/phase-3-javascript/project-07-functions",
+          "title": "Functions",
+          "description": "Notes app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-loops",
+          "path": "projects/phase-3-javascript/project-08-loops",
+          "title": "Loops",
+          "description": "Counter with save history",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-conditions",
+          "path": "projects/phase-3-javascript/project-09-conditions",
+          "title": "Conditions",
+          "description": "Typing test app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-json",
+          "path": "projects/phase-3-javascript/project-10-json",
+          "title": "JSON",
+          "description": "BMI calculator",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-dom",
+          "path": "projects/phase-3-javascript/project-11-dom",
+          "title": "DOM",
+          "description": "Weather app (public API)",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-events",
+          "path": "projects/phase-3-javascript/project-12-events",
+          "title": "Events",
+          "description": "Stopwatch",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-13-localstorage",
+          "path": "projects/phase-3-javascript/project-13-localstorage",
+          "title": "LocalStorage",
+          "description": "Expense tracker",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-14-fetch-api",
+          "path": "projects/phase-3-javascript/project-14-fetch-api",
+          "title": "Fetch API",
+          "description": "Quiz app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-15-promises",
+          "path": "projects/phase-3-javascript/project-15-promises",
+          "title": "Promises",
+          "description": "Dictionary app (API)",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-16-async-await",
+          "path": "projects/phase-3-javascript/project-16-async-await",
+          "title": "Async/await",
+          "description": "Movie search (API)",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-17-classes",
+          "path": "projects/phase-3-javascript/project-17-classes",
+          "title": "Classes",
+          "description": "Image slider",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-18-modules",
+          "path": "projects/phase-3-javascript/project-18-modules",
+          "title": "Modules",
+          "description": "Country search (REST API)",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-19-es6-features",
+          "path": "projects/phase-3-javascript/project-19-es6-features",
+          "title": "ES6 Features",
+          "description": "Drag & drop todo board",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-20-spread-rest",
+          "path": "projects/phase-3-javascript/project-20-spread-rest",
+          "title": "Spread, Rest",
+          "description": "Portfolio website",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-21-map-filter-reduce",
+          "path": "projects/phase-3-javascript/project-21-map-filter-reduce",
+          "title": "Map/filter/reduce",
+          "description": "Data visualization dashboard",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-22-debounce-and-throttle",
+          "path": "projects/phase-3-javascript/project-22-debounce-and-throttle",
+          "title": "Debounce & Throttle",
+          "description": "Search with debounce",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-23-event-bubbling",
+          "path": "projects/phase-3-javascript/project-23-event-bubbling",
+          "title": "Event Bubbling",
+          "description": "Event propagation demo",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-24-cookies-vs-localstorage",
+          "path": "projects/phase-3-javascript/project-24-cookies-vs-localstorage",
+          "title": "Cookies Vs LocalStorage",
+          "description": "User preferences app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-typescript",
+      "title": "TypeScript",
+      "goal": "Add type safety to your JavaScript.",
+      "projectCount": 10,
+      "projects": [
+        {
+          "slug": "project-01-types-vs-interfaces",
+          "path": "projects/phase-4-typescript/project-01-types-vs-interfaces",
+          "title": "Types Vs Interfaces",
+          "description": "Convert JS Calculator to TS",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-primitives",
+          "path": "projects/phase-4-typescript/project-02-primitives",
+          "title": "Primitives",
+          "description": "TypeScript Todo App",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-union-intersection",
+          "path": "projects/phase-4-typescript/project-03-union-intersection",
+          "title": "Union, Intersection",
+          "description": "Data types playground",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-optional-readonly",
+          "path": "projects/phase-4-typescript/project-04-optional-readonly",
+          "title": "Optional, Readonly",
+          "description": "Form validation with TS",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-function-types",
+          "path": "projects/phase-4-typescript/project-05-function-types",
+          "title": "Function Types",
+          "description": "API fetch + TS typing",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-generics",
+          "path": "projects/phase-4-typescript/project-06-generics",
+          "title": "Generics",
+          "description": "Rebuild quiz app in TS",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-modules",
+          "path": "projects/phase-4-typescript/project-07-modules",
+          "title": "Modules",
+          "description": "Rebuild expense tracker in TS",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-tsconfig",
+          "path": "projects/phase-4-typescript/project-08-tsconfig",
+          "title": "Tsconfig",
+          "description": "TS utility functions library",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-enums",
+          "path": "projects/phase-4-typescript/project-09-enums",
+          "title": "Enums",
+          "description": "Weather app in TS",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-type-narrowing",
+          "path": "projects/phase-4-typescript/project-10-type-narrowing",
+          "title": "Type Narrowing",
+          "description": "Portfolio rebuild in TS",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-react-nextjs",
+      "title": "React & Next.js",
+      "goal": "Build modern, interactive web applications.",
+      "projectCount": 19,
+      "projects": [
+        {
+          "slug": "project-01-jsx",
+          "path": "projects/phase-5-react-nextjs/project-01-jsx",
+          "title": "JSX",
+          "description": "First React app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-components",
+          "path": "projects/phase-5-react-nextjs/project-02-components",
+          "title": "Components",
+          "description": "Counter app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-props",
+          "path": "projects/phase-5-react-nextjs/project-03-props",
+          "title": "Props",
+          "description": "Todo list",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-state",
+          "path": "projects/phase-5-react-nextjs/project-04-state",
+          "title": "State",
+          "description": "Notes app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-usestate",
+          "path": "projects/phase-5-react-nextjs/project-05-usestate",
+          "title": "UseState",
+          "description": "Weather app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-useeffect",
+          "path": "projects/phase-5-react-nextjs/project-06-useeffect",
+          "title": "UseEffect",
+          "description": "Movie search",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-useref",
+          "path": "projects/phase-5-react-nextjs/project-07-useref",
+          "title": "UseRef",
+          "description": "GitHub user finder",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-usememo",
+          "path": "projects/phase-5-react-nextjs/project-08-usememo",
+          "title": "UseMemo",
+          "description": "Recipe finder",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-usecallback",
+          "path": "projects/phase-5-react-nextjs/project-09-usecallback",
+          "title": "UseCallback",
+          "description": "Image gallery",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-context-api",
+          "path": "projects/phase-5-react-nextjs/project-10-context-api",
+          "title": "Context API",
+          "description": "Pagination list",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-custom-hooks",
+          "path": "projects/phase-5-react-nextjs/project-11-custom-hooks",
+          "title": "Custom Hooks",
+          "description": "Tabs UI",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-component-composition",
+          "path": "projects/phase-5-react-nextjs/project-12-component-composition",
+          "title": "Component Composition",
+          "description": "Accordion",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-13-next-js-app-router",
+          "path": "projects/phase-5-react-nextjs/project-13-next-js-app-router",
+          "title": "Next.js App Router",
+          "description": "First Next.js app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-14-dynamic-routes",
+          "path": "projects/phase-5-react-nextjs/project-14-dynamic-routes",
+          "title": "Dynamic Routes",
+          "description": "Blog dynamic route",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-15-server-vs-client-components",
+          "path": "projects/phase-5-react-nextjs/project-15-server-vs-client-components",
+          "title": "Server Vs Client Components",
+          "description": "Weather app in Next",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-16-data-fetching",
+          "path": "projects/phase-5-react-nextjs/project-16-data-fetching",
+          "title": "Data Fetching",
+          "description": "News feed (API)",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-17-react-query-swr",
+          "path": "projects/phase-5-react-nextjs/project-17-react-query-swr",
+          "title": "React Query / SWR",
+          "description": "Custom hooks library",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-18-react-hook-form",
+          "path": "projects/phase-5-react-nextjs/project-18-react-hook-form",
+          "title": "React Hook Form",
+          "description": "Form builder",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-19-deployment-vercel",
+          "path": "projects/phase-5-react-nextjs/project-19-deployment-vercel",
+          "title": "Deployment (Vercel)",
+          "description": "Deploy your app",
+          "tech": [
+            "HTML",
+            "CSS",
+            "Tailwind CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next.js"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
