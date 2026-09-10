@@ -1,0 +1,746 @@
+{
+  "id": "robotics-humanoid",
+  "title": "Robotics & Humanoid Systems Engineering",
+  "tagline": "Make C++ move in the physical world.",
+  "level": null,
+  "stack": [
+    "C++17/20",
+    "Eigen",
+    "ROS 2",
+    "Python",
+    "MuJoCo / Isaac Sim"
+  ],
+  "targetRoles": [
+    "Robotics Software Engineer",
+    "Humanoid / Controls Engineer",
+    "Perception / SLAM Engineer",
+    "Embedded Robotics Engineer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Make C++ move in the physical world. This is the robotics specialization: you build the real-time stack behind humanoid and mobile robots — the rotation math and kinematics that place a limb where you want it, the dynamics and classical control (PID through MPC) that make it move stably, the Kalman-filter state estimation and sensor fusion that tell the robot where it is, the perception and SLAM that let it see and map, the ROS 2 / embedded / real-time-Linux software layer (with CAN and EtherCAT to the actuators), and finally physics simulation plus the learning layer (RL, imitation, and vision-language-action policies) that increasingly drives modern humanoids. The capstone trains and deploys a locomotion or manipulation policy in simulation with a C++ control loop — no hardware required. Built on the C++ and systems foundations of the program, this is Branch C of the Zero-to-Low-Level-Systems-Elite path — the route into Tesla Optimus, Figure, 1X, Apptronik, and the humanoid companies pulling senior C++ talent hard.",
+  "environment": [],
+  "capstone": {
+    "title": "Sim-to-Control — A Locomotion or Manipulation Policy with a C++ Control Loop",
+    "project": "Build a complete, hardware-free robotics capstone in simulation (MuJoCo or Isaac): set up a robot (a quadruped/biped for locomotion or an arm for manipulation), implement a controller that closes the loop in real time — a classical controller (PID/MPC) and/or a trained RL/imitation policy — and demonstrate the robot achieving the task. Measure performance (stability, tracking error, success rate), and document the control architecture and the sim-to-real considerations."
+  },
+  "phases": [
+    {
+      "id": "phase-1-robot-math-kinematics",
+      "title": "Robot Math & Kinematics",
+      "goal": "Place a robot in space: coordinate frames, rotations (matrices and quaternions), homogeneous transforms, forward and inverse kinematics, and Jacobians — implemented with Eigen.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-coordinate-frames",
+          "path": "projects/phase-1-robot-math-kinematics/project-01-coordinate-frames",
+          "title": "Coordinate Frames & Points",
+          "description": "Build intuition for coordinate frames — world, body, and sensor — by representing 3D points with Eigen::Vector3d, applying (R, t) transforms to move points between frames, and chaining transforms across a camera→body→world sensor pipeline.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-rotations-2d",
+          "path": "projects/phase-1-robot-math-kinematics/project-02-rotations-2d",
+          "title": "Rotations in 2D & Rotation Matrices",
+          "description": "Derive the 2D rotation matrix from first principles, verify its SO(2) properties (orthogonality, det=1, inverse=transpose) using Eigen::Matrix2d, compose rotations, and preview why 3D rotations do not commute.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-rotations-3d",
+          "path": "projects/phase-1-robot-math-kinematics/project-03-rotations-3d",
+          "title": "3D Rotations: Matrices, Euler Angles & Axis-Angle",
+          "description": "Build the SO(3) elementary rotation matrices (Rx, Ry, Rz), compose ZYX Euler angles, demonstrate gimbal lock numerically, and implement Rodrigues' rotation formula — then use Eigen::AngleAxisd to verify and convert between all three representations.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-quaternions",
+          "path": "projects/phase-1-robot-math-kinematics/project-04-quaternions",
+          "title": "Quaternions",
+          "description": "Build unit quaternions from axis-angle, rotate vectors with the sandwich product, compose rotations via quaternion multiplication, interpolate orientations with SLERP, and convert between all representations using Eigen::Quaterniond.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-homogeneous-transforms",
+          "path": "projects/phase-1-robot-math-kinematics/project-05-homogeneous-transforms",
+          "title": "Homogeneous Transforms (SE(3))",
+          "description": "Construct 4×4 SE(3) homogeneous transform matrices, transform points and free vectors using homogeneous coordinates, compose multi-frame chains by matrix multiplication, compute analytical inverses, and use Eigen::Isometry3d for clean rigid-body transform operations.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-forward-kinematics",
+          "path": "projects/phase-1-robot-math-kinematics/project-06-forward-kinematics",
+          "title": "Forward Kinematics",
+          "description": "Implement Denavit-Hartenberg (DH) forward kinematics for a 3-DOF planar arm and a 6-DOF serial arm using Eigen::Isometry3d chains, verify at zero config and known analytical poses, and build geometric invariant tests.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-inverse-kinematics",
+          "path": "projects/phase-1-robot-math-kinematics/project-07-inverse-kinematics",
+          "title": "Inverse Kinematics",
+          "description": "Implement analytical IK (law of cosines, elbow-up/down) for a 2-link arm and Jacobian-based numerical IK (Newton's method + damped least squares) for a 3-DOF arm, demonstrating multiple solutions, singularity detection, and the tradeoff of the damping parameter.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-jacobians-lab",
+          "path": "projects/phase-1-robot-math-kinematics/project-08-jacobians-lab",
+          "title": "Jacobians & a Kinematics Lab",
+          "description": "Derive and implement the geometric Jacobian analytically from FK joint frames, verify it against numerical finite differences, use SVD for singularity detection, and run a complete kinematics lab tracking a circular trajectory with FK + IK + Jacobian-based velocity control end-to-end.",
+          "tech": [
+            "C++20",
+            "Eigen",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-dynamics-control",
+      "title": "Dynamics & Classical Control",
+      "goal": "Make it move stably: rigid-body dynamics, the control loop, PID control, state-space models, stability, and trajectory generation.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-control-loop",
+          "path": "projects/phase-2-dynamics-control/project-01-control-loop",
+          "title": "The Control Loop",
+          "description": "Build and instrument a discrete-time sense–think–act control loop in C++, comparing open-loop vs closed-loop feedback on a simulated robot joint.",
+          "tech": [
+            "C++17",
+            "chrono",
+            "control theory"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-pid",
+          "path": "projects/phase-2-dynamics-control/project-02-pid",
+          "title": "PID Control",
+          "description": "Implement a full discrete-time PID controller in C++ with anti-windup and derivative-kick prevention, and tune it on a simulated 1-DOF mass-damper system.",
+          "tech": [
+            "C++17",
+            "control theory",
+            "numerical simulation"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-dynamics",
+          "path": "projects/phase-2-dynamics-control/project-03-dynamics",
+          "title": "Rigid-Body Dynamics",
+          "description": "Derive and simulate pendulum and cart equations of motion in C++ using Euler and RK4 integration, and verify correctness with an energy conservation check.",
+          "tech": [
+            "C++17",
+            "numerical integration",
+            "classical mechanics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-state-space",
+          "path": "projects/phase-2-dynamics-control/project-04-state-space",
+          "title": "State-Space Models",
+          "description": "Represent cart and cart-pole systems in state-space form (ẋ = Ax + Bu), discretize them, simulate with Eigen, and analyze stability via eigenvalues of A.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "linear algebra",
+            "control theory"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-stability-lqr",
+          "path": "projects/phase-2-dynamics-control/project-05-stability-lqr",
+          "title": "Stability & Optimal Feedback (LQR)",
+          "description": "Implement pole placement and an iterative DARE solver in C++ to compute LQR gains, then stabilize a 4-state cart-pole system and explore how Q and R weights shape the response.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "optimal control",
+            "linear algebra"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-trajectory-generation",
+          "path": "projects/phase-2-dynamics-control/project-06-trajectory-generation",
+          "title": "Trajectory Generation",
+          "description": "Implement trapezoidal velocity profiles and cubic/quintic polynomial splines in C++, then combine feedforward trajectory commands with PD feedback to demonstrate high-accuracy joint tracking.",
+          "tech": [
+            "C++17",
+            "numerical methods",
+            "control theory"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-multijoint-control",
+          "path": "projects/phase-2-dynamics-control/project-07-multijoint-control",
+          "title": "Multi-Joint & Cascade Control",
+          "description": "Simulate a 2-link planar robot arm with coupled dynamics in C++/Eigen, implement cascade position/velocity control, and demonstrate gravity compensation reducing steady-state error by 100x.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "robot dynamics",
+            "control theory"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-control-lab",
+          "path": "projects/phase-2-dynamics-control/project-08-control-lab",
+          "title": "Control Lab: Balance the Cart-Pole",
+          "description": "Phase 2 capstone: simulate the full nonlinear cart-pole in C++/Eigen with RK4, design and tune both a PID and an LQR controller, close the loop, and measure settling time, steady-state error, and disturbance recovery.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "control theory",
+            "LQR",
+            "PID",
+            "simulation"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-state-estimation",
+      "title": "State Estimation & Sensor Fusion",
+      "goal": "Know where you are despite noise: sensors and noise models, the Kalman filter and EKF, sensor fusion, and localization.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-sensors-noise",
+          "path": "projects/phase-3-state-estimation/project-01-sensors-noise",
+          "title": "Sensors & Noise",
+          "description": "Simulate IMU, wheel-encoder, and lidar sensors with realistic Gaussian noise, bias, and drift; measure RMSE against ground truth to understand why raw sensor readings are insufficient for robot state estimation.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "C++ STL <random>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-probability-for-estimation",
+          "path": "projects/phase-3-state-estimation/project-02-probability-for-estimation",
+          "title": "Probability for Estimation",
+          "description": "Implement the Bayesian predict-update cycle from scratch using Gaussian beliefs, computing Kalman gain and fusing two independent sensor measurements to show how uncertainty shrinks with each observation.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "C++ STL <random>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-kalman-filter",
+          "path": "projects/phase-3-state-estimation/project-03-kalman-filter",
+          "title": "The Kalman Filter",
+          "description": "Implement the five Kalman filter equations in C++/Eigen: a scalar 1-D filter for a constant signal and a 2-D constant-velocity tracker that infers unmeasured velocity from noisy position observations.",
+          "tech": [
+            "C++17",
+            "Eigen"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-ekf",
+          "path": "projects/phase-3-state-estimation/project-04-ekf",
+          "title": "The Extended Kalman Filter",
+          "description": "Implement an EKF for 2-D robot pose estimation with unicycle kinematics and range-bearing landmark measurements, deriving and coding the motion and measurement Jacobians by hand.",
+          "tech": [
+            "C++17",
+            "Eigen"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-imu-orientation",
+          "path": "projects/phase-3-state-estimation/project-05-imu-orientation",
+          "title": "IMU & Orientation Estimation",
+          "description": "Simulate gyroscope drift and accelerometer tilt estimation, then implement the complementary filter to fuse both sensors; compare RMSE to show the fused estimate beats either sensor alone.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "C++ STL <random>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-sensor-fusion",
+          "path": "projects/phase-3-state-estimation/project-06-sensor-fusion",
+          "title": "Multi-Sensor Fusion",
+          "description": "Fuse wheel odometry (20 Hz) and GPS (2 Hz) in an asynchronous Kalman filter with a shared 4-D state vector, demonstrating that adding a noisier sensor still reduces overall RMSE.",
+          "tech": [
+            "C++17",
+            "Eigen"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-localization",
+          "path": "projects/phase-3-state-estimation/project-07-localization",
+          "title": "Localization",
+          "description": "Implement EKF localisation and a Monte Carlo particle filter (MCL) on a 5-landmark map; simulate the kidnapped robot problem and show the particle filter recovering in under 10 steps while the EKF diverges.",
+          "tech": [
+            "C++17",
+            "Eigen",
+            "C++ STL <random>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-estimation-lab",
+          "path": "projects/phase-3-state-estimation/project-08-estimation-lab",
+          "title": "Estimation Lab: Track a Moving Robot",
+          "description": "Phase finale: fuse simulated noisy odometry and range-bearing measurements in a complete EKF to track a robot driving a figure-eight trajectory; produce an ASCII plot of estimate vs ground truth and report RMS position and heading error.",
+          "tech": [
+            "C++17",
+            "Eigen"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-perception-slam",
+      "title": "Perception & SLAM",
+      "goal": "See and map the world: computer vision for robots, depth and point clouds, visual odometry, SLAM, and detection for manipulation.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-images-cv",
+          "path": "projects/phase-4-perception-slam/project-01-images-cv",
+          "title": "Images & Computer Vision Basics",
+          "description": "Learn to represent camera frames as NumPy arrays, apply color-space conversions, Gaussian blurring, Sobel/Canny edge detection, and thresholding — building the image-processing foundation every robot perception pipeline depends on.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-features",
+          "path": "projects/phase-4-perception-slam/project-02-features",
+          "title": "Feature Detection & Matching",
+          "description": "Detect Harris corners, extract ORB keypoints and binary descriptors, match them across image pairs with Lowe's ratio test, and apply RANSAC to filter geometrically inconsistent outliers — building the front-end of a Visual Odometry / SLAM pipeline.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-camera-geometry",
+          "path": "projects/phase-4-perception-slam/project-03-camera-geometry",
+          "title": "Camera Geometry & Calibration",
+          "description": "Implement the pinhole projection equation and intrinsic matrix K, model radial lens distortion, simulate Zhang's chessboard calibration procedure, and back-project pixels to 3D rays — mastering the geometric model every robot vision pipeline depends on.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-depth-pointclouds",
+          "path": "projects/phase-4-perception-slam/project-04-depth-pointclouds",
+          "title": "Depth & Point Clouds",
+          "description": "Derive the stereo disparity-to-depth equation, compute a depth map from a synthetic stereo pair using StereoBM, back-project a depth image to a 3D point cloud, and apply voxel downsampling, rigid transformation, and surface normal estimation.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-visual-odometry",
+          "path": "projects/phase-4-perception-slam/project-05-visual-odometry",
+          "title": "Visual Odometry",
+          "description": "Implement a monocular Visual Odometry pipeline on a synthetic frame sequence: feature tracking, Essential Matrix estimation, pose chaining, and trajectory drift analysis — connecting the theory of camera geometry to an end-to-end running VO system.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-slam",
+          "path": "projects/phase-4-perception-slam/project-06-slam",
+          "title": "SLAM: Simultaneous Localization and Mapping",
+          "description": "Understand the SLAM problem (chicken-and-egg, front-end/back-end split, loop closure), implement a 2D pose-graph with odometry and loop closure edges, run gradient-descent pose-graph optimization, and analyze how loop closure corrects drift.",
+          "tech": [
+            "Python",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-object-detection",
+          "path": "projects/phase-4-perception-slam/project-07-object-detection",
+          "title": "Object Detection & Pose for Manipulation",
+          "description": "Implement template matching with NMS, decode a YOLO-style grid output, recover 6-DOF object pose with solvePnP from 2D–3D correspondences, and compute a gripper approach vector — completing the perception-to-grasp pipeline for robot manipulation.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-perception-lab",
+          "path": "projects/phase-4-perception-slam/project-08-perception-lab",
+          "title": "Perception Lab: Visual Odometry / Mapping",
+          "description": "Assemble the whole phase into one self-grading lab: synthesize a frame sequence, run an ORB + Essential-Matrix visual-odometry pipeline, triangulate a sparse 3D map, align the estimate to ground truth with Umeyama, and report ATE-RMS — the standard accuracy metric used by KITTI, TUM-RGBD, and EuRoC. Includes an optional real KITTI-snippet path.",
+          "tech": [
+            "Python",
+            "OpenCV",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-ros2-embedded",
+      "title": "Robot Software: ROS 2, Embedded & Real-Time",
+      "goal": "Build the robot's nervous system: ROS 2 nodes/topics/services/actions, simulation integration, real-time Linux, and fieldbus (CAN, EtherCAT) to the actuators.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-ros2-intro",
+          "path": "projects/phase-5-ros2-embedded/project-01-ros2-intro",
+          "title": "ROS 2 Architecture",
+          "description": "Build and run a minimal rclcpp node in a colcon workspace, then inspect the live compute graph with the ROS 2 CLI to understand nodes, DDS, and the workspace overlay.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "rclcpp",
+            "colcon",
+            "ament_cmake"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-topics-pubsub",
+          "path": "projects/phase-5-ros2-embedded/project-02-topics-pubsub",
+          "title": "Topics, Messages & Pub/Sub",
+          "description": "Implement a ROS 2 C++ talker/listener pair with standard and custom message types, then inspect live message flow with ros2 topic echo and hz while experimenting with QoS policies.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "rclcpp",
+            "std_msgs",
+            "rosidl",
+            "DDS"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-services-actions",
+          "path": "projects/phase-5-ros2-embedded/project-03-services-actions",
+          "title": "Services & Actions",
+          "description": "Implement a ROS 2 service server/client for synchronous battery queries and an action server/client for long-running joint motion with real-time feedback and cancellation support.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "rclcpp",
+            "rclcpp_action",
+            "rosidl"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-urdf-tf",
+          "path": "projects/phase-5-ros2-embedded/project-04-urdf-tf",
+          "title": "Robot Description & TF",
+          "description": "Write a two-link arm URDF, launch robot_state_publisher to broadcast its TF tree, then implement a C++ TransformBroadcaster for a moving sensor and a TransformListener that looks up the frame in real time.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "URDF",
+            "tf2_ros",
+            "robot_state_publisher",
+            "RViz"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-gazebo-sim",
+          "path": "projects/phase-5-ros2-embedded/project-05-gazebo-sim",
+          "title": "Simulation with Gazebo",
+          "description": "Spawn a diff-drive robot URDF into Gazebo Fortress, configure the ROS-Gazebo bridge for cmd_vel and IMU topics, drive the robot with velocity commands, and read simulated sensor data from a C++ subscriber node.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "Gazebo Fortress",
+            "ros_gz_bridge",
+            "URDF",
+            "sensor_msgs"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-realtime-linux",
+          "path": "projects/phase-5-ros2-embedded/project-06-realtime-linux",
+          "title": "Real-Time Linux & the Control Thread",
+          "description": "Write a 1 kHz C++ control loop that measures its own wakeup jitter, then elevate it to SCHED_FIFO scheduling and compare p50/p99/p99.9 latency histograms to demonstrate the impact of real-time scheduling.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "Linux",
+            "PREEMPT_RT",
+            "pthread",
+            "SCHED_FIFO",
+            "clock_nanosleep"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-fieldbus-can-ethercat",
+          "path": "projects/phase-5-ros2-embedded/project-07-fieldbus-can-ethercat",
+          "title": "Embedded & Fieldbus: CAN & EtherCAT",
+          "description": "Set up a virtual CAN interface, implement a C++ SocketCAN sender and receiver for simulated joint torque commands, then study the EtherCAT protocol and SOEM to understand how humanoid robots synchronize 30+ joints at 1 kHz.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "SocketCAN",
+            "CAN bus",
+            "EtherCAT",
+            "SOEM",
+            "Linux"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-ros2-robot-lab",
+          "path": "projects/phase-5-ros2-embedded/project-08-ros2-robot-lab",
+          "title": "ROS 2 Robot Lab",
+          "description": "Assemble a complete robot software stack: an odometry/IMU complementary filter node feeding a two-thread velocity controller (SCHED_FIFO RT thread + ROS 2 publisher), all launched together driving a Gazebo diff-drive robot to a goal position.",
+          "tech": [
+            "ROS 2",
+            "C++",
+            "rclcpp",
+            "Gazebo",
+            "SCHED_FIFO",
+            "std::atomic",
+            "ros_gz_bridge",
+            "TF"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-sim-learning-capstone",
+      "title": "Simulation, Learning & the Capstone",
+      "goal": "Bring it to life in sim: physics simulation (MuJoCo/Isaac), advanced control (MPC, whole-body), the learning layer (RL, imitation, VLA), and a deployed policy with a C++ control loop.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-physics-sim",
+          "path": "projects/phase-6-sim-learning-capstone/project-01-physics-sim",
+          "title": "Physics Simulation",
+          "description": "Install MuJoCo, author a two-link arm MJCF model, run a timed simulation loop with sinusoidal torque control, read joint state and contact forces, and measure real-time throughput.",
+          "tech": [
+            "Python 3.10+",
+            "MuJoCo 3.x",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-mpc",
+          "path": "projects/phase-6-sim-learning-capstone/project-02-mpc",
+          "title": "Model Predictive Control",
+          "description": "Implement a random-shooting MPC on a cart-pole balancing task in NumPy, compare against PID on large disturbances, and build the layered control architecture mental model used in production humanoid robots.",
+          "tech": [
+            "Python 3.10+",
+            "NumPy",
+            "SciPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-whole-body-control",
+          "path": "projects/phase-6-sim-learning-capstone/project-03-whole-body-control",
+          "title": "Whole-Body Control for Humanoids",
+          "description": "Implement forward kinematics, Jacobians, ZMP balance analysis, and a prioritized task-space QP for a planar biped that simultaneously balances and reaches, capturing the mathematical core of production humanoid WBC.",
+          "tech": [
+            "Python 3.10+",
+            "NumPy",
+            "SciPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-rl-for-control",
+          "path": "projects/phase-6-sim-learning-capstone/project-04-rl-for-control",
+          "title": "Reinforcement Learning for Control",
+          "description": "Train a PPO policy on InvertedPendulum-v4 in MuJoCo, plot the S-shaped training curve, implement a reward shaping wrapper, and understand the three RL failure modes that practitioners encounter on real robot projects.",
+          "tech": [
+            "Python 3.10+",
+            "MuJoCo 3.x",
+            "gymnasium",
+            "stable-baselines3",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-imitation-learning",
+          "path": "projects/phase-6-sim-learning-capstone/project-05-imitation-learning",
+          "title": "Imitation Learning",
+          "description": "Collect expert PPO demonstrations, train a behavior cloning policy via supervised regression, evaluate the distributional shift gap vs the expert, implement one DAgger iteration, and understand the IL+RL combination pipeline used in modern humanoid manipulation.",
+          "tech": [
+            "Python 3.10+",
+            "MuJoCo 3.x",
+            "gymnasium",
+            "stable-baselines3",
+            "PyTorch",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-vla",
+          "path": "projects/phase-6-sim-learning-capstone/project-06-vla",
+          "title": "Vision-Language-Action Models",
+          "description": "Implement a minimal language-conditioned policy, analyze CLIP semantic alignment, study RT-2 action tokenization and π0 diffusion action heads, and understand the data/scaling story and current limitations of VLAs for humanoid manipulation.",
+          "tech": [
+            "Python 3.10+",
+            "PyTorch",
+            "transformers (HuggingFace)",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-sim-to-real",
+          "path": "projects/phase-6-sim-learning-capstone/project-07-sim-to-real",
+          "title": "Sim-to-Real Transfer",
+          "description": "Implement a domain randomization wrapper for MuJoCo, train and compare nominal vs randomized policies on perturbed environments, run minimal system identification, analyze the full deploy pipeline latency budget, and measure transfer success rate.",
+          "tech": [
+            "Python 3.10+",
+            "MuJoCo 3.x",
+            "gymnasium",
+            "stable-baselines3",
+            "NumPy",
+            "SciPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-sim-learning-capstone/project-08-capstone",
+          "title": "Sim-to-Control: A Locomotion Policy (Track Capstone)",
+          "description": "Build a complete quadruped simulation in MuJoCo (MJCF model, 8 DOFs, contact sensors), implement a classical PD trotting gait controller, train a PPO locomotion policy with shaped reward, evaluate and compare both on forward speed, fall rate, and Cost of Transport, then write a structured report covering the control architecture, two engineering tradeoffs, and the sim-to-real gap.",
+          "tech": [
+            "Python 3.10+",
+            "MuJoCo 3.x",
+            "gymnasium",
+            "stable-baselines3",
+            "NumPy",
+            "PyTorch"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
