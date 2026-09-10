@@ -19,7 +19,7 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 44,
+  "videoCount": 45,
   "freeEligible": true,
   "freeProjectCount": 1,
   "paid": true,
@@ -982,7 +982,12 @@
             "Makefile"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "2W5Ulay-sHc",
+            "url": "https://www.youtube.com/shorts/2W5Ulay-sHc",
+            "title": "Build your own memcached in C | C & Systems Programming #48",
+            "publishAt": "2026-09-10T18:00:00Z"
+          }
         }
       ]
     }
