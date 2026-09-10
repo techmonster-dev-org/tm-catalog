@@ -1,0 +1,688 @@
+{
+  "id": "quant-trader",
+  "title": "Quant Trading — Mental Math, Probability & Market-Making",
+  "tagline": "Train for the trading floor the way the prop shops actually hire.",
+  "level": null,
+  "stack": [
+    "Python",
+    "NumPy",
+    "Probability",
+    "Mental Math",
+    "Monte Carlo"
+  ],
+  "targetRoles": [
+    "Quant Trader (Prop / HFT)",
+    "Trading Intern / Junior Trader",
+    "Market Maker",
+    "Quant Researcher (foundation)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Train for the trading floor the way the prop shops actually hire. This is the quant-trader option of the Zero-to-Low-Level-Systems-Elite program — the one path that rewards raw quantitative reasoning over pedigree, where self-taught candidates genuinely compete. You drill the speed mental math that screens demand (Zetamac-fast arithmetic, estimation, Fermi problems), the applied probability and expected-value toolkit that underlies every trading decision, the games of chance and bet-sizing math (variance, risk of ruin, Kelly), and the heart of the trader interview: making and updating bid/ask markets, handling adverse selection, and managing inventory and risk. You round it out with the brain teasers, logic, and game theory these interviews lean on, then run full mock interviews. The capstone builds a market-making simulator with a quoting-and-risk strategy. Layered on the probability and mental-math of the math-foundations track, this is the route toward the quant-trading seats at Jane Street, Citadel, Jump, HRT, Optiver, IMC, DRW, and SIG — where the trading interview rewards how you think under uncertainty.",
+  "environment": [],
+  "capstone": {
+    "title": "Market-Making Simulator & Strategy",
+    "project": "Build a simulator of a market-making game: an asset with a hidden fair value and incoming order flow (including informed/adverse flow). Implement a strategy that quotes bid/ask around your estimated fair value, updates that estimate Bayesianly as trades arrive, and manages inventory and risk. Run it over many simulated sessions, measure PnL, Sharpe, and risk of ruin, and analyze how spread width, skew, and risk limits change the outcome. Include a curated set of solved probability/mental-math/market-making problems demonstrating the full toolkit."
+  },
+  "phases": [
+    {
+      "id": "phase-1-mental-math",
+      "title": "Mental Math & Estimation",
+      "goal": "Build the screen-passing speed: fast arithmetic, multiplication/division tricks, fractions and percentages, Fermi estimation, and number sense — drilled to Zetamac pace.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-fast-arithmetic",
+          "path": "projects/phase-1-mental-math/project-01-fast-arithmetic",
+          "title": "Fast Mental Arithmetic",
+          "description": "Build the speed foundation for quant trading screens: master left-to-right addition, the complement method for subtraction, and rounding-and-adjusting, then drill with a Python timed arithmetic tool that logs progress toward the Zetamac 25+/120s target.",
+          "tech": [
+            "Python",
+            "random",
+            "time",
+            "json"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-multiplication-tricks",
+          "path": "projects/phase-1-mental-math/project-02-multiplication-tricks",
+          "title": "Multiplication & Division Shortcuts",
+          "description": "Master the multiplication shortcuts required for quant trading aptitude tests — multiply by 11/25/99/125, square numbers near 50 and 100, use reciprocals for fast division — then drill with a Python tool that times per-type performance and logs progress.",
+          "tech": [
+            "Python",
+            "random",
+            "time",
+            "json"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-fractions-percentages",
+          "path": "projects/phase-1-mental-math/project-03-fractions-percentages",
+          "title": "Fractions, Percentages & Decimals",
+          "description": "Build fluent fraction↔decimal↔percentage conversion — the same number in three notations — then master fast percentage computation (decomposition, fraction conversion, scale-from-1%), percentage change, and basis points, drilled with a Python converter tool.",
+          "tech": [
+            "Python",
+            "random",
+            "time",
+            "json"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-estimation-fermi",
+          "path": "projects/phase-1-mental-math/project-04-estimation-fermi",
+          "title": "Estimation & Fermi Problems",
+          "description": "Master the four-step Fermi estimation method — bound, decompose, estimate, sanity-check — practiced on ten classic problems with a Python checker that scores decompositions against reference answers and flags scale errors via per-capita anchors.",
+          "tech": [
+            "Python",
+            "math",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-powers-logs",
+          "path": "projects/phase-1-mental-math/project-05-powers-logs",
+          "title": "Powers, Roots & Logs in Your Head",
+          "description": "Build mental fluency with powers of 2, the rule of 72 for doubling times, square-root estimation via linear approximation, and ln/log approximations — the mathematical tools behind compound growth, options pricing, and probability calculations — drilled with a Python tool across five problem types.",
+          "tech": [
+            "Python",
+            "math",
+            "random",
+            "json"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-sequences-sums",
+          "path": "projects/phase-1-mental-math/project-06-sequences-sums",
+          "title": "Sequences & Series in Your Head",
+          "description": "Master the four core sum formulas — triangular numbers, arithmetic series, finite and infinite geometric series — and apply them to perpetuity pricing and classic interview problems like the St. Petersburg Paradox, drilled with a Python quiz tool across all five types.",
+          "tech": [
+            "Python",
+            "math",
+            "random",
+            "json"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-number-sense",
+          "path": "projects/phase-1-mental-math/project-07-number-sense",
+          "title": "Number Sense & Sanity Checks",
+          "description": "Build the defensive layer of mental math: divisibility rules for 2–11, last-digit reasoning for products and powers, casting out nines as a correctness probe, and domain-constraint checks for probability and finance — drilled with a Python quiz tool across four problem types.",
+          "tech": [
+            "Python",
+            "random",
+            "time",
+            "json"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-mental-math-lab",
+          "path": "projects/phase-1-mental-math/project-08-mental-math-lab",
+          "title": "Mental-Math Lab: Build a Zetamac Trainer",
+          "description": "Build a complete, configurable 120-second mixed-mode arithmetic trainer that draws from all eight Phase 1 problem types, tracks per-type accuracy in a JSON log, produces a multi-session progress report with trend and weakness flags, and benchmarks against the Zetamac 25+/120s target.",
+          "tech": [
+            "Python",
+            "random",
+            "time",
+            "json",
+            "math",
+            "collections"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-probability-ev",
+      "title": "Probability & Expected Value",
+      "goal": "Master the trader's probability toolkit: sample spaces, expected value, conditional probability and Bayes, combinatorics, distributions, variance, and expectation tricks.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-probability-basics",
+          "path": "projects/phase-2-probability-ev/project-01-probability-basics",
+          "title": "Probability Fundamentals for Traders",
+          "description": "Build the core probability toolkit — sample spaces, events, axioms, independence, and odds — by solving trading-framed problems analytically and verifying each with Monte Carlo simulation.",
+          "tech": [
+            "Python 3",
+            "random",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-expected-value",
+          "path": "projects/phase-2-probability-ev/project-02-expected-value",
+          "title": "Expected Value — the Trader's Core Tool",
+          "description": "Master expected value as the fundamental pricing tool: compute EV analytically for dice, card, and trading-style bets, apply linearity of expectation to portfolios, and verify every result with simulation.",
+          "tech": [
+            "Python 3",
+            "random",
+            "math",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-conditional-bayes",
+          "path": "projects/phase-2-probability-ev/project-03-conditional-bayes",
+          "title": "Conditional Probability & Bayes",
+          "description": "Master Bayes' theorem by solving the disease test, Monty Hall problem, base-rate fallacy, and a trading signal update analytically, then confirming every result with Monte Carlo simulation.",
+          "tech": [
+            "Python 3",
+            "random",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-combinatorics",
+          "path": "projects/phase-2-probability-ev/project-04-combinatorics",
+          "title": "Combinatorics & Counting",
+          "description": "Build the counting toolkit — permutations, combinations, the multiplication principle, poker hand probabilities, and the birthday problem — solving each analytically and verifying with simulation.",
+          "tech": [
+            "Python 3",
+            "math",
+            "random",
+            "itertools"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-distributions",
+          "path": "projects/phase-2-probability-ev/project-05-distributions",
+          "title": "Distributions a Trader Meets",
+          "description": "Implement binomial, geometric, Poisson, uniform, and normal distributions from scratch, verify mean and variance analytically and by simulation, and demonstrate the Central Limit Theorem.",
+          "tech": [
+            "Python 3",
+            "random",
+            "math",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-variance-risk",
+          "path": "projects/phase-2-probability-ev/project-06-variance-risk",
+          "title": "Variance & Risk",
+          "description": "Quantify risk through variance, Sharpe ratio, risk of ruin, portfolio covariance, and VaR/CVaR — computing each analytically and confirming with simulation across multiple distributions.",
+          "tech": [
+            "Python 3",
+            "random",
+            "math",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-expectation-tricks",
+          "path": "projects/phase-2-probability-ev/project-07-expectation-tricks",
+          "title": "Expectation Tricks",
+          "description": "Master indicator random variables, the Law of Total Expectation, and symmetry arguments by solving the coupon collector, first-ace, record-high, and nested randomness problems analytically then verifying by simulation.",
+          "tech": [
+            "Python 3",
+            "random",
+            "math",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-probability-lab",
+          "path": "projects/phase-2-probability-ev/project-08-probability-lab",
+          "title": "Probability Lab: Analytic + Monte Carlo Solver",
+          "description": "Solve five hard trading-style probability puzzles (broken stick, derangements, gambler's ruin, random walk return, secretary problem) analytically and verify each with Monte Carlo simulation using a reusable framework.",
+          "tech": [
+            "Python 3",
+            "random",
+            "math",
+            "statistics"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-games-betting",
+      "title": "Games of Chance & Betting",
+      "goal": "Reason about risk and edge: fair value, variance and risk of ruin, the Kelly criterion, optional stopping, and the classic probability puzzles traders are asked.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-fair-value",
+          "path": "projects/phase-3-games-betting/project-01-fair-value",
+          "title": "Fair Value & the EV of a Bet",
+          "description": "Build a bet-pricing calculator that computes fair value, expected value, and house edge for binary bets, then verify analytically via 100 000-trial simulation — the foundational skill for every trading interview and prop-desk role.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-variance-ruin",
+          "path": "projects/phase-3-games-betting/project-02-variance-ruin",
+          "title": "Variance, Risk of Ruin & Bankroll",
+          "description": "Derive the gambler's ruin formula, simulate 10 000 bankroll paths, and measure how edge, variance, and bet size jointly determine the probability of going broke — the quantitative foundation of every risk management decision.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-kelly",
+          "path": "projects/phase-3-games-betting/project-03-kelly",
+          "title": "The Kelly Criterion",
+          "description": "Derive the Kelly fraction from first principles, simulate 10 000 bankroll growth curves for full Kelly, fractional Kelly, and overbetting strategies, and verify that median wealth is maximized exactly at the Kelly fraction — the foundation of professional bet-sizing and portfolio management.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-optional-stopping",
+          "path": "projects/phase-3-games-betting/project-04-optional-stopping",
+          "title": "Optional Stopping & Martingales",
+          "description": "Implement and simulate the martingale doubling system across 10 000 sessions, prove via the optional-stopping theorem that no stopping rule can beat a fair game, and see why exponential capital requirements guarantee ruin in practice.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-card-dice-games",
+          "path": "projects/phase-3-games-betting/project-05-card-dice-games",
+          "title": "Card & Dice Game Problems",
+          "description": "Solve five classic quant-interview probability problems — optimal die reroll, maximum of two dice, first ace in a deck, colored-ball draws, and asymmetric gambler's ruin — analytically using linearity of expectation and symmetry, then verify each answer with 100 000-trial simulation.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-classic-puzzles",
+          "path": "projects/phase-3-games-betting/project-06-classic-puzzles",
+          "title": "Classic Probability Puzzles",
+          "description": "Solve four Mosteller-style probability puzzles — Bertrand's box, the cab problem, coupon collector, and the secretary problem — with complete Bayesian reasoning, analytic derivations, and simulation verification over 100 000+ trials.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-decision-uncertainty",
+          "path": "projects/phase-3-games-betting/project-07-decision-uncertainty",
+          "title": "Decision-Making Under Uncertainty",
+          "description": "Implement utility functions and certainty equivalents, prove that log utility recovers the Kelly fraction, compute the value of perfect information for binary bets, and solve a two-stage sequential decision tree via backward induction — building the decision theory toolkit used in risk management.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-betting-lab",
+          "path": "projects/phase-3-games-betting/project-08-betting-lab",
+          "title": "Betting Lab: Strategy Showdown",
+          "description": "Build a modular betting simulator that runs flat, full Kelly, half Kelly, quarter Kelly, and martingale strategies over 10 000 paths × 1 000 rounds on the same +EV game, producing a summary table that makes the risk/return tradeoff of every Phase 3 concept undeniable.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-market-making",
+      "title": "Market Making & Trading Games",
+      "goal": "Play the core of the trader interview: quoting around fair value, updating on information, adverse selection, inventory and risk management, and the market-making game.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-what-is-market-making",
+          "path": "projects/phase-4-market-making/project-01-what-is-market-making",
+          "title": "What Is Market Making?",
+          "description": "Simulate a basic market maker earning the bid/ask spread on balanced and imbalanced order flow, and understand the maker/taker economics that underpin real firms like Jane Street, Optiver, and IMC.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-quoting-fair-value",
+          "path": "projects/phase-4-market-making/project-02-quoting-fair-value",
+          "title": "Quoting Around Fair Value",
+          "description": "Estimate fair value from noisy signals, set bid and ask around it, and simulate how spread width trades off fill rate against PnL edge on noisy customer order flow.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-updating-on-info",
+          "path": "projects/phase-4-market-making/project-03-updating-on-info",
+          "title": "Updating Your Market on Information",
+          "description": "Apply Bayesian updating to revise a fair value estimate as trades arrive, and simulate the classic interview game where an informed agent trades against your quotes until you converge to the true value.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-adverse-selection",
+          "path": "projects/phase-4-market-making/project-04-adverse-selection",
+          "title": "Adverse Selection & Informed Flow",
+          "description": "Simulate a market with mixed noise and informed order flow, observe how informed fills systematically lose money, and derive the Glosten-Milgrom break-even spread that compensates for adverse selection.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-inventory-risk",
+          "path": "projects/phase-4-market-making/project-05-inventory-risk",
+          "title": "Inventory & Risk Management",
+          "description": "Simulate inventory dynamics in a market maker's book, implement quote skewing to offload unwanted positions, and apply the Avellaneda-Stoikov model to understand the optimal tradeoff between spread income and inventory risk.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-position-sizing",
+          "path": "projects/phase-4-market-making/project-06-position-sizing",
+          "title": "Position Sizing & Risk Limits",
+          "description": "Apply the Kelly criterion to compute optimal quote sizes, simulate how overbetting leads to ruin despite positive edge, and implement daily stop-losses and confidence-scaled sizing for a market maker.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-the-mm-game",
+          "path": "projects/phase-4-market-making/project-07-the-mm-game",
+          "title": "The Market-Making Interview Game",
+          "description": "Play the canonical Jane Street/Optiver interview game in a fully playable Python simulation: make a two-sided market on an unknown quantity, an AI opponent trades on inside information, and you Bayesian-update and skew to convergence.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-market-making-lab",
+          "path": "projects/phase-4-market-making/project-08-market-making-lab",
+          "title": "Market-Making Lab: Full Simulator",
+          "description": "Build a complete market-making simulator with an OU price process, mixed informed/noise order flow, a full quoting strategy with skewing and limits, and run 100-session Monte Carlo analysis to evaluate PnL distribution, Sharpe ratio, and parameter sensitivity.",
+          "tech": [
+            "Python",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-logic-game-theory",
+      "title": "Brain Teasers, Logic & Game Theory",
+      "goal": "Sharpen 'how you think': logic puzzles and brain teasers, sequential and combinatorial games, game theory, auctions, and information puzzles.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-logic-puzzles",
+          "path": "projects/phase-5-logic-game-theory/project-01-logic-puzzles",
+          "title": "Logic Puzzles",
+          "description": "Solve four canonical logic puzzle classes — hat puzzles, balance-scale problems, river crossings, and the 100 Prisoners problem — using structured deduction and Python brute-force verification to prove correctness.",
+          "tech": [
+            "Python 3",
+            "itertools",
+            "collections.deque",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-brain-teasers",
+          "path": "projects/phase-5-logic-game-theory/project-02-brain-teasers",
+          "title": "Quant Brain Teasers",
+          "description": "Work through five classic Heard-on-the-Street style teasers — rope burning, birthday problem, egg drop, expected coin flips, and ants on a pole — using a systematic four-step framework (Simplify, Invariant, Small Cases, Generalise) and Python simulation to verify every answer.",
+          "tech": [
+            "Python 3",
+            "NumPy",
+            "random",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-sequential-games",
+          "path": "projects/phase-5-logic-game-theory/project-03-sequential-games",
+          "title": "Sequential & Combinatorial Games",
+          "description": "Implement backward induction and the Sprague-Grundy framework for Nim, take-away games, misère Nim, and Chomp; build a minimax solver in Python and verify optimal strategies computationally.",
+          "tech": [
+            "Python 3",
+            "functools.lru_cache",
+            "itertools"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-game-theory",
+          "path": "projects/phase-5-logic-game-theory/project-04-game-theory",
+          "title": "Game Theory Basics",
+          "description": "Implement Nash equilibrium solvers for normal-form games — IESDS, pure-strategy search, mixed-strategy indifference conditions, and the minimax LP — and simulate the iterated Prisoner's Dilemma to see how cooperation emerges from repeated play.",
+          "tech": [
+            "Python 3",
+            "NumPy",
+            "SciPy (linprog)",
+            "random"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-auctions",
+          "path": "projects/phase-5-logic-game-theory/project-05-auctions",
+          "title": "Auctions & the Winner's Curse",
+          "description": "Implement simulators for four auction formats (first-price, Vickrey, English, Dutch) and verify revenue equivalence numerically; model the winner's curse in common-value auctions and simulate rational bid-shading corrections.",
+          "tech": [
+            "Python 3",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-information-puzzles",
+          "path": "projects/phase-5-logic-game-theory/project-06-information-puzzles",
+          "title": "Information & Common-Knowledge Puzzles",
+          "description": "Reason about what agents know and when private knowledge becomes common knowledge; work through the Blue-Eyed Islanders, Muddy Children, and Unexpected Hanging puzzles with formal Kripke-model analysis and Python cascade simulations.",
+          "tech": [
+            "Python 3",
+            "random",
+            "itertools"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-estimation-how-you-think",
+          "path": "projects/phase-5-logic-game-theory/project-07-estimation-how-you-think",
+          "title": "Estimation & 'How You Think' Questions",
+          "description": "Master the open-ended estimation under pressure: work through seven Fermi estimation problems (golf balls, AAPL volume, trades per second, piano tuners, McDonald's revenue, NYSE data, US real estate) using a structured verbal framework and Python verification, with explicit pushback-handling scripts.",
+          "tech": [
+            "Python 3",
+            "math"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-puzzle-lab",
+          "path": "projects/phase-5-logic-game-theory/project-08-puzzle-lab",
+          "title": "Puzzle Lab: A Solved Bank & Drill Tool",
+          "description": "Assemble a curated bank of 10 solved puzzles across all Phase 5 types (logic, brain teasers, sequential games, game theory, auctions, information, estimation) with full interview-voice reasoning, build a Python timed-drill tool with self-scoring and a performance log, and write a one-page 'Approach to Any Teaser' framework.",
+          "tech": [
+            "Python 3",
+            "NumPy",
+            "random",
+            "json",
+            "time",
+            "functools"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-trading-interview",
+      "title": "The Trading Interview & Capstone",
+      "goal": "Put it together: the quant-trader role and interview format, mock mental-math/probability/market-making rounds, firm fit and applying, and a market-making simulator capstone.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-the-qt-role",
+          "path": "projects/phase-6-trading-interview/project-01-the-qt-role",
+          "title": "The Quant Trader Role & Path",
+          "description": "Build a role-comparison tool, day-in-the-life simulator, and honest self-assessment to understand exactly what a QT does, how it differs from QR and Trading SWE, and what a realistic path to top-firm offers looks like for self-taught candidates.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-interview-format",
+          "path": "projects/phase-6-trading-interview/project-02-interview-format",
+          "title": "The QT Interview Format",
+          "description": "Build a pipeline-stage explainer, firm-comparison tool, and timed readiness checklist to understand every gate in the QT interview process and identify which specific stage to target in preparation.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-mock-mental-math",
+          "path": "projects/phase-6-trading-interview/project-03-mock-mental-math",
+          "title": "Mock: Mental Math Under Pressure",
+          "description": "Build a timed mental math gauntlet, targeted operation-type drills, and a pressure simulation tool to develop the Zetamac 25+ speed and oral performance consistency required for QT interview arithmetic screens.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-mock-probability",
+          "path": "projects/phase-6-trading-interview/project-04-mock-probability",
+          "title": "Mock: Probability & EV Round",
+          "description": "Study ten interview-difficulty probability and EV problems with full think-aloud solutions, build a timed drill tool that scores both correctness and explanation quality, and internalize the five archetypes that cover ~80% of QT probability screens.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-mock-market-making",
+          "path": "projects/phase-6-trading-interview/project-05-mock-market-making",
+          "title": "Mock: The Market-Making Round",
+          "description": "Build and play a complete market-making interview simulation: an asset with hidden fair value, a scripted adversarial interviewer, Bayesian fair-value updating, inventory skewing, and a three-dimension scoring engine tracking EV capture, update quality, and inventory control.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-fit-and-firms",
+          "path": "projects/phase-6-trading-interview/project-06-fit-and-firms",
+          "title": "Fit, Firms & Applying",
+          "description": "Build a firm-profile reference tool, fit interview preparation framework, signal opportunity tracker, and structured application plan covering 10 major QT firms across three tiers with honest acceptance-rate framing.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-building-edge",
+          "path": "projects/phase-6-trading-interview/project-07-building-edge",
+          "title": "Building Your Edge (Self-Taught)",
+          "description": "Build a deliberate-practice system with a weekly schedule, cumulative rep tracker, community resource guide, and monthly sustainability check-in to sustain a 12-36 month preparation habit toward a QT offer.",
+          "tech": [
+            "Python"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-trading-interview/project-08-capstone",
+          "title": "Track Capstone: Market-Making Simulator & Strategy",
+          "description": "Build a complete market-making simulator — Ornstein-Uhlenbeck price process, informed/uninformed order flow, Bayesian fair-value estimator, inventory skewing strategy, and risk manager — run 500-session Monte Carlo evaluation reporting PnL distribution, Sharpe, and risk of ruin, sweep parameters, and write a defended architecture document. The track and program finale.",
+          "tech": [
+            "Python",
+            "NumPy"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
