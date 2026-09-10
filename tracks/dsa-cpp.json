@@ -1,0 +1,774 @@
+{
+  "id": "dsa-cpp",
+  "title": "Data Structures & Algorithms in C++ (Interview-Grade)",
+  "tagline": "Turn your C++ fluency into problem-solving power.",
+  "level": null,
+  "stack": [
+    "C++17/20",
+    "g++/clang++",
+    "CMake",
+    "GoogleTest"
+  ],
+  "targetRoles": [
+    "Software Engineer (interview-ready)",
+    "Low-Latency / HFT Engineer (foundation)",
+    "AI-Chip / Systems Engineer (foundation)",
+    "Competitive Programmer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Turn your C++ fluency into problem-solving power. You implement every core data structure and algorithm from scratch in modern C++ — dynamic arrays, linked lists, stacks/queues, trees, heaps, tries, hash tables, and graphs — then master the algorithmic techniques that dominate technical interviews: two pointers, sliding window, recursion, binary search, sorting, BFS/DFS, shortest paths, greedy, divide-and-conquer, backtracking, and dynamic programming. Every project pairs a working implementation with complexity analysis and the interview patterns it unlocks. Note the division of labour with the c-systems track: c-systems hand-rolls a vector, linked list, hash table and ring buffer in C as exercises in memory ownership and API design, because C ships no containers at all. This track is the algorithms course - complexity analysis, balanced trees, graph algorithms and the design paradigms - and it is where the structures c-systems deliberately defers are taught. This is the shared problem-solving core of the Zero-to-Low-Level-Systems-Elite program: it takes the language from cpp-from-zero and builds the timed, whiteboard-ready algorithmic skill that HFT, AI-chip, and big-tech screens all test.",
+  "environment": [],
+  "capstone": {
+    "title": "Autocomplete & Route-Planning Engine (Tested & Benchmarked)",
+    "project": "Build a real, CMake-packaged C++ application that combines the data structures you implemented across the track: a trie-backed autocomplete with ranked suggestions (trie + heap), and a route planner over a weighted graph using Dijkstra's algorithm. Unit-test it with GoogleTest, benchmark the hot paths, and document the structures chosen and why."
+  },
+  "phases": [
+    {
+      "id": "phase-1-complexity-foundations",
+      "title": "Complexity & Array Foundations",
+      "goal": "Reason about running time with Big-O and master array techniques: dynamic arrays, two pointers, sliding window, prefix sums, and matrices.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-big-o",
+          "path": "projects/phase-1-complexity-foundations/project-01-big-o",
+          "title": "Big-O Notation & Measuring Growth",
+          "description": "Build intuition for asymptotic complexity by implementing the five common complexity classes, deriving Big-O from code, and empirically timing algorithms with std::chrono to watch growth curves diverge.",
+          "tech": [
+            "C++17/20",
+            "std::chrono",
+            "std::vector",
+            "std::unordered_set"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-array-traversal",
+          "path": "projects/phase-1-complexity-foundations/project-02-array-traversal",
+          "title": "Arrays & Traversal Patterns",
+          "description": "Master the fundamental array traversal patterns — find max/min, count, accumulate, and in-place modify — using std::vector, and observe why contiguous memory and cache-friendliness make arrays fast in practice.",
+          "tech": [
+            "C++17/20",
+            "std::vector",
+            "std::chrono"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-dynamic-array-amortized",
+          "path": "projects/phase-1-complexity-foundations/project-03-dynamic-array-amortized",
+          "title": "Dynamic Arrays & Amortized Analysis",
+          "description": "Build a minimal MyVector<T> from scratch with new[]/delete[] and capacity doubling, then prove that push_back is amortized O(1) using the aggregate counting method.",
+          "tech": [
+            "C++17/20",
+            "templates",
+            "RAII",
+            "new[]/delete[]"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-two-pointers",
+          "path": "projects/phase-1-complexity-foundations/project-04-two-pointers",
+          "title": "The Two-Pointer Technique",
+          "description": "Implement four classic two-pointer problems — reverse in place, pair-sum on sorted array, remove duplicates, and palindrome check — and prove each is O(n) vs the O(n²) naive approach.",
+          "tech": [
+            "C++17/20",
+            "std::vector",
+            "std::string",
+            "std::optional"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-sliding-window",
+          "path": "projects/phase-1-complexity-foundations/project-05-sliding-window",
+          "title": "The Sliding Window Technique",
+          "description": "Solve fixed-window and variable-window subarray problems — max-sum of size-k subarray, longest unique substring, minimum-length sum window — in O(n) using a sliding window, and contrast with O(n²) naive solutions.",
+          "tech": [
+            "C++17/20",
+            "std::vector",
+            "std::string",
+            "std::unordered_map",
+            "std::chrono"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-prefix-sums",
+          "path": "projects/phase-1-complexity-foundations/project-06-prefix-sums",
+          "title": "Prefix Sums & Range Queries",
+          "description": "Build 1D and 2D prefix-sum arrays to answer arbitrary range-sum queries in O(1), implement a difference array for O(1) range updates, and understand the preprocessing vs query time tradeoff.",
+          "tech": [
+            "C++17/20",
+            "std::vector",
+            "std::chrono",
+            "std::mt19937"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-matrix-traversal",
+          "path": "projects/phase-1-complexity-foundations/project-07-matrix-traversal",
+          "title": "2D Arrays & Matrix Traversal",
+          "description": "Implement row-major traversal, spiral and diagonal iteration, and in-place transpose and 90° rotation of a square matrix, expressing all complexity in terms of both m and n.",
+          "tech": [
+            "C++17/20",
+            "std::vector",
+            "std::algorithm",
+            "std::iomanip"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-array-toolkit",
+          "path": "projects/phase-1-complexity-foundations/project-08-array-toolkit",
+          "title": "Array Algorithms Toolkit (Finale)",
+          "description": "Synthesise all Phase 1 techniques — two-pointer, sliding window, prefix sums, and matrix operations — into a single CLI toolkit with a complexity reference table, a benchmark, and a problem-triage decision guide.",
+          "tech": [
+            "C++17/20",
+            "std::vector",
+            "std::chrono",
+            "std::algorithm",
+            "std::unordered_map"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-linear-structures",
+      "title": "Linear Structures: Lists, Stacks & Queues",
+      "goal": "Build the pointer-based linear structures from scratch: singly/doubly linked lists, stacks, queues, deques, and their classic applications.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-singly-linked-list",
+          "path": "projects/phase-2-linear-structures/project-01-singly-linked-list",
+          "title": "Singly Linked List",
+          "description": "Build a templated SinglyLinkedList<T> from scratch using raw node pointers, implementing push_front (O(1)), push_back (O(n)), remove, search, traversal, and a correct RAII destructor with full Rule of Five compliance.",
+          "tech": [
+            "C++17/20",
+            "raw pointers",
+            "RAII",
+            "Rule of Five",
+            "class templates"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-doubly-linked-list",
+          "path": "projects/phase-2-linear-structures/project-02-doubly-linked-list",
+          "title": "Doubly Linked List",
+          "description": "Build a templated DoublyLinkedList<T> with prev/next pointers and head/tail anchors, enabling O(1) insert and delete at both ends and O(1) node removal given a pointer handle.",
+          "tech": [
+            "C++17/20",
+            "raw pointers",
+            "RAII",
+            "Rule of Five",
+            "class templates"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-linked-list-algorithms",
+          "path": "projects/phase-2-linear-structures/project-03-linked-list-algorithms",
+          "title": "Linked List Algorithms",
+          "description": "Implement the four classic interview linked-list algorithms — in-place reversal (iterative and recursive), Floyd's cycle detection, slow/fast middle-finding, and sorted list merge — each as a stand-alone O(1)-space program.",
+          "tech": [
+            "C++17/20",
+            "raw pointers",
+            "two-pointer technique",
+            "Floyd's algorithm"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-stack",
+          "path": "projects/phase-2-linear-structures/project-04-stack",
+          "title": "Stack (LIFO)",
+          "description": "Implement the Stack ADT two ways — a fixed-capacity array-backed ArrayStack<T,N> with zero runtime allocation and a dynamically growing LinkedStack<T> backed by linked nodes — then compare their complexity and allocation trade-offs.",
+          "tech": [
+            "C++17/20",
+            "non-type template parameters",
+            "raw pointers",
+            "RAII",
+            "std::array"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-queue",
+          "path": "projects/phase-2-linear-structures/project-05-queue",
+          "title": "Queue & Circular Buffer",
+          "description": "Implement the Queue ADT as a linked-node queue with O(1) enqueue/dequeue and then as a fixed-size circular ring buffer with modulo wrap-around, zero runtime allocation, and a count-based full/empty disambiguation.",
+          "tech": [
+            "C++17/20",
+            "std::array",
+            "raw pointers",
+            "RAII",
+            "modulo arithmetic",
+            "non-type template parameters"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-deque",
+          "path": "projects/phase-2-linear-structures/project-06-deque",
+          "title": "Deque (Double-Ended Queue)",
+          "description": "Build a Deque<T> backed by a doubly linked list with O(1) push/pop at both ends, then implement the sliding-window maximum using a monotonic deque to show the structure's canonical O(n) application.",
+          "tech": [
+            "C++17/20",
+            "std::deque",
+            "doubly linked list",
+            "monotonic deque",
+            "sliding window"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-stack-queue-applications",
+          "path": "projects/phase-2-linear-structures/project-07-stack-queue-applications",
+          "title": "Applications of Stacks & Queues",
+          "description": "Implement four canonical algorithms that demonstrate the power of LIFO and FIFO disciplines: balanced bracket checking, Shunting-Yard infix-to-postfix conversion with postfix evaluation, next-greater-element via a monotonic stack, and a BFS level-order traversal preview.",
+          "tech": [
+            "C++17/20",
+            "std::stack",
+            "std::queue",
+            "std::deque",
+            "monotonic stack",
+            "Shunting-Yard"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-lru-cache",
+          "path": "projects/phase-2-linear-structures/project-08-lru-cache",
+          "title": "LRU Cache",
+          "description": "Build an O(1) Least-Recently-Used cache by composing std::unordered_map with a hand-written doubly linked list (with sentinel nodes), implementing get and put in strictly O(1) time with correct LRU eviction and move-to-front on access.",
+          "tech": [
+            "C++17/20",
+            "std::unordered_map",
+            "doubly linked list",
+            "sentinel nodes",
+            "RAII",
+            "data structure composition"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-recursion-sorting-searching",
+      "title": "Recursion, Searching & Sorting",
+      "goal": "Master recursion and the canonical algorithms: binary search, merge/quick/heap sort, and the analysis that explains why each performs as it does.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-recursion",
+          "path": "projects/phase-3-recursion-sorting-searching/project-01-recursion",
+          "title": "Recursion & the Call Stack",
+          "description": "Build factorial, Fibonacci, and exponentiation recursively, trace the call stack frame-by-frame, observe exponential blow-up, fix it with memoisation, and understand tail recursion — tying hardware stack mechanics to algorithmic reasoning.",
+          "tech": [
+            "C++20",
+            "g++",
+            "chrono"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-binary-search",
+          "path": "projects/phase-3-recursion-sorting-searching/project-02-binary-search",
+          "title": "Binary Search & Its Variants",
+          "description": "Implement classic binary search with overflow-safe mid, then build lower_bound and upper_bound from scratch, search a rotated sorted array, and apply binary search on the answer to an optimisation problem — understanding the loop invariant that makes each variant correct.",
+          "tech": [
+            "C++20",
+            "g++",
+            "<algorithm>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-elementary-sorts",
+          "path": "projects/phase-3-recursion-sorting-searching/project-03-elementary-sorts",
+          "title": "Elementary Sorts",
+          "description": "Implement bubble, selection, and insertion sort from scratch with comparison/swap counters, compare their behaviour on sorted, random, and reverse inputs, and understand stability, in-place sorting, and why insertion sort remains relevant inside every production sort library.",
+          "tech": [
+            "C++20",
+            "g++",
+            "<algorithm>",
+            "<random>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-merge-sort",
+          "path": "projects/phase-3-recursion-sorting-searching/project-04-merge-sort",
+          "title": "Merge Sort (Divide & Conquer)",
+          "description": "Implement merge sort from scratch — the merge step, recursive split, and bottom-up iterative variant — derive T(n) = 2T(n/2) + O(n) via the recursion tree, verify O(n log n) time and O(n) space, and confirm stability with a keyed-record test.",
+          "tech": [
+            "C++20",
+            "g++",
+            "<vector>",
+            "<algorithm>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-quick-sort",
+          "path": "projects/phase-3-recursion-sorting-searching/project-05-quick-sort",
+          "title": "Quick Sort & Partitioning",
+          "description": "Implement Lomuto and Hoare partition schemes, observe the O(n^2) worst case with fixed pivot on sorted input, eliminate it with randomised pivot selection, and handle duplicates efficiently with three-way Dutch National Flag partitioning.",
+          "tech": [
+            "C++20",
+            "g++",
+            "<random>",
+            "<chrono>",
+            "<algorithm>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-heap-sort",
+          "path": "projects/phase-3-recursion-sorting-searching/project-06-heap-sort",
+          "title": "Heap Sort & the Binary Heap",
+          "description": "Build an array-based binary max-heap from scratch with sift_up, sift_down, and O(n) heapify, then implement heap sort (in-place, O(n log n), not stable) and a full priority queue interface — the same heap that powers Dijkstra and std::priority_queue.",
+          "tech": [
+            "C++20",
+            "g++",
+            "<vector>",
+            "<algorithm>",
+            "<chrono>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-sorting-analysis",
+          "path": "projects/phase-3-recursion-sorting-searching/project-07-sorting-analysis",
+          "title": "Choosing a Sort: Analysis, Stability & std::sort",
+          "description": "Consolidate all six sorting algorithms into a comparison table, prove the Omega(n log n) comparison lower bound with a decision-tree argument, implement counting sort and radix sort from scratch, and learn what std::sort (introsort) and std::stable_sort actually do.",
+          "tech": [
+            "C++20",
+            "g++",
+            "<algorithm>",
+            "<chrono>",
+            "<iomanip>"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-search-sort-toolkit",
+          "path": "projects/phase-3-recursion-sorting-searching/project-08-search-sort-toolkit",
+          "title": "Searching & Sorting Toolkit",
+          "description": "Build a header-only toolkit.hpp exposing binary_search, lower_bound, merge_sort, quick_sort, and heap_sort, then benchmark all five against std::sort and std::stable_sort on random, sorted, and reversed inputs using <chrono>, and write a structured empirical analysis tying the numbers back to algorithmic theory.",
+          "tech": [
+            "C++20",
+            "g++",
+            "-O2",
+            "<chrono>",
+            "<random>",
+            "<algorithm>"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-trees-heaps",
+      "title": "Trees, Heaps & Tries",
+      "goal": "Implement hierarchical structures: binary trees and BSTs, balancing, binary heaps/priority queues, tries, and range-query trees.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-binary-tree",
+          "path": "projects/phase-4-trees-heaps/project-01-binary-tree",
+          "title": "Binary Trees & Traversals",
+          "description": "Build a binary tree from scratch with RAII cleanup and implement all four traversals — preorder, inorder, postorder (recursive and iterative with an explicit stack), and level-order BFS — to understand how the call stack and data-structure traversal relate.",
+          "tech": [
+            "C++20",
+            "std::stack",
+            "std::queue",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-bst",
+          "path": "projects/phase-4-trees-heaps/project-02-bst",
+          "title": "Binary Search Tree",
+          "description": "Build a full BST with insert, search, and delete (all three cases including two-children/inorder-successor) from scratch, and confirm that inorder traversal always yields sorted output.",
+          "tech": [
+            "C++20",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-tree-algorithms",
+          "path": "projects/phase-4-trees-heaps/project-03-tree-algorithms",
+          "title": "Tree Algorithms",
+          "description": "Implement the eight classic interview tree algorithms — height, balanced-check, diameter, LCA, validate-BST, invert, and path-sum — each demonstrating a distinct recursive postorder-reduction pattern.",
+          "tech": [
+            "C++20",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-balanced-trees",
+          "path": "projects/phase-4-trees-heaps/project-04-balanced-trees",
+          "title": "Balanced Trees & Rotations",
+          "description": "Implement an AVL self-balancing BST from scratch — height-tracked nodes, left/right rotations, all four imbalance cases (LL/RR/LR/RL), and insert with automatic rebalancing — proving that O(log n) height is maintained regardless of input order.",
+          "tech": [
+            "C++20",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-heap-priority-queue",
+          "path": "projects/phase-4-trees-heaps/project-05-heap-priority-queue",
+          "title": "Binary Heap & Priority Queue",
+          "description": "Implement an array-backed max-heap with sift-up push, sift-down pop, and O(n) build_heap, then generalize it as a PriorityQueue<T,Comp> class template that works as min- or max-heap, and apply it to the top-K streaming problem.",
+          "tech": [
+            "C++20",
+            "std::vector",
+            "std::less",
+            "std::greater",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-trie",
+          "path": "projects/phase-4-trees-heaps/project-06-trie",
+          "title": "Trie (Prefix Tree)",
+          "description": "Build a trie from scratch with 26-slot array children and an end-of-word flag, implementing insert, search, startsWith, and an autocomplete function via DFS-with-backtracking.",
+          "tech": [
+            "C++20",
+            "std::array",
+            "std::unordered_map",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-fenwick-segment-tree",
+          "path": "projects/phase-4-trees-heaps/project-07-fenwick-segment-tree",
+          "title": "Range-Query Trees: Fenwick & Segment Tree",
+          "description": "Build a Fenwick tree (BIT) for O(log n) prefix-sum update and query using the lowbit trick, then build a segment tree supporting both range-sum and range-min queries with point updates, and compare when each structure is appropriate.",
+          "tech": [
+            "C++20",
+            "std::vector",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-tree-toolkit",
+          "path": "projects/phase-4-trees-heaps/project-08-tree-toolkit",
+          "title": "Tree Toolkit: Huffman Coding",
+          "description": "Synthesize Phase 4 by building a complete Huffman coding pipeline: frequency table, greedy tree construction with a min-heap, prefix-free codebook generation by tree traversal, encode a string to bits, and decode using the tree as a trie.",
+          "tech": [
+            "C++20",
+            "std::priority_queue",
+            "std::unordered_map",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-hashing-graphs",
+      "title": "Hashing & Graphs",
+      "goal": "Build hash tables and graph algorithms: collision handling, hashing patterns, BFS/DFS, shortest paths, and topological sort.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-hash-tables",
+          "path": "projects/phase-5-hashing-graphs/project-01-hash-tables",
+          "title": "Hash Tables from Scratch",
+          "description": "Build a HashMap<K,V> with separate chaining, load-factor-triggered resize, and average O(1) insert/find/erase, then compare against std::unordered_map.",
+          "tech": [
+            "C++20",
+            "std::hash",
+            "std::vector",
+            "std::list"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-open-addressing",
+          "path": "projects/phase-5-hashing-graphs/project-02-open-addressing",
+          "title": "Open Addressing & Hashing Internals",
+          "description": "Build a FlatMap<K,V> with linear probing and tombstone deletion, implement double hashing to eliminate clustering, and compare cache behavior against separate chaining.",
+          "tech": [
+            "C++20",
+            "std::vector",
+            "std::hash",
+            "std::optional"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-hashing-patterns",
+          "path": "projects/phase-5-hashing-graphs/project-03-hashing-patterns",
+          "title": "Hashing Interview Patterns",
+          "description": "Implement five canonical hashing patterns — frequency counting, deduplication, two-sum, group anagrams, and subarray-sum-equals-k — each turning an O(n²) brute force into an O(n) solution.",
+          "tech": [
+            "C++20",
+            "std::unordered_map",
+            "std::unordered_set",
+            "std::optional"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-graph-representations",
+          "path": "projects/phase-5-hashing-graphs/project-04-graph-representations",
+          "title": "Graph Representations",
+          "description": "Build a reusable Graph class with adjacency-list and adjacency-matrix representations for directed/undirected weighted graphs, analyze space and time tradeoffs, and load graphs from edge lists.",
+          "tech": [
+            "C++20",
+            "std::vector",
+            "std::pair"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-bfs",
+          "path": "projects/phase-5-hashing-graphs/project-05-bfs",
+          "title": "Breadth-First Search",
+          "description": "Implement BFS with a queue on the Project 4 Graph class to compute shortest unweighted paths, find connected components, and solve a grid maze with an implicit graph.",
+          "tech": [
+            "C++20",
+            "std::queue",
+            "std::vector",
+            "graph.hpp"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-dfs",
+          "path": "projects/phase-5-hashing-graphs/project-06-dfs",
+          "title": "Depth-First Search",
+          "description": "Implement recursive and iterative DFS on the Project 4 Graph class, detect directed cycles with three-color marking, detect undirected cycles with parent tracking, and enumerate all paths with backtracking.",
+          "tech": [
+            "C++20",
+            "std::stack",
+            "std::vector",
+            "std::function",
+            "graph.hpp"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-shortest-paths-topo",
+          "path": "projects/phase-5-hashing-graphs/project-07-shortest-paths-topo",
+          "title": "Weighted Shortest Paths & Topological Sort",
+          "description": "Implement Dijkstra's algorithm with a min-heap priority queue for non-negative weighted shortest paths, and topological sort via both DFS post-order and Kahn's BFS algorithm with cycle detection.",
+          "tech": [
+            "C++20",
+            "std::priority_queue",
+            "std::queue",
+            "std::function",
+            "graph.hpp"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-graph-toolkit",
+          "path": "projects/phase-5-hashing-graphs/project-08-graph-toolkit",
+          "title": "Graph Toolkit",
+          "description": "Synthesise the phase: build a GridPathfinder running BFS and Dijkstra on weighted terrain, implement Union-Find with path compression and union by rank, and apply it to Kruskal-style connectivity.",
+          "tech": [
+            "C++20",
+            "std::priority_queue",
+            "std::queue",
+            "std::vector",
+            "std::iota",
+            "graph.hpp"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-algorithm-design",
+      "title": "Algorithm Design & Interview Mastery",
+      "goal": "Wield the big algorithmic paradigms — greedy, divide-and-conquer, backtracking, and dynamic programming — and assemble a tested capstone.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-greedy",
+          "path": "projects/phase-6-algorithm-design/project-01-greedy",
+          "title": "Greedy Algorithms",
+          "description": "Build four greedy classics from scratch — interval scheduling, coin change (with DP counterexample), fractional knapsack, and Huffman coding — proving each correct or wrong via the exchange argument.",
+          "tech": [
+            "C++20",
+            "STL priority_queue",
+            "std::sort",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-divide-conquer",
+          "path": "projects/phase-6-algorithm-design/project-02-divide-conquer",
+          "title": "Divide & Conquer",
+          "description": "Implement maximum subarray (D&C vs Kadane), inversion counting via merge sort, and fast exponentiation, then apply the Master Theorem to analyze the recurrence of each.",
+          "tech": [
+            "C++20",
+            "recursion",
+            "std::vector",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-backtracking",
+          "path": "projects/phase-6-algorithm-design/project-03-backtracking",
+          "title": "Backtracking",
+          "description": "Implement permutations, subsets, combinations, N-Queens, and a Sudoku solver using the choose/explore/un-choose template, then quantify how pruning reduces nodes visited exponentially.",
+          "tech": [
+            "C++20",
+            "recursion",
+            "std::vector",
+            "std::array",
+            "std::function",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-dp-1d",
+          "path": "projects/phase-6-algorithm-design/project-04-dp-1d",
+          "title": "Dynamic Programming I (1D)",
+          "description": "Implement Fibonacci, climbing stairs, house robber, coin change (minimum coins), and LIS from scratch using both memoization and tabulation, deriving each recurrence from first principles.",
+          "tech": [
+            "C++20",
+            "std::vector",
+            "std::unordered_map",
+            "std::chrono",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-dp-2d",
+          "path": "projects/phase-6-algorithm-design/project-05-dp-2d",
+          "title": "Dynamic Programming II (2D & Sequences)",
+          "description": "Implement grid unique-paths, min-path-sum, 0/1 knapsack, LCS, and edit distance with full 2D tables and space-compressed variants, including solution reconstruction for LCS.",
+          "tech": [
+            "C++20",
+            "std::vector",
+            "std::string",
+            "std::algorithm",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-bit-manipulation",
+          "path": "projects/phase-6-algorithm-design/project-06-bit-manipulation",
+          "title": "Bit Manipulation",
+          "description": "Implement ten canonical bit tricks (check/set/clear/toggle, LSB, popcount, power-of-2, XOR swap, single number, bitmask subsets), explain their two's complement mechanics, and apply them to HFT-style flag operations.",
+          "tech": [
+            "C++20",
+            "std::bitset",
+            "std::popcount",
+            "std::has_single_bit",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-interview-patterns",
+          "path": "projects/phase-6-algorithm-design/project-07-interview-patterns",
+          "title": "Interview Patterns & Problem-Solving Framework",
+          "description": "Build a systematic problem-solving framework mapping 8 signal patterns to algorithms, implement the same problem two ways with explicit tradeoff analysis, and study the complexity targets and LeetCode strategy that make pattern mastery stick.",
+          "tech": [
+            "C++20",
+            "std::priority_queue",
+            "std::unordered_map",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-algorithm-design/project-08-capstone",
+          "title": "Autocomplete & Route-Planning Engine (Track Capstone)",
+          "description": "Build a CMake-packaged, GoogleTest-tested C++ application combining a Trie-backed autocomplete (top-k via heap) and a weighted-graph route planner (Dijkstra), structured as a library + thin CLI with 10 tests covering happy paths and edge cases.",
+          "tech": [
+            "C++20",
+            "CMake 3.14+",
+            "GoogleTest 1.14",
+            "FetchContent",
+            "std::unique_ptr",
+            "std::priority_queue",
+            "std::unordered_map",
+            "g++"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
