@@ -1,0 +1,726 @@
+{
+  "id": "python-core",
+  "title": "Python Core (Beginner to Advanced)",
+  "tagline": "Master the Python language end-to-end through projects: fundamentals, idiomatic and functional Python, object-oriented design, packaging and environments, the standard library, and concurrency, perfo…",
+  "level": null,
+  "stack": [
+    "Python 3.12",
+    "pytest",
+    "typing",
+    "venv",
+    "Poetry"
+  ],
+  "targetRoles": [
+    "Python Developer",
+    "Software Engineer",
+    "Backend Engineer (Python)",
+    "ML/Data Engineer (foundation)"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Master the Python language end-to-end through projects: fundamentals, idiomatic and functional Python, object-oriented design, packaging and environments, the standard library, and concurrency, performance, and testing. The language foundation every Python role assumes — and the base the AI/ML, Web, and Data-Automation tracks build on.",
+  "environment": [],
+  "capstone": {
+    "title": "Packaged, typed, tested CLI library",
+    "project": "Build a useful command-line tool as a properly packaged Python project: type-hinted throughout, tested with pytest (with coverage), documented, and published to TestPyPI so anyone can `pip install` it."
+  },
+  "phases": [
+    {
+      "id": "phase-1-fundamentals",
+      "title": "Language Fundamentals",
+      "goal": "Read and write clean, correct Python: types, collections, control flow, functions, and exceptions.",
+      "projectCount": 9,
+      "projects": [
+        {
+          "slug": "project-01-unit-converter-cli",
+          "path": "projects/phase-1-fundamentals/project-01-unit-converter-cli",
+          "title": "Unit Converter CLI",
+          "description": "Build an interactive command-line unit converter to learn Python's core types, type conversion, functions, conditionals, loops, and exception handling.",
+          "tech": [
+            "Python 3.12",
+            "input/print",
+            "functions",
+            "exceptions"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-string-toolkit",
+          "path": "projects/phase-1-fundamentals/project-02-string-toolkit",
+          "title": "String Toolkit",
+          "description": "Build a small library of text utilities (slugify, word count, title-case, reverse, palindrome check) to master Python strings, slicing, methods, and f-string formatting.",
+          "tech": [
+            "Python 3.12",
+            "str methods",
+            "slicing",
+            "f-strings"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-number-guessing-game",
+          "path": "projects/phase-1-fundamentals/project-03-number-guessing-game",
+          "title": "Number Guessing Game",
+          "description": "Build a guess-the-number game with hints, attempt limits, and replay to master numbers, the random module, comparison operators, and while loops.",
+          "tech": [
+            "Python 3.12",
+            "random",
+            "while loops",
+            "int/float"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-todo-list-collections",
+          "path": "projects/phase-1-fundamentals/project-04-todo-list-collections",
+          "title": "To-Do List (Lists & Tuples)",
+          "description": "Build an in-memory to-do manager with add/list/complete/remove to master Python lists, tuples, indexing, iteration, and mutation vs immutability.",
+          "tech": [
+            "Python 3.12",
+            "list",
+            "tuple",
+            "enumerate"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-contact-book-dict",
+          "path": "projects/phase-1-fundamentals/project-05-contact-book-dict",
+          "title": "Contact Book (Dicts & Sets)",
+          "description": "Build a searchable contact book to master dictionaries (key/value lookup), sets (uniqueness and membership), and why hashing makes them fast.",
+          "tech": [
+            "Python 3.12",
+            "dict",
+            "set",
+            "hashing"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-data-cleaning-comprehensions",
+          "path": "projects/phase-1-fundamentals/project-06-data-cleaning-comprehensions",
+          "title": "Data Cleaning with Comprehensions",
+          "description": "Clean a messy list of records using list, dict, and set comprehensions, learning when a comprehension improves clarity and when it hurts it.",
+          "tech": [
+            "Python 3.12",
+            "comprehensions",
+            "list/dict/set"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-control-flow-patterns",
+          "path": "projects/phase-1-fundamentals/project-07-control-flow-patterns",
+          "title": "Control Flow Patterns",
+          "description": "Implement classic exercises (FizzBuzz, a multiplication table, a simple text menu with match/case, and prime detection) to master conditionals, loops, and structural pattern matching.",
+          "tech": [
+            "Python 3.12",
+            "match/case",
+            "for/while",
+            "boolean logic"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-functions-deep-dive",
+          "path": "projects/phase-1-fundamentals/project-08-functions-deep-dive",
+          "title": "Functions Deep Dive",
+          "description": "Build a small statistics toolkit to master function parameters, default arguments, *args/**kwargs, multiple return values, scope, and the mutable-default-argument trap.",
+          "tech": [
+            "Python 3.12",
+            "functions",
+            "*args/**kwargs",
+            "scope"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-09-errors-and-validation",
+          "path": "projects/phase-1-fundamentals/project-09-errors-and-validation",
+          "title": "Errors & Input Validation",
+          "description": "Build a reusable validation layer with custom exceptions to master try/except/else/finally, exception hierarchy, raising and chaining, and the EAFP vs LBYL styles.",
+          "tech": [
+            "Python 3.12",
+            "exceptions",
+            "custom errors",
+            "EAFP"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-idiomatic",
+      "title": "Idiomatic & Functional Python",
+      "goal": "Write Python the way Python developers do: comprehensions, generators, decorators, typing, and the functional toolkit.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-unpacking-and-zip",
+          "path": "projects/phase-2-idiomatic/project-01-unpacking-and-zip",
+          "title": "Unpacking, Starred Targets & zip",
+          "description": "Build a CSV row transformer to master tuple/dict unpacking, starred assignment, zip, enumerate, and dict merging — the idioms that make Python code concise.",
+          "tech": [
+            "Python 3.12",
+            "unpacking",
+            "zip",
+            "enumerate"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-iterators-and-generators",
+          "path": "projects/phase-2-idiomatic/project-02-iterators-and-generators",
+          "title": "Iterators & Generators",
+          "description": "Build a lazy log-file reader and number streams using the iterator protocol and generator functions with yield, learning lazy evaluation and memory efficiency.",
+          "tech": [
+            "Python 3.12",
+            "generators",
+            "yield",
+            "iterator protocol"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-decorators",
+          "path": "projects/phase-2-idiomatic/project-03-decorators",
+          "title": "Decorators",
+          "description": "Build timing, caching, and retry decorators to learn how functions wrap other functions, why functools.wraps matters, and how decorators with arguments work.",
+          "tech": [
+            "Python 3.12",
+            "decorators",
+            "functools.wraps",
+            "closures"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-closures-higher-order",
+          "path": "projects/phase-2-idiomatic/project-04-closures-higher-order",
+          "title": "Closures & Higher-Order Functions",
+          "description": "Build configurable function factories and pipelines to master closures, functions as values, higher-order functions, and lambda — the foundation under decorators and callbacks.",
+          "tech": [
+            "Python 3.12",
+            "closures",
+            "higher-order functions",
+            "lambda"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-functional-toolkit",
+          "path": "projects/phase-2-idiomatic/project-05-functional-toolkit",
+          "title": "Functional Toolkit: map, filter, reduce, partial",
+          "description": "Process data with map, filter, functools.reduce, functools.partial, and the operator module — and learn when these beat a comprehension and when they don't.",
+          "tech": [
+            "Python 3.12",
+            "functools",
+            "operator",
+            "map/filter/reduce"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-itertools-recipes",
+          "path": "projects/phase-2-idiomatic/project-06-itertools-recipes",
+          "title": "itertools Recipes",
+          "description": "Solve real problems with itertools (chain, islice, groupby, count, cycle, combinations, permutations, accumulate) to learn efficient, lazy iteration patterns.",
+          "tech": [
+            "Python 3.12",
+            "itertools",
+            "generators"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-type-hints-mypy",
+          "path": "projects/phase-2-idiomatic/project-07-type-hints-mypy",
+          "title": "Type Hints & Static Checking with mypy",
+          "description": "Add complete type hints to a small module and verify them with mypy: built-in generics, Optional/Union, type aliases, Protocols, and Generics.",
+          "tech": [
+            "Python 3.12",
+            "typing",
+            "mypy"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-dataclasses-enums",
+          "path": "projects/phase-2-idiomatic/project-08-dataclasses-enums",
+          "title": "Dataclasses, Enums & NamedTuples",
+          "description": "Model structured records with dataclasses (mutable, frozen, with defaults and methods), Enums for fixed choices, and NamedTuple for lightweight immutable records.",
+          "tech": [
+            "Python 3.12",
+            "dataclasses",
+            "enum",
+            "typing.NamedTuple"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-oop-design",
+      "title": "Object-Oriented Python & Design",
+      "goal": "Model problems with classes done well — inheritance, dunder methods, properties, ABCs, and Pythonic design.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-classes-and-instances",
+          "path": "projects/phase-3-oop-design/project-01-classes-and-instances",
+          "title": "Classes & Instances",
+          "description": "Model a bank account with classes to learn __init__, instance vs class attributes, methods, and the role of self.",
+          "tech": [
+            "Python 3.12",
+            "classes",
+            "self",
+            "attributes"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-dunder-methods",
+          "path": "projects/phase-3-oop-design/project-02-dunder-methods",
+          "title": "Dunder Methods (Operator Overloading)",
+          "description": "Build a Vector and a Money class implementing __repr__/__str__, __eq__/__hash__, __add__, comparison, and __len__ to learn how Python's data model makes objects behave like built-ins.",
+          "tech": [
+            "Python 3.12",
+            "dunder methods",
+            "data model"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-inheritance-and-mro",
+          "path": "projects/phase-3-oop-design/project-03-inheritance-and-mro",
+          "title": "Inheritance, super() & the MRO",
+          "description": "Model a shape hierarchy to learn inheritance, method overriding, super(), and how Python resolves methods across multiple base classes (the MRO).",
+          "tech": [
+            "Python 3.12",
+            "inheritance",
+            "super",
+            "MRO"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-properties-and-encapsulation",
+          "path": "projects/phase-3-oop-design/project-04-properties-and-encapsulation",
+          "title": "Properties & Encapsulation",
+          "description": "Use @property, setters, and computed attributes to enforce invariants and expose a clean interface, learning Python's convention-based encapsulation.",
+          "tech": [
+            "Python 3.12",
+            "@property",
+            "encapsulation"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-abstract-base-classes",
+          "path": "projects/phase-3-oop-design/project-05-abstract-base-classes",
+          "title": "Abstract Base Classes & Interfaces",
+          "description": "Define a payment-processor interface with abc.ABC and @abstractmethod so subclasses are forced to implement required methods, learning interface-based design.",
+          "tech": [
+            "Python 3.12",
+            "abc",
+            "interfaces"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-composition-over-inheritance",
+          "path": "projects/phase-3-oop-design/project-06-composition-over-inheritance",
+          "title": "Composition over Inheritance",
+          "description": "Model a Car built from an Engine, Wheels, and a Logger to learn composition, delegation, and dependency injection — and when they beat inheritance.",
+          "tech": [
+            "Python 3.12",
+            "composition",
+            "delegation",
+            "dependency injection"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-classmethods-staticmethods",
+          "path": "projects/phase-3-oop-design/project-07-classmethods-staticmethods",
+          "title": "Class Methods & Static Methods",
+          "description": "Add alternative constructors and utility methods to a Date/Color class to learn @classmethod, @staticmethod, and how they differ from instance methods.",
+          "tech": [
+            "Python 3.12",
+            "@classmethod",
+            "@staticmethod"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-design-patterns-pythonic",
+          "path": "projects/phase-3-oop-design/project-08-design-patterns-pythonic",
+          "title": "Pythonic Design Patterns",
+          "description": "Implement Strategy, Factory, and a Pythonic Singleton/registry, learning how Python's first-class functions and modules simplify classic OO patterns.",
+          "tech": [
+            "Python 3.12",
+            "design patterns",
+            "first-class functions"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-packaging-envs",
+      "title": "Modules, Packaging & Environments",
+      "goal": "Turn scripts into installable, reproducible, distributable packages.",
+      "projectCount": 7,
+      "projects": [
+        {
+          "slug": "project-01-modules-and-imports",
+          "path": "projects/phase-4-packaging-envs/project-01-modules-and-imports",
+          "title": "Modules & the Import System",
+          "description": "Split a script into multiple modules and learn how Python's import system works: import vs from-import, absolute vs relative imports, __name__, and how sys.path resolves modules.",
+          "tech": [
+            "Python 3.12",
+            "modules",
+            "imports"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-packages-and-structure",
+          "path": "projects/phase-4-packaging-envs/project-02-packages-and-structure",
+          "title": "Packages & Project Structure",
+          "description": "Organize modules into an installable package with a src layout, __init__.py, and a clean public API, learning how real Python projects are structured.",
+          "tech": [
+            "Python 3.12",
+            "packages",
+            "__init__.py",
+            "src layout"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-virtual-environments",
+          "path": "projects/phase-4-packaging-envs/project-03-virtual-environments",
+          "title": "Virtual Environments & pip",
+          "description": "Create isolated environments with venv, install and pin dependencies with pip and requirements.txt, and learn why isolation and reproducibility matter.",
+          "tech": [
+            "Python 3.12",
+            "venv",
+            "pip",
+            "requirements.txt"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-pyproject-and-packaging",
+          "path": "projects/phase-4-packaging-envs/project-04-pyproject-and-packaging",
+          "title": "pyproject.toml & Building a Package",
+          "description": "Write a pyproject.toml, build a wheel and sdist, and install your package locally (editable) — the modern, standardized way to package Python.",
+          "tech": [
+            "Python 3.12",
+            "pyproject.toml",
+            "build",
+            "hatchling"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-publishing-to-pypi",
+          "path": "projects/phase-4-packaging-envs/project-05-publishing-to-pypi",
+          "title": "Publishing to PyPI (TestPyPI)",
+          "description": "Publish your package to TestPyPI with twine, then install it back with pip — the full release loop, practiced safely on the test index.",
+          "tech": [
+            "Python 3.12",
+            "twine",
+            "TestPyPI",
+            "build"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-dependency-management",
+          "path": "projects/phase-4-packaging-envs/project-06-dependency-management",
+          "title": "Dependency Management & Lockfiles",
+          "description": "Use a modern tool (uv or Poetry) to resolve, lock, and reproduce dependencies, learning version constraints, lockfiles, and how dependency resolution handles conflicts.",
+          "tech": [
+            "Python 3.12",
+            "uv",
+            "Poetry",
+            "lockfiles"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-cli-entry-points",
+          "path": "projects/phase-4-packaging-envs/project-07-cli-entry-points",
+          "title": "CLI Entry Points",
+          "description": "Turn your package into an installable command-line tool using project.scripts entry points and argparse, so users can run it by name after pip install.",
+          "tech": [
+            "Python 3.12",
+            "entry points",
+            "argparse"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-stdlib-io",
+      "title": "Standard Library & I/O",
+      "goal": "Get real work done with the batteries Python includes: files, data formats, dates, regex, logging, and processes.",
+      "projectCount": 7,
+      "projects": [
+        {
+          "slug": "project-01-files-and-pathlib",
+          "path": "projects/phase-5-stdlib-io/project-01-files-and-pathlib",
+          "title": "Files & pathlib",
+          "description": "Build a file-organizing tool using pathlib to read, write, move, and inspect files and directories the modern way, learning paths, encodings, and safe I/O.",
+          "tech": [
+            "Python 3.12",
+            "pathlib",
+            "file I/O"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-context-managers",
+          "path": "projects/phase-5-stdlib-io/project-02-context-managers",
+          "title": "Context Managers",
+          "description": "Write custom context managers with both __enter__/__exit__ and contextlib.contextmanager (a timer, a temporary-directory, a DB-like transaction) to master guaranteed setup/teardown.",
+          "tech": [
+            "Python 3.12",
+            "context managers",
+            "contextlib"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-json-and-csv",
+          "path": "projects/phase-5-stdlib-io/project-03-json-and-csv",
+          "title": "JSON & CSV Data Formats",
+          "description": "Read, write, and convert between JSON and CSV with the standard library, handling nested data, types, and the quirks of each format.",
+          "tech": [
+            "Python 3.12",
+            "json",
+            "csv"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-datetime-handling",
+          "path": "projects/phase-5-stdlib-io/project-04-datetime-handling",
+          "title": "Dates, Times & Time Zones",
+          "description": "Build a small scheduling/age calculator to master datetime, timedelta, parsing/formatting, and the critical difference between naive and timezone-aware datetimes.",
+          "tech": [
+            "Python 3.12",
+            "datetime",
+            "zoneinfo"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-regular-expressions",
+          "path": "projects/phase-5-stdlib-io/project-05-regular-expressions",
+          "title": "Regular Expressions",
+          "description": "Build a log/text extractor with the re module: patterns, groups, named groups, substitution, and compiled patterns, learning when regex is the right tool and when it isn't.",
+          "tech": [
+            "Python 3.12",
+            "re"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-logging",
+          "path": "projects/phase-5-stdlib-io/project-06-logging",
+          "title": "Logging Done Right",
+          "description": "Replace print debugging with the logging module: levels, loggers, handlers, formatters, and writing to console and file with structured output.",
+          "tech": [
+            "Python 3.12",
+            "logging"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-subprocess-and-os",
+          "path": "projects/phase-5-stdlib-io/project-07-subprocess-and-os",
+          "title": "Subprocess & OS Interaction",
+          "description": "Run external commands with subprocess and interact with the environment via os/shutil, learning safe argument passing, capturing output, exit codes, and avoiding shell-injection.",
+          "tech": [
+            "Python 3.12",
+            "subprocess",
+            "os",
+            "shutil"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-concurrency-perf-test",
+      "title": "Concurrency, Performance & Testing",
+      "goal": "Make Python fast, concurrent, and trustworthy — and prove it with tests.",
+      "projectCount": 9,
+      "projects": [
+        {
+          "slug": "project-01-threading-and-gil",
+          "path": "projects/phase-6-concurrency-perf-test/project-01-threading-and-gil",
+          "title": "Threading & the GIL",
+          "description": "Speed up I/O-bound work with threads and learn why the GIL means threads help I/O but not CPU-bound code, plus thread safety with locks.",
+          "tech": [
+            "Python 3.12",
+            "threading",
+            "GIL"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-02-multiprocessing",
+          "path": "projects/phase-6-concurrency-perf-test/project-02-multiprocessing",
+          "title": "Multiprocessing",
+          "description": "Use multiprocessing to parallelize CPU-bound work across cores, learning processes vs threads, Pool/map, and the cost of inter-process communication.",
+          "tech": [
+            "Python 3.12",
+            "multiprocessing"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-03-asyncio-basics",
+          "path": "projects/phase-6-concurrency-perf-test/project-03-asyncio-basics",
+          "title": "Asyncio Basics",
+          "description": "Learn async/await, coroutines, and the event loop by building an async program, understanding how single-threaded concurrency handles many I/O operations.",
+          "tech": [
+            "Python 3.12",
+            "asyncio",
+            "async/await"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-04-async-concurrency",
+          "path": "projects/phase-6-concurrency-perf-test/project-04-async-concurrency",
+          "title": "Async Concurrency Patterns",
+          "description": "Build a concurrent async fetcher with tasks, gather, timeouts, semaphores for rate-limiting, and error handling — the patterns real async code uses.",
+          "tech": [
+            "Python 3.12",
+            "asyncio",
+            "httpx"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-05-concurrent-futures",
+          "path": "projects/phase-6-concurrency-perf-test/project-05-concurrent-futures",
+          "title": "concurrent.futures",
+          "description": "Use ThreadPoolExecutor and ProcessPoolExecutor for a unified, high-level pool API, learning futures, executor.map, as_completed, and choosing the right pool.",
+          "tech": [
+            "Python 3.12",
+            "concurrent.futures"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-06-profiling-optimization",
+          "path": "projects/phase-6-concurrency-perf-test/project-06-profiling-optimization",
+          "title": "Profiling & Optimization",
+          "description": "Measure performance with timeit and cProfile, find the real bottleneck, and optimize it with data-driven changes (better algorithms/data structures, caching), avoiding premature optimization.",
+          "tech": [
+            "Python 3.12",
+            "timeit",
+            "cProfile"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-07-pytest-basics",
+          "path": "projects/phase-6-concurrency-perf-test/project-07-pytest-basics",
+          "title": "pytest Basics",
+          "description": "Write your first automated test suite with pytest: test functions, plain assert, testing for exceptions, and structuring tests so they run from one command.",
+          "tech": [
+            "Python 3.12",
+            "pytest"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-08-pytest-fixtures-parametrize",
+          "path": "projects/phase-6-concurrency-perf-test/project-08-pytest-fixtures-parametrize",
+          "title": "Fixtures & Parametrization",
+          "description": "Use pytest fixtures for reusable setup/teardown and parametrize to run one test across many inputs, keeping tests DRY and thorough.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "fixtures"
+          ],
+          "featured": false,
+          "video": null
+        },
+        {
+          "slug": "project-09-mocking-and-coverage",
+          "path": "projects/phase-6-concurrency-perf-test/project-09-mocking-and-coverage",
+          "title": "Mocking & Coverage",
+          "description": "Isolate external dependencies with unittest.mock (patch, Mock, monkeypatch) and measure test thoroughness with coverage, learning to test code that talks to networks, time, or files.",
+          "tech": [
+            "Python 3.12",
+            "unittest.mock",
+            "pytest",
+            "coverage"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
