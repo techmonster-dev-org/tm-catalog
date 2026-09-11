@@ -19,7 +19,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 45,
+  "videoCount": 46,
   "freeEligible": true,
   "freeProjectCount": 1,
   "paid": true,
@@ -455,7 +455,12 @@
             "Valgrind"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "KwC4hZ00Dxg",
+            "url": "https://www.youtube.com/shorts/KwC4hZ00Dxg",
+            "title": "You can't grow the buffer. So bend it into a circle. | C & Systems Programming #49",
+            "publishAt": "2026-09-10T23:00:00Z"
+          }
         },
         {
           "slug": "project-07-error-handling",
