@@ -16,7 +16,7 @@
     "Market Maker",
     "Quant Researcher (foundation)"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Train for the trading floor the way the prop shops actually hire. This is the quant-trader option of the Zero-to-Low-Level-Systems-Elite program — the one path that rewards raw quantitative reasoning over pedigree, where self-taught candidates genuinely compete. You drill the speed mental math that screens demand (Zetamac-fast arithmetic, estimation, Fermi problems), the applied probability and expected-value toolkit that underlies every trading decision, the games of chance and bet-sizing math (variance, risk of ruin, Kelly), and the heart of the trader interview: making and updating bid/ask markets, handling adverse selection, and managing inventory and risk. You round it out with the brain teasers, logic, and game theory these interviews lean on, then run full mock interviews. The capstone builds a market-making simulator with a quoting-and-risk strategy. Layered on the probability and mental-math of the math-foundations track, this is the route toward the quant-trading seats at Jane Street, Citadel, Jump, HRT, Optiver, IMC, DRW, and SIG — where the trading interview rewards how you think under uncertainty.",
+  "summary": "Train for the trading floor the way the prop shops actually hire. This is the quant-trader option of the Zero-to-Low-Level-Systems-Elite program — the one path that rewards raw quantitative reasoning over pedigree, where self-taught candidates genuinely compete. You drill the speed mental math that screens demand (the timed arithmetic drill-fast arithmetic, estimation, Fermi problems), the applied probability and expected-value toolkit that underlies every trading decision, the games of chance and bet-sizing math (variance, risk of ruin, Kelly), and the heart of the trader interview: making and updating bid/ask markets, handling adverse selection, and managing inventory and risk. You round it out with the brain teasers, logic, and game theory these interviews lean on, then run full mock interviews. The capstone builds a market-making simulator with a quoting-and-risk strategy. Layered on the probability and mental-math of the math-foundations track, this is the route toward the quant-trading seats at the leading proprietary trading and market-making firms — where the trading interview rewards how you think under uncertainty.",
   "environment": [],
   "capstone": {
     "title": "Market-Making Simulator & Strategy",
@@ -34,14 +34,14 @@
     {
       "id": "phase-1-mental-math",
       "title": "Mental Math & Estimation",
-      "goal": "Build the screen-passing speed: fast arithmetic, multiplication/division tricks, fractions and percentages, Fermi estimation, and number sense — drilled to Zetamac pace.",
+      "goal": "Build the screen-passing speed: fast arithmetic, multiplication/division tricks, fractions and percentages, Fermi estimation, and number sense — drilled to drill pace.",
       "projectCount": 8,
       "projects": [
         {
           "slug": "project-01-fast-arithmetic",
           "path": "projects/phase-1-mental-math/project-01-fast-arithmetic",
           "title": "Fast Mental Arithmetic",
-          "description": "Build the speed foundation for quant trading screens: master left-to-right addition, the complement method for subtraction, and rounding-and-adjusting, then drill with a Python timed arithmetic tool that logs progress toward the Zetamac 25+/120s target.",
+          "description": "Build the speed foundation for quant trading screens: master left-to-right addition, the complement method for subtraction, and rounding-and-adjusting, then drill with a Python timed arithmetic tool that logs progress toward the timed arithmetic drill 25+/120s target.",
           "tech": [
             "Python",
             "random",
@@ -137,8 +137,8 @@
         {
           "slug": "project-08-mental-math-lab",
           "path": "projects/phase-1-mental-math/project-08-mental-math-lab",
-          "title": "Mental-Math Lab: Build a Zetamac Trainer",
-          "description": "Build a complete, configurable 120-second mixed-mode arithmetic trainer that draws from all eight Phase 1 problem types, tracks per-type accuracy in a JSON log, produces a multi-session progress report with trend and weakness flags, and benchmarks against the Zetamac 25+/120s target.",
+          "title": "Mental-Math Lab: Build a Timed Arithmetic Drill Trainer",
+          "description": "Build a complete, configurable 120-second mixed-mode arithmetic trainer that draws from all eight Phase 1 problem types, tracks per-type accuracy in a JSON log, produces a multi-session progress report with trend and weakness flags, and benchmarks against the timed arithmetic drill 25+/120s target.",
           "tech": [
             "Python",
             "random",
@@ -384,7 +384,7 @@
           "slug": "project-01-what-is-market-making",
           "path": "projects/phase-4-market-making/project-01-what-is-market-making",
           "title": "What Is Market Making?",
-          "description": "Simulate a basic market maker earning the bid/ask spread on balanced and imbalanced order flow, and understand the maker/taker economics that underpin real firms like Jane Street, Optiver, and IMC.",
+          "description": "Simulate a basic market maker earning the bid/ask spread on balanced and imbalanced order flow, and understand the maker/taker economics that underpin real firms like the leading proprietary trading and market-making firms.",
           "tech": [
             "Python"
           ],
@@ -450,7 +450,7 @@
           "slug": "project-07-the-mm-game",
           "path": "projects/phase-4-market-making/project-07-the-mm-game",
           "title": "The Market-Making Interview Game",
-          "description": "Play the canonical Jane Street/Optiver interview game in a fully playable Python simulation: make a two-sided market on an unknown quantity, an AI opponent trades on inside information, and you Bayesian-update and skew to convergence.",
+          "description": "Play the canonical the leading proprietary trading and market-making firms interview game in a fully playable Python simulation: make a two-sided market on an unknown quantity, an AI opponent trades on inside information, and you Bayesian-update and skew to convergence.",
           "tech": [
             "Python"
           ],
@@ -561,7 +561,7 @@
           "slug": "project-07-estimation-how-you-think",
           "path": "projects/phase-5-logic-game-theory/project-07-estimation-how-you-think",
           "title": "Estimation & 'How You Think' Questions",
-          "description": "Master the open-ended estimation under pressure: work through seven Fermi estimation problems (golf balls, AAPL volume, trades per second, piano tuners, McDonald's revenue, NYSE data, US real estate) using a structured verbal framework and Python verification, with explicit pushback-handling scripts.",
+          "description": "Master the open-ended estimation under pressure: work through seven Fermi estimation problems (golf balls, MRDT volume, trades per second, piano tuners, McDonald's revenue, the listing exchange data, US real estate) using a structured verbal framework and Python verification, with explicit pushback-handling scripts.",
           "tech": [
             "Python 3",
             "math"
@@ -619,7 +619,7 @@
           "slug": "project-03-mock-mental-math",
           "path": "projects/phase-6-trading-interview/project-03-mock-mental-math",
           "title": "Mock: Mental Math Under Pressure",
-          "description": "Build a timed mental math gauntlet, targeted operation-type drills, and a pressure simulation tool to develop the Zetamac 25+ speed and oral performance consistency required for QT interview arithmetic screens.",
+          "description": "Build a timed mental math gauntlet, targeted operation-type drills, and a pressure simulation tool to develop the timed arithmetic drill 25+ speed and oral performance consistency required for QT interview arithmetic screens.",
           "tech": [
             "Python"
           ],
