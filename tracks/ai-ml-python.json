@@ -11,7 +11,7 @@
     "scikit-learn",
     "PyTorch",
     "XGBoost",
-    "Anthropic SDK",
+    "LLM provider SDK",
     "FastAPI",
     "MLflow",
     "SQL"
@@ -22,7 +22,7 @@
     "AI/ML Software Engineer",
     "Applied Scientist (entry)"
   ],
-  "version": "3.0.0",
+  "version": "3.1.0",
   "phaseCount": 6,
   "projectCount": 49,
   "videoCount": 0,
@@ -30,7 +30,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Become a job-ready ML engineer through projects: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/generative-AI application work with the Anthropic API, and the MLOps that gets models into production. Pairs naturally with the Python Core track (its prerequisite) and the AI-Native/LLM track.",
+  "summary": "Become a job-ready ML engineer through projects: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/generative-AI application work with your model provider's API, and the MLOps that gets models into production. Pairs naturally with the Python Core track (its prerequisite) and the AI-Native/LLM track.",
   "environment": [],
   "capstone": {
     "title": "End-to-end ML project",
@@ -446,7 +446,7 @@
           "slug": "project-07-attention-transformers",
           "path": "projects/phase-4-deep-learning/project-07-attention-transformers",
           "title": "Attention & Transformers",
-          "description": "Understand self-attention and build a small transformer encoder, learning why attention replaced recurrence and powers modern AI (BERT, GPT, Claude).",
+          "description": "Understand self-attention and build a small transformer encoder, learning why attention replaced recurrence and powers modern AI (BERT, frontier and open-weights models).",
           "tech": [
             "Python 3.12",
             "PyTorch"
@@ -471,7 +471,7 @@
           "slug": "project-09-nlp-with-transformers",
           "path": "projects/phase-4-deep-learning/project-09-nlp-with-transformers",
           "title": "NLP with Pretrained Transformers",
-          "description": "Use Hugging Face transformers to run and fine-tune a pretrained language model (e.g. DistilBERT) for text classification — applying transfer learning to NLP.",
+          "description": "Use the transformers library to run and fine-tune a pretrained language model (e.g. DistilBERT) for text classification — applying transfer learning to NLP.",
           "tech": [
             "Python 3.12",
             "transformers",
@@ -486,17 +486,17 @@
     {
       "id": "phase-5-llms-genai",
       "title": "LLMs & Generative AI",
-      "goal": "Build real applications on large language models with the Anthropic API: prompting, structured output, RAG, evaluation, and agents.",
+      "goal": "Build real applications on large language models with your model provider's API: prompting, structured output, RAG, evaluation, and agents.",
       "projectCount": 8,
       "projects": [
         {
           "slug": "project-01-anthropic-api-basics",
           "path": "projects/phase-5-llms-genai/project-01-anthropic-api-basics",
-          "title": "Anthropic API Basics",
-          "description": "Make your first calls to Claude with the Anthropic Python SDK: messages, system prompts, multi-turn conversations, model/token parameters, and reading the response and usage.",
+          "title": "LLM API Basics",
+          "description": "Make your first calls to the model with your model provider's SDK: messages, system prompts, multi-turn conversations, model/token parameters, and reading the response and usage.",
           "tech": [
             "Python 3.12",
-            "anthropic"
+            "provider SDK"
           ],
           "featured": true,
           "video": null
@@ -505,10 +505,10 @@
           "slug": "project-02-prompt-engineering",
           "path": "projects/phase-5-llms-genai/project-02-prompt-engineering",
           "title": "Prompt Engineering Patterns",
-          "description": "Apply reliable prompting techniques with Claude — clear instructions, few-shot examples, role/system prompts, chain-of-thought, and XML-tag structuring — and measure their effect.",
+          "description": "Apply reliable prompting techniques with the model — clear instructions, few-shot examples, role/system prompts, chain-of-thought, and XML-tag structuring — and measure their effect.",
           "tech": [
             "Python 3.12",
-            "anthropic"
+            "provider SDK"
           ],
           "featured": false,
           "video": null
@@ -517,10 +517,10 @@
           "slug": "project-03-structured-output",
           "path": "projects/phase-5-llms-genai/project-03-structured-output",
           "title": "Structured Output Extraction",
-          "description": "Get guaranteed schema-valid JSON from Claude using structured outputs (output_config.format / messages.parse) so LLM responses can flow directly into your code.",
+          "description": "Get guaranteed schema-valid JSON from the model using structured outputs (output_config.format / messages.parse) so LLM responses can flow directly into your code.",
           "tech": [
             "Python 3.12",
-            "anthropic",
+            "provider SDK",
             "pydantic"
           ],
           "featured": true,
@@ -530,10 +530,10 @@
           "slug": "project-04-tool-use-function-calling",
           "path": "projects/phase-5-llms-genai/project-04-tool-use-function-calling",
           "title": "Tool Use & Function Calling",
-          "description": "Let Claude call your Python functions: define tools, run the agentic loop (tool_use -> execute -> tool_result), and let the model decide when to use them.",
+          "description": "Let the model call your Python functions: define tools, run the agentic loop (tool_use -> execute -> tool_result), and let the model decide when to use them.",
           "tech": [
             "Python 3.12",
-            "anthropic"
+            "provider SDK"
           ],
           "featured": true,
           "video": null
@@ -542,10 +542,10 @@
           "slug": "project-05-rag",
           "path": "projects/phase-5-llms-genai/project-05-rag",
           "title": "Retrieval-Augmented Generation (RAG)",
-          "description": "Ground Claude's answers in your own documents: embed a knowledge base, retrieve the most relevant chunks for a question, and pass them as context so the model answers from your data.",
+          "description": "Ground the model's answers in your own documents: embed a knowledge base, retrieve the most relevant chunks for a question, and pass them as context so the model answers from your data.",
           "tech": [
             "Python 3.12",
-            "anthropic",
+            "provider SDK",
             "sentence-transformers",
             "numpy"
           ],
@@ -559,7 +559,7 @@
           "description": "Measure LLM quality systematically: build a test set, score with exact/structured checks and an LLM-as-judge, and track quality across prompt or model changes instead of guessing.",
           "tech": [
             "Python 3.12",
-            "anthropic"
+            "provider SDK"
           ],
           "featured": false,
           "video": null
@@ -571,7 +571,7 @@
           "description": "Make LLM apps responsive and affordable: stream responses token-by-token, use prompt caching for repeated context, count tokens, and choose models by cost/quality.",
           "tech": [
             "Python 3.12",
-            "anthropic"
+            "provider SDK"
           ],
           "featured": false,
           "video": null
@@ -583,7 +583,7 @@
           "description": "Combine tool use, the agentic loop, and a system prompt into a small autonomous agent that plans, calls multiple tools across turns, and produces a final answer — with guardrails.",
           "tech": [
             "Python 3.12",
-            "anthropic"
+            "provider SDK"
           ],
           "featured": true,
           "video": null
