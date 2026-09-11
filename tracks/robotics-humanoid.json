@@ -8,7 +8,7 @@
     "Eigen",
     "ROS 2",
     "Python",
-    "MuJoCo / Isaac Sim"
+    "MuJoCo / GPU-accelerated simulators"
   ],
   "targetRoles": [
     "Robotics Software Engineer",
