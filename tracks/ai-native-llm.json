@@ -6,7 +6,7 @@
   "stack": [
     "Python",
     "TypeScript",
-    "Anthropic SDK",
+    "LLM provider SDK",
     "FastAPI/Next.js",
     "pgvector",
     "Docker"
@@ -17,7 +17,7 @@
     "Applied AI Engineer",
     "ML-adjacent Software Engineer"
   ],
-  "version": "2.0.0",
+  "version": "2.1.0",
   "phaseCount": 4,
   "projectCount": 17,
   "videoCount": 0,
@@ -46,7 +46,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -62,7 +62,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -78,7 +78,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -94,7 +94,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -118,7 +118,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -134,7 +134,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -150,7 +150,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -166,7 +166,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -182,7 +182,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -206,7 +206,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -222,7 +222,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -238,7 +238,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -254,7 +254,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -278,7 +278,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -294,7 +294,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -310,7 +310,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
@@ -326,7 +326,7 @@
           "tech": [
             "Python",
             "TypeScript",
-            "Anthropic SDK",
+            "LLM provider SDK",
             "FastAPI/Next.js",
             "pgvector",
             "Docker"
