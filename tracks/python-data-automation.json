@@ -22,7 +22,7 @@
     "Analytics Engineer",
     "Platform/Backend Engineer (Data)"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 5,
   "projectCount": 43,
   "videoCount": 0,
@@ -111,7 +111,7 @@
           "slug": "project-06-spreadsheet-automation",
           "path": "projects/phase-1-automation-scripting/project-06-spreadsheet-automation",
           "title": "Spreadsheet Automation",
-          "description": "Automate Excel and CSV work: read, transform, and generate spreadsheets with pandas and openpyxl — formatted reports, multiple sheets, and formulas — replacing manual spreadsheet drudgery.",
+          "description": "Automate spreadsheet and CSV work: read, transform, and generate spreadsheets with pandas and openpyxl — formatted reports, multiple sheets, and formulas — replacing manual spreadsheet drudgery.",
           "tech": [
             "Python 3.12",
             "pandas",
@@ -124,7 +124,7 @@
           "slug": "project-07-notifications-automation",
           "path": "projects/phase-1-automation-scripting/project-07-notifications-automation",
           "title": "Notifications & Alerts",
-          "description": "Send automated notifications — email (SMTP) and chat (Slack/webhook) — so your scripts and pipelines tell you about successes, failures, and results.",
+          "description": "Send automated notifications — email (SMTP) and chat (incoming webhooks) — so your scripts and pipelines tell you about successes, failures, and results.",
           "tech": [
             "Python 3.12",
             "smtplib",
@@ -234,7 +234,7 @@
           "slug": "project-07-pdf-document-extraction",
           "path": "projects/phase-2-scraping-acquisition/project-07-pdf-document-extraction",
           "title": "Extracting Data from PDFs & Documents",
-          "description": "Liberate data trapped in documents: extract text and tables from PDFs with pdfplumber, read Word/Excel files, and handle scanned pages with OCR — turning unstructured documents into structured data.",
+          "description": "Liberate data trapped in documents: extract text and tables from PDFs with pdfplumber, read .docx/.xlsx files, and handle scanned pages with OCR — turning unstructured documents into structured data.",
           "tech": [
             "Python 3.12",
             "pdfplumber",
@@ -510,12 +510,12 @@
         {
           "slug": "project-01-cloud-storage-boto3",
           "path": "projects/phase-5-cloud-reliability/project-01-cloud-storage-boto3",
-          "title": "Cloud Storage with boto3 (AWS SDK)",
-          "description": "Work with cloud infrastructure from Python: use boto3 to read/write S3 (the data lake), handle credentials securely, stream large objects, and understand object storage as the foundation of cloud data platforms.",
+          "title": "Cloud Storage with boto3 (the cloud provider SDK)",
+          "description": "Work with cloud infrastructure from Python: use boto3 to read/write object storage (the data lake), handle credentials securely, stream large objects, and understand object storage as the foundation of cloud data platforms.",
           "tech": [
             "Python 3.12",
             "boto3",
-            "AWS S3"
+            "object storage-compatible object storage"
           ],
           "featured": true,
           "video": null
@@ -566,7 +566,7 @@
           "tech": [
             "Python 3.12",
             "pydantic-settings",
-            "AWS Secrets Manager"
+            "the cloud provider Secrets Manager"
           ],
           "featured": false,
           "video": null
@@ -600,11 +600,11 @@
           "slug": "project-08-serverless-event-driven",
           "path": "projects/phase-5-cloud-reliability/project-08-serverless-event-driven",
           "title": "Serverless & Event-Driven Data Processing",
-          "description": "Process data without managing servers: write a function (AWS Lambda) triggered by events (a file landing in S3, a queue message), understand the serverless model and its tradeoffs, and design event-driven pipelines.",
+          "description": "Process data without managing servers: write a function (a serverless function runtime) triggered by events (a file landing in object storage, a queue message), understand the serverless model and its tradeoffs, and design event-driven pipelines.",
           "tech": [
             "Python 3.12",
-            "AWS Lambda",
-            "S3",
+            "a serverless function runtime",
+            "object storage",
             "SQS"
           ],
           "featured": true,
