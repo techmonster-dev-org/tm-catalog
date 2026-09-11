@@ -6,7 +6,7 @@
   "stack": [
     "C++17/20",
     "x86-64 / GCC / Clang",
-    "Godbolt",
+    "Compiler Explorer",
     "perf / Linux"
   ],
   "targetRoles": [
@@ -15,7 +15,7 @@
     "Systems / Performance Engineer",
     "Embedded / Robotics Engineer (foundation)"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -23,7 +23,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Go beneath the language to the machine itself — the layer that separates a generic software engineer from a low-latency systems engineer. You learn how data is represented in bits, how C compiles to x86-64 assembly, how the CPU pipelines and predicts branches, how the cache and memory hierarchy actually determine performance, how threads and atomics work at the hardware level, and how your program talks to the operating system kernel. Every concept is hands-on: you read disassembly on Godbolt, measure cache effects and branch misprediction, profile with perf, and kill false sharing with cache-line alignment. This is the shared systems spine of the Zero-to-Low-Level-Systems-Elite program — the body of knowledge that HFT low-latency, AI-chip/kernel, and robotics roles all assume, and where 'thinking in cache lines and nanoseconds' is built.",
+  "summary": "Go beneath the language to the machine itself — the layer that separates a generic software engineer from a low-latency systems engineer. You learn how data is represented in bits, how C compiles to x86-64 assembly, how the CPU pipelines and predicts branches, how the cache and memory hierarchy actually determine performance, how threads and atomics work at the hardware level, and how your program talks to the operating system kernel. Every concept is hands-on: you read disassembly on Compiler Explorer, measure cache effects and branch misprediction, profile with perf, and kill false sharing with cache-line alignment. This is the shared systems spine of the Zero-to-Low-Level-Systems-Elite program — the body of knowledge that HFT low-latency, AI-chip/kernel, and robotics roles all assume, and where 'thinking in cache lines and nanoseconds' is built.",
   "environment": [],
   "capstone": {
     "title": "Latency Lab — A Measured, Cache-Aware Lock-Free Component",
@@ -177,12 +177,12 @@
           "slug": "project-02-x86-basics",
           "path": "projects/phase-2-c-to-machine/project-02-x86-basics",
           "title": "x86-64 Assembly Basics",
-          "description": "Learn the x86-64 register file, Intel syntax, and the core instruction set by annotating compiler output on Godbolt — turning assembly from noise into readable machine-level C++.",
+          "description": "Learn the x86-64 register file, Intel syntax, and the core instruction set by annotating compiler output on Compiler Explorer — turning assembly from noise into readable machine-level C++.",
           "tech": [
             "C++20",
             "g++",
             "x86-64",
-            "Godbolt",
+            "Compiler Explorer",
             "Intel syntax"
           ],
           "featured": true,
@@ -196,7 +196,7 @@
           "tech": [
             "C++20",
             "g++",
-            "Godbolt",
+            "Compiler Explorer",
             "x86-64",
             "Intel syntax"
           ],
@@ -212,7 +212,7 @@
             "C++20",
             "g++",
             "x86-64",
-            "Godbolt",
+            "Compiler Explorer",
             "Intel syntax"
           ],
           "featured": true,
@@ -228,7 +228,7 @@
             "g++",
             "x86-64",
             "System V ABI",
-            "Godbolt"
+            "Compiler Explorer"
           ],
           "featured": true,
           "video": null
@@ -243,7 +243,7 @@
             "g++",
             "x86-64",
             "Intel syntax",
-            "Godbolt"
+            "Compiler Explorer"
           ],
           "featured": true,
           "video": null
@@ -368,11 +368,11 @@
           "slug": "project-06-compiler-optimization",
           "path": "projects/phase-3-processor-performance/project-06-compiler-optimization",
           "title": "What the Compiler Does For You",
-          "description": "Measure the performance impact of -O0 through -Ofast, observe constant folding and inlining with timing experiments, use __restrict__ to unblock auto-vectorization, and read generated assembly on Godbolt.",
+          "description": "Measure the performance impact of -O0 through -Ofast, observe constant folding and inlining with timing experiments, use __restrict__ to unblock auto-vectorization, and read generated assembly on Compiler Explorer.",
           "tech": [
             "C++20",
             "g++",
-            "Godbolt/Compiler Explorer",
+            "Compiler Explorer/Compiler Explorer",
             "fopt-info-vec"
           ],
           "featured": true,
@@ -756,7 +756,7 @@
           "slug": "project-07-low-latency-techniques",
           "path": "projects/phase-6-os-and-low-latency/project-07-low-latency-techniques",
           "title": "Low-Latency Engineering Techniques",
-          "description": "Synthesize the HFT engineering toolkit: implement and benchmark busy-polling vs epoll wakeup latency, apply the no-alloc hot-path discipline and measure p99 improvement, pin threads to CPU cores, and explain kernel-bypass concepts (DPDK, Solarflare) — backed by a latency histogram reporting p50/p99/p99.9.",
+          "description": "Synthesize the HFT engineering toolkit: implement and benchmark busy-polling vs epoll wakeup latency, apply the no-alloc hot-path discipline and measure p99 improvement, pin threads to CPU cores, and explain kernel-bypass concepts (DPDK, a kernel-bypass NIC) — backed by a latency histogram reporting p50/p99/p99.9.",
           "tech": [
             "C++20",
             "Linux",
