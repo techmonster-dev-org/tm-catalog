@@ -16,7 +16,7 @@
     "Perception / SLAM Engineer",
     "Embedded Robotics Engineer"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Make C++ move in the physical world. This is the robotics specialization: you build the real-time stack behind humanoid and mobile robots — the rotation math and kinematics that place a limb where you want it, the dynamics and classical control (PID through MPC) that make it move stably, the Kalman-filter state estimation and sensor fusion that tell the robot where it is, the perception and SLAM that let it see and map, the ROS 2 / embedded / real-time-Linux software layer (with CAN and EtherCAT to the actuators), and finally physics simulation plus the learning layer (RL, imitation, and vision-language-action policies) that increasingly drives modern humanoids. The capstone trains and deploys a locomotion or manipulation policy in simulation with a C++ control loop — no hardware required. Built on the C++ and systems foundations of the program, this is Branch C of the Zero-to-Low-Level-Systems-Elite path — the route into Tesla Optimus, Figure, 1X, Apptronik, and the humanoid companies pulling senior C++ talent hard.",
+  "summary": "Make C++ move in the physical world. This is the robotics specialization: you build the real-time stack behind humanoid and mobile robots — the rotation math and kinematics that place a limb where you want it, the dynamics and classical control (PID through MPC) that make it move stably, the Kalman-filter state estimation and sensor fusion that tell the robot where it is, the perception and SLAM that let it see and map, the ROS 2 / embedded / real-time-Linux software layer (with CAN and EtherCAT to the actuators), and finally physics simulation plus the learning layer (RL, imitation, and vision-language-action policies) that increasingly drives modern humanoids. The capstone trains and deploys a locomotion or manipulation policy in simulation with a C++ control loop — no hardware required. Built on the C++ and systems foundations of the program, this is Branch C of the Zero-to-Low-Level-Systems-Elite path — the route into an automaker's humanoid program and several humanoid startups, a humanoid startup, and the humanoid companies pulling senior C++ talent hard.",
   "environment": [],
   "capstone": {
     "title": "Sim-to-Control — A Locomotion or Manipulation Policy with a C++ Control Loop",
@@ -698,11 +698,11 @@
           "slug": "project-06-vla",
           "path": "projects/phase-6-sim-learning-capstone/project-06-vla",
           "title": "Vision-Language-Action Models",
-          "description": "Implement a minimal language-conditioned policy, analyze CLIP semantic alignment, study RT-2 action tokenization and π0 diffusion action heads, and understand the data/scaling story and current limitations of VLAs for humanoid manipulation.",
+          "description": "Implement a minimal language-conditioned policy, analyze CLIP semantic alignment, study a vision-language-action model action tokenization and π0 diffusion action heads, and understand the data/scaling story and current limitations of VLAs for humanoid manipulation.",
           "tech": [
             "Python 3.10+",
             "PyTorch",
-            "transformers (HuggingFace)",
+            "transformers (the open model hub)",
             "NumPy"
           ],
           "featured": true,
