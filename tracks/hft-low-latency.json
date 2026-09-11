@@ -16,7 +16,7 @@
     "Market Data / Feed Handler Engineer",
     "Performance Engineer"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Engineer software where nanoseconds are money. This is the specialization branch for high-frequency trading and ultra-low-latency systems: you learn to measure latency distributions (not averages), write 'mechanically sympathetic' C++ that never allocates or branches on the hot path, build the lock-free queues and ring buffers that move data between threads without contention, implement a limit-order-book matching engine with price-time priority, handle binary market-data feeds over the network with kernel-bypass techniques, and tune a Linux box for deterministic tail latency. The track culminates in a real matching engine fed by a simulated market-data handler, instrumented with latency histograms down to p99.9. Built on the computer-architecture and parallel-performance foundations, this is the path toward the highest-compensation engineering roles in software — the prop shops and hedge funds (Jane Street, Citadel, Jump, HRT, Optiver) where low-latency C++ mastery is the price of admission.",
+  "summary": "Engineer software where nanoseconds are money. This is the specialization branch for high-frequency trading and ultra-low-latency systems: you learn to measure latency distributions (not averages), write 'mechanically sympathetic' C++ that never allocates or branches on the hot path, build the lock-free queues and ring buffers that move data between threads without contention, implement a limit-order-book matching engine with price-time priority, handle binary market-data feeds over the network with kernel-bypass techniques, and tune a Linux box for deterministic tail latency. The track culminates in a real matching engine fed by a simulated market-data handler, instrumented with latency histograms down to p99.9. Built on the computer-architecture and parallel-performance foundations, this is the path toward the highest-compensation engineering roles in software — the prop shops and hedge funds (the leading proprietary trading and market-making firms) where low-latency C++ mastery is the price of admission.",
   "environment": [],
   "capstone": {
     "title": "Limit-Order-Book Matching Engine + Market-Data Feed Handler",
@@ -606,7 +606,7 @@
           "slug": "project-05-kernel-bypass",
           "path": "projects/phase-5-market-data-networking/project-05-kernel-bypass",
           "title": "Kernel Bypass & Fast I/O (Concepts + Busy-Poll)",
-          "description": "Study the kernel packet path's latency sources, implement SO_BUSY_POLL and a manual non-blocking spin-poll loop on standard sockets, and survey the kernel-bypass technology landscape (DPDK, AF_XDP, io_uring, Solarflare ef_vi).",
+          "description": "Study the kernel packet path's latency sources, implement SO_BUSY_POLL and a manual non-blocking spin-poll loop on standard sockets, and survey the kernel-bypass technology landscape (DPDK, AF_XDP, io_uring, a kernel-bypass NIC ef_vi).",
           "tech": [
             "C++20",
             "POSIX sockets",
