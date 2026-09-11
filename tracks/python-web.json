@@ -20,7 +20,7 @@
     "API Engineer",
     "Software Engineer"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 45,
   "videoCount": 0,
@@ -390,7 +390,7 @@
           "slug": "project-03-oauth2-social-login",
           "path": "projects/phase-4-auth-security/project-03-oauth2-social-login",
           "title": "OAuth2 & Social Login",
-          "description": "Let users log in with a third-party provider (Google/GitHub) via the OAuth2 authorization-code flow, learning what OAuth delegates and why you never handle the user's provider password.",
+          "description": "Let users log in with a third-party provider (a hyperscaler/GitHub) via the OAuth2 authorization-code flow, learning what OAuth delegates and why you never handle the user's provider password.",
           "tech": [
             "Python 3.12",
             "FastAPI",
