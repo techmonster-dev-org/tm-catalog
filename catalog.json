@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10T23:27:26Z",
+  "generatedAt": "2026-09-11T00:37:13Z",
   "totals": {
     "tracks": 21,
     "projects": 941,
@@ -25,7 +25,7 @@
         "ML Compiler Engineer",
         "AI-Chip / Accelerator Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -47,7 +47,7 @@
         "scikit-learn",
         "PyTorch",
         "XGBoost",
-        "Anthropic SDK",
+        "LLM provider SDK",
         "FastAPI",
         "MLflow",
         "SQL"
@@ -58,7 +58,7 @@
         "AI/ML Software Engineer",
         "Applied Scientist (entry)"
       ],
-      "version": "3.0.0",
+      "version": "3.1.0",
       "phaseCount": 6,
       "projectCount": 49,
       "videoCount": 0,
@@ -75,7 +75,7 @@
       "stack": [
         "Python",
         "TypeScript",
-        "Anthropic SDK",
+        "LLM provider SDK",
         "FastAPI/Next.js",
         "pgvector",
         "Docker"
@@ -86,7 +86,7 @@
         "Applied AI Engineer",
         "ML-adjacent Software Engineer"
       ],
-      "version": "2.0.0",
+      "version": "2.1.0",
       "phaseCount": 4,
       "projectCount": 17,
       "videoCount": 0,
@@ -139,7 +139,7 @@
         "Low-Latency Engineer (foundation)",
         "OS / Database / Network Internals Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 45,
@@ -184,7 +184,7 @@
       "stack": [
         "C++17/20",
         "x86-64 / GCC / Clang",
-        "Godbolt",
+        "Compiler Explorer",
         "perf / Linux"
       ],
       "targetRoles": [
@@ -193,7 +193,7 @@
         "Systems / Performance Engineer",
         "Embedded / Robotics Engineer (foundation)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -219,7 +219,7 @@
         "AI-Chip / Kernel Engineer (foundation)",
         "Systems / Robotics Engineer (foundation)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -240,7 +240,7 @@
         "Kubernetes",
         "Terraform",
         "GitHub Actions",
-        "a cloud (AWS/GCP/Azure)",
+        "a cloud (any major cloud provider)",
         "Python",
         "SQL"
       ],
@@ -251,7 +251,7 @@
         "Data Engineer",
         "SRE"
       ],
-      "version": "2.0.0",
+      "version": "2.1.0",
       "phaseCount": 4,
       "projectCount": 16,
       "videoCount": 0,
@@ -277,7 +277,7 @@
         "AI-Chip / Systems Engineer (foundation)",
         "Competitive Programmer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -306,7 +306,7 @@
         "Next.js Developer",
         "UI Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 5,
       "projectCount": 72,
       "videoCount": 0,
@@ -331,7 +331,7 @@
         "Next.js Developer",
         "Full-Stack (frontend-leaning)"
       ],
-      "version": "1.1.0",
+      "version": "1.2.0",
       "phaseCount": 8,
       "projectCount": 88,
       "videoCount": 0,
@@ -359,7 +359,7 @@
         "Software Engineer",
         "Product Engineer"
       ],
-      "version": "2.0.0",
+      "version": "2.1.0",
       "phaseCount": 4,
       "projectCount": 16,
       "videoCount": 0,
@@ -386,7 +386,7 @@
         "Market Data / Feed Handler Engineer",
         "Performance Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -413,7 +413,7 @@
         "Low-Latency / HFT Engineer (foundation)",
         "Robotics Engineer (foundation)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -440,7 +440,7 @@
         "Low-Latency Engineer",
         "ML-Systems Engineer (foundation)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -467,7 +467,7 @@
         "Backend Engineer (Python)",
         "ML/Data Engineer (foundation)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -500,7 +500,7 @@
         "Analytics Engineer",
         "Platform/Backend Engineer (Data)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 5,
       "projectCount": 43,
       "videoCount": 0,
@@ -531,7 +531,7 @@
         "API Engineer",
         "Software Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 45,
       "videoCount": 0,
@@ -558,7 +558,7 @@
         "Market Maker",
         "Quant Researcher (foundation)"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
@@ -585,7 +585,7 @@
         "Perception / SLAM Engineer",
         "Embedded Robotics Engineer"
       ],
-      "version": "1.0.0",
+      "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
       "videoCount": 0,
