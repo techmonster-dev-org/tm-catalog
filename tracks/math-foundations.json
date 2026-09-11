@@ -16,7 +16,7 @@
     "Low-Latency / HFT Engineer (foundation)",
     "Robotics Engineer (foundation)"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -41,7 +41,7 @@
           "slug": "project-01-mental-math-engine",
           "path": "projects/phase-1-number-sense/project-01-mental-math-engine",
           "title": "Mental Math Engine",
-          "description": "Build a timed arithmetic drill (your own Zetamac) that generates random problems, scores answers against the clock, and reports a correct-per-minute rate — while learning the core mental-math shortcuts.",
+          "description": "Build a timed arithmetic drill (your own timed arithmetic trainer) that generates random problems, scores answers against the clock, and reports a correct-per-minute rate — while learning the core mental-math shortcuts.",
           "tech": [
             "Python 3.12",
             "random",
