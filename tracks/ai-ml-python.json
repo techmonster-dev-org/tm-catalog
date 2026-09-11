@@ -22,7 +22,7 @@
     "AI/ML Software Engineer",
     "Applied Scientist (entry)"
   ],
-  "version": "3.1.0",
+  "version": "3.2.0",
   "phaseCount": 6,
   "projectCount": 49,
   "videoCount": 0,
@@ -490,8 +490,8 @@
       "projectCount": 8,
       "projects": [
         {
-          "slug": "project-01-anthropic-api-basics",
-          "path": "projects/phase-5-llms-genai/project-01-anthropic-api-basics",
+          "slug": "project-01-model-api-basics",
+          "path": "projects/phase-5-llms-genai/project-01-model-api-basics",
           "title": "LLM API Basics",
           "description": "Make your first calls to the model with your model provider's SDK: messages, system prompts, multi-turn conversations, model/token parameters, and reading the response and usage.",
           "tech": [
