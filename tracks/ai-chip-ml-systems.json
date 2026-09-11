@@ -16,7 +16,7 @@
     "ML Compiler Engineer",
     "AI-Chip / Accelerator Engineer"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
   "videoCount": 0,
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Build the layer that makes AI fast on hardware — the highest, most durable rung of the AI-infrastructure stack. You start with just enough deep learning to know what you're optimizing (tensors, GEMM, the transformer, attention, what's memory- vs compute-bound, quantization), then engineer the GPU kernels behind modern models: optimized matmul and tensor cores, softmax/LayerNorm reductions, and kernel fusion — culminating in a FlashAttention-style fused attention kernel. You then rise above hand-tuned CUDA to the layer that survives automation: Triton (block-level GPU programming in Python) and ML compilers (MLIR, TVM, torch.compile) that lower a model graph to hardware. The capstone is a fused attention kernel measured against a vendor baseline. This is Branch B of the Zero-to-Low-Level-Systems-Elite program — the path to NVIDIA, the frontier labs (OpenAI/Anthropic/xAI), and AI-chip startups, where the durable edge is designing the kernels and compilers, not memorizing intrinsics a model can emit.",
+  "summary": "Build the layer that makes AI fast on hardware — the highest, most durable rung of the AI-infrastructure stack. You start with just enough deep learning to know what you're optimizing (tensors, GEMM, the transformer, attention, what's memory- vs compute-bound, quantization), then engineer the GPU kernels behind modern models: optimized matmul and tensor cores, softmax/LayerNorm reductions, and kernel fusion — culminating in a FlashAttention-style fused attention kernel. You then rise above hand-tuned CUDA to the layer that survives automation: Triton (block-level GPU programming in Python) and ML compilers (MLIR, TVM, torch.compile) that lower a model graph to hardware. The capstone is a fused attention kernel measured against a vendor baseline. This is Branch B of the Zero-to-Low-Level-Systems-Elite program — the path to NVIDIA, the frontier labs (the largest AI and platform companies/a frontier lab), and AI-chip startups, where the durable edge is designing the kernels and compilers, not memorizing intrinsics a model can emit.",
   "environment": [],
   "capstone": {
     "title": "Fused Attention Kernel — Optimized & Benchmarked Against a Vendor Baseline",
@@ -131,7 +131,7 @@
           "slug": "project-08-profiling-a-model",
           "path": "projects/phase-1-dl-for-systems/project-08-profiling-a-model",
           "title": "Profile a Model's Forward Pass",
-          "description": "Build a GPT-style mini transformer, profile its forward pass with the PyTorch profiler, compute MFU, classify the top bottlenecks using the roofline model, and produce a written optimization agenda for Phase 2.",
+          "description": "Build a decoder-only mini transformer, profile its forward pass with the PyTorch profiler, compute MFU, classify the top bottlenecks using the roofline model, and produce a written optimization agenda for Phase 2.",
           "tech": [
             "Python",
             "PyTorch"
@@ -401,7 +401,7 @@
             "Triton",
             "PyTorch",
             "CUDA",
-            "Google Colab"
+            "Colab"
           ],
           "featured": true,
           "video": null
@@ -599,7 +599,7 @@
           "slug": "project-07-compiler-as-edge",
           "path": "projects/phase-5-ml-compilers/project-07-compiler-as-edge",
           "title": "The Compiler Layer as the Durable Edge",
-          "description": "Analyze the automation trajectory from hand-written CUDA to compiler-generated kernels, map the skills required at NVIDIA/Meta/Google compiler engineering roles to your current capabilities, and produce a concrete 6-month roadmap toward a role at the compiler/architecture layer.",
+          "description": "Analyze the automation trajectory from hand-written CUDA to compiler-generated kernels, map the skills required at the largest AI and platform companies roles to your current capabilities, and produce a concrete 6-month roadmap toward a role at the compiler/architecture layer.",
           "tech": [
             "Python"
           ],
@@ -632,11 +632,11 @@
           "slug": "project-01-inference-vs-training",
           "path": "projects/phase-6-inference-capstone/project-01-inference-vs-training",
           "title": "Inference vs Training",
-          "description": "Quantify the memory, compute, and bandwidth constraints that make inference a distinct engineering discipline from training, measuring TTFT and TPOT on GPT-2 and deriving why decode is memory-bandwidth-bound.",
+          "description": "Quantify the memory, compute, and bandwidth constraints that make inference a distinct engineering discipline from training, measuring TTFT and TPOT on a small decoder-only transformer and deriving why decode is memory-bandwidth-bound.",
           "tech": [
             "Python",
             "PyTorch",
-            "Hugging Face Transformers",
+            "the open model hub Transformers",
             "Roofline Analysis"
           ],
           "featured": true,
@@ -675,7 +675,7 @@
           "slug": "project-04-batching-serving",
           "path": "projects/phase-6-inference-capstone/project-04-batching-serving",
           "title": "Batching & Serving",
-          "description": "Simulate static vs continuous batching schedulers, derive the arithmetic intensity vs batch size curve, measure real throughput scaling on GPT-2, and build a capacity planning tool showing the compounding benefit of quantization plus continuous batching.",
+          "description": "Simulate static vs continuous batching schedulers, derive the arithmetic intensity vs batch size curve, measure real throughput scaling on a small decoder-only transformer, and build a capacity planning tool showing the compounding benefit of quantization plus continuous batching.",
           "tech": [
             "Python",
             "PyTorch",
@@ -705,7 +705,7 @@
           "slug": "project-06-end-to-end-optimization",
           "path": "projects/phase-6-inference-capstone/project-06-end-to-end-optimization",
           "title": "Optimizing an End-to-End Model",
-          "description": "Apply the full inference optimization stack (FP16, torch.compile, INT8 quantization, KV-cache, batching) to a GPT-2-scale transformer and produce a complete optimization ladder table measuring TTFT, TPOT, throughput, and memory at each stage.",
+          "description": "Apply the full inference optimization stack (FP16, torch.compile, INT8 quantization, KV-cache, batching) to a small decoder-only transformer-scale transformer and produce a complete optimization ladder table measuring TTFT, TPOT, throughput, and memory at each stage.",
           "tech": [
             "Python",
             "PyTorch",
@@ -720,7 +720,7 @@
           "slug": "project-07-ai-chip-landscape",
           "path": "projects/phase-6-inference-capstone/project-07-ai-chip-landscape",
           "title": "The AI-Chip Landscape & Your Path",
-          "description": "Map the AI-chip ecosystem (NVIDIA, AMD, Google TPU, Groq, Cerebras, Tenstorrent, SambaNova), understand the CUDA→Triton→MLIR skill ladder, identify frontier-lab roles and their signals, and build a 90-day career plan.",
+          "description": "Map the AI-chip ecosystem (NVIDIA, AMD, a hyperscaler TPU, a deterministic-dataflow chip startup, a wafer-scale chip startup, a RISC-V dataflow chip startup, a reconfigurable-dataflow chip startup), understand the CUDA→Triton→MLIR skill ladder, identify frontier-lab roles and their signals, and build a 90-day career plan.",
           "tech": [
             "Python",
             "Career Strategy",
