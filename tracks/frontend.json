@@ -18,7 +18,7 @@
     "Next.js Developer",
     "UI Engineer"
   ],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "phaseCount": 5,
   "projectCount": 72,
   "videoCount": 0,
@@ -1281,7 +1281,7 @@
         {
           "slug": "project-19-deployment-vercel",
           "path": "projects/phase-5-react-nextjs/project-19-deployment-vercel",
-          "title": "Deployment (Vercel)",
+          "title": "Deployment (free static hosting)",
           "description": "Deploy your app",
           "tech": [
             "HTML",
