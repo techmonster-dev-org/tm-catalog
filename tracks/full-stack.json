@@ -17,7 +17,7 @@
     "Software Engineer",
     "Product Engineer"
   ],
-  "version": "2.0.0",
+  "version": "2.1.0",
   "phaseCount": 4,
   "projectCount": 16,
   "videoCount": 0,
@@ -320,7 +320,7 @@
         {
           "slug": "project-04-deployment-vercel-db",
           "path": "projects/phase-4-ship/project-04-deployment-vercel-db",
-          "title": "Deployment (Vercel + DB)",
+          "title": "Deployment (free hosting + DB)",
           "description": "Deploy the full app with a hosted database",
           "tech": [
             "TypeScript",
