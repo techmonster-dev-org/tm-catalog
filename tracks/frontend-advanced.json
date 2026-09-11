@@ -14,7 +14,7 @@
     "Next.js Developer",
     "Full-Stack (frontend-leaning)"
   ],
-  "version": "1.1.0",
+  "version": "1.2.0",
   "phaseCount": 8,
   "projectCount": 88,
   "videoCount": 0,
@@ -946,8 +946,8 @@
         {
           "slug": "project-04-excel-export",
           "path": "projects/phase-6-media-integrations/project-04-excel-export",
-          "title": "Excel Export",
-          "description": "Export data to Excel format",
+          "title": "Spreadsheet Export",
+          "description": "Export data to spreadsheet format",
           "tech": [
             "Next.js",
             "TypeScript",
