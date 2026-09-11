@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-11T00:37:13Z",
+  "generatedAt": "2026-09-11T00:48:52Z",
   "totals": {
     "tracks": 21,
     "projects": 941,
@@ -577,7 +577,7 @@
         "Eigen",
         "ROS 2",
         "Python",
-        "MuJoCo / Isaac Sim"
+        "MuJoCo / GPU-accelerated simulators"
       ],
       "targetRoles": [
         "Robotics Software Engineer",
