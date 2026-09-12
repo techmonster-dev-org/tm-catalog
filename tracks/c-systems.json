@@ -19,7 +19,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 46,
+  "videoCount": 47,
   "freeEligible": true,
   "freeProjectCount": 1,
   "paid": true,
@@ -340,7 +340,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "bfG-EyLqb74",
+            "url": "https://www.youtube.com/shorts/bfG-EyLqb74",
+            "title": "malloc is not free. So write what's underneath. | C & Systems Programming #50",
+            "publishAt": "2026-09-11T23:00:00Z"
+          }
         }
       ]
     },
