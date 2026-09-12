@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-11T12:06:45Z",
+  "generatedAt": "2026-09-12T09:26:17Z",
   "totals": {
     "tracks": 21,
     "projects": 941,
-    "videos": 79
+    "videos": 82
   },
   "tracks": [
     {
@@ -142,7 +142,7 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 46,
+      "videoCount": 47,
       "freeEligible": true,
       "freeProjectCount": 1,
       "paid": true,
@@ -226,7 +226,7 @@
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
-      "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE"
+      "playlistUrl": null
     },
     {
       "id": "devops-cloud-data",
@@ -726,6 +726,15 @@
       "playlistUrl": "https://www.youtube.com/playlist?list=PLeVdqyiGZl8E",
       "episodes": [
         {
+          "id": "qvc01-bit-vs-qubit",
+          "episodeNumber": 1,
+          "topic": "Bit vs qubit: what a qubit actually is",
+          "youtubeId": "eUlD8nAzZXY",
+          "url": "https://www.youtube.com/shorts/eUlD8nAzZXY",
+          "title": "A qubit isn't 'both at once' | Quantum vs Classical #1",
+          "publishAt": "2026-09-11T13:00:00Z"
+        },
+        {
           "id": "qvc02-qubit-hardware",
           "episodeNumber": 2,
           "topic": "Transistor vs qubit: why quantum chips live near absolute zero",
@@ -875,6 +884,15 @@
           "url": "https://www.youtube.com/shorts/MiD4CsbRE8E",
           "title": "'I work in AI' is two different jobs | The Programming Map #9",
           "publishAt": "2026-09-02T18:00:00Z"
+        },
+        {
+          "id": "pm10-game-programming",
+          "episodeNumber": 10,
+          "topic": "Game programming: simulation at 60 frames per second",
+          "youtubeId": "oFiF0Ln-rW4",
+          "url": "https://www.youtube.com/shorts/oFiF0Ln-rW4",
+          "title": "Your game rebuilds the whole world 60 times a second | The Programming Map #10",
+          "publishAt": "2026-09-11T18:00:00Z"
         },
         {
           "id": "pm11-quant-trading",
