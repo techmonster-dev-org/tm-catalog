@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T17:11:45Z",
+  "generatedAt": "2026-09-13T10:22:15Z",
   "totals": {
     "tracks": 21,
     "projects": 941,
-    "videos": 82
+    "videos": 85
   },
   "tracks": [
     {
@@ -142,7 +142,7 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 47,
+      "videoCount": 48,
       "freeEligible": true,
       "freeProjectCount": 1,
       "paid": true,
@@ -222,11 +222,11 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 0,
+      "videoCount": 1,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
-      "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE"
+      "playlistUrl": null
     },
     {
       "id": "devops-cloud-data",
@@ -936,6 +936,15 @@
           "url": "https://www.youtube.com/shorts/MaMKsXqUCcE",
           "title": "We said every call pushes a frame. Wrong. | C & Systems Programming #51",
           "publishAt": "2026-08-30T13:00:00Z"
+        },
+        {
+          "id": "c-systems-e052",
+          "episodeNumber": 52,
+          "topic": "Where your data actually lives: all four storage durations",
+          "youtubeId": "JmQftVbiiKY",
+          "url": "https://www.youtube.com/shorts/JmQftVbiiKY",
+          "title": "Stack or heap isn't the real question | C & Systems Programming #52",
+          "publishAt": "2026-09-12T13:00:00Z"
         }
       ]
     }
