@@ -19,7 +19,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 47,
+  "videoCount": 48,
   "freeEligible": true,
   "freeProjectCount": 1,
   "paid": true,
@@ -65,7 +65,12 @@
             "binutils"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "HNID6OLLUbc",
+            "url": "https://www.youtube.com/shorts/HNID6OLLUbc",
+            "title": "One command turns your C into a running program | C & Systems Programming #1",
+            "publishAt": "2026-09-12T18:00:00Z"
+          }
         },
         {
           "slug": "project-02-types-representation",
