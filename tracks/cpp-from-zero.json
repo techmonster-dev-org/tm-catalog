@@ -18,11 +18,11 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 1,
+  "videoCount": 4,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
-  "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE",
+  "playlistUrl": null,
   "summary": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are all written in. You build understanding of the machine as you go: types and the compiler, control flow and functions, the memory model (pointers, references, the stack and heap), RAII and ownership with smart pointers, the STL and templates, and modern features like move semantics and lambdas. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it turns the mathematical 'what' from math-foundations into the 'how' that runs on real hardware.",
   "environment": [
     "This track is **fully cross-platform** - every project runs natively on Linux, macOS and Windows. You need a C++17 compiler and `make`.",
@@ -73,7 +73,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "rZw5FTr2k_g",
+            "url": "https://www.youtube.com/shorts/rZw5FTr2k_g",
+            "title": "Your int is 4 bytes. Here's why that matters | C++ From Zero #2",
+            "publishAt": "2026-09-13T13:00:00Z"
+          }
         },
         {
           "slug": "project-03-console-io",
@@ -85,7 +90,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "DEAeDWnMDAg",
+            "url": "https://www.youtube.com/shorts/DEAeDWnMDAg",
+            "title": "How does your code read the keyboard? | C++ From Zero #3",
+            "publishAt": "2026-09-13T18:00:00Z"
+          }
         },
         {
           "slug": "project-04-operators-expressions",
@@ -97,7 +107,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "lvYCxzBAWgQ",
+            "url": "https://www.youtube.com/shorts/lvYCxzBAWgQ",
+            "title": "5 / 2 is 2, not 2.5 — C++'s integer-division trap | C++ From Zero #4",
+            "publishAt": "2026-09-13T23:00:00Z"
+          }
         },
         {
           "slug": "project-05-strings-characters",
