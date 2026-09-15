@@ -18,11 +18,11 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 4,
+  "videoCount": 7,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
-  "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE",
+  "playlistUrl": null,
   "summary": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are all written in. You build understanding of the machine as you go: types and the compiler, control flow and functions, the memory model (pointers, references, the stack and heap), RAII and ownership with smart pointers, the STL and templates, and modern features like move semantics and lambdas. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it turns the mathematical 'what' from math-foundations into the 'how' that runs on real hardware.",
   "environment": [
     "This track is **fully cross-platform** - every project runs natively on Linux, macOS and Windows. You need a C++17 compiler and `make`.",
@@ -124,7 +124,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "Zc7ANsKyZJo",
+            "url": "https://www.youtube.com/shorts/Zc7ANsKyZJo",
+            "title": "Why your text can't overflow in modern C++ | C++ From Zero #5",
+            "publishAt": "2026-09-14T13:00:00Z"
+          }
         },
         {
           "slug": "project-06-constants-conversions",
@@ -136,7 +141,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "ICllcVM9FH8",
+            "url": "https://www.youtube.com/shorts/ICllcVM9FH8",
+            "title": "The compiler refused to build this. That's the point. | C++ From Zero #6",
+            "publishAt": "2026-09-14T18:00:00Z"
+          }
         },
         {
           "slug": "project-07-integer-types-overflow",
@@ -149,7 +159,12 @@
             "cstdint"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "dl9s20VF5Mg",
+            "url": "https://www.youtube.com/shorts/dl9s20VF5Mg",
+            "title": "255 + 1 = 0. Your CPU isn't broken. | C++ From Zero #7",
+            "publishAt": "2026-09-14T23:00:00Z"
+          }
         },
         {
           "slug": "project-08-unit-converter-cli",
