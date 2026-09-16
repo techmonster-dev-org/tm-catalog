@@ -22,7 +22,7 @@
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
-  "playlistUrl": null,
+  "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE",
   "summary": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are all written in. You build understanding of the machine as you go: types and the compiler, control flow and functions, the memory model (pointers, references, the stack and heap), RAII and ownership with smart pointers, the STL and templates, and modern features like move semantics and lambdas. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it turns the mathematical 'what' from math-foundations into the 'how' that runs on real hardware.",
   "environment": [
     "This track is **fully cross-platform** - every project runs natively on Linux, macOS and Windows. You need a C++17 compiler and `make`.",
