@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 7,
+  "videoCount": 10,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -176,7 +176,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "2C_PxaJr11A",
+            "url": "https://www.youtube.com/shorts/2C_PxaJr11A",
+            "title": "One wrong letter loops your program forever | C++ From Zero #8",
+            "publishAt": "2026-09-15T13:00:00Z"
+          }
         }
       ]
     },
@@ -196,7 +201,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "3KCWdHLq-iw",
+            "url": "https://www.youtube.com/shorts/3KCWdHLq-iw",
+            "title": "How does your code choose which path to run? | C++ From Zero #9",
+            "publishAt": "2026-09-15T18:00:00Z"
+          }
         },
         {
           "slug": "project-02-switch-statements",
@@ -208,7 +218,12 @@
             "g++/clang++"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "qZsCcpP5s0M",
+            "url": "https://www.youtube.com/shorts/qZsCcpP5s0M",
+            "title": "Your switch printed two answers. You forgot one word. | C++ From Zero #10",
+            "publishAt": "2026-09-15T23:00:00Z"
+          }
         },
         {
           "slug": "project-03-loops",
