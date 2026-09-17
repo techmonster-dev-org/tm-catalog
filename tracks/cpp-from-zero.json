@@ -18,11 +18,11 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 10,
+  "videoCount": 13,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
-  "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE",
+  "playlistUrl": null,
   "summary": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are all written in. You build understanding of the machine as you go: types and the compiler, control flow and functions, the memory model (pointers, references, the stack and heap), RAII and ownership with smart pointers, the STL and templates, and modern features like move semantics and lambdas. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it turns the mathematical 'what' from math-foundations into the 'how' that runs on real hardware.",
   "environment": [
     "This track is **fully cross-platform** - every project runs natively on Linux, macOS and Windows. You need a C++17 compiler and `make`.",
@@ -235,7 +235,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "kN9je6xB3t4",
+            "url": "https://www.youtube.com/shorts/kN9je6xB3t4",
+            "title": "Four lines. A million repetitions. | C++ From Zero #11",
+            "publishAt": "2026-09-16T13:00:00Z"
+          }
         },
         {
           "slug": "project-04-functions-basics",
@@ -247,7 +252,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "8tH4Fhe6xF8",
+            "url": "https://www.youtube.com/shorts/8tH4Fhe6xF8",
+            "title": "The function changed it — main never noticed | C++ From Zero #12",
+            "publishAt": "2026-09-16T18:00:00Z"
+          }
         },
         {
           "slug": "project-05-overloading-defaults",
@@ -259,7 +269,12 @@
             "g++/clang++"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "Zf2LfNmre3I",
+            "url": "https://www.youtube.com/shorts/Zf2LfNmre3I",
+            "title": "Two functions, one name — how does C++ choose? | C++ From Zero #13",
+            "publishAt": "2026-09-16T23:00:00Z"
+          }
         },
         {
           "slug": "project-06-scope-lifetime",
