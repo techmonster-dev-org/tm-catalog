@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 13,
+  "videoCount": 15,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -286,7 +286,12 @@
             "g++/clang++"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "05tgXqiVlTk",
+            "url": "https://www.youtube.com/shorts/05tgXqiVlTk",
+            "title": "It's invisible everywhere — but it never dies | C++ From Zero #14",
+            "publishAt": "2026-09-17T13:00:00Z"
+          }
         },
         {
           "slug": "project-07-recursion",
@@ -298,7 +303,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "BnmyXotSYk0",
+            "url": "https://www.youtube.com/shorts/BnmyXotSYk0",
+            "title": "This function calls itself — and that's the point | C++ From Zero #15",
+            "publishAt": "2026-09-17T18:00:00Z"
+          }
         },
         {
           "slug": "project-08-menu-calculator",
