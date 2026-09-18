@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-18T02:23:09Z",
+  "generatedAt": "2026-09-18T09:52:14Z",
   "totals": {
     "tracks": 22,
     "projects": 953,
-    "videos": 99
+    "videos": 100
   },
   "tracks": [
     {
@@ -222,11 +222,11 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 15,
+      "videoCount": 16,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
-      "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE"
+      "playlistUrl": null
     },
     {
       "id": "devops-cloud-data",
