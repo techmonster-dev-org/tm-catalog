@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-17T12:04:59Z",
+  "generatedAt": "2026-09-18T02:23:09Z",
   "totals": {
-    "tracks": 21,
-    "projects": 941,
-    "videos": 97
+    "tracks": 22,
+    "projects": 953,
+    "videos": 99
   },
   "tracks": [
     {
@@ -222,7 +222,7 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 13,
+      "videoCount": 15,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
@@ -280,6 +280,35 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "forward-deployed-ai",
+      "title": "Forward Deployed AI Engineering",
+      "tagline": "Walk into a messy workflow.",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "FastAPI",
+        "PostgreSQL",
+        "pytest",
+        "Docker",
+        "TypeScript/React",
+        "structured logging & tracing"
+      ],
+      "targetRoles": [
+        "Forward Deployed AI Engineer",
+        "Applied AI Engineer (customer-facing)",
+        "Solutions Engineer (AI)",
+        "AI Delivery / Implementation Consultant"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 8,
+      "projectCount": 12,
       "videoCount": 0,
       "freeEligible": false,
       "freeProjectCount": 0,
