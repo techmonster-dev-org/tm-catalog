@@ -1,0 +1,288 @@
+{
+  "id": "forward-deployed-ai",
+  "title": "Forward Deployed AI Engineering",
+  "tagline": "Walk into a messy workflow.",
+  "level": null,
+  "stack": [
+    "Python 3.12",
+    "FastAPI",
+    "PostgreSQL",
+    "pytest",
+    "Docker",
+    "TypeScript/React",
+    "structured logging & tracing"
+  ],
+  "targetRoles": [
+    "Forward Deployed AI Engineer",
+    "Applied AI Engineer (customer-facing)",
+    "Solutions Engineer (AI)",
+    "AI Delivery / Implementation Consultant"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 8,
+  "projectCount": 12,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Walk into a messy workflow. Find the problem worth solving. Ship a measurable improvement. Leave a system the customer can operate. This is the delivery half of applied AI, and it is the half that decides whether a working prototype ever becomes something a business relies on. You run two simulated customer engagements end to end: discovery and scope, data and integration against a hostile legacy API, bounded AI workflows with structured output and permission-aware retrieval, tool use with real authorization and audit, an evaluation harness that produces a defensible release decision, staged deployment with rollback, a live incident you have to contain and write up, and a handover pack another engineer can operate from. Every deliverable combines code, a customer decision, and evidence the solution works. The customer is fictional and the data is synthetic; the engineering and the judgement are not. This track assumes you can already ship and debug a small service - it teaches the part that comes after that, not instead of it.",
+  "environment": [
+    "Everything in this track runs against a **fictional customer**, Northstar Service Operations, whose brief, synthetic data and mock API ship in `shared/`. No real customer data, no real external service, and no model API key is required to complete any deliverable: every project defines a deterministic path using recorded fixtures, and names the optional live-model extension separately.",
+    "You will need Python 3.12+, Docker (for PostgreSQL and the mock case API), and a terminal. `shared/README.md` has the one-command start."
+  ],
+  "capstone": {
+    "title": "Independent customer engagement",
+    "project": "A second engagement in a new domain with a deliberately incomplete brief. You run discovery, choose the workflow, define the evaluation, integrate the data, deploy, respond to a change request and a live incident, and hand over. You may reuse your own infrastructure; you may not reuse the first customer's decisions."
+  },
+  "phases": [
+    {
+      "id": "phase-1-discovery-and-scope",
+      "title": "Discovery & Scope",
+      "goal": "Find what is worth solving, for whom, and decide in advance what evidence would prove it worked - or stop the project.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-01-customer-discovery-pack",
+          "path": "projects/phase-1-discovery-and-scope/project-01-customer-discovery-pack",
+          "title": "The Customer Discovery Pack",
+          "description": "Turn a sponsor's brief and five conflicting stakeholder interviews into a defensible discovery pack: a workflow diagram, a stakeholder map, an assumptions register labelling every claim MEASURED / ESTIMATED / DERIVED / ASSUMED, a scopeable problem statement, and the conflicts with the next question for each - with every number computed from the customer's own 4,000-row export rather than repeated from the brief.",
+          "tech": [
+            "Python 3.12",
+            "csv",
+            "mermaid",
+            "markdown"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-baseline-and-pilot-charter",
+          "path": "projects/phase-1-discovery-and-scope/project-02-baseline-and-pilot-charter",
+          "title": "Baseline & Pilot Charter",
+          "description": "Build a rules-based ticket-routing baseline that can say why it fired, score it properly against a human-labelled slice with per-queue precision and recall, discover that the status quo already beats it, size what a 200-label sample can actually resolve, and write a pilot charter that fixes the slice, metric, threshold, exclusions and stop conditions before any build starts.",
+          "tech": [
+            "Python 3.12",
+            "re",
+            "csv",
+            "markdown"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-data-and-integration",
+      "title": "Customer Data & Integration",
+      "goal": "Earn the right to build on the customer's data: ingest it, prove it, and survive an API that fails on purpose.",
+      "projectCount": 1,
+      "projects": [
+        {
+          "slug": "project-03-customer-data-adapter",
+          "path": "projects/phase-2-data-and-integration/project-03-customer-data-adapter",
+          "title": "The Customer Data Adapter",
+          "description": "Build the tested ingestion and integration layer the rest of the engagement stands on: import a deliberately hostile 4,092-row ticket export (three timestamp formats in one column, an encoding that lies, rows that destroy their neighbours), quarantine every row you cannot use with its raw text and a reason, separate exact duplicates from conflicts the file cannot resolve, make the import idempotent with a natural key and a content hash, assert a reconciliation identity on every run, and integrate with a legacy case API that reports a wrong total, rate-limits without a Retry-After, answers 200 with an empty body, rotates its key mid-import, and enforces none of its own access rules.",
+          "tech": [
+            "Python 3.12",
+            "SQLite",
+            "httpx",
+            "pytest",
+            "CSV ingestion",
+            "HTTP integration"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-reliable-ai-workflows",
+      "title": "Reliable AI Workflows",
+      "goal": "Make a bounded workflow produce structured, inspectable, permission-correct output - and know when it should refuse.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-04-structured-triage-service",
+          "path": "projects/phase-3-reliable-ai-workflows/project-04-structured-triage-service",
+          "title": "Structured Triage Service",
+          "description": "Classify an incoming support ticket into one of five queues, extract the required fields, attach a confidence, and route uncertain cases to a person instead of guessing. Introduces the deterministic model seam the whole track is built on: a ModelClient protocol, a RecordedModel that replays committed fixtures with no API key, schema validation of every reply, a repair attempt capped at two, prompt and schema versioning in every decision record, token metering, and an honest comparison against the rules baseline on the labelled development set.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "JSON Schema",
+            "recorded model fixtures"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-permission-aware-knowledge-assistant",
+          "path": "projects/phase-3-reliable-ai-workflows/project-05-permission-aware-knowledge-assistant",
+          "title": "Permission-Aware Knowledge Assistant",
+          "description": "Answer an operational question from the customer's procedure drive with citations that resolve to a specific document and version. Builds a small local index with no external vector service, enforces access before content reaches the model rather than after, selects the policy version that was in force on the day the question is about, surfaces conflicting evidence instead of averaging it, abstains when the evidence is absent, refuses a citation whose quote is not in the retrieved text, and makes a revoked document disappear from every copy including the index and the cache.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "TF-IDF retrieval",
+            "recorded model fixtures"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-tools-and-actions",
+      "title": "Tool Use & Controlled Actions",
+      "goal": "Let the system act on the customer's systems, with authorization at execution time and an audit trail that survives a dispute.",
+      "projectCount": 1,
+      "projects": [
+        {
+          "slug": "project-06-case-resolution-workflow",
+          "path": "projects/phase-4-tools-and-actions/project-06-case-resolution-workflow",
+          "title": "Case-Resolution Workflow — Authorized Actions Against a Customer's System",
+          "description": "Deliverable D6. Build a bounded workflow that gathers case context, drafts a reply, proposes a case update, obtains an approval bound to the specific values, and executes exactly one authorized action against the mock case system. Tool contracts reject malformed arguments instead of coercing them; an ungranted write is refused even when the arguments are valid; document content is data and an injected instruction in a customer attachment produces no tool call; the single write reconciles against a non-idempotent API that answers 504 after the write has landed; and the audit line reconstructs who approved what, what was executed and which prompt produced it. Runs entirely on recorded fixtures — no model API key.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "httpx",
+            "HMAC-SHA256",
+            "JSON schema validation",
+            "Model Context Protocol"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-evaluation-and-release",
+      "title": "Evaluation & Release Decisions",
+      "goal": "Measure it against the baseline under realistic conditions, then make a go / limited-pilot / no-go call you can defend.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-07-evaluation-harness",
+          "path": "projects/phase-5-evaluation-and-release/project-07-evaluation-harness",
+          "title": "Evaluation Harness",
+          "description": "Build the harness Phase 5 runs on: versioned, content-hashed evaluation sets with a leakage check that compares text as well as record ids, a run file that separates producing a result from scoring one, metrics that report their own denominators and intervals, and error analysis that names cases instead of averaging them away.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "hashlib",
+            "Wilson score interval",
+            "recorded model fixtures"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-release-recommendation",
+          "path": "projects/phase-5-evaluation-and-release/project-08-release-recommendation",
+          "title": "Release Recommendation",
+          "description": "Compare two configurations and the keyword baseline against acceptance criteria declared before any result was scored, price them on cost per successful task rather than cost per call, answer a mid-engagement latency cut from the design before measuring it, exclude the results gathered during a provider outage, and write a go / limited-pilot / no-go call that names the cases where the system fails.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "predeclared acceptance criteria",
+            "incident exclusion windows",
+            "recorded evaluation runs"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-deployment-and-reliability",
+      "title": "Deployment & Reliability",
+      "goal": "Operate it: staged rollout, budgets, telemetry, rollback - and contain a real incident when it arrives.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-09-staged-deployment",
+          "path": "projects/phase-6-deployment-and-reliability/project-09-staged-deployment",
+          "title": "Staged Deployment — Configuration, Telemetry, Budget and Rollback",
+          "description": "Deliverable D9. Package the triage service as a container a two-person IT team can actually operate: configuration read at start-up with a placeholder that fails rather than becoming a live setting, a correlation id that survives the whole request so an answer can be reconstructed six weeks later, a redaction that keeps the join keys and drops the customer's words and your credentials, a monthly model allowance enforced as a refusal before the call with a degraded path that still answers, a staged rollout that is a pure function of the ticket id and monotone when widened, and an operations surface where deploy, roll back and turn off are each one command. Runs on recorded fixtures against a mounted, read-only customer pack — no model API key, no cloud account.",
+          "tech": [
+            "Python 3.12",
+            "FastAPI",
+            "Docker",
+            "docker compose",
+            "SQLite",
+            "pytest",
+            "structured logging",
+            "contextvars"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-10-incident-exercise",
+          "path": "projects/phase-6-deployment-and-reliability/project-10-incident-exercise",
+          "title": "Incident Exercise — Contain It, Find It, Recover, Write It Up",
+          "description": "Deliverable D10. You are given a symptom in the customer's voice and an evidence bundle, and not the cause. Derive the blast radius from the logs rather than from the complaint, contain the harm before you diagnose it and say what containment costs, correlate two logs that disagree to find the specific condition, separate a rollback from a fix — including the case where rolling back changes nothing because the damage is in state — and write a postmortem that names contributing conditions rather than a person. Two incidents ship in shared/incidents/: duplicate case notes from a retry storm against a non-idempotent write, and a restricted document reaching agents through a late permission filter and a warm cache. Needs nothing running: grep, python and the bundle.",
+          "tech": [
+            "Incident response",
+            "structured log analysis",
+            "Python 3.12",
+            "grep",
+            "postmortem writing",
+            "idempotency",
+            "cache invalidation"
+          ],
+          "featured": false,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-7-adoption-and-handover",
+      "title": "Adoption & Handover",
+      "goal": "Hand the system to the people who will own it, and prove they can run it without you.",
+      "projectCount": 1,
+      "projects": [
+        {
+          "slug": "project-11-adoption-and-handover-pack",
+          "path": "projects/phase-7-adoption-and-handover/project-11-adoption-and-handover-pack",
+          "title": "Adoption & Handover Pack — Proving Somebody Else Can Run It",
+          "description": "Deliverable D11. Hand the pilot to the people who will own it and prove they can run it without you: a UAT script with named participants and observable pass criteria (four of whose cases must refuse), a user guide and a runbook written as separate documents for separate readers, an ownership matrix that survives its owner leaving, support boundaries naming the frozen set, and a sponsor readout that separates measured from estimated from simulated and answers the 30% the sponsor already gave finance. An index generated from the repository refuses to publish a pack that cites an evaluation run nobody recorded, points the operator at a file that does not exist, or leaves a template placeholder in the readout. CR-9 arrives after submission — the new owner was in none of the conversations — and the reusable component leaves with the pattern but none of the customer's names, ids or tuned thresholds. Exit evidence: another learner operates the system from the pack alone, asking you nothing.",
+          "tech": [
+            "Python 3.12",
+            "pathlib",
+            "re",
+            "Markdown",
+            "Docker"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-8-independent-engagement",
+      "title": "Independent Customer Engagement",
+      "goal": "Do the whole thing again, alone, for a customer you have not met, with an incomplete brief and a change request half way through.",
+      "projectCount": 1,
+      "projects": [
+        {
+          "slug": "project-12-independent-engagement",
+          "path": "projects/phase-8-independent-engagement/project-12-independent-engagement",
+          "title": "The Independent Engagement",
+          "description": "Run a complete customer engagement alone, in a new domain, from a deliberately incomplete brief: discovery and acceptance criteria written before any code, a thin slice with an evaluation harness, a change request absorbed after the prototype, a reproducible deployment with rollback, a handover pack, and a live technical defence during which something breaks.",
+          "tech": [
+            "Python 3.12",
+            "pytest",
+            "PostgreSQL",
+            "Docker",
+            "git",
+            "structured logging"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
