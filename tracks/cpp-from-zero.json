@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 19,
+  "videoCount": 20,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -397,7 +397,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "7WMQXGTSVa0",
+            "url": "https://www.youtube.com/shorts/7WMQXGTSVa0",
+            "title": "It looks like a typo — but arr[i] equals *(arr+i) | C++ From Zero #20",
+            "publishAt": "2026-09-19T13:00:00Z"
+          }
         },
         {
           "slug": "project-05-stack-heap",
