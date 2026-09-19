@@ -1,0 +1,336 @@
+{
+  "id": "build-your-own-llm",
+  "title": "Build Your Own Small Language Model",
+  "tagline": "Build the whole stack that sits underneath a language model API, on the laptop you already own.",
+  "level": null,
+  "stack": [
+    "Python 3.11+",
+    "NumPy",
+    "PyTorch (CPU)",
+    "pytest",
+    "FastAPI",
+    "Matplotlib"
+  ],
+  "targetRoles": [
+    "Machine Learning Engineer (training and inference)",
+    "LLM Infrastructure / Inference Engineer",
+    "Applied Research Engineer",
+    "AI Platform Engineer"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 7,
+  "projectCount": 17,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Build the whole stack that sits underneath a language model API, on the laptop you already own. This track is deliberately named for what it is: you implement, train, adapt, measure and operate a SMALL language model - hundreds of thousands to a few million parameters - and every project makes you write down what a model that size cannot do. You write a byte-level BPE tokenizer and prove it round-trips your corpus exactly; you measure what a vocabulary choice costs you in sequence length and in embedding parameters. You implement causal attention forward AND backward in NumPy and check every gradient against finite differences before you are allowed to trust a framework's autodiff. You build a token pipeline with a document-level split and a planted-duplicate leakage check, calibrate your own machine's throughput, and pretrain to a loss curve you measured against a count-based baseline you built first. Then you make it follow instructions: a chat template, supervised fine-tuning with the prompt masked out of the loss, preference tuning against a frozen reference, and an evaluation harness whose tasks have exactly one correct answer - so instruction-following is a number per task type, including the task types your model fails. Finally you make it usable: samplers you wrote, a KV cache proven output-identical to the uncached path, int8 weight-only quantization measured for size, speed and quality, a streaming server that refuses work it cannot finish inside its budget, and a loader that runs somebody else's published open-weights checkpoint through your own attention and your own cache. Nothing here needs a GPU, a paid service or an API key. The point is not to finish with a good assistant. It is to finish unable to be fooled about one.",
+  "environment": [
+    "Everything in this track runs on an ordinary laptop with **no GPU, no paid service and no model API key**. The shared corpus is public-domain literature committed in `shared/corpus/`, the instruction data is generated deterministically by a script in `shared/`, and every training run in the track is sized to finish on a CPU in minutes to about an hour. Where an optional accelerator would let you run a bigger version, the project says so and the deliverable is still gradeable without one.",
+    "You will need Python 3.11+, about 3 GB of free disk for the framework wheel and checkpoints, and a terminal. Phases 1 and 2 need only NumPy. `shared/README.md` has the one-command start and the corpus integrity check."
+  ],
+  "capstone": {
+    "title": "A model you trained, served and documented honestly",
+    "project": "Choose your own public-domain or self-generated corpus, and take it the whole way: tokenizer, token pipeline with a declared train/validation split, pretraining run with a recorded loss curve and wall-clock cost, instruction tuning against an evaluation set you wrote, quantized weights, a streaming server, and a model card. The card must state the training data, the compute, the evaluation numbers with their conditions, and a section on what the model cannot do that is specific enough to be falsifiable."
+  },
+  "phases": [
+    {
+      "id": "phase-1-data-and-tokens",
+      "title": "Text Becomes Numbers",
+      "goal": "Turn bytes into a vocabulary you built yourself, prove the round-trip is exact, and measure what your vocabulary choice costs you in sequence length.",
+      "projectCount": 3,
+      "projects": [
+        {
+          "slug": "project-01-corpus-contract-and-baseline",
+          "path": "projects/phase-1-data-and-tokens/project-01-corpus-contract-and-baseline",
+          "title": "The Corpus Contract and a Baseline Worth Beating",
+          "description": "Establish what the training data IS before modelling anything, and produce the number every later model in the track has to beat. Verify the corpus against a SHA-256 manifest and fail closed on any drift; split it by WORK rather than by random offset, holding out one complete novel; implement a character n-gram model with stupid backoff and score it in bits per byte on text it never saw. Measure the cost of a careless split by running the same model under both split designs, and read the widening train/validation gap as memorisation rather than as an improvement. Ends with the baseline figure recorded with its conditions, plus the paragraph naming what a bits-per-byte number cannot detect.",
+          "tech": [
+            "Python 3.11+",
+            "standard library only",
+            "pytest",
+            "SHA-256 manifests"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-byte-bpe-tokenizer",
+          "path": "projects/phase-1-data-and-tokens/project-02-byte-bpe-tokenizer",
+          "title": "A Tokenizer You Built, That Round-Trips Exactly",
+          "description": "Implement byte-level byte-pair encoding end to end - merge training, encode, decode, save and load - and prove it returns any input unchanged, including curly punctuation, tabs, accented letters and characters that appear nowhere in the training text. A base vocabulary of 256 byte values makes unrepresentable input impossible; a stated tie-break rule makes two runs agree; a whitespace-respecting split pattern stops merges from gluing word endings to the following space, measured rather than asserted. Merges are learned on training text only, and the per-chunk encoding cache is justified with a timing rather than an assumption. Produces vocab1024.json, the tokenizer every later phase loads.",
+          "tech": [
+            "Python 3.11+",
+            "standard library only",
+            "pytest",
+            "byte-pair encoding"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-vocabulary-budget",
+          "path": "projects/phase-1-data-and-tokens/project-03-vocabulary-budget",
+          "title": "What a Vocabulary Costs You",
+          "description": "Measure both sides of the vocabulary trade and then make a decision you can defend with numbers. Sweep the tokenizer at 512, 1024, 2048 and 4096 over the same training slice and the same corpus, recording tokens, bytes per token and round-trip exactness for each; derive a parameter formula for the three published model configurations and check it against a model that was really trained; and find that at width 64 a 4096-token vocabulary puts 72.6% of the parameters into a lookup table. Distinguish unique tokens from token exposures, watch average training signal per embedding row fall by more than half on every doubling, and learn why special tokens must be appended above the learned vocabulary rather than inserted into it. Ends with a written vocabulary decision carried through the rest of the track.",
+          "tech": [
+            "Python 3.11+",
+            "standard library only",
+            "pytest",
+            "byte-pair encoding"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-the-math-you-cannot-skip",
+      "title": "The Math You Cannot Skip",
+      "goal": "Implement autodiff, attention and a transformer block in NumPy, verify every gradient numerically, and train a tiny model with code you can account for line by line.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-04-attention-by-hand",
+          "path": "projects/phase-2-the-math-you-cannot-skip/project-04-attention-by-hand",
+          "title": "Attention, Forward and Backward, With Nothing Taken on Trust",
+          "description": "Implement scaled dot-product attention, causal masking and multi-head splitting in NumPy alone - forward pass and backward pass, no framework - then prove it correct three independent ways: against a deliberately slow brute-force loop over batch, head, query and key; against causality, by perturbing the last token and asserting that every earlier output row is bit-identical rather than merely close; and against both central finite differences and a framework's autodiff. Derive the softmax Jacobian in prose before writing the one line it collapses to, and explain why a finite-difference check agrees to about 1e-5 while an autodiff comparison agrees to about 1e-18 - so a numerical gradient check can tell you a gradient is not wrong, but never that it is exactly right.",
+          "tech": [
+            "Python 3.11+",
+            "NumPy",
+            "pytest",
+            "PyTorch (CPU, second opinion only)"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-decoder-block-and-loss",
+          "path": "projects/phase-2-the-math-you-cannot-skip/project-05-decoder-block-and-loss",
+          "title": "The Whole Model, and a Loss You Can Predict",
+          "description": "Assemble Project 04's attention into a complete decoder-only model: pre-norm residual blocks with a 4x MLP, learned positional embeddings, tied input and output embeddings, shifted targets and cross-entropy with ignore_index. Derive the parameter count of all three published configurations from the shapes by hand - 164,480 / 919,808 / 2,855,808 at vocabulary 1024 - then assert the formula against the built model rather than reading a number off it, and use 16 bytes per parameter to show why a parameter count alone is a poor feasibility test. Predict the untrained loss as ln(1024) = 6.9315 before running it, then drive one batch to near zero to prove gradients reach every parameter - and write down the much longer list of what that does not prove.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-pretraining",
+      "title": "Pretraining For Real",
+      "goal": "Move to a framework only after proving it agrees with your own implementation, build a reproducible data pipeline, and pretrain to a loss curve you measured.",
+      "projectCount": 4,
+      "projects": [
+        {
+          "slug": "project-06-token-pipeline",
+          "path": "projects/phase-3-pretraining/project-06-token-pipeline",
+          "title": "A Split You Can Defend",
+          "description": "Turn the shared corpus into memory-mapped uint16 token files with a meta.json that records the corpus hash, the vocabulary, the per-side byte and token counts and the leakage result - splitting by WORK rather than by offset, so the validation text is a book the model has never seen a word of (3,917,632 bytes to 1,495,733 tokens at 2.619 bytes per token; 141,125 to 55,099 at 2.561). Write a leakage check that reports a number rather than an opinion: 0 of 7,869 held-out 16-token windows occur verbatim in training at stride 7. Then break the split deliberately, re-run the same check unchanged, watch it report 8 of 6,985 and exit non-zero, and confront the gap between eight windows of boilerplate and the 0.218 bits per byte that Project 01 measured the same break to be worth. Choose the window length by measuring it at 4, 8, 16, 32 and 64 over a split you know is clean and one you know is dirty - at window 4 the check calls 38 percent of an honest split leaked, at 64 it calls a broken one clean. Finish with deterministic batching from a seeded generator, and the demonstration that the generator's STATE rather than its seed is part of the training state.",
+          "tech": [
+            "Python 3.11+",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-calibration-and-budget",
+          "path": "projects/phase-3-pretraining/project-07-calibration-and-budget",
+          "title": "Measure Your Machine Before You Trust a Plan",
+          "description": "Time one training step for all three published configurations on your own hardware - warm-up, synthetic batches, a report whose own figures reconcile - and find that the same benchmark on the same idle machine spans 22,799 to 27,824 tokens per second for the standard configuration. Then prove rather than recite the memory rule: walk every tensor the model and the optimiser hold and assert the identity total == 16 x parameters + 4 x parameter tensors, discovering that the optimiser holds nothing at all until after the first step and that the tied embedding must be counted once. Add the 6ND operation count as the ratio tool it is - it ranks the three plans correctly and over-predicts the extension-against-standard wall clock by 30 percent, so it is never a clock - and the activation term the memory table omits, where one attention matrix at the standard configuration is 8.39 MB per layer and grows with the SQUARE of the context. Finish by converting a measured rate into a predicted wall clock, comparing it with the recorded runs (71.8 s predicted against 77.2 s actual at small, 539.0 s against 754.9 s at standard - an overshoot caused by evaluation cadence rather than by the model), and writing budget.json: one configuration chosen against a stated time limit with the margin declared and dated BEFORE anything is trained.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-the-training-run",
+          "path": "projects/phase-3-pretraining/project-08-the-training-run",
+          "title": "The Run, and Proving You Can Stop It",
+          "description": "Write the pretraining loop and defend every decision in it - AdamW at betas 0.9/0.95 with weight decay 0.1, a linear warmup over steps/20 followed by cosine decay to a tenth of the peak, gradient clipping at a global norm of 1.0 - then evaluate in bits per byte on a work the model has never seen, so the curve can be read against the 2.0896 count baseline built in Project 01 rather than against zero. The reference standard run is 3,000 steps at batch 32 and context 128, seed 1337: 754.9 seconds, 12,288,000 token exposures over 1,495,733 unique tokens (8.22 passes), final 1.8705 validation bits per byte against 1.6780 training, crossing the baseline between steps 750 and 1000. The small route is fully graded and does NOT beat the baseline (2.1008, with training at 2.1295 - WORSE than validation, which is underfitting rather than failure). Then read what the model writes and find locally plausible English collapsing into repetition at a score 10.5 percent better than a 4-gram counter. Finally prove the run can be stopped: a resume that restores weights, optimiser, sampler state AND framework RNG state still differs from an uninterrupted run by 6.411e-02 because the cosine schedule is a function of the DECLARED TOTAL - produce that failure first, then reach 0.000e+00 - and account for the checkpoint byte by byte, including the 5.79 percent that is a recomputable causal mask and the tied table that the state dict counts twice.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-09-what-more-compute-buys",
+          "path": "projects/phase-3-pretraining/project-09-what-more-compute-buys",
+          "title": "Two Ladders, and Only One of Them Proves Anything",
+          "description": "Build two comparisons and keep only the claim that one of them supports. The size ladder - 164,480 / 919,808 / 2,855,808 parameters scoring 2.1008 / 1.8705 / 1.8507 bits per byte - differs on THREE axes at once (parameters, context length and token exposures, with the largest model seeing only 75 percent of the exposures of the middle one), so no sentence of the form 'tripling the parameters bought X' is supported by it; what it does support, stated with its conditions, is that going from 919,808 to 2,855,808 parameters moved the score about 1.1 percent for 1.79x the wall clock, which rules capacity out as the binding constraint without identifying what is. The data ladder is controlled: the same 919,808-parameter model, the same 3,000 steps, the same seed and the same 12,288,000 token exposures, with only the amount of distinct text changing - 373,933 / 747,866 / 1,495,733 unique tokens at 32.86 / 16.43 / 8.22 passes. It gives 2.4367 / 1.9740 / 1.8705 final held-out bits per byte with train/validation gaps of 1.2252 / 0.4400 / 0.1925, and the 25 percent run gets WORSE as it trains: its held-out score bottoms at 2.2520 on step 1500 and climbs for 1,500 more steps while its training score falls monotonically to 1.2115, so the last checkpoint ships a model 0.1847 bits per byte worse than one the run had in hand halfway through, and at a quarter of the corpus the same architecture LOSES to the 2.0896 count baseline it beats on the whole one. Quartering the data cost 30.3 percent where tripling the model bought 1.1 percent, and only the controlled ladder can say so.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "Matplotlib",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-making-it-follow-instructions",
+      "title": "Making It Follow Instructions",
+      "goal": "Give the model a chat format, fine-tune it with the prompt masked out, tune it on preferences, and measure instruction-following on tasks with exactly one right answer.",
+      "projectCount": 3,
+      "projects": [
+        {
+          "slug": "project-10-chat-template-and-sft",
+          "path": "projects/phase-4-making-it-follow-instructions/project-10-chat-template-and-sft",
+          "title": "A Format, a Mask, and a Loss That Lies",
+          "description": "Give a pretrained checkpoint a chat template - four control tokens appended ABOVE the learned vocabulary so 1024 becomes 1028 and nothing is renumbered - grow the tied embedding table by four rows for +512 parameters, and fine-tune it on 19,887 instruction pairs with the prompt masked out of the loss, reporting the 113 pairs that did not fit rather than letting them vanish (every one of them an uppercase row, because the merge table was learned on lower-case prose and the same sentence costs 20 tokens lower-case and 51 upper-case). Then run the identical data, seed and 800 steps with the prompt scored as well - the next-token shift preserved, which is the classic bug rather than a copy task - and confront the result: the training loss FALLS from 2.278 to 1.7748 while exact match falls from 0.168 to 0.000 on every one of the ten tasks. Three quarters of the unmasked loss is prompt tokens this model was already good at, the answer's share of the gradient drops to 24.9 percent, and the gap is visible at step 0 before any training at all. A training loss is only comparable between runs that score the same tokens.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-11-preference-tuning",
+          "path": "projects/phase-4-making-it-follow-instructions/project-11-preference-tuning",
+          "title": "A Metric Went Up and the Model Got Worse",
+          "description": "Implement direct preference optimisation against a FROZEN reference copy of your fine-tuned model, with the reference log-probabilities cached once so the training loop runs only the policy - no reward model and no sampling loop, which is why it finishes in 41 seconds on a CPU. The preference pairs are near-misses, not garbage: 2,441 of 20,000 rows produced no plausible corruption at all and the generator says so, with replace_char losing 1,688 because in most words the chosen letter occurs once and 'replace only the first occurrence' IS the right answer. Then confront the measurement: preference accuracy rises 0.845 to 0.960 while instruction exact match FALLS 0.1667 to 0.1333, and a swapped-label control reaches 0.180 and 0.000 - proving the implementation works and the degradation is what optimising this objective did. The mechanism is measurable: count_letter's corruption is always n+1, so after tuning the model answers 1 to all 60 dev items while its exact-match score barely moves.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-12-evaluation-harness",
+          "path": "projects/phase-4-making-it-follow-instructions/project-12-evaluation-harness",
+          "title": "The Score You Get for Free",
+          "description": "Build the evidence report that makes a score mean something: per-task exact match printed beside the MAJORITY-CLASS BASELINE, bits per byte on held-out prose, a repetition measure that takes the decoder as an argument, a verbatim training-overlap check, and a cannot-detect statement on every section. The project opens with a defect that was real in this track's own data - count_letter's letter was drawn from a word's DISTINCT letters, so the answer was '1' on 88.3 percent of items and the model scored 86.96 percent by learning to say '1'; after the fix the free score is 0.500 and the model scores 0.6923, which is worse and worth something. All ten lifts are then reported honestly, six of them negative. Three of the six zeros are structural - the tokenizer emits multi-character chunks, so the model never sees a letter to reverse or replace - and three were CAPPED BY THE HARNESS: at max_new 24 the uppercase ceiling is 0.042, so a perfect model could not have scored above it. Finally the harness catches what the rest of Phase 4 could not: instruction tuning moved validation bits per byte from 1.8705 to 2.7928, worse than the count baseline, and a greedy sample from a prose prompt explains why.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-inference-engineering",
+      "title": "Inference Engineering",
+      "goal": "Implement sampling, a KV cache proven output-identical to the slow path, and int8 quantization measured for size, speed and quality.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-13-sampling-and-kv-cache",
+          "path": "projects/phase-5-inference-engineering/project-13-sampling-and-kv-cache",
+          "title": "Choosing the Next Token, and Not Recomputing the Past",
+          "description": "Implement greedy, temperature, top-k, top-p and a repetition penalty as separate testable functions, then prove the one invariant that matters: no filter may ever empty the distribution - the naive top_p that compares against cumulative-probability-after keeps ZERO tokens at p = 0.5 on the published six-token distribution, so it crashes precisely when the model is confident. Then implement incremental decoding with a key/value cache: prefill the prompt once, feed one token per step, carry keys and values forward, and get the position offset right. Correctness before speed - the cached path must produce the SAME token ids as the uncached one, because a cache bug produces fluent wrong output and never a crash. Finally measure both the work saved and the time saved, and account for the gap: 38.8x fewer token-positions at 64 new tokens bought 1.32x of wall clock on the reference machine, and there is a generation shape where the cache is slower than no cache.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-14-quantized-weights",
+          "path": "projects/phase-5-inference-engineering/project-14-quantized-weights",
+          "title": "Smaller Weights, and Why That Did Not Make It Faster",
+          "description": "Implement symmetric int8 weight-only quantization with one scale per OUTPUT CHANNEL, leaving the output head in full precision, and measure size, quality and speed - having written down a prediction for each first. Derive the expected byte count from the tensor shapes and reconcile it exactly with the measured 4,531,200 fp32 bytes and 2,190,336 int8 bytes, then explain why the ratio is 2.069x rather than 4x. Find the 262,144 bytes - 5.8 percent of the checkpoint - that are causal masks saved by register_buffer without persistent=False, recomputable from block_size and growing with the SQUARE of the context. Then confront the result: validation quality moved by +0.0001 bits per byte and generation got 1.57x SLOWER, because every forward pass dequantizes the weights back to float before an unchanged float32 matrix multiply. Quantization buys SIZE; it buys speed only when an integer kernel or a memory-bandwidth-bound model actually consumes the smaller representation.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-serving-it",
+      "title": "Serving It",
+      "goal": "Put the model behind a streaming endpoint with budgets, accounting and a model card - and run someone else's published weights through the same stack.",
+      "projectCount": 2,
+      "projects": [
+        {
+          "slug": "project-15-local-inference-server",
+          "path": "projects/phase-6-serving-it/project-15-local-inference-server",
+          "title": "A Server That Refuses What It Cannot Finish",
+          "description": "Put the model you trained behind /health, /generate, a server-sent-events /generate/stream and a /model-card, on a process that is CPU-bound and single-threaded - so every limit has to be real. Caps return a named 422 with a machine-readable body (the limit and the ask) rather than truncating silently; a bounded queue returns 503 queue_full; a deadline computed from the moment the request was QUEUED is checked while it waits and again once per token while it runs, so a request that runs out of time stops with the reason 'deadline' instead of being noticed afterwards. Every request gets its own KV cache, proved by a test that a stranger's prompt in between cannot change your answer, and one structured log line per request carries the accounting - prompt tokens, generated tokens, queue wait, generate seconds, tokens per second - and deliberately no prompt text and no output. No latency figure is published: you measure your own and record it with your thread count.",
+          "tech": [
+            "Python 3.11+",
+            "FastAPI",
+            "uvicorn",
+            "httpx",
+            "PyTorch (CPU)",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-16-someone-elses-weights",
+          "path": "projects/phase-6-serving-it/project-16-someone-elses-weights",
+          "title": "Running a Checkpoint You Did Not Train",
+          "description": "Export your own weights into the layout published open-weights checkpoints commonly use - a config.json of architecture fields plus a model.safetensors of named tensors - and load that layout back into your own implementation, which stores q, k and v as one fused matrix where the file stores three and names everything differently. Write the mapping AS DATA: a list of rules carrying their required shapes, so that both completeness checks are possible - every tensor in the file consumed, and every parameter filled, since an unfilled parameter keeps its random initialisation and the model runs anyway. Refuse every architecture the implementation cannot honour rather than approximating it, each refusal naming the mismatch, and prove each refusal fires by breaking a valid checkpoint on purpose. The round trip must be EXACT - 0.000e+00 maximum absolute logit difference on the reference checkpoint - because a wrong mapping does not raise, does not slow anything down, and still produces fluent English: swapping q and k in one layer of four moved the logits by 6.886 on the trained model and by 5.337e-03 on a 20-step one, which is why a loader tested on an untrained model is tested in the regime where the bug is invisible.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "safetensors",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-7-your-own-model",
+      "title": "Your Own Model, End To End",
+      "goal": "Do the whole pipeline again on a corpus you choose, and defend every claim you make about the result.",
+      "projectCount": 1,
+      "projects": [
+        {
+          "slug": "project-17-release-bundle-and-defence",
+          "path": "projects/phase-7-your-own-model/project-17-release-bundle-and-defence",
+          "title": "A Model You Trained, Served and Documented Honestly",
+          "description": "The capstone: take a corpus you chose all the way to a served model, and defend every claim you make about it. Build the provenance manifest and a verifier that fails closed on a changed byte AND on a missing provenance line; split by document and prove the split with a leakage count reported alongside its window length and stride; learn a tokenizer and justify the vocabulary in bytes-per-token and embedding parameters rather than preference; compute a count baseline for YOUR corpus, because 2.0896 belongs to the shared one; pretrain to a recorded loss curve with the wall clock, the token exposures, the unique tokens and the passes over the data all stated separately; write your own instruction set and report every task against its majority-class baseline, including the tasks scoring zero; assemble the inference stack with a KV cache proven output-identical by exact token-id comparison and quantized weights measured for size, quality AND speed. Pre-register what would count as success before the run and report the comparison whichever way it went; report at least one measurement that went against you without silently fixing it; and finish with a model card whose limitations are falsifiable, an evidence report that refuses a bundle whose recorded runs no longer hash to their inputs, and a live defence.",
+          "tech": [
+            "Python 3.11+",
+            "PyTorch (CPU)",
+            "NumPy",
+            "FastAPI",
+            "pytest",
+            "SHA-256 manifests"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
