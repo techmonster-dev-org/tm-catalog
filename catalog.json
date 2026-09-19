@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-19T12:03:52Z",
+  "generatedAt": "2026-09-19T20:14:20Z",
   "totals": {
-    "tracks": 22,
-    "projects": 953,
-    "videos": 103
+    "tracks": 23,
+    "projects": 970,
+    "videos": 104
   },
   "tracks": [
     {
@@ -122,6 +122,34 @@
       "playlistUrl": null
     },
     {
+      "id": "build-your-own-llm",
+      "title": "Build Your Own Small Language Model",
+      "tagline": "Build the whole stack that sits underneath a language model API, on the laptop you already own.",
+      "level": null,
+      "stack": [
+        "Python 3.11+",
+        "NumPy",
+        "PyTorch (CPU)",
+        "pytest",
+        "FastAPI",
+        "Matplotlib"
+      ],
+      "targetRoles": [
+        "Machine Learning Engineer (training and inference)",
+        "LLM Infrastructure / Inference Engineer",
+        "Applied Research Engineer",
+        "AI Platform Engineer"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 7,
+      "projectCount": 17,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
       "id": "c-systems",
       "title": "C & Systems Programming (Zero to the Kernel)",
       "tagline": "Learn C the way the systems world actually uses it — as the portable assembly that the Linux kernel, device drivers, embedded firmware, databases, and network stacks are written in.",
@@ -222,7 +250,7 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 19,
+      "videoCount": 20,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
