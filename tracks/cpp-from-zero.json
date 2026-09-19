@@ -18,11 +18,11 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 16,
+  "videoCount": 19,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
-  "playlistUrl": "https://www.youtube.com/playlist?list=PLU670SZbHPOE",
+  "playlistUrl": null,
   "summary": "Learn C++ from the very first line of code to modern, idiomatic C++17/20 — the systems language that the shared core (data structures, computer architecture, performance) and the AI-chip branch are all written in. You build understanding of the machine as you go: types and the compiler, control flow and functions, the memory model (pointers, references, the stack and heap), RAII and ownership with smart pointers, the STL and templates, and modern features like move semantics and lambdas. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it turns the mathematical 'what' from math-foundations into the 'how' that runs on real hardware.",
   "environment": [
     "This track is **fully cross-platform** - every project runs natively on Linux, macOS and Windows. You need a C++17 compiler and `make`.",
@@ -346,7 +346,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "P_-uHufJ_Ic",
+            "url": "https://www.youtube.com/shorts/P_-uHufJ_Ic",
+            "title": "You asked for element five. It printed anyway. | C++ From Zero #17",
+            "publishAt": "2026-09-18T13:00:00Z"
+          }
         },
         {
           "slug": "project-02-pointers-intro",
@@ -358,7 +363,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "HaZrpaMR7v0",
+            "url": "https://www.youtube.com/shorts/HaZrpaMR7v0",
+            "title": "What if a variable stored an address? | C++ From Zero #18",
+            "publishAt": "2026-09-18T18:00:00Z"
+          }
         },
         {
           "slug": "project-03-references",
@@ -370,7 +380,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "402-51z1Gsw",
+            "url": "https://www.youtube.com/shorts/402-51z1Gsw",
+            "title": "Two names, one variable — change either, both change | C++ From Zero #19",
+            "publishAt": "2026-09-18T23:00:00Z"
+          }
         },
         {
           "slug": "project-04-pointer-arithmetic",
