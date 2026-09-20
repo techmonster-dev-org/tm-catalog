@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 20,
+  "videoCount": 22,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -414,7 +414,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "ooEnblKeLto",
+            "url": "https://www.youtube.com/shorts/ooEnblKeLto",
+            "title": "Where does data that outlives a function go? | C++ From Zero #21",
+            "publishAt": "2026-09-19T18:00:00Z"
+          }
         },
         {
           "slug": "project-06-leaks-dangling",
@@ -427,7 +432,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "G9bA1OjvAG4",
+            "url": "https://www.youtube.com/shorts/G9bA1OjvAG4",
+            "title": "70% of security bugs come from one habit | C++ From Zero #22",
+            "publishAt": "2026-09-19T23:00:00Z"
+          }
         },
         {
           "slug": "project-07-pointers-references-params",
