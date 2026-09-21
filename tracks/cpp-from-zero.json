@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 22,
+  "videoCount": 25,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -449,7 +449,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "afROM0hlWDg",
+            "url": "https://www.youtube.com/shorts/afROM0hlWDg",
+            "title": "Change the original, or just a copy? You decide | C++ From Zero #23",
+            "publishAt": "2026-09-20T13:00:00Z"
+          }
         },
         {
           "slug": "project-08-dynamic-array",
@@ -462,7 +467,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "U08k_zpA_1U",
+            "url": "https://www.youtube.com/shorts/U08k_zpA_1U",
+            "title": "You call push_back a thousand times — it never runs out of room. | C++ From Zero #24",
+            "publishAt": "2026-09-20T18:00:00Z"
+          }
         }
       ]
     },
@@ -482,7 +492,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "q4cN4PtlrAQ",
+            "url": "https://www.youtube.com/shorts/q4cN4PtlrAQ",
+            "title": "Who can set your balance to negative a million? The class decides. | C++ From Zero #25",
+            "publishAt": "2026-09-20T23:00:00Z"
+          }
         },
         {
           "slug": "project-02-constructors-destructors",
