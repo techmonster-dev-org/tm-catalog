@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 25,
+  "videoCount": 28,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -509,7 +509,12 @@
             "g++/clang++"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "O0Fah0mQybU",
+            "url": "https://www.youtube.com/shorts/O0Fah0mQybU",
+            "title": "You never called it. It ran the instant your object died. | C++ From Zero #26",
+            "publishAt": "2026-09-21T13:00:00Z"
+          }
         },
         {
           "slug": "project-03-raii-principle",
@@ -522,7 +527,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "FCdikMklkiI",
+            "url": "https://www.youtube.com/shorts/FCdikMklkiI",
+            "title": "No garbage collector, so C++ must leak? | C++ From Zero #27",
+            "publishAt": "2026-09-21T18:00:00Z"
+          }
         },
         {
           "slug": "project-04-rule-of-three",
@@ -535,7 +545,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "S8VU2BufbwM",
+            "url": "https://www.youtube.com/shorts/S8VU2BufbwM",
+            "title": "Copy it once, and both objects free the same memory | C++ From Zero #28",
+            "publishAt": "2026-09-21T23:00:00Z"
+          }
         },
         {
           "slug": "project-05-unique-ptr",
