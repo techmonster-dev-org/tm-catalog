@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 28,
+  "videoCount": 31,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -564,7 +564,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "9GFi0Ua2__o",
+            "url": "https://www.youtube.com/shorts/9GFi0Ua2__o",
+            "title": "Who frees your heap memory? Nobody has to. | C++ From Zero #29",
+            "publishAt": "2026-09-22T13:00:00Z"
+          }
         },
         {
           "slug": "project-06-shared-ptr",
@@ -578,7 +583,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "K_FPKvB2yLY",
+            "url": "https://www.youtube.com/shorts/K_FPKvB2yLY",
+            "title": "What if one object needs more than one owner? | C++ From Zero #30",
+            "publishAt": "2026-09-22T18:00:00Z"
+          }
         },
         {
           "slug": "project-07-weak-ptr",
@@ -592,7 +602,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "e9nVkoR-doQ",
+            "url": "https://www.youtube.com/shorts/e9nVkoR-doQ",
+            "title": "Two objects. Each owns the other. Neither ever dies. | C++ From Zero #31",
+            "publishAt": "2026-09-22T23:00:00Z"
+          }
         },
         {
           "slug": "project-08-raii-resource-manager",
