@@ -1,0 +1,782 @@
+{
+  "id": "quant-dev-python",
+  "title": "Quant Developer in Python: Research Infrastructure, Backtesting, Portfolio & Risk",
+  "tagline": "Build the software a systematic research desk runs on, and be able to prove every number it prints.",
+  "level": null,
+  "stack": [
+    "Python 3.12",
+    "numpy / pandas / polars",
+    "pyarrow / parquet / sqlite",
+    "statsmodels / scipy / cvxpy",
+    "numba",
+    "pytest",
+    "asyncio / websockets"
+  ],
+  "targetRoles": [
+    "Quant Developer",
+    "Research Engineer (systematic trading)",
+    "Backtesting / Data Platform Engineer",
+    "Junior Systematic Researcher"
+  ],
+  "version": "1.0.0",
+  "phaseCount": 6,
+  "projectCount": 48,
+  "videoCount": 0,
+  "freeEligible": false,
+  "freeProjectCount": 0,
+  "paid": true,
+  "playlistUrl": null,
+  "summary": "Build the software a systematic research desk runs on, and be able to prove every number it prints. This is the quant-developer track: not the person who invents the signal, but the engineer who builds the data, backtesting, allocation, execution and risk infrastructure that makes a signal testable at all - and who can say exactly what a result does and does not show. You start where research software actually starts: an installable package with numerical tests and a benchmark protocol, time semantics that separate when something happened from when you could have known it, typed ingestion with provenance, SQL and as-of joins, columnar storage, a bitemporal point-in-time store, and asynchronous ingestion that never loses a message silently. You then build instrument accounting from the ledger up - cash, positions, corporate actions, settlement, futures rolls and variation margin - and two backtesting engines (vectorised and event-driven) that must agree to a stated tolerance before either is trusted, with cost models, causality enforcement and interval-aware validation. Research validity is its own phase: a pre-registered experiment registry, one temporal and one cross-sectional signal pipeline, point-in-time features against a planted factor structure, regression with dependence-aware uncertainty, cointegration under structural breaks, and a null-research exercise that shows what selection does to a Sharpe ratio. Portfolio construction covers covariance conditioning, constrained optimisation with optimality residuals, allocation stability, discrete lots, signal combination, volatility targeting and option payoff arithmetic. Execution research treats fills and impact as scenarios with stated assumptions, never as facts, and ends in a restartable runner whose ledger survives a crash. Risk, reconciliation, profiling, a reproducible release and a code-review exercise close the loop before an integrated capstone that replays frozen sessions through injected faults and three execution scenarios. Every number is a case count or a tolerance; every project ends in a no-scaffold rebuild; nothing here claims a profitable strategy, and the track says plainly what a laptop, free data and a simulator cannot teach.",
+  "environment": [],
+  "capstone": {
+    "title": "A Reproducible Research Platform: Frozen Sessions, Injected Faults, Three Execution Scenarios",
+    "project": "Assemble everything the track built into one platform and run it end to end: the data package (synthetic fixtures plus at least 20 sessions your own adapter captured from a public endpoint of your choice, one volatile interval selected by a rule you published before looking at results), the backtesting library, the experiment registry with one temporal and one cross-sectional pre-registered hypothesis, the portfolio engine, the execution harness under favourable, baseline and adverse scenarios, the risk report, and the restartable runner replayed through 30 injected transport faults. Publish the synthetic-fixture run publicly and reproducibly; ship the real-data run as a restricted artifact with a provenance manifest and content hashes. No positive research result is required, and none may be presented as evidence of persistent predictability."
+  },
+  "phases": [
+    {
+      "id": "phase-1-research-data-foundations",
+      "title": "Research Software & Market Data Foundations",
+      "goal": "Stand up research software the way a desk does: an installable package with numerical tests and a benchmark protocol, event/arrival/knowledge time, typed ingestion with provenance, SQL and as-of joins, bars and columnar storage, a bitemporal point-in-time store, and asynchronous ingestion with bounded queues and zero silent loss.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-package-tests-and-benchmark-protocol",
+          "path": "projects/phase-1-research-data-foundations/project-01-package-tests-and-benchmark-protocol",
+          "title": "An Installable Package, Thirty Justified Tolerances, and a Benchmark You Can Only Beat by Ratio",
+          "description": "Create the qdp package (pyproject, editable install, lock file, make reproduce), write qdp.numeric with integer-tick arithmetic and 30 test cases whose every tolerance carries a derivation, and run the shipped benchmark protocol so that every later runtime bar is a ratio on your own machine.",
+          "tech": [
+            "Python 3.12",
+            "setuptools / pyproject.toml",
+            "pytest",
+            "numpy",
+            "math.fsum / fractions"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-time-sessions-and-calendars",
+          "path": "projects/phase-1-research-data-foundations/project-02-time-sessions-and-calendars",
+          "title": "Three Clocks on Every Row, and a Calendar That Opens at 09:30 Whatever UTC Says",
+          "description": "Add qdp.timebase: event, arrival and knowledge time as int64 UTC ns, the synthetic zone's DST rule, a holiday-rule session calendar with an overnight variant, and three knowledge-time policies - proven by 100 cases whose expected values come from the shipped calendar and the standard library, never from the module under test.",
+          "tech": [
+            "Python 3.12",
+            "datetime / zoneinfo",
+            "pytest",
+            "int64 UTC nanoseconds"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-typed-ingestion-and-provenance",
+          "path": "projects/phase-1-research-data-foundations/project-03-typed-ingestion-and-provenance",
+          "title": "Every Row Accepted or Rejected With a Reason, and a Hash That Says Which Bytes You Meant",
+          "description": "Add qdp.ingest: a typed CSV loader where every row is accepted with pinned int64 dtypes or rejected with a line number and reason, a canonical content hash that reproduces across loads and row order, a provenance manifest that verifies fail-closed, and the daily capture task against a public endpoint of your choice with its capabilities recorded first.",
+          "tech": [
+            "Python 3.12",
+            "csv / hashlib",
+            "pandas",
+            "pytest",
+            "provenance manifests"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-sql-and-as-of-joins",
+          "path": "projects/phase-1-research-data-foundations/project-04-sql-and-as-of-joins",
+          "title": "The Latest Period Known, Not the Latest Row Arrived - An As-Of Join Done Three Ways",
+          "description": "Add qdp.sqlstore: the daily panel in sqlite3 with keys that forbid duplicates, the as-of join written in SQL, in polars with a latest-known rewrite, and as a loop oracle - 50 queries (32 of them as-of) checked against the oracle and pandas with zero rows multiplied.",
+          "tech": [
+            "Python 3.12",
+            "sqlite3",
+            "polars join_asof",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-bars-and-columnar-storage",
+          "path": "projects/phase-1-research-data-foundations/project-05-bars-and-columnar-storage",
+          "title": "Four Kinds of Bar, One Invariant, and the First Runtime Bar You Measure as a Ratio",
+          "description": "Add qdp.bars: time, tick, volume and notional bars from integer trades in polars with per-instrument volume conserved as an exact int64 identity, a parquet round trip that pins int64, and a 1M-row benchmark reported as ratios to your own protocol run with the parquet size stated as a measured number of bytes.",
+          "tech": [
+            "Python 3.12",
+            "polars",
+            "pyarrow / parquet",
+            "pytest",
+            "benchmark ratios"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-point-in-time-and-universe-history",
+          "path": "projects/phase-1-research-data-foundations/project-06-point-in-time-and-universe-history",
+          "title": "A Store That Remembers What You Knew, a Universe Rebuilt From What Was Knowable, and a Broken Store You Must Read",
+          "description": "Add qdp.pit: an append-only bitemporal store (effective date, known date, restatements as new versions) proven on a real restatement at three timestamps and 1,000 seeded as-of queries with zero not-yet-known records, a membership-interval universe history, the shipped top-300 rebuilt from published files with 0 differences across 39 rebalances, and a reading tier that diagnoses four planted defects in a look-alike module.",
+          "tech": [
+            "Python 3.12",
+            "dataclasses",
+            "pytest",
+            "bitemporal store",
+            "csv"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-async-ingestion-and-quality",
+          "path": "projects/phase-1-research-data-foundations/project-07-async-ingestion-and-quality",
+          "title": "A Consumer That Cannot Receive Everything, So It Accounts for Everything",
+          "description": "Add qdp.feed: a sequence tracker with a bounded reorder window that delivers in order, de-duplicates, declares provisional gaps and reconciles late fills; a producer-consumer pipeline over a bounded asyncio queue with backpressure measured; 20 fault scenarios at frozen seeds with zero silent losses; and the shipped replay server's faulty session consumed with received, duplicates and missing matching the planted truth exactly.",
+          "tech": [
+            "Python 3.12",
+            "asyncio",
+            "websockets",
+            "numpy (seeded faults)",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-lab-research-data-package",
+          "path": "projects/phase-1-research-data-foundations/project-08-lab-research-data-package",
+          "title": "Lab - The Research Data Package",
+          "description": "The Phase 1 lab: specify and build qdp.data - one command that turns ten raw files with twelve planted defects, the fundamentals file and the membership history into a clean, hashed, documented panel with a point-in-time store, a rebuilt universe, a defect report and your captured sessions beside it; three clean builds hash identically, eleven defects are detected with zero false detections and the twelfth's statistical detection limit is measured and stated.",
+          "tech": [
+            "Python 3.12",
+            "pandas / polars / pyarrow",
+            "pytest",
+            "qdp (Projects 01-07)",
+            "provenance manifests"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-2-accounting-and-backtesting",
+      "title": "Instrument Accounting & the Backtesting Engine",
+      "goal": "Build the ledger before the strategy: cash, positions and marks with reconciliation invariants, corporate actions and settlement, futures rolls with variation margin, then a vectorised reference engine and an event-driven engine that must agree within a stated tolerance, with cost models, causality enforcement and interval-aware validation.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-ledger-cash-positions-and-marks",
+          "path": "projects/phase-2-accounting-and-backtesting/project-01-ledger-cash-positions-and-marks",
+          "title": "The Ledger — Cash, Positions and Marks, to the Cent",
+          "description": "Build qdp/ledger.py: a single-currency ledger in integer minor units with FIFO lots, exact cost proration, an append-only journal and a reconcile() that returns three invariants as residuals, tested on 100 accounting cases at a declared tolerance of zero.",
+          "tech": [
+            "Python 3.11",
+            "fractions",
+            "dataclasses",
+            "pytest",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-corporate-actions-and-settlement",
+          "path": "projects/phase-2-accounting-and-backtesting/project-02-corporate-actions-and-settlement",
+          "title": "Corporate Actions and Settlement — Entitlement Is Not Payment",
+          "description": "Build qdp/corporate_actions.py: splits that rewrite FIFO lots with exact cost conservation and cash in lieu, dividends booked as receivables on the ex-date and cash on the pay date, and settled cash derived from the ledger journal with a session lag, verified on 42 fixtures, the 60 shipped splits and two publicly documented splits from captured data.",
+          "tech": [
+            "Python 3.11",
+            "fractions",
+            "pandas",
+            "pytest",
+            "bisect"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-futures-rolls-and-variation-margin",
+          "path": "projects/phase-2-accounting-and-backtesting/project-03-futures-rolls-and-variation-margin",
+          "title": "Futures, Rolls and Variation Margin — An Instrument You Never Pay For",
+          "description": "Build qdp/futures.py: contract specs with an exact cents_per_tick, a futures account margined daily into the ledger with per-lot basis re-set at every settlement, rolls at settlement prices, cash expiry and physical first-notice handling, and a difference-adjusted continuous series, reconciled to the cent on 20 seeded rolls; then diagnose a supplied module that is wrong in three places by reading it.",
+          "tech": [
+            "Python 3.11",
+            "fractions",
+            "pandas",
+            "pytest",
+            "numpy"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-vectorised-reference-engine",
+          "path": "projects/phase-2-accounting-and-backtesting/project-04-vectorised-reference-engine",
+          "title": "The Vectorised Reference Engine — Small Enough to Be Obviously Right",
+          "description": "Build qdp/vectorised.py: a Panel with a missing-bar sentinel and a backtesting engine with no loop over time that turns a target-units matrix into trades, cash, holdings and equity in integer cents under same-close and next-open execution, verified on 20 paths whose expected equity is written out and three of which are recomputed by hand.",
+          "tech": [
+            "Python 3.11",
+            "numpy",
+            "pandas",
+            "pytest",
+            "fractions"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-event-driven-engine",
+          "path": "projects/phase-2-accounting-and-backtesting/project-05-event-driven-engine",
+          "title": "The Event-Driven Engine — Must Agree With the Reference, Exactly",
+          "description": "Build qdp/event_engine.py: a session loop of open, decide, close and mark with orders, pluggable fill models, a past-only PanelView and the Project 01 ledger, proven equal to the vectorised reference on 20 seeded cases in integer cents (and within atol 1e-8 / rtol 1e-10 in currency), with partial fills, next-eligible execution, stale marks and order netting documented as numbered divergences.",
+          "tech": [
+            "Python 3.11",
+            "numpy",
+            "typing.Protocol",
+            "pytest",
+            "fractions"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-costs-and-execution-assumptions",
+          "path": "projects/phase-2-accounting-and-backtesting/project-06-costs-and-execution-assumptions",
+          "title": "Costs and Execution Assumptions — Every Figure Beside Its Scenario",
+          "description": "Build qdp/costs.py: transaction-cost models as exact Fractions (linear bps, per-unit, half-spread, quantised square-root impact, composite) that both engines book per trade to the cent, with analytical totals recovered exactly on 30 frozen trade lists, the break-even cost of a path computed and verified, and a scenario table that puts every gross figure beside its net at several cost levels and both execution conventions.",
+          "tech": [
+            "Python 3.11",
+            "fractions",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-causality-and-temporal-validation",
+          "path": "projects/phase-2-accounting-and-backtesting/project-07-causality-and-temporal-validation",
+          "title": "Causality and Temporal Validation — Mutate the Future, Count What Moved",
+          "description": "Build qdp/causality.py: a future-mutation harness that alters one post-cutoff observation, reruns the event engine and asserts every pre-cutoff decision is byte-identical on 100 seeded mutations (with a leaky rule that must be caught and its catch rate reported), plus label intervals with purged and embargoed splits and walk-forward folds whose prohibited overlaps are counted and asserted zero.",
+          "tech": [
+            "Python 3.11",
+            "numpy",
+            "dataclasses",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-lab-backtesting-library",
+          "path": "projects/phase-2-accounting-and-backtesting/project-08-lab-backtesting-library",
+          "title": "Lab — The Backtesting Library",
+          "description": "Compose Projects 01-07 into qdp/backtest.py: one run_backtest(config) entry point with canonical config, data and result hashes, every honesty device carried by construction (equal-weight baseline, scenario table with break-even, execution convention, three residuals, future-mutation count, unfilled orders, stale marks, split counts), a 100-case golden-hash regression suite with a changelog discipline, and one captured-data replay that reconciles to three zeros.",
+          "tech": [
+            "Python 3.11",
+            "hashlib",
+            "json",
+            "numpy",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-3-research-validity",
+      "title": "Research Validity & Signal Infrastructure",
+      "goal": "Make a research claim checkable: a pre-registered experiment registry, one temporal and one cross-sectional signal pipeline with no future-membership access, point-in-time features against a planted factor structure, regression with dependence-aware uncertainty, cointegration under breaks, and a null-research exercise that quantifies selection bias.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-experiment-registry-and-preregistration",
+          "path": "projects/phase-3-research-validity/project-01-experiment-registry-and-preregistration",
+          "title": "The Experiment Registry, and Why You Register Before You Look",
+          "description": "Build an append-only, hash-chained experiment registry with canonical configuration hashes, data-byte hashes and a run guard that refuses unregistered trials, then preregister the 30 trials Phase 3 will run before any signal code exists.",
+          "tech": [
+            "Python 3.11+",
+            "hashlib",
+            "json",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-temporal-signal-pipeline",
+          "path": "projects/phase-3-research-validity/project-02-temporal-signal-pipeline",
+          "title": "The Temporal Signal Pipeline — Every Feature at Knowledge Time",
+          "description": "Build a one-series signal pipeline with fixed time semantics (features at knowledge time, business-day horizons with recorded label ends, embargoed walk-forward folds, a pooled Spearman IC beside two baselines), prove it with 34 timing cases, run the 30 preregistered trials through the registry, and reproduce one report on captured data.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-cross-sectional-signal-pipeline",
+          "path": "projects/phase-3-research-validity/project-03-cross-sectional-signal-pipeline",
+          "title": "The Cross-Sectional Signal Pipeline — Ranks Against a Universe You Could Have Known",
+          "description": "Build a cross-sectional pipeline that resolves the universe from a membership history as of each formation date, ranks a signal with tie handling and an exclusion ledger, keeps exits in the forward return via terminal payouts, and reports a mean per-date IC beside a permutation null; prove it with 32 edge cases and two preregistered trials on the shared panel.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-point-in-time-features-and-factors",
+          "path": "projects/phase-3-research-validity/project-04-point-in-time-features-and-factors",
+          "title": "Point-in-Time Features and Factor Exposures — What Was Known, and What Was Planted",
+          "description": "Build a bitemporal fundamentals store that answers what was known on a day for one period and for the latest period, honouring restatements across 50 revision cases, then estimate factor exposures by per-instrument OLS that recovers planted betas within 1e-8 on noiseless fixtures and reports its error as a distribution on the noisy panel.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-regression-and-uncertainty",
+          "path": "projects/phase-3-research-validity/project-05-regression-and-uncertainty",
+          "title": "Regression and Uncertainty — A Standard Error Is a Claim About Coverage",
+          "description": "Write OLS by QR with classical, HC1, Newey-West HAC and pre-whitened HAC covariances, verify ten analytical fits against hand arithmetic and an independent library, and measure the coverage of each 95% interval over 1,000 seeded paths of dependent data, where the classical interval covers 87% and the pre-whitened one covers 95%.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "scipy",
+            "statsmodels",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-cointegration-under-breaks",
+          "path": "projects/phase-3-research-validity/project-06-cointegration-under-breaks",
+          "title": "Cointegration Under Breaks — A Test, a Hedge Ratio, and What Neither Promises",
+          "description": "Implement the Engle-Granger two-step test with residual-based critical values, an exact half-life and a sup-Wald hedge-ratio break test with dependence-aware standard errors, measure rejection and estimation-error rates over 200 stationary, 200 broken and 200 independent paths at the frozen seed, and diagnose a supplied module with three planted defects for the phase's reading mastery tier.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "statsmodels",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-selection-bias-and-null-research",
+          "path": "projects/phase-3-research-validity/project-07-selection-bias-and-null-research",
+          "title": "Selection Bias and Null Research — The Best of a Hundred Coin Flips",
+          "description": "Register 100 null candidate strategies, select the best by Sharpe ratio, and report it beside the expected maximum of 100 nulls, the deflated Sharpe probability and a Bonferroni-adjusted p-value with costs on every line; validate the null test with 1,000 i.i.d. series where 35-65 rejections at 5% is the only acceptable count.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "scipy",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-lab-reproducible-research-report",
+          "path": "projects/phase-3-research-validity/project-08-lab-reproducible-research-report",
+          "title": "Lab — The Reproducible Research Report",
+          "description": "Assemble the phase into one report regenerated from the registry and the shared data by a single command: every table reproduces byte-identically across three clean runs, an audit walks every statistic back to a registered trial with an outcome and fails on any unregistered step or missing honesty label, captured-data rows carry provenance, and no positive result is required or presented.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pandas",
+            "hashlib",
+            "csv",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-4-portfolio-construction",
+      "title": "Portfolio Construction & Instrument Risk",
+      "goal": "Turn a signal into feasible holdings with explicit units: covariance conditioning, constrained optimisation with optimality residuals, allocation stability under perturbation, discrete lots with post-rounding limit checks, train-only signal combination, lagged volatility targeting, and option payoff and sensitivity arithmetic.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-covariance-and-conditioning",
+          "path": "projects/phase-4-portfolio-construction/project-01-covariance-and-conditioning",
+          "title": "Covariance and Conditioning",
+          "description": "Build qdp.covariance: a symmetric-by-construction sample covariance with units stated, exact symmetry and PSD checks, condition numbers, linear shrinkage with the analytic intensity, a factor-model constructor, and a fixture generator whose sample covariance equals a target to rounding, tested on 30 symmetry/PSD cases and 5 analytical matrices.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "scipy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-constrained-optimisation",
+          "path": "projects/phase-4-portfolio-construction/project-02-constrained-optimisation",
+          "title": "Constrained Optimisation",
+          "description": "Build qdp.optimise: closed-form minimum-variance and mean-variance solutions as an oracle, a convex QP with budget and box constraints, and a normalised KKT optimality residual computed from the returned point, checked on 10 analytical cases and 20 seeded long-only problems at a residual bar of 1e-6 with the units of every input stated.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "cvxpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-allocation-stability",
+          "path": "projects/phase-4-portfolio-construction/project-03-allocation-stability",
+          "title": "Allocation Stability",
+          "description": "Build qdp.stability: seeded perturbations of expected returns and bootstrap-resampled covariances, a report of weight and ex-ante risk change across 100 perturbations for six allocators beside the equal-weight baseline, the exact linear response of the unconstrained mean-variance solution verified on every draw, and the eigenvalue bound that says why shrinkage lowers the worst case.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "cvxpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-lots-turnover-and-infeasibility",
+          "path": "projects/phase-4-portfolio-construction/project-04-lots-turnover-and-infeasibility",
+          "title": "Lots, Turnover and Infeasibility",
+          "description": "Build qdp.lots: target weights to integer lots in tick prices with a per-name rounding bound, hard-limit checks on integer notionals after rounding, two-sided turnover as a soft limit, and a rebalance that returns either the target on the lot grid or an explicit infeasibility result with a defined fallback portfolio, verified on 100 seeded cases with zero hard-limit breaches.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-signal-combination",
+          "path": "projects/phase-4-portfolio-construction/project-05-signal-combination",
+          "title": "Signal Combination",
+          "description": "Build qdp.combine: NaN-aware cross-sectional z-score, rank and winsorise transforms applied one date at a time, a fixed and a train-only least-squares combination, and a per-date information coefficient, verified by 30 enumerated invariance cases across five monotone maps and by mutation tests that prove no held-out row ever enters the fit.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-volatility-targeting-and-drift",
+          "path": "projects/phase-4-portfolio-construction/project-06-volatility-targeting-and-drift",
+          "title": "Volatility Targeting and Drift",
+          "description": "Build qdp.voltarget: lagged rolling and EWMA volatility estimates, a capped leverage map, the exact drift of leverage and weights between rebalances, and a scheduled runner with cost accounting, verified on 20 analytical paths and 100 seeded volatility-clustered paths with zero applied-leverage cap breaches, then diagnose a supplied broken implementation of the same interface.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-option-payoffs-and-sensitivities",
+          "path": "projects/phase-4-portfolio-construction/project-07-option-payoffs-and-sensitivities",
+          "title": "Option Payoffs and Sensitivities",
+          "description": "Build qdp.options: expiry payoffs of calls, puts and multi-leg structures in exact integer ticks using the shared panel's option specifications, put-call parity to 1e-12, the lognormal model with five analytic sensitivities checked against central finite differences within 1e-4 away from the singular limits, implied volatility by bisection, and a restatement of one real option contract specification of the student's choice.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-lab-portfolio-engine",
+          "path": "projects/phase-4-portfolio-construction/project-08-lab-portfolio-engine",
+          "title": "Lab — The Portfolio Engine",
+          "description": "Assemble the phase's modules into one pipeline over the shared panel — signal, shrunk covariance, long-only optimiser with residual, volatility scaling, lots and an integer ledger — reconciled exactly on five identities after every mark and every rebalance across 50 rebalances with zero breaks, reported beside an equal-weight baseline with costs, plus a stability report on the student's own captured panel labelled as captured data.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pandas",
+            "cvxpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-5-feeds-and-execution-research",
+      "title": "Feed Integration & Execution Research",
+      "goal": "Consume a sequenced feed with an order lifecycle, adapt a real public stream with reconnect and provenance, treat passive fills and impact as bracketed scenarios with stated assumptions, schedule executions without future volume, account for shortfall to the minor currency unit, and build a runner whose ledger survives a crash.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-sequenced-feed-and-order-lifecycle",
+          "path": "projects/phase-5-feeds-and-execution-research/project-01-sequenced-feed-and-order-lifecycle",
+          "title": "A Sequenced Feed, Consumed Honestly, and an Order That Cannot Be Filled Twice",
+          "description": "Build qdp.feed and qdp.orders: a sequence tracker that turns arrival order into seq order with duplicates dropped, reorders buffered, late arrivals flagged and gaps declared after a stated tolerance; a per-instrument book with the snapshot recovery rule; a gap report that proves which lost messages were trades; and an order lifecycle state machine driven from the canonical stream against the local replay server.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "pyarrow",
+            "websockets",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-real-feed-adapter",
+          "path": "projects/phase-5-feeds-and-execution-research/project-02-real-feed-adapter",
+          "title": "A Real Feed Adapter — Units Without Floats, Gaps Without Pretending, Provenance Without Exceptions",
+          "description": "Build qdp.adapter: a declarative SourceSpec for a public market-data endpoint of your choice, a normaliser that converts timestamps, prices and quantities by integer arithmetic or rejects the row with a named reason, seeded exponential backoff floored at the server's minimum, discontinuity accounting that states its detection limit when there is no sequence number, and a provenance manifest with a canonical content hash; rehearse against the local replay server, then run a 60-minute capture labelled captured data.",
+          "tech": [
+            "Python 3.12",
+            "decimal",
+            "websockets",
+            "pyarrow",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-fill-uncertainty",
+          "path": "projects/phase-5-feeds-and-execution-research/project-03-fill-uncertainty",
+          "title": "Fill Uncertainty — A Passive Order Is a Bracket, Not a Fact",
+          "description": "Build qdp.fills: an optimistic, a queue-aware no-cancel and a sweep-only fill model that walk one canonical tape, a provable ordering of their first-fill times around the truth, the crossing-rest event that is a certain fill under every model, and a run over the 100 shipped passive orders that reports how many outcomes the bracket contains and how wide it is by order kind.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "pyarrow",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-impact-scenarios-and-identifiability",
+          "path": "projects/phase-5-feeds-and-execution-research/project-04-impact-scenarios-and-identifiability",
+          "title": "Impact Scenarios and Identifiability — Your Own Footprint Is a Hypothesis",
+          "description": "Build qdp.impact: the temporary-plus-permanent impact response with an event-count half-life (the exact basis the shipped counterfactual fits), a grid-plus-least-squares fit that recovers three planted parameters within 1e-6 on noiseless responses and reports a half-life ridge on a noisy one, a schedule cost model with its two assumptions named, three adverse scenarios beside the baseline, and the paragraph that says why a single realised path never identifies your own impact.",
+          "tech": [
+            "Python 3.12",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-execution-schedules",
+          "path": "projects/phase-5-feeds-and-execution-research/project-05-execution-schedules",
+          "title": "Execution Schedules — Every Lot Accounted For, No Volume From the Future",
+          "description": "Build qdp.schedules: TWAP, VWAP and POV with a largest-remainder allocator that conserves the parent quantity exactly across 50 seeded fixtures, a CausalSeries that raises when a schedule reads the current or a future bucket, a poisoned-future test that proves output independence from unknowable volume, and a reading mastery tier that diagnoses a supplied module with three defects before running it.",
+          "tech": [
+            "Python 3.12",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-shortfall-accounting",
+          "path": "projects/phase-5-feeds-and-execution-research/project-06-shortfall-accounting",
+          "title": "Shortfall Accounting — Explained to the Minor Currency Unit",
+          "description": "Build qdp.shortfall: implementation shortfall against a decision price decomposed into delay, execution, opportunity and fees in integer minor currency units, with the identity asserted inside the module and proven on ten hand-worked ledgers and 100 seeded ones covering both sides, partial and zero fills, fees and three tick values; then account for the reference schedule under a baseline and an adverse scenario, labelled as modelled fills, beside the counterfactual's measured figure.",
+          "tech": [
+            "Python 3.12",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-restartable-research-runner",
+          "path": "projects/phase-5-feeds-and-execution-research/project-07-restartable-research-runner",
+          "title": "A Restartable Research Runner — One Transaction, One Key, No Double Fill",
+          "description": "Build qdp.runner: a research runner whose sqlite ledger survives a crash because the fill row, the account update and the input checkpoint are one transaction and the fill row's primary key is the feed seq; prove it on 100 seeded crash-and-restart cases (inside the transaction and after the commit) that must equal the uninterrupted ledger, and keep a naive two-commit twin whose double-booking is measured rather than asserted.",
+          "tech": [
+            "Python 3.12",
+            "sqlite3",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-lab-execution-research-harness",
+          "path": "projects/phase-5-feeds-and-execution-research/project-08-lab-execution-research-harness",
+          "title": "Lab — The Execution Research Harness",
+          "description": "Compose the feed consumer, fill bracket, schedules, shortfall ledger and restartable runner into qdp.harness: one parent order driven through the shipped sessions under favourable, baseline and adverse scenarios, three shortfall distributions reported beside their fill model, impact hypothesis, cost assumptions and data source, a control row for the free score, and a 100-run suite in which every run reconciles on three exact integer invariants or is excluded and counted.",
+          "tech": [
+            "Python 3.12",
+            "pandas",
+            "pyarrow",
+            "sqlite3",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    },
+    {
+      "id": "phase-6-risk-release-and-capstone",
+      "title": "Risk, Reproducible Release & the Integrated Capstone",
+      "goal": "Close the loop: tail-risk estimators with calibration tests, stress and research-level limits, reconciliation and PnL explain, profiling and memory boundaries, a reproducible release with provenance hashes, a code-review and schema-migration exercise, an integration lab under injected faults, and the capstone.",
+      "projectCount": 8,
+      "projects": [
+        {
+          "slug": "project-01-tail-risk-and-calibration",
+          "path": "projects/phase-6-risk-release-and-capstone/project-01-tail-risk-and-calibration",
+          "title": "Tail Risk and Calibration — Estimators That Are Tested Against Their Own Promise",
+          "description": "Add qdp/tailrisk.py: historical, Gaussian and Student-t value-at-risk and expected-shortfall estimators in a single loss convention, verified against analytical values and an independent numerical integration to 1e-6, plus Kupiec coverage and Christoffersen independence tests and a rolling forecaster that provably never sees its own observation. Then measure the tests themselves over 1,000 seeded paths: the exact binomial size of the Kupiec test at n = 500 (7.09%, not 5%), the inflation of that size by estimation error when the VaR is fitted on 250 points (14.3% versus 7.5% with the true parameters), and power against a heavy-tailed alternative that fails in opposite directions at the 99% and 95% levels.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "scipy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-02-stress-and-risk-limits",
+          "path": "projects/phase-6-risk-release-and-capstone/project-02-stress-and-risk-limits",
+          "title": "Stress and Risk Limits — Checks on Modelled State, Not Promises of Safety",
+          "description": "Add qdp/stress.py: a portfolio in integer shares and integer minor-unit prices, linear scenario revaluation under factor shocks and instrument overrides, a worst-window scenario built from the student's own captured data and labelled as such, and seven kinds of named limit (gross, net, concentration, factor, liquidity, scenario loss, tail loss) that each compare one non-negative magnitude with a bound. Prove it on 30 fixtures - 10 hand-computed revaluations and 20 planted hard-limit violations each rejected by the limit it was planted against - with 0 false breaches across 10 books that are inside every bound by construction, and show by hand which limits doubling a book breaches and which ratio limits it cannot.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pandas",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-03-reconciliation-and-pnl-explain",
+          "path": "projects/phase-6-risk-release-and-capstone/project-03-reconciliation-and-pnl-explain",
+          "title": "Reconciliation and PnL Explain — Two Different Checks, With the Integer Zero as the Bar",
+          "description": "Add qdp/recon.py: a ledger in integer shares and integer minor currency units, reconciliation of its positions and cash against an external statement with every break reported as a kind, an instrument and a signed difference, and a PnL explain that attributes each day's equity change to price PnL on the opening book, trading PnL against the mark, fees and dividends with a residual that is the integer zero. Plant 20 breaks (10 on the statement side, 10 on the ledger side) and detect every one with the right kind; check 100 seeded clean ledgers over 5 days each against an independently written pandas oracle with 0 false breaks and 0 non-zero residuals; and show that a replayed fill breaks reconciliation while leaving the explain residual at zero. The mastery tier is a reading task: diagnose a supplied broken explain from its residuals, derive each wrong figure to the minor unit, and add the regression tests it lacked.",
+          "tech": [
+            "Python 3.11+",
+            "pandas",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-04-profiling-and-memory-boundaries",
+          "path": "projects/phase-6-risk-release-and-capstone/project-04-profiling-and-memory-boundaries",
+          "title": "Profiling and Memory Boundaries — A 4x That Is Byte-Identical",
+          "description": "Add qdp/layout.py: named answers to who owns an array's bytes (np.shares_memory), in what order they are laid out (strides, C versus F), and whether a columnar-to-numpy conversion copied and why (single chunk, nulls, dtype), pinned by 30 ownership and layout tests. Then take the rolling 99% expected-shortfall computation from Project 01, profile the per-cell loop with cProfile and tracemalloc, and replace it with a strided window view plus a blocked np.partition that is 4.3x faster on the reference machine at block 64 with np.array_equal returning True - the same floats, because the k survivors are sorted before the mean. Show that a sliding window view claims 1.8 GB and allocates nothing, that the block size bounds peak memory (32.9 / 109.7 / 416.9 MB for 16 / 64 / 256) without changing the answer, and that a C-order and an F-order sum of the same matrix differ in 182 of 200 columns because layout changes the summation order. The runtime bar is a ratio to the student's own shared/bench run.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "pyarrow",
+            "pytest",
+            "cProfile",
+            "tracemalloc"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-05-reproducible-release",
+          "path": "projects/phase-6-risk-release-and-capstone/project-05-reproducible-release",
+          "title": "Reproducible Release — One Root Hash for Everything That Determines a Result",
+          "description": "Add qdp/release.py: content hashes for every input and output of a run, with text hashed by content (CRLF folded, BOM stripped) and binaries hashed exactly, a tree hash over relative POSIX paths so a rename changes the tree but not the file, a manifest written as canonical BOM-less JSON, a root that covers the source tree, lock file, data manifests, seed, version and outputs while deliberately excluding the environment block, and a verify command that reports environment differences without letting them decide the verdict. Add scripts/reproduce.py, which runs a command three times into clean directories and compares the three roots. Prove that three clean releases share one root, that a one-byte change to an output moves exactly outputs/<name> and root, that a rename changes source_tree and root but not the file's own hash, and that a tampered output makes verify exit 1 naming the file.",
+          "tech": [
+            "Python 3.11+",
+            "hashlib",
+            "json",
+            "pathlib",
+            "subprocess",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-06-code-review-and-schema-migration",
+          "path": "projects/phase-6-risk-release-and-capstone/project-06-code-review-and-schema-migration",
+          "title": "Code Review and Schema Migration — Six Seeded Defects and Two Schemas That Agree to the Integer",
+          "description": "Review a supplied replacement for the v1 ledger reader (work/review/ledger_io_proposed.py) by predicting failures from the source, writing one check per suspicion, and running every check against both the proposal and the merged reader: six defects - float truncation (measured: 4,586 of the 99,999 two-decimal values below 1000.00 truncate wrong through int(float(s) * 100), while the folklore example 51.55 is correct), a mutable default argument, a silent except that drops rows, an unchecked header that reads a v2 file as v1, half-even rounding of sub-minor precision, and an as-of off-by-one. Then add qdp/migrate.py: a v2 schema in integer minor units with an explicit currency and schema tag, conversion through decimal.Decimal that refuses sub-minor precision, readers that refuse the other schema, a byte-identical v1 -> v2 -> v1 round trip, and a proof on 20 seeded ledgers that positions, cash and every PnL-explain field are identical to the integer through both schemas.",
+          "tech": [
+            "Python 3.11+",
+            "decimal",
+            "csv",
+            "numpy",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-07-lab-integration-under-faults",
+          "path": "projects/phase-6-risk-release-and-capstone/project-07-lab-integration-under-faults",
+          "title": "Lab — Integration Under Faults: 30 Injected Faults, 100 Restart Comparisons, One Ledger",
+          "description": "An open-ended integration lab: assemble the feed consumer, book state, restartable runner, ledger, reconciliation and risk report into one end-to-end run on a frozen session, subject it to exactly 30 transport faults injected from a seed by the supplied qdp/faults.py harness (duplicates, drops, disorder, late arrivals, disconnect windows, one clock offset, one sequence reset), classify every fault recoverable or unrecoverable by the feed schema's rule, run 100 seeded crash/restart comparisons against the uninterrupted ledger with a field-by-field comparison, and finish with a risk report and a Project 05 manifest. Ten acceptance cases, each a test and a row in journal/integration.md with a count; at the frozen seed the schedule has 7 unrecoverable faults, all disconnects that swallowed a trade.",
+          "tech": [
+            "Python 3.11+",
+            "numpy",
+            "asyncio / websockets",
+            "pytest"
+          ],
+          "featured": true,
+          "video": null
+        },
+        {
+          "slug": "project-08-capstone",
+          "path": "projects/phase-6-risk-release-and-capstone/project-08-capstone",
+          "title": "Capstone — A Reproducible Research Platform: Frozen Sessions, Injected Faults, Three Execution Scenarios",
+          "description": "Assemble everything the track built into one platform and run it end to end: the data package (synthetic fixtures plus at least 20 sessions your own adapter captured from a public endpoint of your choice, one volatile interval selected by a rule you published before looking at results), the backtesting library, the experiment registry with one temporal and one cross-sectional pre-registered hypothesis, the portfolio engine, the execution harness under favourable, baseline and adverse scenarios, the risk report, and the restartable runner replayed through 30 injected transport faults. Publish the synthetic-fixture run publicly and reproducibly; ship the real-data run as a restricted artifact with a provenance manifest and content hashes. qdp/capstone.py makes two rubric sentences checkable: the selection rule is a hashed text applied literally with two fallbacks, and the bundle index separates public from restricted files with one hash over the listing. No positive research result is required, and none may be presented as evidence of persistent predictability.",
+          "tech": [
+            "Python 3.12",
+            "numpy / pandas / polars",
+            "pyarrow / parquet / sqlite",
+            "statsmodels / scipy / cvxpy",
+            "numba",
+            "pytest",
+            "asyncio / websockets"
+          ],
+          "featured": true,
+          "video": null
+        }
+      ]
+    }
+  ]
+}
