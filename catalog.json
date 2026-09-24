@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-24T12:23:53Z",
+  "generatedAt": "2026-09-24T21:30:21Z",
   "totals": {
-    "tracks": 23,
-    "projects": 970,
-    "videos": 118
+    "tracks": 24,
+    "projects": 1018,
+    "videos": 119
   },
   "tracks": [
     {
@@ -250,7 +250,7 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 34,
+      "videoCount": 35,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
@@ -591,6 +591,35 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 45,
+      "videoCount": 0,
+      "freeEligible": false,
+      "freeProjectCount": 0,
+      "paid": true,
+      "playlistUrl": null
+    },
+    {
+      "id": "quant-dev-python",
+      "title": "Quant Developer in Python: Research Infrastructure, Backtesting, Portfolio & Risk",
+      "tagline": "Build the software a systematic research desk runs on, and be able to prove every number it prints.",
+      "level": null,
+      "stack": [
+        "Python 3.12",
+        "numpy / pandas / polars",
+        "pyarrow / parquet / sqlite",
+        "statsmodels / scipy / cvxpy",
+        "numba",
+        "pytest",
+        "asyncio / websockets"
+      ],
+      "targetRoles": [
+        "Quant Developer",
+        "Research Engineer (systematic trading)",
+        "Backtesting / Data Platform Engineer",
+        "Junior Systematic Researcher"
+      ],
+      "version": "1.0.0",
+      "phaseCount": 6,
+      "projectCount": 48,
       "videoCount": 0,
       "freeEligible": false,
       "freeProjectCount": 0,
