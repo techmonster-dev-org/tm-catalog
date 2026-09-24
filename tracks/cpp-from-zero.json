@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 34,
+  "videoCount": 35,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -686,7 +686,12 @@
             "unordered_map"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "CUx5Ia3K66g",
+            "url": "https://www.youtube.com/shorts/CUx5Ia3K66g",
+            "title": "A loop checks every entry. A map checks one. | C++ From Zero #35",
+            "publishAt": "2026-09-24T13:00:00Z"
+          }
         },
         {
           "slug": "project-04-set-pair-tuple",
