@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 31,
+  "videoCount": 34,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -622,7 +622,12 @@
             "AddressSanitizer"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "JBuEoLl6-iI",
+            "url": "https://www.youtube.com/shorts/JBuEoLl6-iI",
+            "title": "You wrote no destructor. Who closes the file? | C++ From Zero #32",
+            "publishAt": "2026-09-23T13:00:00Z"
+          }
         }
       ]
     },
@@ -643,7 +648,12 @@
             "vector"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "wfPxYhHUSP4",
+            "url": "https://www.youtube.com/shorts/wfPxYhHUSP4",
+            "title": "A thousand pushes, about ten reallocations — here's the trick. | C++ From Zero #33",
+            "publishAt": "2026-09-23T18:00:00Z"
+          }
         },
         {
           "slug": "project-02-string-string-view",
@@ -657,7 +667,12 @@
             "string_view"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "b6MBKlGJmLY",
+            "url": "https://www.youtube.com/shorts/b6MBKlGJmLY",
+            "title": "Your function copies every character just to read it. This one copies nothing. | C++ From Zero #34",
+            "publishAt": "2026-09-23T23:00:00Z"
+          }
         },
         {
           "slug": "project-03-map",
