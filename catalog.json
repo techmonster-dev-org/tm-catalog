@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-23T12:58:13Z",
+  "generatedAt": "2026-09-24T10:09:49Z",
   "totals": {
     "tracks": 23,
     "projects": 970,
-    "videos": 115
+    "videos": 118
   },
   "tracks": [
     {
@@ -147,7 +147,7 @@
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
-      "playlistUrl": "https://www.youtube.com/playlist?list=PLVVvaMswslKw"
+      "playlistUrl": null
     },
     {
       "id": "c-systems",
@@ -250,7 +250,7 @@
       "version": "1.1.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 31,
+      "videoCount": 34,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
