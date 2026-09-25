@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 35,
+  "videoCount": 37,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -706,7 +706,12 @@
             "utility"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "mUQJyk0g7cY",
+            "url": "https://www.youtube.com/shorts/mUQJyk0g7cY",
+            "title": "Looping a vector to check membership? A set skips the scan. | C++ From Zero #36",
+            "publishAt": "2026-09-24T18:00:00Z"
+          }
         },
         {
           "slug": "project-05-iterators",
@@ -720,7 +725,12 @@
             "algorithm"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "I7RfPu4qZbQ",
+            "url": "https://www.youtube.com/shorts/I7RfPu4qZbQ",
+            "title": "One loop reads a vector, a string, and a map | C++ From Zero #37",
+            "publishAt": "2026-09-24T23:00:00Z"
+          }
         },
         {
           "slug": "project-06-algorithms",
