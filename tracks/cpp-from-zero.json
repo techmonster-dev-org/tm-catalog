@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 37,
+  "videoCount": 40,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -744,7 +744,12 @@
             "numeric"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "VVxxbYgCDxM",
+            "url": "https://www.youtube.com/shorts/VVxxbYgCDxM",
+            "title": "How many loops to sort, search, and count? None. | C++ From Zero #38",
+            "publishAt": "2026-09-25T13:00:00Z"
+          }
         },
         {
           "slug": "project-07-function-templates",
@@ -758,7 +763,12 @@
             "concepts"
           ],
           "featured": false,
-          "video": null
+          "video": {
+            "youtubeId": "r9DAnKSU-_Y",
+            "url": "https://www.youtube.com/shorts/r9DAnKSU-_Y",
+            "title": "Rewrite max for every type? You don't. | C++ From Zero #39",
+            "publishAt": "2026-09-25T18:00:00Z"
+          }
         },
         {
           "slug": "project-08-class-templates",
@@ -773,7 +783,12 @@
             "RAII"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "obAcE2M2Z7g",
+            "url": "https://www.youtube.com/shorts/obAcE2M2Z7g",
+            "title": "One class definition. Any type inside. | C++ From Zero #40",
+            "publishAt": "2026-09-25T23:00:00Z"
+          }
         }
       ]
     },
