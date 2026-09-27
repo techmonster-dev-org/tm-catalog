@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 40,
+  "videoCount": 43,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -811,7 +811,12 @@
             "std::move"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "R-n-BaN56eo",
+            "url": "https://www.youtube.com/shorts/R-n-BaN56eo",
+            "title": "A million elements out. Zero copies made. | C++ From Zero #41",
+            "publishAt": "2026-09-26T13:00:00Z"
+          }
         },
         {
           "slug": "project-02-rule-of-five",
@@ -826,7 +831,12 @@
             "RAII"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "Bsbn92Ykld8",
+            "url": "https://www.youtube.com/shorts/Bsbn92Ykld8",
+            "title": "Copying allocates. Moving steals a pointer. | C++ From Zero #42",
+            "publishAt": "2026-09-26T18:00:00Z"
+          }
         },
         {
           "slug": "project-03-auto-structured-bindings",
@@ -841,7 +851,12 @@
             "decltype"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "8tqz47GI9fc",
+            "url": "https://www.youtube.com/shorts/8tqz47GI9fc",
+            "title": "Why spell out a type the compiler already knows? | C++ From Zero #43",
+            "publishAt": "2026-09-26T23:00:00Z"
+          }
         },
         {
           "slug": "project-04-lambdas-closures",
