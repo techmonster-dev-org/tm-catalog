@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 43,
+  "videoCount": 46,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -871,7 +871,12 @@
             "algorithms"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "FUR5RoGkxao",
+            "url": "https://www.youtube.com/shorts/FUR5RoGkxao",
+            "title": "A function with no name, written where you use it. | C++ From Zero #44",
+            "publishAt": "2026-09-27T13:00:00Z"
+          }
         },
         {
           "slug": "project-05-optional-variant",
@@ -886,7 +891,12 @@
             "std::visit"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "spx2A_CTkqU",
+            "url": "https://www.youtube.com/shorts/spx2A_CTkqU",
+            "title": "Returning minus one for \"not found\" has caused bugs for decades. | C++ From Zero #45",
+            "publishAt": "2026-09-27T18:00:00Z"
+          }
         },
         {
           "slug": "project-06-ranges-views",
@@ -916,7 +926,12 @@
             "std::async"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "jy4qsXTthhI",
+            "url": "https://www.youtube.com/shorts/jy4qsXTthhI",
+            "title": "Four threads, one counter, and a total that's always too low | C++ From Zero #47",
+            "publishAt": "2026-09-27T23:00:00Z"
+          }
         },
         {
           "slug": "project-08-capstone-expense-analyzer",
