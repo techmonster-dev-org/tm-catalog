@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 0,
+  "videoCount": 2,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -53,7 +53,12 @@
             "SHA-256 manifests"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "RkGEKA4JTNY",
+            "url": "https://www.youtube.com/shorts/RkGEKA4JTNY",
+            "title": "Beat 2.0896, or your model learned nothing. | Build Your Own Small Language Model #1",
+            "publishAt": "2026-09-28T18:00:00Z"
+          }
         },
         {
           "slug": "project-02-byte-bpe-tokenizer",
@@ -67,7 +72,12 @@
             "byte-pair encoding"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "XVTMPGmrPSc",
+            "url": "https://www.youtube.com/shorts/XVTMPGmrPSc",
+            "title": "One character changed. Your data is silently wrong. | Build Your Own Small Language Model #2",
+            "publishAt": "2026-09-28T23:00:00Z"
+          }
         },
         {
           "slug": "project-03-vocabulary-budget",
