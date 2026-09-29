@@ -18,7 +18,7 @@
   "version": "1.1.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 46,
+  "videoCount": 47,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -946,7 +946,12 @@
             "STL"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "mIfRBLjsFFI",
+            "url": "https://www.youtube.com/shorts/mIfRBLjsFFI",
+            "title": "One tool. Everything you learned. Does it fit? | C++ From Zero #48",
+            "publishAt": "2026-09-28T13:00:00Z"
+          }
         }
       ]
     }
