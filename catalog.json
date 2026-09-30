@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-29T12:04:28Z",
+  "generatedAt": "2026-09-30T11:13:10Z",
   "totals": {
     "tracks": 24,
     "projects": 1018,
-    "videos": 133
+    "videos": 136
   },
   "tracks": [
     {
@@ -143,7 +143,7 @@
       "version": "1.0.0",
       "phaseCount": 7,
       "projectCount": 17,
-      "videoCount": 2,
+      "videoCount": 5,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
@@ -624,7 +624,7 @@
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
-      "playlistUrl": "https://www.youtube.com/playlist?list=PLJ1BkihTzwsw"
+      "playlistUrl": null
     },
     {
       "id": "quant-trader",
