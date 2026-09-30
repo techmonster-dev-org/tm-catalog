@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 2,
+  "videoCount": 5,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -91,7 +91,12 @@
             "byte-pair encoding"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "fIPlQY_JFAU",
+            "url": "https://www.youtube.com/shorts/fIPlQY_JFAU",
+            "title": "A bigger vocabulary can outweigh your whole model. | Build Your Own Small Language Model #3",
+            "publishAt": "2026-09-29T13:00:00Z"
+          }
         }
       ]
     },
@@ -113,7 +118,12 @@
             "PyTorch (CPU, second opinion only)"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "i6Stt9zICRw",
+            "url": "https://www.youtube.com/shorts/i6Stt9zICRw",
+            "title": "Your loss curve drops. The model is cheating. | Build Your Own Small Language Model #4",
+            "publishAt": "2026-09-29T18:00:00Z"
+          }
         },
         {
           "slug": "project-05-decoder-block-and-loss",
@@ -127,7 +137,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "prq6xYMAHhk",
+            "url": "https://www.youtube.com/shorts/prq6xYMAHhk",
+            "title": "You can predict your model's loss before it runs. | Build Your Own Small Language Model #5",
+            "publishAt": "2026-09-29T23:00:00Z"
+          }
         }
       ]
     },
