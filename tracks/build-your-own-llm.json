@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 5,
+  "videoCount": 8,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -163,7 +163,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "K8mOkCec9JU",
+            "url": "https://www.youtube.com/shorts/K8mOkCec9JU",
+            "title": "Prove your validation split with a number. | Build Your Own Small Language Model #6",
+            "publishAt": "2026-09-30T13:00:00Z"
+          }
         },
         {
           "slug": "project-07-calibration-and-budget",
@@ -177,7 +182,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "Yo9cXywzQ88",
+            "url": "https://www.youtube.com/shorts/Yo9cXywzQ88",
+            "title": "Same code, same machine, a different number. | Build Your Own Small Language Model #7",
+            "publishAt": "2026-09-30T18:00:00Z"
+          }
         },
         {
           "slug": "project-08-the-training-run",
@@ -191,7 +201,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "cdBFa6AtLNs",
+            "url": "https://www.youtube.com/shorts/cdBFa6AtLNs",
+            "title": "Restored everything. Still a different model. | Build Your Own Small Language Model #8",
+            "publishAt": "2026-09-30T23:00:00Z"
+          }
         },
         {
           "slug": "project-09-what-more-compute-buys",
