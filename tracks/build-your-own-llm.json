@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 8,
+  "videoCount": 11,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -221,7 +221,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "J2OoV9AqUH8",
+            "url": "https://www.youtube.com/shorts/J2OoV9AqUH8",
+            "title": "The biggest model won. It proves nothing. | Build Your Own Small Language Model #9",
+            "publishAt": "2026-10-01T13:00:00Z"
+          }
         }
       ]
     },
@@ -243,7 +248,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "gZp2WNSITyM",
+            "url": "https://www.youtube.com/shorts/gZp2WNSITyM",
+            "title": "Lower loss. Zero score. Same run. | Build Your Own Small Language Model #10",
+            "publishAt": "2026-10-01T18:00:00Z"
+          }
         },
         {
           "slug": "project-11-preference-tuning",
@@ -271,7 +281,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "AmGfL1Yfs5A",
+            "url": "https://www.youtube.com/shorts/AmGfL1Yfs5A",
+            "title": "A dumb model beat mine by a point | Build Your Own Small Language Model #12",
+            "publishAt": "2026-10-01T23:00:00Z"
+          }
         }
       ]
     },
