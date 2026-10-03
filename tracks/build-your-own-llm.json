@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 11,
+  "videoCount": 14,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -307,7 +307,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "kLbIl1ya-Rw",
+            "url": "https://www.youtube.com/shorts/kLbIl1ya-Rw",
+            "title": "Your token filter can keep zero tokens. | Build Your Own Small Language Model #13",
+            "publishAt": "2026-10-02T13:00:00Z"
+          }
         },
         {
           "slug": "project-14-quantized-weights",
@@ -321,7 +326,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "s8oxrHwk-3Q",
+            "url": "https://www.youtube.com/shorts/s8oxrHwk-3Q",
+            "title": "Smaller weights did not make it faster. | Build Your Own Small Language Model #14",
+            "publishAt": "2026-10-02T18:00:00Z"
+          }
         }
       ]
     },
@@ -345,7 +355,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "rNCnWrswiIg",
+            "url": "https://www.youtube.com/shorts/rNCnWrswiIg",
+            "title": "Your server should say no, not quietly say less. | Build Your Own Small Language Model #15",
+            "publishAt": "2026-10-02T23:00:00Z"
+          }
         },
         {
           "slug": "project-16-someone-elses-weights",
