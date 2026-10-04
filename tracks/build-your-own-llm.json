@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 14,
+  "videoCount": 16,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -374,7 +374,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "KjEFPy44EoI",
+            "url": "https://www.youtube.com/shorts/KjEFPy44EoI",
+            "title": "Same swap moved the logits 6.886. Or 0.005. | Build Your Own Small Language Model #16",
+            "publishAt": "2026-10-03T13:00:00Z"
+          }
         }
       ]
     },
@@ -398,7 +403,12 @@
             "SHA-256 manifests"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "EMqbPNB1vB8",
+            "url": "https://www.youtube.com/shorts/EMqbPNB1vB8",
+            "title": "Did you write the number before you measured it? | Build Your Own Small Language Model #17",
+            "publishAt": "2026-10-03T18:00:00Z"
+          }
         }
       ]
     }
