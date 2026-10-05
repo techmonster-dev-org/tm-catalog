@@ -20,7 +20,7 @@
   "version": "1.0.0",
   "phaseCount": 7,
   "projectCount": 17,
-  "videoCount": 16,
+  "videoCount": 17,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -267,7 +267,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "JzeFUPhn-R4",
+            "url": "https://www.youtube.com/shorts/JzeFUPhn-R4",
+            "title": "A score went up. The model got worse. | Build Your Own Small Language Model #11",
+            "publishAt": "2026-10-04T13:00:00Z"
+          }
         },
         {
           "slug": "project-12-evaluation-harness",
