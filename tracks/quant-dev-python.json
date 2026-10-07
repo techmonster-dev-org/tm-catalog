@@ -21,7 +21,7 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 5,
+  "videoCount": 8,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -166,7 +166,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "aHd53gwAjpA",
+            "url": "https://www.youtube.com/shorts/aHd53gwAjpA",
+            "title": "Zero gaps can be a hidden loss. | Quant Developer in Python #7",
+            "publishAt": "2026-10-06T13:00:00Z"
+          }
         },
         {
           "slug": "project-08-lab-research-data-package",
@@ -181,7 +186,12 @@
             "provenance manifests"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "iRd3IU4yz-Y",
+            "url": "https://www.youtube.com/shorts/iRd3IU4yz-Y",
+            "title": "11 of 12 caught. The 12th, it refused. | Quant Developer in Python #8",
+            "publishAt": "2026-10-06T18:00:00Z"
+          }
         }
       ]
     },
@@ -204,7 +214,12 @@
             "numpy"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "r2fzrXwd9vU",
+            "url": "https://www.youtube.com/shorts/r2fzrXwd9vU",
+            "title": "Store a fund's cash in a float and it drifts a cent | Quant Developer in Python #9",
+            "publishAt": "2026-10-06T23:00:00Z"
+          }
         },
         {
           "slug": "project-02-corporate-actions-and-settlement",
