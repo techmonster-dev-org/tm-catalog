@@ -21,7 +21,7 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 8,
+  "videoCount": 11,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -234,7 +234,12 @@
             "bisect"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "YhDeMfAnPrE",
+            "url": "https://www.youtube.com/shorts/YhDeMfAnPrE",
+            "title": "Price dropped by the dividend. Did you lose? | Quant Developer in Python #10",
+            "publishAt": "2026-10-07T13:00:00Z"
+          }
         },
         {
           "slug": "project-03-futures-rolls-and-variation-margin",
@@ -249,7 +254,12 @@
             "numpy"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "WP7VI97GlpA",
+            "url": "https://www.youtube.com/shorts/WP7VI97GlpA",
+            "title": "You never pay for a futures contract. It pays you daily. | Quant Developer in Python #11",
+            "publishAt": "2026-10-07T18:00:00Z"
+          }
         },
         {
           "slug": "project-04-vectorised-reference-engine",
@@ -264,7 +274,12 @@
             "fractions"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "gI8S9u1zuQc",
+            "url": "https://www.youtube.com/shorts/gI8S9u1zuQc",
+            "title": "A whole backtest in four lines of numpy | Quant Developer in Python #12",
+            "publishAt": "2026-10-07T23:00:00Z"
+          }
         },
         {
           "slug": "project-05-event-driven-engine",
