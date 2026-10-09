@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-08T12:05:57Z",
+  "generatedAt": "2026-10-09T11:57:54Z",
   "totals": {
     "tracks": 24,
     "projects": 1018,
-    "videos": 160
+    "videos": 163
   },
   "tracks": [
     {
@@ -620,7 +620,7 @@
       "version": "1.0.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 11,
+      "videoCount": 14,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
