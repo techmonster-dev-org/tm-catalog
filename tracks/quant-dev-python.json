@@ -21,7 +21,7 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 11,
+  "videoCount": 14,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -294,7 +294,12 @@
             "fractions"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "nu8EX7SPRnk",
+            "url": "https://www.youtube.com/shorts/nu8EX7SPRnk",
+            "title": "Two backtesters. The day they disagree is a bad day. | Quant Developer in Python #13",
+            "publishAt": "2026-10-08T13:00:00Z"
+          }
         },
         {
           "slug": "project-06-costs-and-execution-assumptions",
@@ -308,7 +313,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "8MGXtXXM_v8",
+            "url": "https://www.youtube.com/shorts/8MGXtXXM_v8",
+            "title": "The same trades made +589 and −405 | Quant Developer in Python #14",
+            "publishAt": "2026-10-08T18:00:00Z"
+          }
         },
         {
           "slug": "project-07-causality-and-temporal-validation",
@@ -322,7 +332,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "m3ntyZ74qPA",
+            "url": "https://www.youtube.com/shorts/m3ntyZ74qPA",
+            "title": "Code that looks causal proves nothing | Quant Developer in Python #15",
+            "publishAt": "2026-10-08T23:00:00Z"
+          }
         },
         {
           "slug": "project-08-lab-backtesting-library",
