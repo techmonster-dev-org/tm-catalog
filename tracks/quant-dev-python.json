@@ -21,11 +21,11 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 14,
+  "videoCount": 17,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
-  "playlistUrl": "https://www.youtube.com/playlist?list=PLJ1BkihTzwsw",
+  "playlistUrl": null,
   "summary": "Build the software a systematic research desk runs on, and be able to prove every number it prints. This is the quant-developer track: not the person who invents the signal, but the engineer who builds the data, backtesting, allocation, execution and risk infrastructure that makes a signal testable at all - and who can say exactly what a result does and does not show. You start where research software actually starts: an installable package with numerical tests and a benchmark protocol, time semantics that separate when something happened from when you could have known it, typed ingestion with provenance, SQL and as-of joins, columnar storage, a bitemporal point-in-time store, and asynchronous ingestion that never loses a message silently. You then build instrument accounting from the ledger up - cash, positions, corporate actions, settlement, futures rolls and variation margin - and two backtesting engines (vectorised and event-driven) that must agree to a stated tolerance before either is trusted, with cost models, causality enforcement and interval-aware validation. Research validity is its own phase: a pre-registered experiment registry, one temporal and one cross-sectional signal pipeline, point-in-time features against a planted factor structure, regression with dependence-aware uncertainty, cointegration under structural breaks, and a null-research exercise that shows what selection does to a Sharpe ratio. Portfolio construction covers covariance conditioning, constrained optimisation with optimality residuals, allocation stability, discrete lots, signal combination, volatility targeting and option payoff arithmetic. Execution research treats fills and impact as scenarios with stated assumptions, never as facts, and ends in a restartable runner whose ledger survives a crash. Risk, reconciliation, profiling, a reproducible release and a code-review exercise close the loop before an integrated capstone that replays frozen sessions through injected faults and three execution scenarios. Every number is a case count or a tolerance; every project ends in a no-scaffold rebuild; nothing here claims a profitable strategy, and the track says plainly what a laptop, free data and a simulator cannot teach.",
   "environment": [],
   "capstone": {
@@ -353,7 +353,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "X6cKYU7GMvM",
+            "url": "https://www.youtube.com/shorts/X6cKYU7GMvM",
+            "title": "100 configs. One hash each. Change nothing, they must match. | Quant Developer in Python #16",
+            "publishAt": "2026-10-09T13:00:00Z"
+          }
         }
       ]
     },
@@ -375,7 +380,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "DppQEvwerjs",
+            "url": "https://www.youtube.com/shorts/DppQEvwerjs",
+            "title": "You register the experiment before you look. | Quant Developer in Python #17",
+            "publishAt": "2026-10-09T18:00:00Z"
+          }
         },
         {
           "slug": "project-02-temporal-signal-pipeline",
@@ -389,7 +399,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "P8tpRmIe7_Q",
+            "url": "https://www.youtube.com/shorts/P8tpRmIe7_Q",
+            "title": "A peeking window beats the truth. That's the bug. | Quant Developer in Python #18",
+            "publishAt": "2026-10-09T23:00:00Z"
+          }
         },
         {
           "slug": "project-03-cross-sectional-signal-pipeline",
