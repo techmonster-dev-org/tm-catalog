@@ -21,7 +21,7 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 20,
+  "videoCount": 23,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -476,7 +476,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "qF4W8jUze7s",
+            "url": "https://www.youtube.com/shorts/qF4W8jUze7s",
+            "title": "A test passed. The hedge ratio still moved. | Quant Developer in Python #22",
+            "publishAt": "2026-10-11T13:00:00Z"
+          }
         },
         {
           "slug": "project-07-selection-bias-and-null-research",
@@ -491,7 +496,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "GKENTGe3fm8",
+            "url": "https://www.youtube.com/shorts/GKENTGe3fm8",
+            "title": "The best of 100 coin flips scored a Sharpe of 1.04 | Quant Developer in Python #23",
+            "publishAt": "2026-10-11T18:00:00Z"
+          }
         },
         {
           "slug": "project-08-lab-reproducible-research-report",
@@ -507,7 +517,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "w1cNBCJ2JS8",
+            "url": "https://www.youtube.com/shorts/w1cNBCJ2JS8",
+            "title": "A wrong number reproduces just as faithfully | Quant Developer in Python #24",
+            "publishAt": "2026-10-11T23:00:00Z"
+          }
         }
       ]
     },
