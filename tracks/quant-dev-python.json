@@ -21,7 +21,7 @@
   "version": "1.0.0",
   "phaseCount": 6,
   "projectCount": 48,
-  "videoCount": 26,
+  "videoCount": 29,
   "freeEligible": false,
   "freeProjectCount": 0,
   "paid": true,
@@ -600,7 +600,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "GQsyUZSIHLI",
+            "url": "https://www.youtube.com/shorts/GQsyUZSIHLI",
+            "title": "One lot already breaks your risk limit | Quant Developer in Python #28",
+            "publishAt": "2026-10-13T13:00:00Z"
+          }
         },
         {
           "slug": "project-05-signal-combination",
@@ -613,7 +618,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "SHT-zoGnivI",
+            "url": "https://www.youtube.com/shorts/SHT-zoGnivI",
+            "title": "You fit the weights on all your data. You leaked the future. | Quant Developer in Python #29",
+            "publishAt": "2026-10-13T18:00:00Z"
+          }
         },
         {
           "slug": "project-06-volatility-targeting-and-drift",
@@ -626,7 +636,12 @@
             "pytest"
           ],
           "featured": true,
-          "video": null
+          "video": {
+            "youtubeId": "8aDQToz7c34",
+            "url": "https://www.youtube.com/shorts/8aDQToz7c34",
+            "title": "Lose 10%, and 2x leverage becomes 2.25x | Quant Developer in Python #30",
+            "publishAt": "2026-10-13T23:00:00Z"
+          }
         },
         {
           "slug": "project-07-option-payoffs-and-sensitivities",
