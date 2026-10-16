@@ -1,7 +1,7 @@
 {
   "id": "ai-ml-python",
   "title": "AI / ML with Python",
-  "tagline": "Become a job-ready ML engineer through projects: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/ge…",
+  "tagline": "Build ML engineering skills through projects you can show and explain: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transf…",
   "level": null,
   "stack": [
     "Python 3.12",
@@ -30,7 +30,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Become a job-ready ML engineer through projects: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/generative-AI application work with your model provider's API, and the MLOps that gets models into production. Pairs naturally with the Python Core track (its prerequisite) and the AI-Native/LLM track.",
+  "summary": "Build ML engineering skills through projects you can show and explain: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/generative-AI application work with your model provider's API, and the MLOps that gets models into production. Pairs naturally with the Python Core track (its prerequisite) and the AI-Native/LLM track.",
   "environment": [],
   "capstone": {
     "title": "End-to-end ML project",
