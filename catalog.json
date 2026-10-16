@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-16T09:55:08Z",
+  "generatedAt": "2026-10-16T22:38:40Z",
   "totals": {
     "tracks": 24,
     "projects": 1018,
-    "videos": 184
+    "videos": 185
   },
   "tracks": [
     {
       "id": "ai-chip-ml-systems",
       "title": "AI-Chip & ML-Systems Engineering (GPU Kernels to Compilers)",
-      "tagline": "Build the layer that makes AI fast on hardware — the highest, most durable rung of the AI-infrastructure stack.",
+      "tagline": "Build the layer that makes AI fast on hardware — the layer of the AI-infrastructure stack that sits closest to the hardware.",
       "level": null,
       "stack": [
         "CUDA",
@@ -37,7 +37,7 @@
     {
       "id": "ai-ml-python",
       "title": "AI / ML with Python",
-      "tagline": "Become a job-ready ML engineer through projects: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transformers), modern LLM/ge…",
+      "tagline": "Build ML engineering skills through projects you can show and explain: data foundations (NumPy, pandas, viz, SQL), classical machine learning with honest evaluation, deep learning (CNNs, RNNs, transf…",
       "level": null,
       "stack": [
         "Python 3.12",
@@ -300,7 +300,7 @@
         "GoogleTest"
       ],
       "targetRoles": [
-        "Software Engineer (interview-ready)",
+        "Software Engineer (technical interview preparation)",
         "Low-Latency / HFT Engineer (foundation)",
         "AI-Chip / Systems Engineer (foundation)",
         "Competitive Programmer"
@@ -346,7 +346,7 @@
     {
       "id": "frontend",
       "title": "Frontend Engineering",
-      "tagline": "Job-ready modern frontend: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio.",
+      "tagline": "Modern frontend you can show and explain: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio.",
       "level": null,
       "stack": [
         "HTML",
@@ -400,7 +400,7 @@
     {
       "id": "full-stack",
       "title": "Full-Stack Engineering",
-      "tagline": "The most common job-ready bundle: build complete products end-to-end — frontend, backend, database, auth, and deployment — using Next.js full-stack.",
+      "tagline": "Full-stack product engineering: build complete products end-to-end — frontend, backend, database, auth, and deployment — using Next.js full-stack.",
       "level": null,
       "stack": [
         "TypeScript",
@@ -455,7 +455,7 @@
     {
       "id": "math-foundations",
       "title": "Math & Reasoning for Systems and Quant (Zero to Confident)",
-      "tagline": "Build the mathematical spine that every elite low-level and quantitative role assumes — from a true-zero start, learning by writing tiny programs that compute and verify each idea.",
+      "tagline": "Build the mathematical spine that low-level and quantitative work relies on — from a true-zero start, learning by writing tiny programs that compute and verify each idea.",
       "level": null,
       "stack": [
         "Python 3.12",
@@ -620,16 +620,16 @@
       "version": "1.0.0",
       "phaseCount": 6,
       "projectCount": 48,
-      "videoCount": 35,
+      "videoCount": 36,
       "freeEligible": false,
       "freeProjectCount": 0,
       "paid": true,
-      "playlistUrl": null
+      "playlistUrl": "https://www.youtube.com/playlist?list=PLJ1BkihTzwsw"
     },
     {
       "id": "quant-trader",
       "title": "Quant Trading — Mental Math, Probability & Market-Making",
-      "tagline": "Train for the trading floor the way the prop shops actually hire.",
+      "tagline": "Practise the quantitative reasoning that trading interviews test.",
       "level": null,
       "stack": [
         "Python",
