@@ -10,7 +10,7 @@
     "GoogleTest"
   ],
   "targetRoles": [
-    "Software Engineer (interview-ready)",
+    "Software Engineer (technical interview preparation)",
     "Low-Latency / HFT Engineer (foundation)",
     "AI-Chip / Systems Engineer (foundation)",
     "Competitive Programmer"
@@ -23,7 +23,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Turn your C++ fluency into problem-solving power. You implement every core data structure and algorithm from scratch in modern C++ — dynamic arrays, linked lists, stacks/queues, trees, heaps, tries, hash tables, and graphs — then master the algorithmic techniques that dominate technical interviews: two pointers, sliding window, recursion, binary search, sorting, BFS/DFS, shortest paths, greedy, divide-and-conquer, backtracking, and dynamic programming. Every project pairs a working implementation with complexity analysis and the interview patterns it unlocks. Note the division of labour with the c-systems track: c-systems hand-rolls a vector, linked list, hash table and ring buffer in C as exercises in memory ownership and API design, because C ships no containers at all. This track is the algorithms course - complexity analysis, balanced trees, graph algorithms and the design paradigms - and it is where the structures c-systems deliberately defers are taught. This is the shared problem-solving core of the Zero-to-Low-Level-Systems-Elite program: it takes the language from cpp-from-zero and builds the timed, whiteboard-ready algorithmic skill that HFT, AI-chip, and big-tech screens all test.",
+  "summary": "Turn your C++ fluency into problem-solving power. You implement every core data structure and algorithm from scratch in modern C++ — dynamic arrays, linked lists, stacks/queues, trees, heaps, tries, hash tables, and graphs — then master the algorithmic techniques common in technical interviews: two pointers, sliding window, recursion, binary search, sorting, BFS/DFS, shortest paths, greedy, divide-and-conquer, backtracking, and dynamic programming. Every project pairs a working implementation with complexity analysis and the interview patterns it practises. Note the division of labour with the c-systems track: c-systems hand-rolls a vector, linked list, hash table and ring buffer in C as exercises in memory ownership and API design, because C ships no containers at all. This track is the algorithms course - complexity analysis, balanced trees, graph algorithms and the design paradigms - and it is where the structures c-systems deliberately defers are taught. This is the shared problem-solving core of the Zero-to-Low-Level-Systems-Elite program: it takes the language from cpp-from-zero and builds the timed, whiteboard-style algorithmic skill that technical interviews commonly test.",
   "environment": [],
   "capstone": {
     "title": "Autocomplete & Route-Planning Engine (Tested & Benchmarked)",
