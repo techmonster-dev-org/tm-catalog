@@ -25,7 +25,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Build production LLM applications the way modern teams actually do: structured outputs, RAG, agents, tool use, evals, and MCP. The highest-demand, highest-margin track. Every project demands you explain the model's behavior, not just call an API.",
+  "summary": "Build production LLM applications the way modern teams actually do: structured outputs, RAG, agents, tool use, evals, and MCP. Every project demands you explain the model's behavior, not just call an API.",
   "environment": [],
   "capstone": {
     "title": "Production LLM application",
