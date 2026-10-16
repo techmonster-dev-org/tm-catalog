@@ -1,7 +1,7 @@
 {
   "id": "math-foundations",
   "title": "Math & Reasoning for Systems and Quant (Zero to Confident)",
-  "tagline": "Build the mathematical spine that every elite low-level and quantitative role assumes — from a true-zero start, learning by writing tiny programs that compute and verify each idea.",
+  "tagline": "Build the mathematical spine that low-level and quantitative work relies on — from a true-zero start, learning by writing tiny programs that compute and verify each idea.",
   "level": null,
   "stack": [
     "Python 3.12",
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Build the mathematical spine that every elite low-level and quantitative role assumes — from a true-zero start, learning by writing tiny programs that compute and verify each idea. Covers number sense and mental math, discrete math and logic, probability, statistics, linear algebra, and the calculus and optimization used in systems and machine learning. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it feeds the shared core (DSA, computer architecture, performance) and is the direct on-ramp for the quant-trader and AI/ML-systems branches. Python is used as a calculator and laboratory; you only need the few lines each project teaches.",
+  "summary": "Build the mathematical spine that low-level and quantitative work relies on — from a true-zero start, learning by writing tiny programs that compute and verify each idea. Covers number sense and mental math, discrete math and logic, probability, statistics, linear algebra, and the calculus and optimization used in systems and machine learning. This is Tier 0 of the Zero-to-Low-Level-Systems-Elite program: it feeds the shared core (DSA, computer architecture, performance) and is the direct on-ramp for the quant-trader and AI/ML-systems branches. Python is used as a calculator and laboratory; you only need the few lines each project teaches.",
   "environment": [],
   "capstone": {
     "title": "Numerical & Probability Toolkit",
