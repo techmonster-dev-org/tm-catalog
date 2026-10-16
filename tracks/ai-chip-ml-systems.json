@@ -1,7 +1,7 @@
 {
   "id": "ai-chip-ml-systems",
   "title": "AI-Chip & ML-Systems Engineering (GPU Kernels to Compilers)",
-  "tagline": "Build the layer that makes AI fast on hardware — the highest, most durable rung of the AI-infrastructure stack.",
+  "tagline": "Build the layer that makes AI fast on hardware — the layer of the AI-infrastructure stack that sits closest to the hardware.",
   "level": null,
   "stack": [
     "CUDA",
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Build the layer that makes AI fast on hardware — the highest, most durable rung of the AI-infrastructure stack. You start with just enough deep learning to know what you're optimizing (tensors, GEMM, the transformer, attention, what's memory- vs compute-bound, quantization), then engineer the GPU kernels behind modern models: optimized matmul and tensor cores, softmax/LayerNorm reductions, and kernel fusion — culminating in a FlashAttention-style fused attention kernel. You then rise above hand-tuned CUDA to the layer that survives automation: Triton (block-level GPU programming in Python) and ML compilers (MLIR, TVM, torch.compile) that lower a model graph to hardware. The capstone is a fused attention kernel measured against a vendor baseline. This is Branch B of the Zero-to-Low-Level-Systems-Elite program — the path to NVIDIA, the frontier labs (the largest AI and platform companies/a frontier lab), and AI-chip startups, where the durable edge is designing the kernels and compilers, not memorizing intrinsics a model can emit.",
+  "summary": "Build the layer that makes AI fast on hardware — the layer of the AI-infrastructure stack that sits closest to the hardware. You start with just enough deep learning to know what you're optimizing (tensors, GEMM, the transformer, attention, what's memory- vs compute-bound, quantization), then engineer the GPU kernels behind modern models: optimized matmul and tensor cores, softmax/LayerNorm reductions, and kernel fusion — culminating in a FlashAttention-style fused attention kernel. You then rise above hand-tuned CUDA to the layer that survives automation: Triton (block-level GPU programming in Python) and ML compilers (MLIR, TVM, torch.compile) that lower a model graph to hardware. The capstone is a fused attention kernel measured against a vendor baseline. This is Branch B of the Zero-to-Low-Level-Systems-Elite program — the skills used in GPU-kernel, ML-compiler and AI-accelerator engineering, where the lasting skill is designing the kernels and compilers, not memorizing intrinsics a model can emit.",
   "environment": [],
   "capstone": {
     "title": "Fused Attention Kernel — Optimized & Benchmarked Against a Vendor Baseline",
@@ -720,7 +720,7 @@
           "slug": "project-07-ai-chip-landscape",
           "path": "projects/phase-6-inference-capstone/project-07-ai-chip-landscape",
           "title": "The AI-Chip Landscape & Your Path",
-          "description": "Map the AI-chip ecosystem (NVIDIA, AMD, a hyperscaler TPU, a deterministic-dataflow chip startup, a wafer-scale chip startup, a RISC-V dataflow chip startup, a reconfigurable-dataflow chip startup), understand the CUDA→Triton→MLIR skill ladder, identify frontier-lab roles and their signals, and build a 90-day career plan.",
+          "description": "Map the AI-chip ecosystem (NVIDIA, AMD, a hyperscaler TPU, a deterministic-dataflow chip startup, a wafer-scale chip startup, a RISC-V dataflow chip startup, a reconfigurable-dataflow chip startup), understand the CUDA→Triton→MLIR skill ladder, identify related roles and the skills each one asks for, and build a 90-day learning plan.",
           "tech": [
             "Python",
             "Career Strategy",
