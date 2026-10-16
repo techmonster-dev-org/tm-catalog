@@ -1,7 +1,7 @@
 {
   "id": "quant-trader",
   "title": "Quant Trading — Mental Math, Probability & Market-Making",
-  "tagline": "Train for the trading floor the way the prop shops actually hire.",
+  "tagline": "Practise the quantitative reasoning that trading interviews test.",
   "level": null,
   "stack": [
     "Python",
@@ -24,7 +24,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Train for the trading floor the way the prop shops actually hire. This is the quant-trader option of the Zero-to-Low-Level-Systems-Elite program — the one path that rewards raw quantitative reasoning over pedigree, where self-taught candidates genuinely compete. You drill the speed mental math that screens demand (the timed arithmetic drill-fast arithmetic, estimation, Fermi problems), the applied probability and expected-value toolkit that underlies every trading decision, the games of chance and bet-sizing math (variance, risk of ruin, Kelly), and the heart of the trader interview: making and updating bid/ask markets, handling adverse selection, and managing inventory and risk. You round it out with the brain teasers, logic, and game theory these interviews lean on, then run full mock interviews. The capstone builds a market-making simulator with a quoting-and-risk strategy. Layered on the probability and mental-math of the math-foundations track, this is the route toward the quant-trading seats at the leading proprietary trading and market-making firms — where the trading interview rewards how you think under uncertainty.",
+  "summary": "Practise the quantitative reasoning that trading interviews test. This is the quant-trader option of the Zero-to-Low-Level-Systems-Elite program — the option built around quantitative reasoning rather than prior credentials. You drill the speed mental math that screens demand (the timed arithmetic drill-fast arithmetic, estimation, Fermi problems), the applied probability and expected-value toolkit that underlies every trading decision, the games of chance and bet-sizing math (variance, risk of ruin, Kelly), and the heart of the trader interview: making and updating bid/ask markets, handling adverse selection, and managing inventory and risk. You round it out with the brain teasers, logic, and game theory these interviews lean on, then run full mock interviews. The capstone builds a market-making simulator with a quoting-and-risk strategy. Layered on the probability and mental-math of the math-foundations track, this track helps you practise reasoning under uncertainty, the skill quant-trading interviews focus on.",
   "environment": [],
   "capstone": {
     "title": "Market-Making Simulator & Strategy",
@@ -597,7 +597,7 @@
           "slug": "project-01-the-qt-role",
           "path": "projects/phase-6-trading-interview/project-01-the-qt-role",
           "title": "The Quant Trader Role & Path",
-          "description": "Build a role-comparison tool, day-in-the-life simulator, and honest self-assessment to understand exactly what a QT does, how it differs from QR and Trading SWE, and what a realistic path to top-firm offers looks like for self-taught candidates.",
+          "description": "Build a role-comparison tool, day-in-the-life simulator, and honest self-assessment to understand exactly what a QT does, how it differs from QR and Trading SWE, and what preparing for the role involves for a self-taught learner.",
           "tech": [
             "Python"
           ],
@@ -630,7 +630,7 @@
           "slug": "project-04-mock-probability",
           "path": "projects/phase-6-trading-interview/project-04-mock-probability",
           "title": "Mock: Probability & EV Round",
-          "description": "Study ten interview-difficulty probability and EV problems with full think-aloud solutions, build a timed drill tool that scores both correctness and explanation quality, and internalize the five archetypes that cover ~80% of QT probability screens.",
+          "description": "Study ten interview-difficulty probability and EV problems with full think-aloud solutions, build a timed drill tool that scores both correctness and explanation quality, and internalize five common archetypes of QT probability screens.",
           "tech": [
             "Python"
           ],
@@ -652,7 +652,7 @@
           "slug": "project-06-fit-and-firms",
           "path": "projects/phase-6-trading-interview/project-06-fit-and-firms",
           "title": "Fit, Firms & Applying",
-          "description": "Build a firm-profile reference tool, fit interview preparation framework, signal opportunity tracker, and structured application plan covering 10 major QT firms across three tiers with honest acceptance-rate framing.",
+          "description": "Build a firm-profile reference tool, fit interview preparation framework, signal opportunity tracker, and structured application plan covering 10 QT firms across three tiers, with no claims about anyone's chances of an offer.",
           "tech": [
             "Python"
           ],
@@ -663,7 +663,7 @@
           "slug": "project-07-building-edge",
           "path": "projects/phase-6-trading-interview/project-07-building-edge",
           "title": "Building Your Edge (Self-Taught)",
-          "description": "Build a deliberate-practice system with a weekly schedule, cumulative rep tracker, community resource guide, and monthly sustainability check-in to sustain a 12-36 month preparation habit toward a QT offer.",
+          "description": "Build a deliberate-practice system with a weekly schedule, cumulative rep tracker, community resource guide, and monthly sustainability check-in to sustain a 12-36 month preparation habit.",
           "tech": [
             "Python"
           ],
