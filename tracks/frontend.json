@@ -1,7 +1,7 @@
 {
   "id": "frontend",
   "title": "Frontend Engineering",
-  "tagline": "Job-ready modern frontend: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio.",
+  "tagline": "Modern frontend you can show and explain: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio.",
   "level": null,
   "stack": [
     "HTML",
@@ -26,7 +26,7 @@
   "freeProjectCount": 0,
   "paid": true,
   "playlistUrl": null,
-  "summary": "Job-ready modern frontend: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio. Migrated from the original STUDENT-GUIDE.md as the reference track.",
+  "summary": "Modern frontend you can show and explain: from Git and HTML/CSS to JavaScript, TypeScript, React and Next.js, built through 90+ projects that become a live portfolio. Migrated from the original STUDENT-GUIDE.md as the reference track.",
   "environment": [],
   "capstone": {
     "title": "Full portfolio + blog + project hub",
