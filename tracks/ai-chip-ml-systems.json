@@ -511,7 +511,7 @@
     {
       "id": "phase-5-ml-compilers",
       "title": "ML Compilers — MLIR, TVM & Graph Optimization",
-      "goal": "Rise to the durable layer: computational graphs, operator fusion and lowering, MLIR dialects, TVM and torch.compile, and how a model becomes hardware instructions.",
+      "goal": "Move up to the compiler layer: computational graphs, operator fusion and lowering, MLIR dialects, TVM and torch.compile, and how a model becomes hardware instructions.",
       "projectCount": 8,
       "projects": [
         {
@@ -723,7 +723,7 @@
           "description": "Map the AI-chip ecosystem (NVIDIA, AMD, a hyperscaler TPU, a deterministic-dataflow chip startup, a wafer-scale chip startup, a RISC-V dataflow chip startup, a reconfigurable-dataflow chip startup), understand the CUDA→Triton→MLIR skill ladder, identify related roles and the skills each one asks for, and build a 90-day learning plan.",
           "tech": [
             "Python",
-            "Career Strategy",
+            "Industry Landscape",
             "AI Chip Ecosystem",
             "Triton",
             "MLIR"
