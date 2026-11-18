@@ -4,7 +4,7 @@
   "tagline": "Master the Python language end-to-end through projects: fundamentals, idiomatic and functional Python, object-oriented design, packaging and environments, the standard library, and concurrency, perfo…",
   "level": null,
   "stack": [
-    "Python 3.12",
+    "Python 3.11+",
     "pytest",
     "typing",
     "venv",
@@ -43,7 +43,7 @@
           "title": "Unit Converter CLI",
           "description": "Build an interactive command-line unit converter to learn Python's core types, type conversion, functions, conditionals, loops, and exception handling.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "input/print",
             "functions",
             "exceptions"
@@ -57,7 +57,7 @@
           "title": "String Toolkit",
           "description": "Build a small library of text utilities (slugify, word count, title-case, reverse, palindrome check) to master Python strings, slicing, methods, and f-string formatting.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "str methods",
             "slicing",
             "f-strings"
@@ -71,7 +71,7 @@
           "title": "Number Guessing Game",
           "description": "Build a guess-the-number game with hints, attempt limits, and replay to master numbers, the random module, comparison operators, and while loops.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "random",
             "while loops",
             "int/float"
@@ -85,7 +85,7 @@
           "title": "To-Do List (Lists & Tuples)",
           "description": "Build an in-memory to-do manager with add/list/complete/remove to master Python lists, tuples, indexing, iteration, and mutation vs immutability.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "list",
             "tuple",
             "enumerate"
@@ -99,7 +99,7 @@
           "title": "Contact Book (Dicts & Sets)",
           "description": "Build a searchable contact book to master dictionaries (key/value lookup), sets (uniqueness and membership), and why hashing makes them fast.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "dict",
             "set",
             "hashing"
@@ -113,7 +113,7 @@
           "title": "Data Cleaning with Comprehensions",
           "description": "Clean a messy list of records using list, dict, and set comprehensions, learning when a comprehension improves clarity and when it hurts it.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "comprehensions",
             "list/dict/set"
           ],
@@ -126,7 +126,7 @@
           "title": "Control Flow Patterns",
           "description": "Implement classic exercises (FizzBuzz, a multiplication table, a simple text menu with match/case, and prime detection) to master conditionals, loops, and structural pattern matching.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "match/case",
             "for/while",
             "boolean logic"
@@ -140,7 +140,7 @@
           "title": "Functions Deep Dive",
           "description": "Build a small statistics toolkit to master function parameters, default arguments, *args/**kwargs, multiple return values, scope, and the mutable-default-argument trap.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "functions",
             "*args/**kwargs",
             "scope"
@@ -154,7 +154,7 @@
           "title": "Errors & Input Validation",
           "description": "Build a reusable validation layer with custom exceptions to master try/except/else/finally, exception hierarchy, raising and chaining, and the EAFP vs LBYL styles.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "exceptions",
             "custom errors",
             "EAFP"
@@ -176,7 +176,7 @@
           "title": "Unpacking, Starred Targets & zip",
           "description": "Build a CSV row transformer to master tuple/dict unpacking, starred assignment, zip, enumerate, and dict merging — the idioms that make Python code concise.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "unpacking",
             "zip",
             "enumerate"
@@ -190,7 +190,7 @@
           "title": "Iterators & Generators",
           "description": "Build a lazy log-file reader and number streams using the iterator protocol and generator functions with yield, learning lazy evaluation and memory efficiency.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "generators",
             "yield",
             "iterator protocol"
@@ -204,7 +204,7 @@
           "title": "Decorators",
           "description": "Build timing, caching, and retry decorators to learn how functions wrap other functions, why functools.wraps matters, and how decorators with arguments work.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "decorators",
             "functools.wraps",
             "closures"
@@ -218,7 +218,7 @@
           "title": "Closures & Higher-Order Functions",
           "description": "Build configurable function factories and pipelines to master closures, functions as values, higher-order functions, and lambda — the foundation under decorators and callbacks.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "closures",
             "higher-order functions",
             "lambda"
@@ -232,7 +232,7 @@
           "title": "Functional Toolkit: map, filter, reduce, partial",
           "description": "Process data with map, filter, functools.reduce, functools.partial, and the operator module — and learn when these beat a comprehension and when they don't.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "functools",
             "operator",
             "map/filter/reduce"
@@ -246,7 +246,7 @@
           "title": "itertools Recipes",
           "description": "Solve real problems with itertools (chain, islice, groupby, count, cycle, combinations, permutations, accumulate) to learn efficient, lazy iteration patterns.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "itertools",
             "generators"
           ],
@@ -259,7 +259,7 @@
           "title": "Type Hints & Static Checking with mypy",
           "description": "Add complete type hints to a small module and verify them with mypy: built-in generics, Optional/Union, type aliases, Protocols, and Generics.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "typing",
             "mypy"
           ],
@@ -272,7 +272,7 @@
           "title": "Dataclasses, Enums & NamedTuples",
           "description": "Model structured records with dataclasses (mutable, frozen, with defaults and methods), Enums for fixed choices, and NamedTuple for lightweight immutable records.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "dataclasses",
             "enum",
             "typing.NamedTuple"
@@ -294,7 +294,7 @@
           "title": "Classes & Instances",
           "description": "Model a bank account with classes to learn __init__, instance vs class attributes, methods, and the role of self.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "classes",
             "self",
             "attributes"
@@ -308,7 +308,7 @@
           "title": "Dunder Methods (Operator Overloading)",
           "description": "Build a Vector and a Money class implementing __repr__/__str__, __eq__/__hash__, __add__, comparison, and __len__ to learn how Python's data model makes objects behave like built-ins.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "dunder methods",
             "data model"
           ],
@@ -321,7 +321,7 @@
           "title": "Inheritance, super() & the MRO",
           "description": "Model a shape hierarchy to learn inheritance, method overriding, super(), and how Python resolves methods across multiple base classes (the MRO).",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "inheritance",
             "super",
             "MRO"
@@ -335,7 +335,7 @@
           "title": "Properties & Encapsulation",
           "description": "Use @property, setters, and computed attributes to enforce invariants and expose a clean interface, learning Python's convention-based encapsulation.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "@property",
             "encapsulation"
           ],
@@ -348,7 +348,7 @@
           "title": "Abstract Base Classes & Interfaces",
           "description": "Define a payment-processor interface with abc.ABC and @abstractmethod so subclasses are forced to implement required methods, learning interface-based design.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "abc",
             "interfaces"
           ],
@@ -361,7 +361,7 @@
           "title": "Composition over Inheritance",
           "description": "Model a Car built from an Engine, Wheels, and a Logger to learn composition, delegation, and dependency injection — and when they beat inheritance.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "composition",
             "delegation",
             "dependency injection"
@@ -375,7 +375,7 @@
           "title": "Class Methods & Static Methods",
           "description": "Add alternative constructors and utility methods to a Date/Color class to learn @classmethod, @staticmethod, and how they differ from instance methods.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "@classmethod",
             "@staticmethod"
           ],
@@ -388,7 +388,7 @@
           "title": "Pythonic Design Patterns",
           "description": "Implement Strategy, Factory, and a Pythonic Singleton/registry, learning how Python's first-class functions and modules simplify classic OO patterns.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "design patterns",
             "first-class functions"
           ],
@@ -409,7 +409,7 @@
           "title": "Modules & the Import System",
           "description": "Split a script into multiple modules and learn how Python's import system works: import vs from-import, absolute vs relative imports, __name__, and how sys.path resolves modules.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "modules",
             "imports"
           ],
@@ -422,7 +422,7 @@
           "title": "Packages & Project Structure",
           "description": "Organize modules into an installable package with a src layout, __init__.py, and a clean public API, learning how real Python projects are structured.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "packages",
             "__init__.py",
             "src layout"
@@ -436,7 +436,7 @@
           "title": "Virtual Environments & pip",
           "description": "Create isolated environments with venv, install and pin dependencies with pip and requirements.txt, and learn why isolation and reproducibility matter.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "venv",
             "pip",
             "requirements.txt"
@@ -450,7 +450,7 @@
           "title": "pyproject.toml & Building a Package",
           "description": "Write a pyproject.toml, build a wheel and sdist, and install your package locally (editable) — the modern, standardized way to package Python.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "pyproject.toml",
             "build",
             "hatchling"
@@ -464,7 +464,7 @@
           "title": "Publishing to PyPI (TestPyPI)",
           "description": "Publish your package to TestPyPI with twine, then install it back with pip — the full release loop, practiced safely on the test index.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "twine",
             "TestPyPI",
             "build"
@@ -478,7 +478,7 @@
           "title": "Dependency Management & Lockfiles",
           "description": "Use a modern tool (uv or Poetry) to resolve, lock, and reproduce dependencies, learning version constraints, lockfiles, and how dependency resolution handles conflicts.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "uv",
             "Poetry",
             "lockfiles"
@@ -492,7 +492,7 @@
           "title": "CLI Entry Points",
           "description": "Turn your package into an installable command-line tool using project.scripts entry points and argparse, so users can run it by name after pip install.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "entry points",
             "argparse"
           ],
@@ -513,7 +513,7 @@
           "title": "Files & pathlib",
           "description": "Build a file-organizing tool using pathlib to read, write, move, and inspect files and directories the modern way, learning paths, encodings, and safe I/O.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "pathlib",
             "file I/O"
           ],
@@ -526,7 +526,7 @@
           "title": "Context Managers",
           "description": "Write custom context managers with both __enter__/__exit__ and contextlib.contextmanager (a timer, a temporary-directory, a DB-like transaction) to master guaranteed setup/teardown.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "context managers",
             "contextlib"
           ],
@@ -539,7 +539,7 @@
           "title": "JSON & CSV Data Formats",
           "description": "Read, write, and convert between JSON and CSV with the standard library, handling nested data, types, and the quirks of each format.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "json",
             "csv"
           ],
@@ -552,7 +552,7 @@
           "title": "Dates, Times & Time Zones",
           "description": "Build a small scheduling/age calculator to master datetime, timedelta, parsing/formatting, and the critical difference between naive and timezone-aware datetimes.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "datetime",
             "zoneinfo"
           ],
@@ -565,7 +565,7 @@
           "title": "Regular Expressions",
           "description": "Build a log/text extractor with the re module: patterns, groups, named groups, substitution, and compiled patterns, learning when regex is the right tool and when it isn't.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "re"
           ],
           "featured": false,
@@ -577,7 +577,7 @@
           "title": "Logging Done Right",
           "description": "Replace print debugging with the logging module: levels, loggers, handlers, formatters, and writing to console and file with structured output.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "logging"
           ],
           "featured": false,
@@ -589,7 +589,7 @@
           "title": "Subprocess & OS Interaction",
           "description": "Run external commands with subprocess and interact with the environment via os/shutil, learning safe argument passing, capturing output, exit codes, and avoiding shell-injection.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "subprocess",
             "os",
             "shutil"
@@ -611,7 +611,7 @@
           "title": "Threading & the GIL",
           "description": "Speed up I/O-bound work with threads and learn why the GIL means threads help I/O but not CPU-bound code, plus thread safety with locks.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "threading",
             "GIL"
           ],
@@ -624,7 +624,7 @@
           "title": "Multiprocessing",
           "description": "Use multiprocessing to parallelize CPU-bound work across cores, learning processes vs threads, Pool/map, and the cost of inter-process communication.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "multiprocessing"
           ],
           "featured": false,
@@ -636,7 +636,7 @@
           "title": "Asyncio Basics",
           "description": "Learn async/await, coroutines, and the event loop by building an async program, understanding how single-threaded concurrency handles many I/O operations.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "asyncio",
             "async/await"
           ],
@@ -649,7 +649,7 @@
           "title": "Async Concurrency Patterns",
           "description": "Build a concurrent async fetcher with tasks, gather, timeouts, semaphores for rate-limiting, and error handling — the patterns real async code uses.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "asyncio",
             "httpx"
           ],
@@ -662,7 +662,7 @@
           "title": "concurrent.futures",
           "description": "Use ThreadPoolExecutor and ProcessPoolExecutor for a unified, high-level pool API, learning futures, executor.map, as_completed, and choosing the right pool.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "concurrent.futures"
           ],
           "featured": false,
@@ -674,7 +674,7 @@
           "title": "Profiling & Optimization",
           "description": "Measure performance with timeit and cProfile, find the real bottleneck, and optimize it with data-driven changes (better algorithms/data structures, caching), avoiding premature optimization.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "timeit",
             "cProfile"
           ],
@@ -687,7 +687,7 @@
           "title": "pytest Basics",
           "description": "Write your first automated test suite with pytest: test functions, plain assert, testing for exceptions, and structuring tests so they run from one command.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "pytest"
           ],
           "featured": false,
@@ -699,7 +699,7 @@
           "title": "Fixtures & Parametrization",
           "description": "Use pytest fixtures for reusable setup/teardown and parametrize to run one test across many inputs, keeping tests DRY and thorough.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "pytest",
             "fixtures"
           ],
@@ -712,7 +712,7 @@
           "title": "Mocking & Coverage",
           "description": "Isolate external dependencies with unittest.mock (patch, Mock, monkeypatch) and measure test thoroughness with coverage, learning to test code that talks to networks, time, or files.",
           "tech": [
-            "Python 3.12",
+            "Python 3.11+",
             "unittest.mock",
             "pytest",
             "coverage"
